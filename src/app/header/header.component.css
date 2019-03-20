@@ -10,7 +10,8 @@
 #logo {
      margin-top: 4px;
      width:"17.98%";
-     height:"83.3333333%"; 
+     height:"83.3333333%";
+     min-width: 10px; 
 }
 #left-dropdown-button {
     background-color: white;
@@ -193,11 +194,38 @@
     width: 240px;
     height: auto;
     max-height: 360px;
-    min-width: 170px;
+    min-width: 200px;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
-@media only screen and (min-width:920px) {
-    #dropdown-menu-right {width: 50px;}
+@media only screen and (max-width:1780px) and (min-width:1500px) {
+    #search-bar {width: 600px;}
 }
+@media only screen and (max-width:1500px) and (min-width:1375px) {
+    #search-bar {width: 500px;}
+}
+@media only screen and (max-width:1375px) and (min-width:1250px) {
+    #search-bar {width: 400px;}
+}
+@media only screen and (max-width:1250px) and (min-width:1150px) {
+    #search-bar {width: 300px;}
+}
+@media only screen and (max-width:1150px) and (min-width:950px) {
+    #search-bar {width: 200px;}
+}
+@media only screen and (max-width:950px) and (min-width:850px) {
+    #search-bar {width: 100px;}
+}
+@media only screen and (max-width:850px) and (min-width:500px) {
+    .small-icons {display: none;}
+    #search-bar {width: 100px;}
+}
+@media only screen and (max-width:500px) {
+    .small-icons {display: none;}
+    #search-bar {width: 50px;}
+    #log-in {display: none;}
+    #sign-up {display: none;}
+}
+
+
