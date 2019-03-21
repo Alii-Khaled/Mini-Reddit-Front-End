@@ -9,6 +9,18 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PostLayoutComponent } from './post-layout/post-layout.component';
+import {MatButtonModule} from '@angular/material';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -19,13 +31,26 @@ import { ProfileComponent } from './profile/profile.component';
     DropdownDirective,
     UserHeaderComponent,
     CommunityComponent,
-    ProfileComponent
+    ProfileComponent,
+    PostLayoutComponent,
+    HomeComponent,
+    LoginComponent,
+    SignupComponent,
+    ModalModule
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFontAwesomeModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
