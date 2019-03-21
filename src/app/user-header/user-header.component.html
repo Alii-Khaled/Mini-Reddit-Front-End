@@ -7,7 +7,7 @@
        </a>
     </div>
     <div class="dropdown" id="left-dropdown"appDropdown>
-        <button class="btn btn-default dropdown-toggle" id="left-dropdown-button" type="button">
+        <button class="btn btn-default dropdown-toggle" id="left-dropdown-button" type="button" (click)="onclick()">
           <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px">
           <b>Popular</b>
         <span style="float: right;margin-top: 10px" class="caret" ></span>
@@ -24,8 +24,8 @@
           <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">
           Original content</a></li>
           <li class="dropdown-header">Subscriptions</li>
-          <li><a href="#"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
-            User Settings</a></li>
+          <li *ngFor="let com of MyCommunities"><a href="#"><img src="{{com?.community_logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+            {{com?.community_name}}</a></li>
           <li class="dropdown-header">Other</li>
           <li><a href="#"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
           User Settings</a></li>
