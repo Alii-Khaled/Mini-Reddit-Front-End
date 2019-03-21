@@ -8,12 +8,13 @@ import { DropdownDirective } from './header/dropdown.directive';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserHeaderComponent } from './user-header/user-header.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DropdownDirective,
-    UserHeaderComponent
+    UserHeaderComponent,
   ],
   imports: [
     BrowserModule,
