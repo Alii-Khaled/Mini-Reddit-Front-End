@@ -16,13 +16,14 @@ import { CommunityComponent } from './community/community.component';
     AppComponent,
     HeaderComponent,
     DropdownDirective,
-    UserHeaderComponent
+    UserHeaderComponent,
+    CommunityComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
