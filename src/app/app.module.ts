@@ -16,8 +16,6 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -33,7 +31,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     CommunityComponent,
     ProfileComponent,
     PostLayoutComponent,
-    HomeComponent,
     LoginComponent,
     SignupComponent,
     ModalModule
