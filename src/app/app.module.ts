@@ -8,6 +8,7 @@ import { DropdownDirective } from './header/dropdown.directive';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -17,7 +18,8 @@ import { CommunityComponent } from './community/community.component';
     HeaderComponent,
     DropdownDirective,
     UserHeaderComponent,
-    CommunityComponent
+    CommunityComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
