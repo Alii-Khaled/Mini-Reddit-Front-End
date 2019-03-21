@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { DropdownDirective } from './header/dropdown.directive';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserHeaderComponent } from './user-header/user-header.component';
+import { CommunityComponent } from './community/community.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { UserHeaderComponent } from './user-header/user-header.component';
     HeaderComponent,
     DropdownDirective,
     UserHeaderComponent,
+    CommunityComponent,
   ],
   imports: [
     BrowserModule,
