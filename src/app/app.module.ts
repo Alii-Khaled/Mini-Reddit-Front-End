@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,18 +10,19 @@ import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DropdownDirective,
-    UserHeaderComponent,
-    CommunityComponent,
+    UserHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
