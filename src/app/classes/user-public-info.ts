@@ -4,13 +4,14 @@ export class UserPublicInfo {
 // tslint:disable-next-line: variable-name
     public cake_day: string;
     public about: string;
-// tslint:disable-next-line: variable-name
-    public profile_pic: string;
-    constructor(username: string, karma: number,cake_day: string,about: string,profile_pic: string) {
+    public photo_path: string;
+    public cover_path: string;
+    constructor(username: string, karma: number,cake_day: string,about: string,photo_path: string,cover_path: string) {
         this.username = username;
         this.karma = karma;
-        this.cake_day=cake_day;
-        this.about=about;
-        this.profile_pic=profile_pic;
+        this.cake_day = cake_day;
+        this.about = about;
+        this.photo_path = photo_path;
+        this.cover_path = cover_path;
     }
 }

@@ -3,6 +3,7 @@ import { UserCommunities } from 'src/app/classes/user-communities';
 import { HttpService } from '../http.service';
 import { ActivatedRoute } from '@angular/router';
 import { UserPublicInfo } from 'src/app/classes/user-public-info';
+import { DropdownDirective } from '../header/dropdown.directive';
 
 
 @Component({
