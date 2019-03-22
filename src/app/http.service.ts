@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { catchError, tap} from 'rxjs/operators'; 
+import { catchError, tap} from 'rxjs/operators' ;
 
 import { UserCommunities } from './classes/user-communities';
 import { UserPublicInfo } from './classes/user-public-info';
@@ -12,9 +12,8 @@ import { UserPublicInfo } from './classes/user-public-info';
 })
 export class HttpService {
     constructor(private http: HttpClient) {}
-    GetCommNameAndLogo() :Observable<any>
-    {
-        return this.http.get("http://localhost:3000/communities");
+    GetCommNameAndLogo(): Observable<any> {
+        return this.http.get('http://localhost:3000/communities');
     }
 
     GetMyCommunities(): Observable<UserCommunities[]> {

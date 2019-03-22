@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , TemplateRef } from '@angular/core';
+import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import {HttpService} from '../http.service';
 import {FormBuilder, FormControlName , FormGroup , Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  constructor(private service: HttpService , private fb: FormBuilder , private router: Router) {
+  modalRef: BsModalRef;
+  constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -28,6 +30,9 @@ export class LoginComponent implements OnInit {
      console.log('error');
 
    }});
+  }
+  signup(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
 }
