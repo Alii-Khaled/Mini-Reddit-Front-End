@@ -1,0 +1,84 @@
+body{
+    background-color: #E4E8EC;
+    /* overflow: scroll; */
+    background-attachment: scroll;
+}
+
+#posts{
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color:#E4E8EC;
+    height: 100%;
+    margin-top: 50px;
+}
+.PopularPosts{
+    color: #1a1a1b;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    margin-top: 10x;
+
+}
+.division{
+    float:left;
+    /* width: 5%; */
+    
+}
+
+#buttonVote{
+    width:25px;
+    height:15px;
+}
+
+#first{
+    width: 2%;
+    text-align: center;
+}
+
+#second{
+    width: 7%;
+    text-align: center;
+}
+
+#imgPost{
+    width: 42px;
+    height: 42px;
+}
+
+#arrow:hover{
+    src: url("https://exclusivepropertiesus.com/wp-content/uploads/2015/06/red-arrow-up.jpg");
+}
+
+#title{
+    font-weight: bold;
+    font-size: 17px;
+    color: black;
+}
+
+#userInfo{
+    font-size: 13px;
+    color: gray;
+}
+
+#postType{
+    font-weight: bold;
+    cursor:pointer;
+    color: black;
+}
+
+.hoving:hover{
+    text-decoration: underline;
+}
+
+#postLink{
+    font-weight: normal;
+    cursor:pointer;
+    color: royalblue;
+    font-size: 13px;
+}
+
+#buttons{
+    height: 30px;
+    font-size: 12px;
+    color: gray;
+}

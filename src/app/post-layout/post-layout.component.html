@@ -1,0 +1,113 @@
+<!-- this is the body of the component html of posts layout -->
+<body>
+
+  <!-- this div is for the rest of the page were posts and there title should be shown here, 
+    this is in case we put another div for adds or reddit options or whatever -->
+  <div id="restPage">
+
+    <!-- this div is were all posts are put in and making all features for them -->
+    <div id="posts">
+      <br>
+<div class="PopularPosts">Popular posts</div>
+      <!-- we make a mat-card for each post -->
+      <!-- this first mat-card is just for trial to ensure making posts from a single object and getting all its attributes from it -->
+      <mat-card style="cursor:pointer">
+        <!--  -->
+        <div class="division" id="first">
+          <div>
+            <button disableRipple mat-icon-button id="buttonVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
+                  
+            <h6>{{postObj.votes}}</h6>
+            
+            <button disableRipple mat-icon-button id="buttonVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
+            
+          </div>
+          
+        </div>
+        
+        <div class="division" id="second"><img src="{{imgsrc}}" id="imgPost"></div>
+        
+        <div class="division" id="third">
+        
+          <div id="title">{{postObj.title}}  <a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg">https://i.redd.it/cw7oa5..<mat-icon>open_in_new</mat-icon></a></div>
+        
+          <div id="userInfo">
+        
+            <p>
+        
+              <span class="hoving" id="postType" onclick="parent.location='https:'+'//www.reddit.com/'">                        
+                {{postObj.type}}</span> Posted by <span class="hoving">{{postObj.username}}</span> {{postObj.date}}
+            </p>
+                  
+                
+          </div>
+          
+          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>open_in_new</mat-icon></button>
+          
+          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>mode_comment</mat-icon> {{postObj.comments}} Comments</button>
+          
+                 
+          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
+          
+                
+          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>reply</mat-icon> Share</button>
+             
+          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>add_box</mat-icon> Save</button>
+          
+          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>block</mat-icon> Hide</button>
+          
+          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>flag</mat-icon> Report</button>
+          <br>
+          <br>
+        </div>
+        
+        <br>
+        
+        <br>
+        
+        <br><br>
+        
+      </mat-card>
+
+      
+      <!-- make ngFor -->
+      <div *ngFor="let postsTemp of posts; index as i;">
+        <mat-divider></mat-divider>
+
+        <mat-card style="cursor:pointer" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">
+         <div class="division" id="first">
+           <div>
+             <button disableRipple mat-icon-button id="buttonVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
+             <h6 id="voteNum">{{posts[i].up_votes-posts[i].down_votes}}</h6>
+             <button disableRipple mat-icon-button id="buttonVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
+           </div>
+         </div>
+         <div class="division" id="second"><img src="{{posts[i].image}}" id="imgPost"></div>
+         <div class="division" id="third">
+           <div id="title">{{posts[i].title}}  <a id="postLink" href="https://{{posts[i].upper_link}}{{posts[i].upper_link_cont}}">{{posts[i].upper_link}}..<mat-icon>open_in_new</mat-icon></a></div>
+           <div id="userInfo">
+             <p>
+               <span class="hoving" id="postType" onclick="parent.location='https:'+'//www.reddit.com/'">
+                   {{posts[i].community}}</span> Posted by <span class="hoving">{{posts[i].username}}</span> <span class="hoving"> {{posts[i].date}}</span></p>
+             
+           </div>
+           
+               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>{{posts[i].first_icon}}</mat-icon></button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>mode_comment</mat-icon> {{posts[i].comments_num}} Comments</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>reply</mat-icon> Share</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>add_box</mat-icon> Save</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>block</mat-icon> Hide</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>flag</mat-icon> Report</button>
+               
+                   
+         </div>
+         <br>
+         <br>
+         <br><br>
+      </mat-card>
+      </div>
+    </div>
+</div>
+    
+</body>

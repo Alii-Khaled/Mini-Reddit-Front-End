@@ -1,6 +1,7 @@
 export class UserPublicInfo {
     public username: string;
     public karma: number;
+// tslint:disable-next-line: variable-name
     public cake_day: string;
     public about: string;
     public photo_path: string;
