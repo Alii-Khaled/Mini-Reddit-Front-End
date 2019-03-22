@@ -18,7 +18,7 @@ export class HttpService {
         return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + id);
     }
     login(username: string , password: string): Observable<any> {
-        return this.http.post( '#', {username, password});
+        return this.http.post( 'request', {username, password});
 
     }
 }

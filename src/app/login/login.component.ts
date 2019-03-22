@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpService} from '../http.service'
+import {HttpService} from '../http.service';
 import {FormBuilder, FormControlName , FormGroup , Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
