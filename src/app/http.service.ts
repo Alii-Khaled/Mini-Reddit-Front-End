@@ -2,8 +2,6 @@ import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, from} from 'rxjs';
 import { catchError, tap} from 'rxjs/operators';
-import { UserCommunities } from './classes/user-communities';
-import { UserPublicInfo } from './classes/user-public-info';
 
 @Injectable({
     providedIn: 'root'
