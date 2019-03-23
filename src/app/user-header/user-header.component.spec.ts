@@ -5,7 +5,6 @@ import { UserHeaderComponent } from './user-header.component';
 describe('UserHeaderComponent', () => {
   let component: UserHeaderComponent;
   let fixture: ComponentFixture<UserHeaderComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserHeaderComponent ]

@@ -15,11 +15,11 @@
         <!--  -->
         <div class="division" id="first">
           <div>
-            <button disableRipple mat-icon-button id="buttonVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
+            <button disableRipple mat-icon-button id="upVote0" class="buttonVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
                   
             <h6>{{postObj.votes}}</h6>
             
-            <button disableRipple mat-icon-button id="buttonVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
+            <button disableRipple mat-icon-button id="downVote0" class="buttonVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
             
           </div>
           
@@ -42,21 +42,21 @@
                 
           </div>
           
-          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>open_in_new</mat-icon></button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon0" class="buttons" ><mat-icon>open_in_new</mat-icon></button>
           
-          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>mode_comment</mat-icon> {{postObj.comments}} Comments</button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="comment0" class="buttons" ><mat-icon>mode_comment</mat-icon> {{postObj.comments}} Comments</button>
           
                  
-          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="giveAward0" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
           
                 
-          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>reply</mat-icon> Share</button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="share0" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
              
-          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>add_box</mat-icon> Save</button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="save0" class="buttons" ><mat-icon>add_box</mat-icon> Save</button>
           
-          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>block</mat-icon> Hide</button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="hide0" class="buttons" ><mat-icon>block</mat-icon> Hide</button>
           
-          <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>flag</mat-icon> Report</button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="report0" class="buttons" ><mat-icon>flag</mat-icon> Report</button>
           <br>
           <br>
         </div>
@@ -77,9 +77,9 @@
         <mat-card style="cursor:pointer" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">
          <div class="division" id="first">
            <div>
-             <button disableRipple mat-icon-button id="buttonVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
+             <button disableRipple mat-icon-button id="upVote{{posts[i].post_id}}" class="buttonVote" (click)="posts[i].up_voting()"><mat-icon >arrow_upward</mat-icon></button>
              <h6 id="voteNum">{{posts[i].up_votes-posts[i].down_votes}}</h6>
-             <button disableRipple mat-icon-button id="buttonVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
+             <button disableRipple mat-icon-button id="downVote{{posts[i].post_id}}" class="buttonVote" (click)="posts[i].down_voting()"><mat-icon>arrow_downward</mat-icon></button>
            </div>
          </div>
          <div class="division" id="second"><img src="{{posts[i].image}}" id="imgPost"></div>
@@ -92,13 +92,13 @@
              
            </div>
            
-               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>{{posts[i].first_icon}}</mat-icon></button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>mode_comment</mat-icon> {{posts[i].comments_num}} Comments</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>reply</mat-icon> Share</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>add_box</mat-icon> Save</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>block</mat-icon> Hide</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="buttons" ><mat-icon>flag</mat-icon> Report</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon{{posts[i].post_id}}" class="buttons" ><mat-icon>{{posts[i].first_icon}}</mat-icon></button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="comment{{posts[i].post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts[i].comments_num}} Comments</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="giveAward{{posts[i].post_id}}" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="share{{posts[i].post_id}}" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="save{{posts[i].post_id}}" class="buttons" ><mat-icon>add_box</mat-icon> Save</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="hide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Hide</button>
+               <button onclick="parent.location='localhost:4200'" mat-button id="report{{posts[i].post_id}}" class="buttons" ><mat-icon>flag</mat-icon> Report</button>
                
                    
          </div>
