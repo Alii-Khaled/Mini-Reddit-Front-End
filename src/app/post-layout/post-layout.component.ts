@@ -48,7 +48,13 @@ export class PostLayoutComponent implements OnInit {
         down_voted: 'false',
         first_icon: 'zoom_out_map',
         upper_link: 'i.redd.it/cw7oa5',
-        upper_link_cont: '4rc3n21.jpg'
+        upper_link_cont: '4rc3n21.jpg',
+        up_voting(){
+          this.up_votes = this.up_votes + 1;
+        },
+        down_voting(){
+         this.down_votes = this.down_votes + 1;
+        }
     },
     {
         post_id: 2,
@@ -71,7 +77,13 @@ export class PostLayoutComponent implements OnInit {
         down_voted: 'false',
         first_icon: 'open_in_new',
         upper_link: 'www.hattiesburgamerican.com/story/',
-        upper_link_cont: 'news/2019/03/19/former-mississippi-gulf-coast-officer-says-she-had-sex-while-child-dying-hot-car/3209859002/'
+        upper_link_cont: 'news/2019/03/19/former-mississippi-gulf-coast-officer-says-she-had-sex-while-child-dying-hot-car/3209859002/',
+        up_voting(){
+          this.up_votes = this.up_votes + 1;
+        },
+        down_voting(){
+         this.down_votes = this.down_votes + 1;
+        }
     },
     {
         post_id: 3,
@@ -94,7 +106,13 @@ export class PostLayoutComponent implements OnInit {
         down_voted: 'false',
         first_icon: 'open_in_new',
         upper_link: '//gfycat.com/Filthy',
-        upper_link_cont: 'PaleBasenji'
+        upper_link_cont: 'PaleBasenji',
+        up_voting(){
+          this.up_votes = this.up_votes + 1;
+        },
+        down_voting(){
+         this.down_votes = this.down_votes + 1;
+        }
     }
 ];
   // @Input() public parentData;
