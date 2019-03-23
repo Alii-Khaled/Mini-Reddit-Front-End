@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 body{
     background-color: #E4E8EC;
     /* overflow: scroll; */
@@ -20,9 +22,7 @@ body{
 
 }
 .division{
-    float:left;
-    /* width: 5%; */
-    
+    float:left;    
 }
 
 .buttonUpVote{
