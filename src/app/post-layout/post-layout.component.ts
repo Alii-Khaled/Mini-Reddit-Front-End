@@ -30,7 +30,7 @@ export class PostLayoutComponent implements OnInit {
     {
         post_id: 1,
         body: 'post1',
-        videoUrl: 'https:\/\/www.youtube.com',
+        video_url: 'https:\/\/www.youtube.com',
         // image: 'storage\/app\/avater.jpg',
         image: 'https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_3.jpg',
         title: 'title1',
@@ -49,10 +49,10 @@ export class PostLayoutComponent implements OnInit {
         first_icon: 'zoom_out_map',
         upper_link: 'i.redd.it/cw7oa5',
         upper_link_cont: '4rc3n21.jpg',
-        up_voting(){
+        up_voting() {
           this.up_votes = this.up_votes + 1;
         },
-        down_voting(){
+        down_voting() {
          this.down_votes = this.down_votes + 1;
         }
     },
@@ -61,7 +61,7 @@ export class PostLayoutComponent implements OnInit {
         body: 'post2',
         // image: 'storage\/app\/avater.jpg',
         image: 'https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_1.jpg',
-        videoUurl: 'https:\/\/www.youtube.com',
+        video_url: 'https:\/\/www.youtube.com',
         title: 'title2',
         username: 'ahmed',
         community: 'none',
@@ -78,10 +78,10 @@ export class PostLayoutComponent implements OnInit {
         first_icon: 'open_in_new',
         upper_link: 'www.hattiesburgamerican.com/story/',
         upper_link_cont: 'news/2019/03/19/former-mississippi-gulf-coast-officer-says-she-had-sex-while-child-dying-hot-car/3209859002/',
-        up_voting(){
+        up_voting() {
           this.up_votes = this.up_votes + 1;
         },
-        down_voting(){
+        down_voting() {
          this.down_votes = this.down_votes + 1;
         }
     },
@@ -90,7 +90,7 @@ export class PostLayoutComponent implements OnInit {
         body: 'post3',
         // image: 'storage\/app\/avater.jpg',
         image: 'https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_2.jpg',
-        videoUrl: 'https:\/\/www.youtube.com',
+        video_url: 'https:\/\/www.youtube.com',
         title: 'title3',
         username: 'ahmed',
         community: 'none',
@@ -107,10 +107,10 @@ export class PostLayoutComponent implements OnInit {
         first_icon: 'open_in_new',
         upper_link: '//gfycat.com/Filthy',
         upper_link_cont: 'PaleBasenji',
-        up_voting(){
+        up_voting() {
           this.up_votes = this.up_votes + 1;
         },
-        down_voting(){
+        down_voting() {
          this.down_votes = this.down_votes + 1;
         }
     }
