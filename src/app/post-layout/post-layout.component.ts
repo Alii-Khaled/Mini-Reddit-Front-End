@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { text } from '@angular/core/src/render3';
+import { HttpService } from '../http.service';
+import { PostsObjects } from '../classes/posts-objects';
 
 @Component({
   selector: 'app-post-layout',
@@ -7,9 +9,10 @@ import { text } from '@angular/core/src/render3';
   styleUrls: ['./post-layout.component.css']
 })
 export class PostLayoutComponent implements OnInit {
+  httpService: any;
 
   // public mPost
-  constructor() {
+  constructor(private http: HttpService) {
     // mPost = qsdsasd
   }
   public link1 = 'parent.location=';
@@ -23,7 +26,9 @@ export class PostLayoutComponent implements OnInit {
     date: '12 hours ago',
     comments: 230,
     type: 'r/pics',
-    link: 'https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'
+    link: 'https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/',
+    upVoted: false,
+    downVoted: false
   };
 
   public posts = [
@@ -50,10 +55,22 @@ export class PostLayoutComponent implements OnInit {
         upper_link: 'i.redd.it/cw7oa5',
         upper_link_cont: '4rc3n21.jpg',
         up_voting() {
-          this.up_votes = this.up_votes + 1;
+          if (this.up_voted === 'false') {
+            this.up_votes = this.up_votes + 1;
+            this.up_voted = 'true';
+        } else {
+            this.up_votes = this.up_votes - 1;
+            this.up_voted = 'false';
+        }
         },
         down_voting() {
-         this.down_votes = this.down_votes + 1;
+          if (this.down_voted) {
+            this.down_votes = this.down_votes + 1;
+            this.down_voted = 'true';
+          } else {
+            this.down_votes = this.down_votes - 1;
+            this.down_voted = 'false';
+          }
         }
     },
     {
@@ -79,10 +96,22 @@ export class PostLayoutComponent implements OnInit {
         upper_link: 'www.hattiesburgamerican.com/story/',
         upper_link_cont: 'news/2019/03/19/former-mississippi-gulf-coast-officer-says-she-had-sex-while-child-dying-hot-car/3209859002/',
         up_voting() {
-          this.up_votes = this.up_votes + 1;
+          if (this.up_voted === 'false') {
+            this.up_votes = this.up_votes + 1;
+            this.up_voted = 'true';
+        } else {
+            this.up_votes = this.up_votes - 1;
+            this.up_voted = 'false';
+        }
         },
         down_voting() {
-         this.down_votes = this.down_votes + 1;
+          if (this.down_voted) {
+            this.down_votes = this.down_votes + 1;
+            this.down_voted = 'true';
+          } else {
+            this.down_votes = this.down_votes - 1;
+            this.down_voted = 'false';
+          }
         }
     },
     {
@@ -108,27 +137,54 @@ export class PostLayoutComponent implements OnInit {
         upper_link: '//gfycat.com/Filthy',
         upper_link_cont: 'PaleBasenji',
         up_voting() {
-          this.up_votes = this.up_votes + 1;
+          if (this.up_voted === 'false') {
+            this.up_votes = this.up_votes + 1;
+            this.up_voted = 'true';
+        } else {
+            this.up_votes = this.up_votes - 1;
+            this.up_voted = 'false';
+        }
         },
         down_voting() {
-         this.down_votes = this.down_votes + 1;
+          if (this.down_voted) {
+            this.down_votes = this.down_votes + 1;
+            this.down_voted = 'true';
+          } else {
+            this.down_votes = this.down_votes - 1;
+            this.down_voted = 'false';
+          }
         }
     }
 ];
+public myPosts;
   // @Input() public parentData;
 // tslint:disable-next-line: no-input-rename
   @Input('parentData') public name;
   @Output() public childEven = new EventEmitter();
 
   ngOnInit() {
+    // this.http.GetPostsObjects().subscribe((data: PostsObjects) => this.myPosts = data);
+    this.httpService.GetPostsObjects().subscribe(data => this.myPosts = data);
   }
 
   upVote() {
-    this.postObj.votes = this.postObj.votes + 1;
+    if (this.postObj.upVoted === false) {
+      this.postObj.votes = this.postObj.votes + 1;
+      this.postObj.upVoted = true;
+    } else {
+      this.postObj.votes = this.postObj.votes - 1;
+      this.postObj.upVoted = false;
+    }
   }
 
   downVote() {
-    this.postObj.votes = this.postObj.votes - 1;
+    if (this.postObj.downVoted === false) {
+      this.postObj.votes = this.postObj.votes - 1;
+      this.postObj.downVoted = true;
+    } else {
+      this.postObj.votes = this.postObj.votes + 1;
+      this.postObj.downVoted = false;
+    }
   }
 
 }
