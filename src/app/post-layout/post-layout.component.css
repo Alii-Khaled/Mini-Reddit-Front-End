@@ -25,9 +25,23 @@ body{
     
 }
 
-.buttonVote{
+.buttonUpVote{
     width:25px;
     height:15px;
+}
+
+.buttonDownVote{
+    width:25px;
+    height:15px;
+}
+
+
+.buttonUpVote:hover{
+    color: blue;
+}
+
+.buttonDownVote:hover{
+    color: red;
 }
 
 #first{
