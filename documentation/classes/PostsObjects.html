@@ -140,7 +140,7 @@
                                     <a href="../classes/AppPage.html" >AppPage</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/PostsObjects.html" >PostsObjects</a>
+                                    <a href="../classes/PostsObjects.html"  class="active" >PostsObjects</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/UserCommunities.html" >UserCommunities</a>
@@ -167,7 +167,7 @@
                                 id="xs-injectables-links"
                             >
                                 <li class="link">
-                                    <a href="../injectables/HttpService.html"  class="active" >HttpService</a>
+                                    <a href="../injectables/HttpService.html" >HttpService</a>
                                 </li>
                         </ul>
                     </li>
@@ -319,7 +319,7 @@
                                            <a href="../classes/AppPage.html" >AppPage</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/PostsObjects.html" >PostsObjects</a>
+                                           <a href="../classes/PostsObjects.html"  class="active" >PostsObjects</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/UserCommunities.html" >UserCommunities</a>
@@ -346,7 +346,7 @@
                                        id="injectables-links"
                    >
                                        <li class="link">
-                                           <a href="../injectables/HttpService.html"  class="active" >HttpService</a>
+                                           <a href="../injectables/HttpService.html" >HttpService</a>
                                        </li>
                                </ul>
                            </li>
@@ -372,15 +372,17 @@
                    
                    </nav>
                </div>
-               <div class="content injectable">
+               <div class="content class">
                    <div class="content-data">
 
 
 
 
+
+
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li>HttpService</li>
+  <li>Classes</li>
+  <li>PostsObjects</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -398,7 +400,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/http.service.ts</code>
+            <code>src/app/classes/posts-objects.ts</code>
         </p>
 
 
@@ -408,36 +410,29 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(http: HttpClient)</code>
+                                    <code>constructor(pId: number, pBody: string, pImage: string, pVideoUrl: string, pTitle: string, pUsername: string, pCommunity: string, pSubscribed: boolean, pAuthorPhotoPath: string, pDownVotes: number, pUpVotes: number, pDate: string, pCommentsNum: number, pSaved: boolean, pHidden: boolean, pUpVoted: boolean, pDownVoted: boolean, pPostLink: string)</code>
                                 </td>
                             </tr>
             
                         </tbody>
                     </table>
             </section>
+
+
 
             <section>
-                <h3 id="methods">Methods</h3>
+                <h3 id="inputs">Properties</h3>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> GetCommNameAndLogo</b>
+                                    <b><span class="modifier">Public</span> author_photo_path</b>
                                 </td>
                             </tr>
-            
                             <tr>
                                 <td class="col-md-4">
-            <code>GetCommNameAndLogo()</code>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>Observable&lt;any&gt;</code>
-            
-                                        </div>
+                                    <span class="modifier-icon fa fa-circle"></span><code>author_photo_path:     <code>string</code>
+            </bcode>
                                 </td>
                             </tr>
                         </tbody>
@@ -446,24 +441,13 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> GetMyCommunities</b>
+                                    <b><span class="modifier">Public</span> body</b>
                                 </td>
                             </tr>
-            
                             <tr>
                                 <td class="col-md-4">
-            <code>GetMyCommunities()</code>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>to get all communities subscribed by this user</p>
-            </div>
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code><a href="../classes/UserCommunities.html" target="_self" >Observable&lt;UserCommunities[]&gt;</a></code>
-            
-                                        </div>
+                                    <span class="modifier-icon fa fa-circle"></span><code>body:     <code>string</code>
+            </bcode>
                                 </td>
                             </tr>
                         </tbody>
@@ -472,41 +456,13 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> GetUserPublicInfo</b>
+                                    <b><span class="modifier">Public</span> comments_num</b>
                                 </td>
                             </tr>
-            
                             <tr>
                                 <td class="col-md-4">
-            <code>GetUserPublicInfo(id: number)</code>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>get user public info like (karma,name,username,...)</p>
-            </div>
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <ul class="jsdoc-params">
-                                                        <li>
-                                                            <div>
-                                                                <b>id</b>
-                                                            </div>
-                                                            <div>
-                                                                <p>now we use id to get specific user but when connect to back-end we will use username</p>
-            
-                                                            </div>
-                                                        </li>
-                                                </ul>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code><a href="../classes/UserPublicInfo.html" target="_self" >Observable&lt;UserPublicInfo&gt;</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
+                                    <span class="modifier-icon fa fa-circle"></span><code>comments_num:     <code>number</code>
+            </bcode>
                                 </td>
                             </tr>
                         </tbody>
@@ -515,24 +471,13 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> GetPostsObjects</b>
+                                    <b><span class="modifier">Public</span> community</b>
                                 </td>
                             </tr>
-            
                             <tr>
                                 <td class="col-md-4">
-            <code>GetPostsObjects()</code>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>to send a request contains the user name &amp; password<br>get all information needed in the database for the posts (id, comments, subscribed, ...)</p>
-            </div>
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code><a href="../classes/PostsObjects.html" target="_self" >Observable&lt;PostsObjects[]&gt;</a></code>
-            
-                                        </div>
+                                    <span class="modifier-icon fa fa-circle"></span><code>community:     <code>string</code>
+            </bcode>
                                 </td>
                             </tr>
                         </tbody>
@@ -541,22 +486,13 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> login</b>
+                                    <b><span class="modifier">Public</span> date</b>
                                 </td>
                             </tr>
-            
                             <tr>
                                 <td class="col-md-4">
-            <code>login(username: string, password: string)</code>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>Observable&lt;any&gt;</code>
-            
-                                        </div>
+                                    <span class="modifier-icon fa fa-circle"></span><code>date:     <code>string</code>
+            </bcode>
                                 </td>
                             </tr>
                         </tbody>
@@ -565,93 +501,246 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> next</b>
+                                    <b><span class="modifier">Public</span> down_voted</b>
                                 </td>
                             </tr>
-            
                             <tr>
                                 <td class="col-md-4">
-            <code>next(email: string)</code>
+                                    <span class="modifier-icon fa fa-circle"></span><code>down_voted:     <code>boolean</code>
+            </bcode>
                                 </td>
                             </tr>
-            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-description"><p>to send a request contains the email</p>
-            </div>
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>Observable&lt;any&gt;</code>
-            
-                                        </div>
+                                    <b><span class="modifier">Public</span> down_votes</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>down_votes:     <code>number</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> hidden</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>hidden:     <code>boolean</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> image</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>image:     <code>string</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> post_id</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>post_id:     <code>number</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> post_link</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>post_link:     <code>string</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> saved</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>saved:     <code>boolean</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> subscribed</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>subscribed:     <code>boolean</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> title</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>title:     <code>string</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> up_voted</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>up_voted:     <code>boolean</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> up_votes</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>up_votes:     <code>number</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> username</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>username:     <code>string</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> video_url</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>video_url:     <code>string</code>
+            </bcode>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
             </section>
-
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { Injectable} from &#x27;@angular/core&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { Observable} from &#x27;rxjs&#x27;;
-import { catchError, tap} from &#x27;rxjs/operators&#x27; ;
+        <pre><code class="hljs javascript">export class PostsObjects {
+    public post_id: number;
+    public body: string;
+    public image: string;
+    public video_url: string;
+    public title: string;
+    public username: string;
+    public community: string;
+    public subscribed: boolean;
+    public author_photo_path: string;
+    public down_votes: number;
+    public up_votes: number;
+    public date: string;
+    public comments_num: number;
+    public saved: boolean;
+    public hidden: boolean;
+    public up_voted: boolean;
+    public down_voted: boolean;
+    public post_link: string;
 
-import { UserCommunities } from &#x27;./classes/user-communities&#x27;;
-import { UserPublicInfo } from &#x27;./classes/user-public-info&#x27;;
-import { PostsObjects } from &#x27;./classes/posts-objects&#x27;;
-
-
-@Injectable({
-    providedIn: &#x27;root&#x27;
-})
-export class HttpService {
-    constructor(private http: HttpClient) {}
-    GetCommNameAndLogo(): Observable&lt;any&gt; {
-        return this.http.get(&#x27;http://localhost:3000/communities&#x27;);
-    }
-    /**
-     * to get all communities subscribed by this user
-     */
-    GetMyCommunities(): Observable&lt;UserCommunities[]&gt; {
-        return this.http.get&lt;UserCommunities[]&gt;(&#x27;http://localhost:3000/communities&#x27;);
-    }
-    /**
-     * get user public info like (karma,name,username,...)
-     * @param id now we use id to get specific user but when connect to back-end we will use username
-     */
-    GetUserPublicInfo(id: number): Observable&lt;UserPublicInfo&gt; {
-        return this.http.get&lt;UserPublicInfo&gt;(&#x27;http://localhost:3000/user_public_info/&#x27; + id);
-    }
-    /**
-     * to send a request contains the user name &amp; password
-     */
-
-    /**
-     * get all information needed in the database for the posts (id, comments, subscribed, ...)
-     */
-
-    GetPostsObjects(): Observable&lt;PostsObjects[]&gt; {
-        return this.http.get&lt;PostsObjects[]&gt;(&#x27;http://localhost:3000/&#x27;);
-    }
-
-    login(username: string , password: string): Observable&lt;any&gt; {
-        return this.http.post( &#x27;request&#x27;, {username, password});
-
-    }
-    /**
-     * to send a request contains the email
-     */
-    next(email: string): Observable&lt;any&gt; {
-        return this.http.post( &#x27;request&#x27;, {email});
-
-    }
+    constructor(pId: number, pBody: string, pImage: string, pVideoUrl: string, pTitle: string, pUsername: string, pCommunity: string,
+                pSubscribed: boolean, pAuthorPhotoPath: string, pDownVotes: number, pUpVotes: number, pDate: string, pCommentsNum: number,
+                pSaved: boolean, pHidden: boolean, pUpVoted: boolean, pDownVoted: boolean, pPostLink: string) {
+            this.post_id &#x3D; pId;
+            this.body &#x3D; pBody;
+            this.image &#x3D; pImage;
+            this.video_url &#x3D; pVideoUrl;
+            this.title &#x3D; pTitle;
+            this.username &#x3D; pUsername;
+            this.community &#x3D; pCommunity;
+            this.subscribed &#x3D; pSubscribed;
+            this.author_photo_path &#x3D; pAuthorPhotoPath;
+            this.down_votes &#x3D; pDownVotes;
+            this.up_votes &#x3D; pUpVotes;
+            this.date &#x3D; pDate;
+            this.comments_num &#x3D; pCommentsNum;
+            this.saved &#x3D; pSaved;
+            this.hidden &#x3D; pHidden;
+            this.up_voted &#x3D; pUpVoted;
+            this.down_voted &#x3D; pDownVoted;
+            this.post_link &#x3D; pPostLink;
+        }
 }
-
 </code></pre>
     </div>
 </div>
-
-
 
 
 

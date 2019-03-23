@@ -140,6 +140,9 @@
                                     <a href="../classes/AppPage.html" >AppPage</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../classes/PostsObjects.html" >PostsObjects</a>
+                                </li>
+                                <li class="link">
                                     <a href="../classes/UserCommunities.html" >UserCommunities</a>
                                 </li>
                                 <li class="link">
@@ -316,6 +319,9 @@
                                            <a href="../classes/AppPage.html" >AppPage</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../classes/PostsObjects.html" >PostsObjects</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../classes/UserCommunities.html" >UserCommunities</a>
                                        </li>
                                        <li class="link">
@@ -442,6 +448,8 @@
                             <code>parentData</code>
                         </td>
                         <td class="col-md-10">
+                            <div><p>these two lines are just for testing and applying child component</p>
+</div>
                         </td>
                     </tr>
                 </tbody>
@@ -471,10 +479,28 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor()</code>
+                            <code>constructor(http: <a href="../injectables/HttpService.html" >HttpService</a>)</code>
                         </td>
                     </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>http</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>for requests</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -497,10 +523,29 @@
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>these are two functions for voting the first testing post</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>upVoted</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>for knowing if it is clicked before or not</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -537,6 +582,27 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> httpService</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>httpService:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>initialization for httpService</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b><span class="modifier">Public</span> imgsrc</b>
                         </td>
                     </tr>
@@ -551,46 +617,33 @@
                                 <i>Default value: </i><code>https://i.pinimg.com/236x/cf/7f/83/cf7f83d1e0a270fa7f4e50a3bf1a62ee--emoticon-smile-face.jpg</code>
                             </td>
                         </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>variable to get image source</p>
+    </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b><span class="modifier">Public</span> link1</b>
+                            <b> myPosts</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-circle"></span><code>link1:     <code>string</code>
+                            <code>myPosts:     <code><a href="../classes/PostsObjects.html" target="_self" >PostsObjects</a></code>
     </bcode>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>parent.location&#x3D;</code>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b><span class="modifier">Public</span> link2</b>
+                            <div class="io-description"><p>object to receive objects of posts information</p>
+    </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <span class="modifier-icon fa fa-circle"></span><code>link2:     <code>string</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/</code>
-                            </td>
-                        </tr>
                 </tbody>
             </table>
             <table class="table table-sm table-bordered">
@@ -606,6 +659,12 @@
     </bcode>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>object of the first post which is the testing post</p>
+    </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <table class="table table-sm table-bordered">
@@ -617,8 +676,14 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-circle"></span><code>posts:     <code>({ post_id: number; body: string; videoUrl: string; image: string; title: string; username: strin...</code>
+                            <span class="modifier-icon fa fa-circle"></span><code>posts:     <code>{ post_id: number; body: string; video_url: string; image: string; title: string; username: strin...</code>
     </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>array of objects for posts information from the API, but these are for testing before connecting back-end with front-end<br>the single object takes parameters like (post id, body link, votes, ..)<br>it has also two functions, one for up voting and another for down voting</p>
+    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -628,6 +693,8 @@
         <div class="tab-pane fade tab-source-code" id="source">
             <pre><code class="hljs javascript">import { Component, OnInit, Input, EventEmitter, Output } from &#x27;@angular/core&#x27;;
 import { text } from &#x27;@angular/core/src/render3&#x27;;
+import { HttpService } from &#x27;../http.service&#x27;;
+import { PostsObjects } from &#x27;../classes/posts-objects&#x27;;
 
 @Component({
   selector: &#x27;app-post-layout&#x27;,
@@ -635,14 +702,27 @@ import { text } from &#x27;@angular/core/src/render3&#x27;;
   styleUrls: [&#x27;./post-layout.component.css&#x27;]
 })
 export class PostLayoutComponent implements OnInit {
+  /**
+   * initialization for httpService
+   */
+  httpService: any;
+  /**
+   * object to receive objects of posts information
+   */
+  myPosts: PostsObjects;
 
-  // public mPost
-  constructor() {
-    // mPost &#x3D; qsdsasd
+  /**
+   * @param http for requests
+   */
+  constructor(private http: HttpService) {
   }
-  public link1 &#x3D; &#x27;parent.location&#x3D;&#x27;;
-  public link2 &#x3D; &#x27;https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/&#x27;;
+  /**
+   * variable to get image source
+   */
   public imgsrc &#x3D; &#x27;https://i.pinimg.com/236x/cf/7f/83/cf7f83d1e0a270fa7f4e50a3bf1a62ee--emoticon-smile-face.jpg&#x27;;
+  /**
+   * object of the first post which is the testing post
+   */
   public postObj &#x3D; {
     votes: 5,
     title: &#x27;Skydiver catches pet bird mid-air&#x27;,
@@ -651,14 +731,21 @@ export class PostLayoutComponent implements OnInit {
     date: &#x27;12 hours ago&#x27;,
     comments: 230,
     type: &#x27;r/pics&#x27;,
-    link: &#x27;https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/&#x27;
+    link: &#x27;https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/&#x27;,
+    upVoted: false,
+    downVoted: false
   };
 
+  /**
+   * array of objects for posts information from the API, but these are for testing before connecting back-end with front-end
+   * the single object takes parameters like (post id, body link, votes, ..)
+   * it has also two functions, one for up voting and another for down voting
+   */
   public posts &#x3D; [
     {
         post_id: 1,
         body: &#x27;post1&#x27;,
-        videoUrl: &#x27;https:\/\/www.youtube.com&#x27;,
+        video_url: &#x27;https:\/\/www.youtube.com&#x27;,
         // image: &#x27;storage\/app\/avater.jpg&#x27;,
         image: &#x27;https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_3.jpg&#x27;,
         title: &#x27;title1&#x27;,
@@ -677,11 +764,26 @@ export class PostLayoutComponent implements OnInit {
         first_icon: &#x27;zoom_out_map&#x27;,
         upper_link: &#x27;i.redd.it/cw7oa5&#x27;,
         upper_link_cont: &#x27;4rc3n21.jpg&#x27;,
-        up_voting(){
-          this.up_votes &#x3D; this.up_votes + 1;
+        /**
+         * @param up_voted for knowing if it is clicked before or not
+         */
+        up_voting() {
+          if (this.up_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
+            this.up_votes &#x3D; this.up_votes + 1;
+            this.up_voted &#x3D; &#x27;true&#x27;;
+        } else {
+            this.up_votes &#x3D; this.up_votes - 1;
+            this.up_voted &#x3D; &#x27;false&#x27;;
+        }
         },
-        down_voting(){
-         this.down_votes &#x3D; this.down_votes + 1;
+        down_voting() {
+          if (this.down_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
+            this.down_votes &#x3D; this.down_votes + 1;
+            this.down_voted &#x3D; &#x27;true&#x27;;
+          } else {
+            this.down_votes &#x3D; this.down_votes - 1;
+            this.down_voted &#x3D; &#x27;false&#x27;;
+          }
         }
     },
     {
@@ -689,7 +791,7 @@ export class PostLayoutComponent implements OnInit {
         body: &#x27;post2&#x27;,
         // image: &#x27;storage\/app\/avater.jpg&#x27;,
         image: &#x27;https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_1.jpg&#x27;,
-        videoUurl: &#x27;https:\/\/www.youtube.com&#x27;,
+        video_url: &#x27;https:\/\/www.youtube.com&#x27;,
         title: &#x27;title2&#x27;,
         username: &#x27;ahmed&#x27;,
         community: &#x27;none&#x27;,
@@ -706,11 +808,23 @@ export class PostLayoutComponent implements OnInit {
         first_icon: &#x27;open_in_new&#x27;,
         upper_link: &#x27;www.hattiesburgamerican.com/story/&#x27;,
         upper_link_cont: &#x27;news/2019/03/19/former-mississippi-gulf-coast-officer-says-she-had-sex-while-child-dying-hot-car/3209859002/&#x27;,
-        up_voting(){
-          this.up_votes &#x3D; this.up_votes + 1;
+        up_voting() {
+          if (this.up_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
+            this.up_votes &#x3D; this.up_votes + 1;
+            this.up_voted &#x3D; &#x27;true&#x27;;
+        } else {
+            this.up_votes &#x3D; this.up_votes - 1;
+            this.up_voted &#x3D; &#x27;false&#x27;;
+        }
         },
-        down_voting(){
-         this.down_votes &#x3D; this.down_votes + 1;
+        down_voting() {
+          if (this.down_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
+            this.down_votes &#x3D; this.down_votes + 1;
+            this.down_voted &#x3D; &#x27;true&#x27;;
+          } else {
+            this.down_votes &#x3D; this.down_votes - 1;
+            this.down_voted &#x3D; &#x27;false&#x27;;
+          }
         }
     },
     {
@@ -718,7 +832,7 @@ export class PostLayoutComponent implements OnInit {
         body: &#x27;post3&#x27;,
         // image: &#x27;storage\/app\/avater.jpg&#x27;,
         image: &#x27;https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_2.jpg&#x27;,
-        videoUrl: &#x27;https:\/\/www.youtube.com&#x27;,
+        video_url: &#x27;https:\/\/www.youtube.com&#x27;,
         title: &#x27;title3&#x27;,
         username: &#x27;ahmed&#x27;,
         community: &#x27;none&#x27;,
@@ -735,28 +849,61 @@ export class PostLayoutComponent implements OnInit {
         first_icon: &#x27;open_in_new&#x27;,
         upper_link: &#x27;//gfycat.com/Filthy&#x27;,
         upper_link_cont: &#x27;PaleBasenji&#x27;,
-        up_voting(){
-          this.up_votes &#x3D; this.up_votes + 1;
+        up_voting() {
+          if (this.up_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
+            this.up_votes &#x3D; this.up_votes + 1;
+            this.up_voted &#x3D; &#x27;true&#x27;;
+        } else {
+            this.up_votes &#x3D; this.up_votes - 1;
+            this.up_voted &#x3D; &#x27;false&#x27;;
+        }
         },
-        down_voting(){
-         this.down_votes &#x3D; this.down_votes + 1;
+        down_voting() {
+          if (this.down_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
+            this.down_votes &#x3D; this.down_votes + 1;
+            this.down_voted &#x3D; &#x27;true&#x27;;
+          } else {
+            this.down_votes &#x3D; this.down_votes - 1;
+            this.down_voted &#x3D; &#x27;false&#x27;;
+          }
         }
     }
 ];
-  // @Input() public parentData;
+
+/**
+ * these two lines are just for testing and applying child component
+ */
 // tslint:disable-next-line: no-input-rename
   @Input(&#x27;parentData&#x27;) public name;
   @Output() public childEven &#x3D; new EventEmitter();
 
   ngOnInit() {
+    // this.http.GetPostsObjects().subscribe((data: PostsObjects) &#x3D;&gt; this.myPosts &#x3D; data);
+    // this.httpService.GetPostsObjects().subscribe(data &#x3D;&gt; this.myPosts &#x3D; data);
   }
 
+  /**
+   * these are two functions for voting the first testing post
+   * @param upVoted for knowing if it is clicked before or not
+   */
   upVote() {
-    this.postObj.votes &#x3D; this.postObj.votes + 1;
+    if (this.postObj.upVoted &#x3D;&#x3D;&#x3D; false) {
+      this.postObj.votes &#x3D; this.postObj.votes + 1;
+      this.postObj.upVoted &#x3D; true;
+    } else {
+      this.postObj.votes &#x3D; this.postObj.votes - 1;
+      this.postObj.upVoted &#x3D; false;
+    }
   }
 
   downVote() {
-    this.postObj.votes &#x3D; this.postObj.votes - 1;
+    if (this.postObj.downVoted &#x3D;&#x3D;&#x3D; false) {
+      this.postObj.votes &#x3D; this.postObj.votes - 1;
+      this.postObj.downVoted &#x3D; true;
+    } else {
+      this.postObj.votes &#x3D; this.postObj.votes + 1;
+      this.postObj.downVoted &#x3D; false;
+    }
   }
 
 }

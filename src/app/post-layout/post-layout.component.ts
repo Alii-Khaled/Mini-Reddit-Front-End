@@ -9,15 +9,27 @@ import { PostsObjects } from '../classes/posts-objects';
   styleUrls: ['./post-layout.component.css']
 })
 export class PostLayoutComponent implements OnInit {
+  /**
+   * initialization for httpService
+   */
   httpService: any;
+  /**
+   * object to receive objects of posts information
+   */
+  myPosts: PostsObjects;
 
-  // public mPost
+  /**
+   * @param http for requests
+   */
   constructor(private http: HttpService) {
-    // mPost = qsdsasd
   }
-  public link1 = 'parent.location=';
-  public link2 = 'https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/';
+  /**
+   * variable to get image source
+   */
   public imgsrc = 'https://i.pinimg.com/236x/cf/7f/83/cf7f83d1e0a270fa7f4e50a3bf1a62ee--emoticon-smile-face.jpg';
+  /**
+   * object of the first post which is the testing post
+   */
   public postObj = {
     votes: 5,
     title: 'Skydiver catches pet bird mid-air',
@@ -31,6 +43,11 @@ export class PostLayoutComponent implements OnInit {
     downVoted: false
   };
 
+  /**
+   * array of objects for posts information from the API, but these are for testing before connecting back-end with front-end
+   * the single object takes parameters like (post id, body link, votes, ..)
+   * it has also two functions, one for up voting and another for down voting
+   */
   public posts = [
     {
         post_id: 1,
@@ -54,6 +71,9 @@ export class PostLayoutComponent implements OnInit {
         first_icon: 'zoom_out_map',
         upper_link: 'i.redd.it/cw7oa5',
         upper_link_cont: '4rc3n21.jpg',
+        /**
+         * @param up_voted for knowing if it is clicked before or not
+         */
         up_voting() {
           if (this.up_voted === 'false') {
             this.up_votes = this.up_votes + 1;
@@ -156,17 +176,23 @@ export class PostLayoutComponent implements OnInit {
         }
     }
 ];
-public myPosts;
-  // @Input() public parentData;
+
+/**
+ * these two lines are just for testing and applying child component
+ */
 // tslint:disable-next-line: no-input-rename
   @Input('parentData') public name;
   @Output() public childEven = new EventEmitter();
 
   ngOnInit() {
     // this.http.GetPostsObjects().subscribe((data: PostsObjects) => this.myPosts = data);
-    this.httpService.GetPostsObjects().subscribe(data => this.myPosts = data);
+    // this.httpService.GetPostsObjects().subscribe(data => this.myPosts = data);
   }
 
+  /**
+   * these are two functions for voting the first testing post
+   * @param upVoted for knowing if it is clicked before or not
+   */
   upVote() {
     if (this.postObj.upVoted === false) {
       this.postObj.votes = this.postObj.votes + 1;
