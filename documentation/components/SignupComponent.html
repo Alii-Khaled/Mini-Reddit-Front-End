@@ -441,7 +441,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor()</code>
+                            <code>constructor(modalService: BsModalService, service: <a href="../injectables/HttpService.html" >HttpService</a>, fb: <a href="https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html" target="_blank" >FormBuilder</a>, router: <a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a>)</code>
                         </td>
                     </tr>
     
@@ -449,22 +449,110 @@
             </table>
     </section>
 
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> next</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>next()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>take the user&#39;s input(email) from the input form</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> form</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>form:     <code><a href="https://angular.io/docs/ts/latest/api/forms/index/FormGroup-class.html" target="_blank" >FormGroup</a></code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> modalRef</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>modalRef:     <code>BsModalRef</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+            <pre><code class="hljs javascript">import { Component, OnInit , TemplateRef } from &#x27;@angular/core&#x27;;
+import { BsModalService, BsModalRef, ModalOptions } from &#x27;ngx-bootstrap/modal&#x27;;
+import {HttpService} from &#x27;../http.service&#x27;;
+import {FormBuilder, FormControlName , FormGroup , Validator, Validators } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-signup&#x27;,
   templateUrl: &#x27;./signup.component.html&#x27;,
   styleUrls: [&#x27;./signup.component.css&#x27;]
 })
+ /**
+  * this class is used for getting user&#x27;s email to sign up
+  */
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  modalRef: BsModalRef;
+  constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
+    this.form &#x3D; this.fb.group({
+    email: [&#x27;&#x27;, Validators.required]
+    });
+  }
 
   ngOnInit() {
   }
+    /**
+     * take the user&#x27;s input(email) from the input form
+     */
+  next() {
+    const val &#x3D; this.form.value;
+    this.service.next( val.email).subscribe((data: any) &#x3D;&gt; {
+    this.router.navigateByUrl(&#x27;#&#x27;);
+    },
+    err &#x3D;&gt; {if (err.status &#x3D;&#x3D;&#x3D; 400) {
+      console.log(&#x27;error&#x27;);
+
+    }});
+   }
 
 }
 </code></pre>

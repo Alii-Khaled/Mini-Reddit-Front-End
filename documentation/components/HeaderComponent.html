@@ -467,6 +467,8 @@
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>this is the function that shows the login page as popup</p>
+    </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
@@ -507,6 +509,12 @@
     </bcode>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>this to configure the popup modal</p>
+    </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -520,8 +528,14 @@ import { BsModalService, BsModalRef, ModalOptions } from &#x27;ngx-bootstrap/mod
   templateUrl: &#x27;./header.component.html&#x27;,
   styleUrls: [&#x27;./header.component.css&#x27;]
 })
+ /**
+  * this class is the header that contains login &amp; sign up buttons , search , popular ,oc, and view options
+  */
 export class HeaderComponent implements OnInit {
 
+ /**
+  * this to configure the popup modal
+  */
   modalRef: BsModalRef;
   config &#x3D; {
     animated: true,
@@ -534,6 +548,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+ /**
+  * this is the function that shows the login page as popup
+  */
   openModal(template: TemplateRef&lt;any&gt;) {
     this.modalRef &#x3D; this.modalService.show(template, this.config);
   }

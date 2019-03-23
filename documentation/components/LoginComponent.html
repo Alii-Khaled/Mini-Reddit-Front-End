@@ -467,6 +467,8 @@
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>take the user&#39;s input (username &amp; password) from the input form and set token</p>
+    </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
@@ -491,6 +493,8 @@
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>supposed to open sign up page as pop up</p>
+    </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
@@ -539,28 +543,37 @@
             <pre><code class="hljs javascript">import { Component, OnInit , TemplateRef } from &#x27;@angular/core&#x27;;
 import { BsModalService, BsModalRef, ModalOptions } from &#x27;ngx-bootstrap/modal&#x27;;
 import {HttpService} from &#x27;../http.service&#x27;;
-import {FormBuilder, FormControlName , FormGroup , Validator, Validators } from &#x27;@angular/forms&#x27;;
+import {FormBuilder, FormControlName , FormGroup , Validator, Validators, FormControl } from &#x27;@angular/forms&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { NgIf } from &#x27;@angular/common&#x27;;
+import { MatDialogRef } from &#x27;@angular/material&#x27;;
 @Component({
   selector: &#x27;app-login&#x27;,
   templateUrl: &#x27;./login.component.html&#x27;,
   styleUrls: [&#x27;./login.component.css&#x27;]
 })
+        /**
+         * this class is used for getting username and password and set token in local storage
+         */
+
 export class LoginComponent implements OnInit {
   form: FormGroup;
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
     this.form &#x3D; this.fb.group({
-      username: [&#x27;&#x27;, Validators.required],
+      username: [&#x27;&#x27;, Validators.required , Validators.minLength(3) , Validators.maxLength(20)],
       password: [&#x27;&#x27;, Validators.required]
     });
    }
 
   ngOnInit() {
   }
+    /**
+     * take the user&#x27;s input (username &amp; password) from the input form and set token
+     */
   login() {
-   const val &#x3D; this.form.value;
-   this.service.login(val.username , val.password).subscribe((data: any) &#x3D;&gt; {
+    const val &#x3D; this.form.value;
+    this.service.login(val.username , val.password).subscribe((data: any) &#x3D;&gt; {
      localStorage.setItem(&#x27;token&#x27;, data.token );
      this.router.navigateByUrl(&#x27;#&#x27;);
    },
@@ -569,6 +582,9 @@ export class LoginComponent implements OnInit {
 
    }});
   }
+    /**
+     * supposed to open sign up page as pop up
+     */
   signup(template: TemplateRef&lt;any&gt;) {
     this.modalRef &#x3D; this.modalService.show(template);
   }

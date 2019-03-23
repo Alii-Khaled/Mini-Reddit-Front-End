@@ -28,11 +28,17 @@ export class HttpService {
     GetUserPublicInfo(id: number): Observable<UserPublicInfo> {
         return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + id);
     }
+    /**
+     * to send a request contains the user name & password
+     */
 
     login(username: string , password: string): Observable<any> {
         return this.http.post( 'request', {username, password});
 
     }
+    /**
+     * to send a request contains the email
+     */
     next(email: string): Observable<any> {
         return this.http.post( 'request', {email});
 
