@@ -13,6 +13,7 @@ export class UserPublicInfo {
     /**
      * birth day of this user
      */
+// tslint:disable-next-line: variable-name
     public cake_day: string;
     /**
      * about for this user
@@ -21,6 +22,7 @@ export class UserPublicInfo {
     /**
      * profile pic URL of this user
      */
+// tslint:disable-next-line: variable-name
     public photo_path: string;
     /**
      * banner pic URL of this user
