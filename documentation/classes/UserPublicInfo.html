@@ -411,7 +411,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(username: string, karma: number, cake_day: string, about: string, photo_path: string, cover_path: string)</code>
+                                    <code>constructor(username: string, karma: number, cake_day: string, about: string, photo_path: string, cover_path: string, name: string)</code>
                                 </td>
                             </tr>
             
@@ -517,6 +517,27 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> name</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>name:     <code>string</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>user display name</p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <b><span class="modifier">Public</span> photo_path</b>
                                 </td>
                             </tr>
@@ -586,15 +607,20 @@
      */
     public cover_path: string;
     /**
+     * user display name
+     */
+    public name:string;
+    /**
      * constructor takes every value of the class and assign it to this user
      */
-    constructor(username: string, karma: number,cake_day: string,about: string,photo_path: string,cover_path: string) {
+    constructor(username: string, karma: number,cake_day: string,about: string,photo_path: string,cover_path: string, name: string) {
         this.username &#x3D; username;
         this.karma &#x3D; karma;
         this.cake_day &#x3D; cake_day;
         this.about &#x3D; about;
         this.photo_path &#x3D; photo_path;
         this.cover_path &#x3D; cover_path;
+        this.name &#x3D; name;
     }
 }
 </code></pre>
