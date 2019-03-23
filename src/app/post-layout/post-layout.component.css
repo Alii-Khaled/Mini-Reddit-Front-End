@@ -25,7 +25,7 @@ body{
     
 }
 
-#buttonVote{
+.buttonVote{
     width:25px;
     height:15px;
 }
@@ -77,7 +77,7 @@ body{
     font-size: 13px;
 }
 
-#buttons{
+.buttons{
     height: 30px;
     font-size: 12px;
     color: gray;
