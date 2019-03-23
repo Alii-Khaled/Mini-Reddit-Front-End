@@ -186,6 +186,9 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
+.my-modal {
+    width:420px;
+  }
 
 @media only screen and (max-width:1780px) and (min-width:1500px) {
     #search-bar {width: 600px;}
