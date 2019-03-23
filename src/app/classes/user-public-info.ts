@@ -29,14 +29,19 @@ export class UserPublicInfo {
      */
     public cover_path: string;
     /**
+     * user display name
+     */
+    public name:string;
+    /**
      * constructor takes every value of the class and assign it to this user
      */
-    constructor(username: string, karma: number,cake_day: string,about: string,photo_path: string,cover_path: string) {
+    constructor(username: string, karma: number,cake_day: string,about: string,photo_path: string,cover_path: string, name: string) {
         this.username = username;
         this.karma = karma;
         this.cake_day = cake_day;
         this.about = about;
         this.photo_path = photo_path;
         this.cover_path = cover_path;
+        this.name = name;
     }
 }
