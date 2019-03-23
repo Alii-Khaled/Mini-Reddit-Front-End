@@ -64,7 +64,7 @@ export class PostLayoutComponent implements OnInit {
         }
         },
         down_voting() {
-          if (this.down_voted) {
+          if (this.down_voted === 'false') {
             this.down_votes = this.down_votes + 1;
             this.down_voted = 'true';
           } else {
@@ -105,7 +105,7 @@ export class PostLayoutComponent implements OnInit {
         }
         },
         down_voting() {
-          if (this.down_voted) {
+          if (this.down_voted === 'false') {
             this.down_votes = this.down_votes + 1;
             this.down_voted = 'true';
           } else {
@@ -146,7 +146,7 @@ export class PostLayoutComponent implements OnInit {
         }
         },
         down_voting() {
-          if (this.down_voted) {
+          if (this.down_voted === 'false') {
             this.down_votes = this.down_votes + 1;
             this.down_voted = 'true';
           } else {
