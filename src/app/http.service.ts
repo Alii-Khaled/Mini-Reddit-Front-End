@@ -30,8 +30,12 @@ export class HttpService {
     GetUserPublicInfo(id: number): Observable<UserPublicInfo> {
         return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + id);
     }
-    GetCommunityInfo(): Observable <Communities[]> {
-    return this.http.get<Communities[]>('http://localhost:3000/communities');
+    
+    /**
+     * to get all community info 
+     */
+    GetCommunityInfo(): Observable <Communities> {
+    return this.http.get<Communities>('http://localhost:3000/communities');
     }
     /**
      * to send a request contains the user name & password

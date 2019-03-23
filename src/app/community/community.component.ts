@@ -8,15 +8,23 @@ import { HttpService } from '../http.service';
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
-
-  Community :Communities[];
+  /**
+   * list of communities that the user subscribed
+   */
+  Community :Communities;
  
-
+  /**
+   * 
+   * @param http for requests
+   */
 
   constructor(private http: HttpService) { }
 
+   /**
+   * on initializing the page send a request to get current community info and display all info about it
+   */
   ngOnInit() {
-    this.http.GetCommunityInfo().subscribe((data: Communities[]) => this.Community = data);
+    this.http.GetCommunityInfo().subscribe((data: Communities) => this.Community = data);
   }
 
 }
