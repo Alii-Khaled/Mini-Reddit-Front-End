@@ -4,10 +4,13 @@
       
   </HEAD>
   <body >
-    <br><br><br>
+    
+      <img alt="side" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Red_rose_with_black_background.jpg"  width="156px" height="430px" style="position: absolute">
     <div class="content">
+        <br><br>
         <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Reddit_logo_orange.svg/128px-Reddit_logo_orange.svg.png" class="logo" width="40" height="40">
     
+        
         <br><br>
         <h4>Sign in</h4>
         <br><br>
@@ -18,6 +21,7 @@
           
           <input type="text" placeholder="Username" formControlName="username" required >
           <br>
+          <br>
           <input type="password" placeholder="Password" formControlName="password" required>
           <br>
           <button type="submit" id =signin (click)="login()">SIGN IN</button>
@@ -27,7 +31,16 @@
           .
           <a href="#"><strong>Forgot password</strong></a>
           </p>
-          <p>New to Reddit? <a href=#><strong>SIGN UP</strong></a> </p>
+          <br><br>
+          <!-- <p>New to Reddit? <a href=# (click)="signup()"><strong>SIGN UP</strong></a> </p> -->
+          <ng-template #template>
+              <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <app-signup></app-signup>
+            </ng-template>
         </div>
     </form>
     

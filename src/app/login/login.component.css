@@ -9,6 +9,7 @@ body
     color: #1a1a1b;
     font-family: IBMPlexSans,sans-serif;
     padding: 765* 1236 ;
+    display:block
 }
 
 form {
@@ -20,14 +21,15 @@ form {
   /* Full-width inputs */
   input[type=text], input[type=password]
    {
+    
+    padding: 22px 12px 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 4px;
     text-align: center;
-    background-color: rgb(250, 250, 250);
-    width:420px;
-    height: 50px;
-    border-bottom-style: groove;
-    border-bottom-color: lightgray;
+    background-color: #fcfcfb;
+    width:400px;
+    height: 48px;
     display: inline-block;
-    border-radius: 2mm;
     box-sizing: border-box
   }
   
@@ -51,4 +53,9 @@ form {
   #forgot
   {
       font-size:11px
+  }
+  .content
+  {
+    padding-left: 170px;
+    position: relative;
   }
