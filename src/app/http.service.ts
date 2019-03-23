@@ -33,5 +33,9 @@ export class HttpService {
         return this.http.post( 'request', {username, password});
 
     }
+    next(email: string): Observable<any> {
+        return this.http.post( 'request', {email});
+
+    }
 }
 
