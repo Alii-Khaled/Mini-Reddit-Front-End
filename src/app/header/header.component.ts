@@ -6,8 +6,14 @@ import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+ /**
+  * this class is the header that contains login & sign up buttons , search , popular ,oc, and view options
+  */
 export class HeaderComponent implements OnInit {
 
+ /**
+  * this to configure the popup modal
+  */
   modalRef: BsModalRef;
   config = {
     animated: true,
@@ -20,6 +26,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+ /**
+  * this is the function that shows the login page as popup
+  */
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }

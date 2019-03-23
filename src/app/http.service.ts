@@ -5,6 +5,7 @@ import { catchError, tap} from 'rxjs/operators' ;
 
 import { UserCommunities } from './classes/user-communities';
 import { UserPublicInfo } from './classes/user-public-info';
+import { PostsObjects } from './classes/posts-objects';
 
 
 @Injectable({
@@ -28,9 +29,27 @@ export class HttpService {
     GetUserPublicInfo(id: number): Observable<UserPublicInfo> {
         return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + id);
     }
+    /**
+     * to send a request contains the user name & password
+     */
+
+    /**
+     * get all information needed in the database for the posts (id, comments, subscribed, ...)
+     */
+
+    GetPostsObjects(): Observable<PostsObjects[]> {
+        return this.http.get<PostsObjects[]>('http://localhost:3000/');
+    }
 
     login(username: string , password: string): Observable<any> {
         return this.http.post( 'request', {username, password});
+
+    }
+    /**
+     * to send a request contains the email
+     */
+    next(email: string): Observable<any> {
+        return this.http.post( 'request', {email});
 
     }
 }
