@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Communities } from 'src/app/classes/community-info';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-community',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommunityComponent implements OnInit {
 
-  constructor() { }
+  Community :Communities[];
+ 
+
+
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
+    this.http.GetCommunityInfo().subscribe((data: Communities[]) => this.Community = data);
   }
 
 }

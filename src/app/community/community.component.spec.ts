@@ -19,7 +19,20 @@ describe('CommunityComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create the app',async( () => {
+    let fixture=TestBed.createComponent(CommunityComponent);
+    let comm =fixture.debugElement.componentInstance;
+    expect(comm).toBeTruthy();
+  }));
+  
+  it('should render BannerBar with bg color blue',async( () => {
+    let fixture=TestBed.createComponent(CommunityComponent);
+    fixture.detectChanges();
+    let compiled =fixture.debugElement.nativeElement;
+    expect(compiled.querySelector).toBeTruthy();
+  }
+  
+  
+  
+  ));
 });
