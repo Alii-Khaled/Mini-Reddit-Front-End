@@ -676,7 +676,13 @@ export class PostLayoutComponent implements OnInit {
         down_voted: &#x27;false&#x27;,
         first_icon: &#x27;zoom_out_map&#x27;,
         upper_link: &#x27;i.redd.it/cw7oa5&#x27;,
-        upper_link_cont: &#x27;4rc3n21.jpg&#x27;
+        upper_link_cont: &#x27;4rc3n21.jpg&#x27;,
+        up_voting(){
+          this.up_votes &#x3D; this.up_votes + 1;
+        },
+        down_voting(){
+         this.down_votes &#x3D; this.down_votes + 1;
+        }
     },
     {
         post_id: 2,
@@ -699,7 +705,13 @@ export class PostLayoutComponent implements OnInit {
         down_voted: &#x27;false&#x27;,
         first_icon: &#x27;open_in_new&#x27;,
         upper_link: &#x27;www.hattiesburgamerican.com/story/&#x27;,
-        upper_link_cont: &#x27;news/2019/03/19/former-mississippi-gulf-coast-officer-says-she-had-sex-while-child-dying-hot-car/3209859002/&#x27;
+        upper_link_cont: &#x27;news/2019/03/19/former-mississippi-gulf-coast-officer-says-she-had-sex-while-child-dying-hot-car/3209859002/&#x27;,
+        up_voting(){
+          this.up_votes &#x3D; this.up_votes + 1;
+        },
+        down_voting(){
+         this.down_votes &#x3D; this.down_votes + 1;
+        }
     },
     {
         post_id: 3,
@@ -722,7 +734,13 @@ export class PostLayoutComponent implements OnInit {
         down_voted: &#x27;false&#x27;,
         first_icon: &#x27;open_in_new&#x27;,
         upper_link: &#x27;//gfycat.com/Filthy&#x27;,
-        upper_link_cont: &#x27;PaleBasenji&#x27;
+        upper_link_cont: &#x27;PaleBasenji&#x27;,
+        up_voting(){
+          this.up_votes &#x3D; this.up_votes + 1;
+        },
+        down_voting(){
+         this.down_votes &#x3D; this.down_votes + 1;
+        }
     }
 ];
   // @Input() public parentData;

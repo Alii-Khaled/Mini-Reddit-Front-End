@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+ /**
+  * this class is used for getting user's email to sign up
+  */
 export class SignupComponent implements OnInit {
 
   form: FormGroup;
@@ -21,6 +24,9 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
+    /**
+     * take the user's input(email) from the input form
+     */
   next() {
     const val = this.form.value;
     this.service.next( val.email).subscribe((data: any) => {

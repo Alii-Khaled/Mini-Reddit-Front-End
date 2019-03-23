@@ -521,6 +521,34 @@
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>to send a request contains the user name &amp; password</p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>Observable&lt;any&gt;</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> next</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>next(email: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>to send a request contains the email</p>
+            </div>
                                         <div class="io-description">
                                             <b>Returns: </b>    <code>Observable&lt;any&gt;</code>
             
@@ -563,9 +591,19 @@ export class HttpService {
     GetUserPublicInfo(id: number): Observable&lt;UserPublicInfo&gt; {
         return this.http.get&lt;UserPublicInfo&gt;(&#x27;http://localhost:3000/user_public_info/&#x27; + id);
     }
+    /**
+     * to send a request contains the user name &amp; password
+     */
 
     login(username: string , password: string): Observable&lt;any&gt; {
         return this.http.post( &#x27;request&#x27;, {username, password});
+
+    }
+    /**
+     * to send a request contains the email
+     */
+    next(email: string): Observable&lt;any&gt; {
+        return this.http.post( &#x27;request&#x27;, {email});
 
     }
 }
