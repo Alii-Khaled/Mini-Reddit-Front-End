@@ -48,7 +48,7 @@ export class HttpService {
      */
 
     GetPostsObjects(): Observable<PostsObjects[]> {
-        return this.http.get<PostsObjects[]>('http://localhost:3000/');
+        return this.http.get<PostsObjects[]>('http://localhost:3000/posts');
     }
 
 

@@ -8,29 +8,378 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">reddit documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">reddit documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CommunityComponent.html" >CommunityComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PostLayoutComponent.html" >PostLayoutComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UserHeaderComponent.html"  class="active" >UserHeaderComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-code"></span>
+                            <span>Directives</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-directives-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-directives-links"
+                            >
+                                <li class="link">
+                                    <a href="../directives/DropdownDirective.html" >DropdownDirective</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/AppPage.html" >AppPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Communities.html" >Communities</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/PostsObjects.html" >PostsObjects</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/UserCommunities.html" >UserCommunities</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/UserPublicInfo.html" >UserPublicInfo</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/HttpService.html" >HttpService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">reddit documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CommunityComponent.html" >CommunityComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PostLayoutComponent.html" >PostLayoutComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UserHeaderComponent.html"  class="active" >UserHeaderComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-code"></span>
+                                   <span>Directives</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#directives-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="directives-links"
+                   >
+                                       <li class="link">
+                                           <a href="../directives/DropdownDirective.html" >DropdownDirective</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/AppPage.html" >AppPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Communities.html" >Communities</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/PostsObjects.html" >PostsObjects</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/UserCommunities.html" >UserCommunities</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/UserPublicInfo.html" >UserPublicInfo</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/HttpService.html" >HttpService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content component">
                    <div class="content-data">
-
-
 
 
 <ol class="breadcrumb">
@@ -38,26 +387,18 @@
   <li>UserHeaderComponent</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
-</ul>
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -66,18 +407,11 @@
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
-
-
 <section>
     <h3>Metadata</h3>
     <table class="table table-sm table-hover">
         <tbody>
+
 
 
 
@@ -96,317 +430,142 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./user-header.component.css</code></td>
+                <td class="col-md-9"><code>user-header.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./user-header.component.html</code></td>
+                <td class="col-md-9"><code>user-header.component.html</code></td>
             </tr>
-
-
-
-
-
-
 
 
         </tbody>
     </table>
 </section>
 
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#MyCommunities">MyCommunities</a>
-                            </li>
-                            <li>
-                                <a href="#PublicInfo">PublicInfo</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                <a href="#OnclickLeftDropdown">OnclickLeftDropdown</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(http: <a href="../injectables/HttpService.html">HttpService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/user-header/user-header.component.ts:22</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>http</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code><p>for requests</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>route</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code><p>to use it when we want send parameters for current user (username) in the request</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-
 
 
     <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/user-header/user-header.component.ts:33</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>on initializing the page send a request to get current user public info and display his/her name and karma
-in the right dropdown</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="OnclickLeftDropdown"></a>
-                    <span class="name">
-                        <b>
-                            OnclickLeftDropdown
-                        </b>
-                        <a href="#OnclickLeftDropdown"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>OnclickLeftDropdown()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/user-header/user-header.component.ts:40</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>on clicking the left dropdown send a request to get this user&#39;s subscribed communities 
-and display it in this dropdown menu</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-    <section>
-    
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="MyCommunities"></a>
-                        <span class="name">
-                            <b>
-                            MyCommunities</b>
-                            <a href="#MyCommunities"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>UserCommunities[]</code>
-
+                            <code>constructor(http: <a href="../injectables/HttpService.html" >HttpService</a>, route: <a href="https://angular.io/docs/ts/latest/api/router/index/ActivatedRoute-interface.html" target="_blank" >ActivatedRoute</a>)</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/user-header/user-header.component.ts:18</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>list of communities that the user subscribed</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="PublicInfo"></a>
-                        <span class="name">
-                            <b>
-                            PublicInfo</b>
-                            <a href="#PublicInfo"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
+    
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../classes/UserPublicInfo.html" target="_self" >UserPublicInfo</a></code>
-
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>http</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>for requests</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>route</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>to use it when we want send parameters for current user (username) in the request</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/user-header/user-header.component.ts:22</a></div>
-                            </td>
-                        </tr>
+                </tbody>
+            </table>
+    </section>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>current user public info</p>
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> OnclickLeftDropdown</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>OnclickLeftDropdown()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>on clicking the left dropdown send a request to get this user&#39;s subscribed communities<br>and display it in this dropdown menu</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> MyCommunities</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>MyCommunities:     <code>any[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>list of communities that the user subscribed</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> PublicInfo</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>PublicInfo:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>current user public info</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-</section>
-
-</div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { UserCommunities } from &#x27;src/app/classes/user-communities&#x27;;
 import { HttpService } from &#x27;../http.service&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
@@ -451,381 +610,8 @@ export class UserHeaderComponent implements OnInit {
 
 }
 </code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;navbar-default navbar-fixed-top&quot;&gt;
-  &lt;div class&#x3D;&quot;cont container-fluid&quot;&gt;
-    &lt;div class&#x3D;&quot;navbar-header&quot; id&#x3D;&quot;logo&quot;&gt; 
-      &lt;!-- to go to home when click on icon --&gt;
-      &lt;a class&#x3D;&quot;log&quot; href&#x3D;&quot;/&quot;&gt; 
-        &lt;img alt&#x3D;&quot;Reddit logo&quot; src&#x3D;&quot;//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png&quot; width&#x3D;&quot;106.65px&quot; height&#x3D;&quot;40px&quot;&gt;
-       &lt;/a&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;dropdown&quot; id&#x3D;&quot;left-dropdown&quot;appDropdown&gt;
-        &lt;button class&#x3D;&quot;btn btn-default dropdown-toggle&quot; id&#x3D;&quot;left-dropdown-button&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;OnclickLeftDropdown()&quot;&gt;
-          &lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png&quot; width&#x3D;&quot;20&quot; height&#x3D;&quot;20&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          &lt;b&gt;Popular&lt;/b&gt;
-        &lt;span style&#x3D;&quot;float: right;margin-top: 10px&quot; class&#x3D;&quot;caret&quot; &gt;&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;ul class&#x3D;&quot;dropdown-menu&quot; id&#x3D;&quot;dropdown-menu-left&quot;&gt;
-          &lt;li&gt;&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;searchTerm&quot; placeholder&#x3D;&quot;Filter&quot;&gt;&lt;/li&gt;
-          &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;Reddit Feeds&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Popular&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://image.flaticon.com/icons/svg/25/25694.svg&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Home&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://image.flaticon.com/icons/png/512/39/39915.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          All&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Original content&lt;/a&gt;&lt;/li&gt;
-          &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;Subscriptions&lt;/li&gt;
-          &lt;li *ngFor&#x3D;&quot;let com of MyCommunities&quot;&gt;&lt;a routerLink&#x3D;&quot;/community/{{com.community_name}}&quot; href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;{{com?.community_logo}}&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px;border-radius: 12.5px;&quot;&gt;
-            {{com?.community_name}}&lt;/a&gt;&lt;/li&gt;
-          &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;Other&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://i.redd.it/x0iiv7jthx901.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px;border-radius: 5px;&quot;&gt;
-          User Settings&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://i.redd.it/x0iiv7jthx901.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px;border-radius: 5px;&quot;&gt;
-          Messages&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn1.iconfinder.com/data/icons/action-states-vol-4-1/48/Sed-04-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Creat Post&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://png.pngtree.com/svg/20170911/d76a0fe79e.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Coins&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Premium&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;input class&#x3D;&quot;searchTerm&quot; id&#x3D;&quot;search-bar&quot; type&#x3D;&quot;search&quot; placeholder&#x3D;&quot;Search Reddit&quot;&gt;
-    &lt;div class&#x3D;&quot;small-icons&quot; role&#x3D;&quot;button&quot; title&#x3D;&quot;popular&quot;&gt;
-    &lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png&quot; width&#x3D;&quot;20px&quot; height&#x3D;&quot;20px&quot; style&#x3D;&quot;margin-top:6px&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;small-icons&quot; role&#x3D;&quot;button&quot; title&#x3D;&quot;all&quot;&gt;
-    &lt;img src&#x3D;&quot;https://image.flaticon.com/icons/png/512/39/39915.png&quot; width&#x3D;&quot;20px&quot; height&#x3D;&quot;20px&quot; style&#x3D;&quot;margin-top:6px&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;small-icons&quot; role&#x3D;&quot;button&quot; title&#x3D;&quot;original content&quot;&gt;
-    &lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png&quot; width&#x3D;&quot;20px&quot; height&#x3D;&quot;20px&quot; style&#x3D;&quot;margin-top:6px&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;small-icons&quot; role&#x3D;&quot;button&quot; title&#x3D;&quot;Chat&quot;&gt;
-    &lt;img src&#x3D;&quot;https://cdn3.iconfinder.com/data/icons/cloud-dialogue-1/512/Solid_Cloud_Dialogue_Circle_left_dot-512.png&quot; width&#x3D;&quot;20px&quot; height&#x3D;&quot;20px&quot; style&#x3D;&quot;margin-top:6px&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;small-icons&quot; role&#x3D;&quot;button&quot; title&#x3D;&quot;Messages&quot;&gt;
-    &lt;img src&#x3D;&quot;https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Mail_black-512.png&quot; width&#x3D;&quot;20px&quot; height&#x3D;&quot;20px&quot; style&#x3D;&quot;margin-top:6px&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;small-icons&quot; role&#x3D;&quot;button&quot; title&#x3D;&quot;Creat post&quot;&gt;
-    &lt;img src&#x3D;&quot;https://cdn1.iconfinder.com/data/icons/action-states-vol-4-1/48/Sed-04-512.png&quot; width&#x3D;&quot;20px&quot; height&#x3D;&quot;20px&quot; style&#x3D;&quot;margin-top:6px&quot;&gt;
-    &lt;/div&gt;
-    
-    &lt;div class&#x3D;&quot;dropdown&quot; appDropdown id&#x3D;&quot;right-dropdown&quot; role&#x3D;&quot;button&quot;&gt;
-      &lt;img src&#x3D;{{PublicInfo.photo_path}} width&#x3D;&quot;25px&quot;height&#x3D;&quot;25px&quot; style&#x3D;&quot;float:left ;margin-left:10px;margin-top: 5px;border-radius: 5px;&quot;&gt;
-      &lt;div style&#x3D;&quot;float:left; margin-left: 5px&quot;&gt;
-        &lt;b&gt;{{PublicInfo.username}}&lt;/b&gt;
-        &lt;br&gt;
-        &lt;i class&#x3D;&quot;fa fa-cog&quot; style&#x3D;&quot;color:coral; float: left;&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
-        &lt;body style&#x3D;&quot;float:left; margin-top: -3px; color:darkgray&quot;&gt;{{PublicInfo.karma}} karma&lt;/body&gt;
-      &lt;/div&gt; 
-      &lt;i class&#x3D;&quot;fa fa-caret-down&quot; aria-hidden&#x3D;&quot;true&quot; style&#x3D;&quot;float:right;margin-top:13px;margin-right: 10px;&quot;&gt;&lt;/i&gt;       
-        &lt;ul class&#x3D;&quot;dropdown-menu dropdown-menu-right&quot; id&#x3D;&quot;dropdown-menu-right&quot;&gt;
-          &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;My stuff&lt;/li&gt;
-          &lt;li&gt;&lt;a routerLink&#x3D;&quot;profile/{{PublicInfo.username}}&quot; href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn1.iconfinder.com/data/icons/avatar-1-2/512/User2-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          My profile&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Settings_black-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          User settings&lt;/a&gt;&lt;/li&gt;
-          &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;View opition&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Night mode
-          &lt;label class&#x3D;&quot;switch&quot;&gt;
-              &lt;input type&#x3D;&quot;checkbox&quot;&gt;
-              &lt;span class&#x3D;&quot;slider round&quot;&gt;&lt;/span&gt;
-          &lt;/label&gt;
-          &lt;/a&gt;&lt;/li&gt;
-          &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;More Stuff&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://png.pngtree.com/svg/20170911/d76a0fe79e.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Reddit Coins&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Reddit Premium&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Help center&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
-          Log Out&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;
-
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./user-header.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">.cont {
-    height: 48px;
-    background-color: white;
-    border-style:solid;
-    border-width: 0;
-    border-bottom-color: whitesmoke;
-    border-bottom-width: 1px;
-}
-
-#logo {
-     margin-top: 4px;
-     width:&quot;17.98%&quot;;
-     height:&quot;83.3333333%&quot;;
-     min-width: 10px; 
-     display: inline-block;
-}
-#left-dropdown-button {
-    background-color: white;
-    height: 75%;
-    width: 100%;
-    text-align: left;
-    border: 0;
-    align-content: center;
-    
-}
-#left-dropdown {
-    display: inline-block;
-    width: 14.0625%;
-    margin-top: 6px;
-    margin-left: 0.8333333%;   
-    min-width: 120px;
-}
-#dropdown-menu-left {
-    width: 100%;
-    height: auto;
-    max-height: 360px;
-    min-width: 170px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-.searchTerm {
-    margin-left: 5.926%;
-    border-radius: 0;
-    border: 1px;
-    border-style: solid;
-    border-color: whitesmoke;
-    width: 88.148%;
-    background-color: whitesmoke;
-    height: 32px;
-}
-.searchTerm:hover {
-    border-color: blue;
-    background-color: white;
-}
-
-#search-bar {
-    display: inline-block;
-    margin-left: 0.8333333%; 
-    width: 50%;
-    border-radius: 5px;
-    min-width: 20px;
-}
-.small-icons {
-    display: inline-block;
-    height: 32px;
-    width: 32px;
-    text-align: center;
-    margin-left: 0.8333333%; 
-    margin-bottom: 1px;
-}
-.small-icons:hover {
-    background-color: whitesmoke;
-}
-.searchTerm:focus {
-    background-color: whitesmoke;
-}
-.searchTerm:active {
-    background-color: whitesmoke;
-}
-#log-in {
-    margin-left: 0.8333333%; 
-    background-color: white;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #0079d3;
-    -webkit-text-fill-color: #0079d3;
-    width: 120px;
-}
-#log-in:hover {
-    border-color: #0889ec;
-    -webkit-text-fill-color: #0889ec;
-}
-#sign-up {
-    margin-left: 0.8333333%; 
-    background-color: #0079d3;
-    -webkit-text-fill-color: white;
-    width: 120px;
-}
-#sign-up:hover {
-    background-color: #0889ec;
-}
-/*night mode switch*/
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 24px;
-    float: right;
-  }
-  
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: &quot;&quot;;
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(16px);
-    -ms-transform: translateX(26px);
-    transform: translateX(16px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-  /*right dropdown menu*/
-  #right-dropdown {
-      display: inline-block;
-      margin-left: 16px;
-      border-style: solid;
-      border-width: 2px;
-      border-color: white;
-      float: right;
-      margin-top: 4px;
-      width: 210px;
-      border-radius: 5px;
-      height: 40px;
-  }
-  #right-dropdown:hover {
-     border-color: whitesmoke;
-}
-
-#dropdown-menu-right {
-    width: 240px;
-    height: auto;
-    max-height: 360px;
-    min-width: 200px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-@media only screen and (max-width:1850px) and (min-width:1600px) {
-    #search-bar {width: 700px;}
-}
-@media only screen and (max-width:1600px) and (min-width:1500px) {
-    #search-bar {width: 600px;}
-}
-@media only screen and (max-width:1500px) and (min-width:1375px) {
-    #search-bar {width: 500px;}
-}
-@media only screen and (max-width:1375px) and (min-width:1250px) {
-    #search-bar {width: 400px;}
-}
-@media only screen and (max-width:1250px) and (min-width:1150px) {
-    #search-bar {width: 300px;}
-}
-@media only screen and (max-width:1150px) and (min-width:950px) {
-    #search-bar {width: 200px;}
-}
-@media only screen and (max-width:950px) and (min-width:850px) {
-    #search-bar {width: 100px;}
-}
-@media only screen and (max-width:850px) and (min-width:775px) {
-    .small-icons {display: none;}
-    #search-bar {width: 100px;}
-}
-@media only screen and (max-width:776px) and (min-width:500px) {
-    .small-icons {display: none;}
-    #search-bar {width: 100px;margin-left: 30px;}
-    #log-in {width: 80px;}
-    #sign-up {width: 80px;}
-}
-@media only screen and (max-width:500px) {
-    .small-icons {display: none;}
-    #search-bar {width: 50px; margin-left: 30px;}
-    #log-in {display: none;}
-    #sign-up {display: none;}
-    #right-dropdown {margin-left: 30px;}
-}
-
-
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
         </div>
     </div>
-
-    
-</div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><nav class="navbar-default navbar-fixed-top">  <div class="cont container-fluid">    <div class="navbar-header" id="logo">       <!-- to go to home when click on icon -->      <a class="log" href="/">         <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png" width="106.65px" height="40px">       </a>    </div>    <div class="dropdown" id="left-dropdown"appDropdown>        <button class="btn btn-default dropdown-toggle" id="left-dropdown-button" type="button" (click)="OnclickLeftDropdown()">          <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px">          <b>Popular</b>        <span style="float: right;margin-top: 10px" class="caret" ></span>        </button>        <ul class="dropdown-menu" id="dropdown-menu-left">          <li><input type="text" class="searchTerm" placeholder="Filter"></li>          <li class="dropdown-header">Reddit Feeds</li>          <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="25" height="25" style="margin-right:15px">          Popular</a></li>          <li><a href="#"><img src="https://image.flaticon.com/icons/svg/25/25694.svg" width="25" height="25" style="margin-right:15px">          Home</a></li>          <li><a href="#"><img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="25" height="25" style="margin-right:15px">          All</a></li>          <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">          Original content</a></li>          <li class="dropdown-header">Subscriptions</li>          <li *ngFor="let com of MyCommunities"><a routerLink="/community/{{com.community_name}}" href="#"><img src="{{com?.community_logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">            {{com?.community_name}}</a></li>          <li class="dropdown-header">Other</li>          <li><a href="#"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">          User Settings</a></li>          <li><a href="#"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">          Messages</a></li>          <li><a href="#"><img src="https://cdn1.iconfinder.com/data/icons/action-states-vol-4-1/48/Sed-04-512.png" width="25" height="25" style="margin-right:15px">          Creat Post</a></li>          <li><a href="#"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">          Coins</a></li>          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">          Premium</a></li>        </ul>    </div>    <input class="searchTerm" id="search-bar" type="search" placeholder="Search Reddit">    <div class="small-icons" role="button" title="popular">    <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="all">    <img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="original content">    <img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="Chat">    <img src="https://cdn3.iconfinder.com/data/icons/cloud-dialogue-1/512/Solid_Cloud_Dialogue_Circle_left_dot-512.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="Messages">    <img src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Mail_black-512.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="Creat post">    <img src="https://cdn1.iconfinder.com/data/icons/action-states-vol-4-1/48/Sed-04-512.png" width="20px" height="20px" style="margin-top:6px">    </div>        <div class="dropdown" appDropdown id="right-dropdown" role="button">      <img src={{PublicInfo.photo_path}} width="25px"height="25px" style="float:left ;margin-left:10px;margin-top: 5px;border-radius: 5px;">      <div style="float:left; margin-left: 5px">        <b>{{PublicInfo.username}}</b>        <br>        <i class="fa fa-cog" style="color:coral; float: left;" aria-hidden="true"></i>        <body style="float:left; margin-top: -3px; color:darkgray">{{PublicInfo.karma}} karma</body>      </div>       <i class="fa fa-caret-down" aria-hidden="true" style="float:right;margin-top:13px;margin-right: 10px;"></i>               <ul class="dropdown-menu dropdown-menu-right" id="dropdown-menu-right">          <li class="dropdown-header">My stuff</li>          <li><a routerLink="profile/{{PublicInfo.username}}" href="#"><img src="https://cdn1.iconfinder.com/data/icons/avatar-1-2/512/User2-512.png" width="25" height="25" style="margin-right:15px">          My profile</a></li>          <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Settings_black-512.png" width="25" height="25" style="margin-right:15px">          User settings</a></li>          <li class="dropdown-header">View opition</li>          <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png" width="25" height="25" style="margin-right:15px">          Night mode          <label class="switch">              <input type="checkbox">              <span class="slider round"></span>          </label>          </a></li>          <li class="dropdown-header">More Stuff</li>          <li><a href="#"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">          Reddit Coins</a></li>          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">          Reddit Premium</a></li>          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png" width="25" height="25" style="margin-right:15px">          Help center</a></li>          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-512.png" width="25" height="25" style="margin-right:15px">          Log Out</a></li>        </ul>    </div>  </div></nav></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'}];
-    var DIRECTIVES = [{'name': 'DropdownDirective', 'selector': '[appDropdown]'}];
-    var ACTUAL_COMPONENT = {'name': 'UserHeaderComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
 
 
 
@@ -838,7 +624,7 @@ export class UserHeaderComponent implements OnInit {
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -846,21 +632,8 @@ export class UserHeaderComponent implements OnInit {
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserHeaderComponent.html';
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -871,17 +644,20 @@ export class UserHeaderComponent implements OnInit {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>
