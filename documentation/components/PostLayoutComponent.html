@@ -588,27 +588,6 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> httpService</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>httpService:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>initialization for httpService</p>
-    </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <b><span class="modifier">Public</span> imgsrc</b>
                         </td>
                     </tr>
@@ -626,27 +605,6 @@
                     <tr>
                         <td class="col-md-4">
                             <div class="io-description"><p>variable to get image source</p>
-    </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> myPosts</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>myPosts:     <code><a href="../classes/PostsObjects.html" target="_self" >PostsObjects</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>object to receive objects of posts information</p>
     </div>
                         </td>
                     </tr>
@@ -677,18 +635,18 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b><span class="modifier">Public</span> posts</b>
+                            <b> posts</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-circle"></span><code>posts:     <code>{ post_id: number; body: string; video_url: string; image: string; title: string; username: strin...</code>
+                            <code>posts:     <code><a href="../classes/PostsObjects.html" target="_self" >PostsObjects[]</a></code>
     </bcode>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-description"><p>array of objects for posts information from the API, but these are for testing before connecting back-end with front-end<br>the single object takes parameters like (post id, body link, votes, ..)<br>it has also two functions, one for up voting and another for down voting</p>
+                            <div class="io-description"><p>object to receivearray of objects of posts information</p>
     </div>
                         </td>
                     </tr>
@@ -709,18 +667,15 @@ import { PostsObjects } from &#x27;../classes/posts-objects&#x27;;
 })
 export class PostLayoutComponent implements OnInit {
   /**
-   * initialization for httpService
+   * object to receivearray of objects of posts information
    */
-  httpService: any;
-  /**
-   * object to receive objects of posts information
-   */
-  myPosts: PostsObjects;
+  posts: PostsObjects[];
 
   /**
    * @param http for requests
    */
   constructor(private http: HttpService) {
+    // this.http.GetPostsObjects().subscribe((data: PostsObjects[]) &#x3D;&gt; this.myPosts &#x3D; data); 
   }
   /**
    * variable to get image source
@@ -742,139 +697,6 @@ export class PostLayoutComponent implements OnInit {
     downVoted: false
   };
 
-  /**
-   * array of objects for posts information from the API, but these are for testing before connecting back-end with front-end
-   * the single object takes parameters like (post id, body link, votes, ..)
-   * it has also two functions, one for up voting and another for down voting
-   */
-  public posts &#x3D; [
-    {
-        post_id: 1,
-        body: &#x27;post1&#x27;,
-        video_url: &#x27;https:\/\/www.youtube.com&#x27;,
-        // image: &#x27;storage\/app\/avater.jpg&#x27;,
-        image: &#x27;https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_3.jpg&#x27;,
-        title: &#x27;title1&#x27;,
-        username: &#x27;ahmed&#x27;,
-        community: &#x27;laravel&#x27;,
-        subscribed: &#x27;true&#x27;,
-        author_photo_path: &#x27;storage\/app\/avater.jpg&#x27;,
-        down_votes: 17,
-        up_votes: 30,
-        date: &#x27; 2 days ago &#x27;,
-        comments_num: 0,
-        saved: &#x27;true&#x27;,
-        hidden: &#x27;false&#x27;,
-        up_voted: &#x27;true&#x27;,
-        down_voted: &#x27;false&#x27;,
-        first_icon: &#x27;zoom_out_map&#x27;,
-        upper_link: &#x27;i.redd.it/cw7oa5&#x27;,
-        upper_link_cont: &#x27;4rc3n21.jpg&#x27;,
-        /**
-         * @param up_voted for knowing if it is clicked before or not
-         */
-        up_voting() {
-          if (this.up_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
-            this.up_votes &#x3D; this.up_votes + 1;
-            this.up_voted &#x3D; &#x27;true&#x27;;
-        } else {
-            this.up_votes &#x3D; this.up_votes - 1;
-            this.up_voted &#x3D; &#x27;false&#x27;;
-        }
-        },
-        down_voting() {
-          if (this.down_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
-            this.down_votes &#x3D; this.down_votes + 1;
-            this.down_voted &#x3D; &#x27;true&#x27;;
-          } else {
-            this.down_votes &#x3D; this.down_votes - 1;
-            this.down_voted &#x3D; &#x27;false&#x27;;
-          }
-        }
-    },
-    {
-        post_id: 2,
-        body: &#x27;post2&#x27;,
-        // image: &#x27;storage\/app\/avater.jpg&#x27;,
-        image: &#x27;https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_1.jpg&#x27;,
-        video_url: &#x27;https:\/\/www.youtube.com&#x27;,
-        title: &#x27;title2&#x27;,
-        username: &#x27;ahmed&#x27;,
-        community: &#x27;none&#x27;,
-        subscribed: &#x27;false&#x27;,
-        author_photo_path: &#x27;storage\/app\/avater.jpg&#x27;,
-        down_votes: 15,
-        up_votes: 20,
-        date: &#x27; 2 days ago &#x27;,
-        comments_num: 18,
-        saved: &#x27;false&#x27;,
-        hidden: &#x27;true&#x27;,
-        up_voted: &#x27;true&#x27;,
-        down_voted: &#x27;false&#x27;,
-        first_icon: &#x27;open_in_new&#x27;,
-        upper_link: &#x27;www.hattiesburgamerican.com/story/&#x27;,
-        upper_link_cont: &#x27;news/2019/03/19/former-mississippi-gulf-coast-officer-says-she-had-sex-while-child-dying-hot-car/3209859002/&#x27;,
-        up_voting() {
-          if (this.up_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
-            this.up_votes &#x3D; this.up_votes + 1;
-            this.up_voted &#x3D; &#x27;true&#x27;;
-        } else {
-            this.up_votes &#x3D; this.up_votes - 1;
-            this.up_voted &#x3D; &#x27;false&#x27;;
-        }
-        },
-        down_voting() {
-          if (this.down_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
-            this.down_votes &#x3D; this.down_votes + 1;
-            this.down_voted &#x3D; &#x27;true&#x27;;
-          } else {
-            this.down_votes &#x3D; this.down_votes - 1;
-            this.down_voted &#x3D; &#x27;false&#x27;;
-          }
-        }
-    },
-    {
-        post_id: 3,
-        body: &#x27;post3&#x27;,
-        // image: &#x27;storage\/app\/avater.jpg&#x27;,
-        image: &#x27;https://d160uhrw1ev0bq.cloudfront.net/img-optim/exchanges/exchange_flow_tile_2.jpg&#x27;,
-        video_url: &#x27;https:\/\/www.youtube.com&#x27;,
-        title: &#x27;title3&#x27;,
-        username: &#x27;ahmed&#x27;,
-        community: &#x27;none&#x27;,
-        subscribed: &#x27;false&#x27;,
-        author_photo_path: &#x27;storage\/app\/avater.jpg&#x27;,
-        down_votes: 15,
-        up_votes: 30,
-        date: &#x27; 3 days ago &#x27;,
-        comments_num: 60,
-        saved: &#x27;true&#x27;,
-        hidden: &#x27;true&#x27;,
-        up_voted: &#x27;true&#x27;,
-        down_voted: &#x27;false&#x27;,
-        first_icon: &#x27;open_in_new&#x27;,
-        upper_link: &#x27;//gfycat.com/Filthy&#x27;,
-        upper_link_cont: &#x27;PaleBasenji&#x27;,
-        up_voting() {
-          if (this.up_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
-            this.up_votes &#x3D; this.up_votes + 1;
-            this.up_voted &#x3D; &#x27;true&#x27;;
-        } else {
-            this.up_votes &#x3D; this.up_votes - 1;
-            this.up_voted &#x3D; &#x27;false&#x27;;
-        }
-        },
-        down_voting() {
-          if (this.down_voted &#x3D;&#x3D;&#x3D; &#x27;false&#x27;) {
-            this.down_votes &#x3D; this.down_votes + 1;
-            this.down_voted &#x3D; &#x27;true&#x27;;
-          } else {
-            this.down_votes &#x3D; this.down_votes - 1;
-            this.down_voted &#x3D; &#x27;false&#x27;;
-          }
-        }
-    }
-];
 
 /**
  * these two lines are just for testing and applying child component
@@ -884,7 +706,10 @@ export class PostLayoutComponent implements OnInit {
   @Output() public childEven &#x3D; new EventEmitter();
 
   ngOnInit() {
-    // this.http.GetPostsObjects().subscribe((data: PostsObjects) &#x3D;&gt; this.myPosts &#x3D; data);
+    /**
+     * to get posts objects information from the request
+     */
+    this.http.GetPostsObjects().subscribe((data: PostsObjects[]) &#x3D;&gt; this.posts &#x3D; data);
     // this.httpService.GetPostsObjects().subscribe(data &#x3D;&gt; this.myPosts &#x3D; data);
   }
 

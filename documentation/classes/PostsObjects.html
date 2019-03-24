@@ -416,7 +416,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(pId: number, pBody: string, pImage: string, pVideoUrl: string, pTitle: string, pUsername: string, pCommunity: string, pSubscribed: boolean, pAuthorPhotoPath: string, pDownVotes: number, pUpVotes: number, pDate: string, pCommentsNum: number, pSaved: boolean, pHidden: boolean, pUpVoted: boolean, pDownVoted: boolean, pPostLink: string)</code>
+                                    <code>constructor(pId: number, pBody: string, pImage: string, pVideoUrl: string, pTitle: string, pUsername: string, pCommunity: string, pSubscribed: boolean, pAuthorPhotoPath: string, pDownVotes: number, pUpVotes: number, pDate: string, pCommentsNum: number, pSaved: boolean, pHidden: boolean, pUpVoted: boolean, pDownVoted: boolean, pFirstIcon: string, pPostLink: string)</code>
                                 </td>
                             </tr>
             
@@ -424,6 +424,57 @@
                     </table>
             </section>
 
+            <section>
+                <h3 id="methods">Methods</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> OnclickUpVote</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>OnclickUpVote()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> OnclickDownVote</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>OnclickDownVote()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
 
             <section>
@@ -507,12 +558,12 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> down_voted</b>
+                                    <b><span class="modifier">Public</span> downvoted</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>down_voted:     <code>boolean</code>
+                                    <span class="modifier-icon fa fa-circle"></span><code>downvoted:     <code>boolean</code>
             </bcode>
                                 </td>
                             </tr>
@@ -522,12 +573,27 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> down_votes</b>
+                                    <b><span class="modifier">Public</span> downvotes</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>down_votes:     <code>number</code>
+                                    <span class="modifier-icon fa fa-circle"></span><code>downvotes:     <code>number</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Public</span> first_icon</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-circle"></span><code>first_icon:     <code>string</code>
             </bcode>
                                 </td>
                             </tr>
@@ -642,12 +708,12 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> up_voted</b>
+                                    <b><span class="modifier">Public</span> upvoted</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>up_voted:     <code>boolean</code>
+                                    <span class="modifier-icon fa fa-circle"></span><code>upvoted:     <code>boolean</code>
             </bcode>
                                 </td>
                             </tr>
@@ -657,12 +723,12 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> up_votes</b>
+                                    <b><span class="modifier">Public</span> upvotes</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>up_votes:     <code>number</code>
+                                    <span class="modifier-icon fa fa-circle"></span><code>upvotes:     <code>number</code>
             </bcode>
                                 </td>
                             </tr>
@@ -704,26 +770,27 @@
         <pre><code class="hljs javascript">export class PostsObjects {
     public post_id: number;
     public body: string;
-    public image: string;
     public video_url: string;
+    public image: string;
     public title: string;
     public username: string;
     public community: string;
     public subscribed: boolean;
     public author_photo_path: string;
-    public down_votes: number;
-    public up_votes: number;
+    public downvotes: number;
+    public upvotes: number;
     public date: string;
     public comments_num: number;
     public saved: boolean;
     public hidden: boolean;
-    public up_voted: boolean;
-    public down_voted: boolean;
+    public upvoted: boolean;
+    public downvoted: boolean;
+    public first_icon: string;
     public post_link: string;
 
     constructor(pId: number, pBody: string, pImage: string, pVideoUrl: string, pTitle: string, pUsername: string, pCommunity: string,
                 pSubscribed: boolean, pAuthorPhotoPath: string, pDownVotes: number, pUpVotes: number, pDate: string, pCommentsNum: number,
-                pSaved: boolean, pHidden: boolean, pUpVoted: boolean, pDownVoted: boolean, pPostLink: string) {
+                pSaved: boolean, pHidden: boolean, pUpVoted: boolean, pDownVoted: boolean, pFirstIcon: string, pPostLink: string) {
             this.post_id &#x3D; pId;
             this.body &#x3D; pBody;
             this.image &#x3D; pImage;
@@ -733,16 +800,37 @@
             this.community &#x3D; pCommunity;
             this.subscribed &#x3D; pSubscribed;
             this.author_photo_path &#x3D; pAuthorPhotoPath;
-            this.down_votes &#x3D; pDownVotes;
-            this.up_votes &#x3D; pUpVotes;
+            this.downvotes &#x3D; pDownVotes;
+            this.upvotes &#x3D; pUpVotes;
             this.date &#x3D; pDate;
             this.comments_num &#x3D; pCommentsNum;
             this.saved &#x3D; pSaved;
             this.hidden &#x3D; pHidden;
-            this.up_voted &#x3D; pUpVoted;
-            this.down_voted &#x3D; pDownVoted;
+            this.upvoted &#x3D; pUpVoted;
+            this.downvoted &#x3D; pDownVoted;
+            this.first_icon &#x3D; pFirstIcon;
             this.post_link &#x3D; pPostLink;
         }
+
+        OnclickUpVote() {
+            if (this.upvoted &#x3D;&#x3D;&#x3D; false) {
+              this.upvotes &#x3D; this.upvotes + 1;
+              this.upvoted &#x3D; true;
+              } else {
+              this.upvotes &#x3D; this.upvotes - 1;
+              this.upvoted &#x3D; false;
+              }
+              }
+
+              OnclickDownVote() {
+                if (this.downvoted &#x3D;&#x3D;&#x3D; false) {
+                  this.downvotes &#x3D; this.downvotes + 1;
+                  this.downvoted &#x3D; true;
+                  } else {
+                  this.downvotes &#x3D; this.downvotes - 1;
+                  this.downvoted &#x3D; false;
+                  }
+                  }
 }
 </code></pre>
     </div>

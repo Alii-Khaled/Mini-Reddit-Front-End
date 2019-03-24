@@ -10,11 +10,7 @@ import { PostsObjects } from '../classes/posts-objects';
 })
 export class PostLayoutComponent implements OnInit {
   /**
-   * initialization for httpService
-   */
-  // httpService: any;
-  /**
-   * object to receive objects of posts information
+   * object to receivearray of objects of posts information
    */
   posts: PostsObjects[];
 
@@ -53,6 +49,9 @@ export class PostLayoutComponent implements OnInit {
   @Output() public childEven = new EventEmitter();
 
   ngOnInit() {
+    /**
+     * to get posts objects information from the request
+     */
     this.http.GetPostsObjects().subscribe((data: PostsObjects[]) => this.posts = data);
     // this.httpService.GetPostsObjects().subscribe(data => this.myPosts = data);
   }
