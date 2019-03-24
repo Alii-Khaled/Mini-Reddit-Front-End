@@ -78,7 +78,7 @@
          <div class="division" id="first">
            <div>
              <button disableRipple mat-icon-button id="upVote{{posts[i].post_id}}" class="buttonUpVote" (click)="posts[i].up_voting()"><mat-icon >arrow_upward</mat-icon></button>
-             <h6 id="voteNum{{posts[i].post_id}}">{{posts[i].up_votes-posts[i].down_votes}}</h6>
+             <h6 id="voteNum{{posts[i].post_id}}">{{posts[i].upvotes-posts[i].downvotes}}</h6>
              <button disableRipple mat-icon-button id="downVote{{posts[i].post_id}}" class="buttonDownVote" (click)="posts[i].down_voting()"><mat-icon>arrow_downward</mat-icon></button>
            </div>
          </div>

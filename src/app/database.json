@@ -1,0 +1,106 @@
+{
+  "communities": [
+          {
+              "id": 1,
+              "community_name":"Ali",
+              "community_logo":"https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
+          },
+          {
+              "id": 2,
+              "community_name":"Ahmed",
+              "community_logo":"https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
+          }
+      ],
+      "user_public_info": [
+          {
+              "id":1,
+              "success": "true",
+              "username": "7moda",
+              "name": "7moda basta",
+              "karma": 500,
+              "cake_day": "March 8, 2019",
+              "about": "be or not to be",
+              "photo_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+              "cover_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
+          },
+          {
+              "id":2,
+              "success": "true",
+              "username": "john",
+              "name": "John Smith",
+              "karma": 500,
+              "cake_day": "March 8, 2019",
+              "about": "be or not to be",
+              "photo_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+              "cover_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
+          }
+      ],
+      "posts": [
+        {
+            "post_id": 1,
+            "body": "post1",
+            "video_url": "https:\/\/www.youtube.com",
+            "image": "storage\/app\/avater.jpg",
+            "title": "title3",
+            "username": "ahmed",
+            "community": "laravel",
+            "subscribed": "true",
+            "author_photo_path": "storage\/app\/avater.jpg",
+            "downvotes": 17,
+            "upvotes": 30,
+            "date": " 2 days ago ",
+            "comments_num": 0,
+            "saved": "true",
+            "hidden": "false",
+            "upvoted": "true",
+            "downvoted": "false",
+            "first_icon": "zoom_out_map",
+            "post_link": "i.redd.it/cw7oa5"
+        },
+        {
+            "post_id": 2,
+            "body": "post2",
+            "image": "storage\/app\/avater.jpg",
+            "video_url": "https:\/\/www.youtube.com",
+            "title": "title2",
+            "username": "ahmed",
+            "community": "none",
+            "subscribed": "false",
+            "author_photo_path": "storage\/app\/avater.jpg",
+            "downvotes": 15,
+            "upvotes": 20,
+            "date": " 2 days ago ",
+            "comments_num": 0,
+            "saved": "false",
+            "hidden": "true",
+            "upvoted": "true",
+            "downvoted": "false",
+            "first_icon": "open_in_new",
+            "post_link": "www.hattiesburgamerican.com/story/"
+        },
+        {
+            "post_id": 3,
+            "body": "post3",
+            "image": "storage\/app\/avater.jpg",
+            "video_url": "https:\/\/www.youtube.com",
+            "title": "title1",
+            "username": "ahmed",
+            "community": "none",
+            "subscribed": "false",
+            "author_photo_path": "storage\/app\/avater.jpg",
+            "downvotes": 15,
+            "upvotes": 20,
+            "date": " 2 days ago ",
+            "comments_num": 0,
+            "saved": "true",
+            "hidden": "true",
+            "upvoted": "true",
+            "downvoted": "false",
+            "first_icon": "open_in_new",
+            "post_link": "//gfycat.com/Filthy"
+        }
+    ]
+
+      
+
+}
