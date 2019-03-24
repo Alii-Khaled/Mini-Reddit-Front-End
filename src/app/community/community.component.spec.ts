@@ -25,14 +25,14 @@ describe('CommunityComponent', () => {
     expect(comm).toBeTruthy();
   }));
   
-  it('should render BannerBar with bg color blue',async( () => {
+  /* it('should render BannerBar with bg color blue',async( () => {
     let fixture=TestBed.createComponent(CommunityComponent);
     fixture.detectChanges();
     let compiled =fixture.debugElement.nativeElement;
     expect(compiled.querySelector).toBeTruthy();
   }
+   */
   
   
   
-  ));
 });

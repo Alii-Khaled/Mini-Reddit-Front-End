@@ -22,15 +22,19 @@ export class Communities {
      * rules of this community
      */
     public community_rules: string;
-
+  /**
+     * number of subscribers of this community
+     */
+    public community_subscribers: number;
        /**
      * constructor takes every value of the class and assign it to this community
      */
-    constructor(name: string, logo: string,banner: string,description: string,rules: string) {
+    constructor(name: string, logo: string,banner: string,description: string,rules: string,subscribers:number) {
         this.community_logo = logo;
         this.community_name = name;
         this.community_banner = banner;
         this.community_description = description;
         this.community_rules = rules;
+        this.community_subscribers = subscribers;
     }
 }
