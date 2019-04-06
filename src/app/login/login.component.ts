@@ -17,11 +17,13 @@ import { MatDialogRef } from '@angular/material';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   modalRef: BsModalRef;
+  disabld: boolean;
   constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
     this.form = this.fb.group({
       username: ['', Validators.required , Validators.minLength(3) , Validators.maxLength(20)],
       password: ['', Validators.required]
     });
+    this.disabld = this.form.valid;
    }
 
   ngOnInit() {
@@ -30,11 +32,11 @@ export class LoginComponent implements OnInit {
      * take the user's input (username & password) from the input form and set token
      */
   login() {
+    console.log('welcome');
     const val = this.form.value;
     this.service.login(val.username , val.password).subscribe((data: any) => {
      localStorage.setItem('token', data.token );
-     var test =localStorage.getItem('token');
-     
+     const test = localStorage.getItem('token');
      this.router.navigateByUrl('profile/' + test);
    },
    err => {if (err.status === 422) {
