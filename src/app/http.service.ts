@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { catchError, tap} from 'rxjs/operators' ;
 
-import { UserCommunities } from './classes/user-communities';
-import { UserPublicInfo } from './classes/user-public-info';
+import { UserCommunities } from './Profile_classes/user-communities';
+import { UserPublicInfo } from './Profile_classes/user-public-info';
 import{Communities} from './classes/community-info';
 import { PostsObjects } from './classes/posts-objects';
 

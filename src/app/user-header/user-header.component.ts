@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserCommunities } from 'src/app/classes/user-communities';
+import { UserCommunities } from 'src/app/Profile_classes/user-communities';
 import { HttpService } from '../http.service';
 import { ActivatedRoute } from '@angular/router';
-import { UserPublicInfo } from 'src/app/classes/user-public-info';
-import { DropdownDirective } from '../header/dropdown.directive';
-
+import { UserPublicInfo } from 'src/app/Profile_classes/user-public-info';
 
 @Component({
   selector: 'app-user-header',
