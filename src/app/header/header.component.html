@@ -6,12 +6,12 @@
         <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png" width="106.65px" height="40px">
        </a>
     </div>
-    <div class="dropdown" id="left-dropdown"appDropdown>
-        <button class="btn btn-default dropdown-toggle" id="left-dropdown-button" type="button">
-          <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px">
-          <b>Popular</b>
-        <span style="float: right;margin-top: 10px" class="caret" ></span>
-        </button>
+    <div class="dropdown" id="left-dropdown">
+      <button data-toggle="dropdown"  class="dropdown-button" type="button" id="left-dropdown-button" role="button" (click)="OnclickLeftDropdown()">
+        <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px;float: left;">
+        <b id="dropdown-left-name" style="float:left">Popular</b>
+      <span style="float: right;margin-top: 10px" class="caret" ></span>
+      </button>
         <ul class="dropdown-menu" id="dropdown-menu-left">
           <li><input type="text" class="searchTerm" placeholder="Filter"></li>
           <li class="dropdown-header">Reddit Feeds</li>
@@ -49,9 +49,11 @@
     </ng-template>
     <button type="button" class="btn btn-outline-primary" id="sign-up"><b>Sign up</b></button>
     
-    <div class="dropdown" appDropdown id="right-dropdown">
+    <div class="dropdown" id="right-dropdown">
+        <button data-toggle="dropdown" class="dropdown-button" type="button" role="button" >
             <i class="fa fa-user" aria-hidden="false" style="margin-right:20px"></i>
             <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </button>      
         <ul class="dropdown-menu dropdown-menu-right" id="dropdown-menu-right">
           <li class="dropdown-header">View opition</li>
           <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png" width="25" height="25" style="margin-right:15px">

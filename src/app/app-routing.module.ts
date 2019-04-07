@@ -4,7 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CommunityComponent } from './community/community.component';
 
 const routes: Routes = [
-  { path: 'profile/:username', component: ProfileComponent },
+  { path: 'user/:username', component: ProfileComponent },
   { path: 'community/:CommunityName', component: CommunityComponent }
 ];
 
