@@ -40,6 +40,7 @@ form {
     color: white;
     text-emphasis: bold;
     text-align: center;
+    vertical-align: -webkit-baseline-middle;
     text-size-adjust: auto;
     padding: 14px 20px;
     margin: 8px 0;

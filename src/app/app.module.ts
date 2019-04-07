@@ -24,6 +24,7 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
+import { ForgotUsernameComponent } from './forgot-username/forgot-username.component';
 
 
 
@@ -43,6 +44,7 @@ import { ProfileSettingComponent } from './profile-setting/profile-setting.compo
     UserSettingsComponent,
     AccountSettingComponent,
     ProfileSettingComponent,
+    ForgotUsernameComponent,
     /* ModalModule */
   ],
   imports: [
