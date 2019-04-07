@@ -7,29 +7,41 @@
     border-bottom-width: 1px;
 }
 
+
 #logo {
      margin-top: 4px;
      width:"17.98%";
      height:"83.3333333%";
      min-width: 10px; 
      display: inline-block;
+     float: left;
 }
 #left-dropdown-button {
     background-color: white;
-    height: 75%;
+    display: inline-block;
+    margin-bottom: 6px;
+    height: 100%;
     width: 100%;
     text-align: left;
     border: 0;
-    align-content: center;
-    
+    align-content: center;   
 }
-#left-dropdown {
+#left-dropdown { 
     display: inline-block;
-    width: 14.0625%;
-    margin-top: 6px;
-    margin-left: 0.8333333%;   
-    min-width: 120px;
+      margin-left: 16px;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      float: left;
+      margin-top: 4px;
+      width: 210px;
+      border-radius: 5px;
+      height: 40px;
 }
+#left-dropdown:hover {
+    border-color: whitesmoke;
+}
+
 #dropdown-menu-left {
     width: 100%;
     height: auto;
@@ -59,6 +71,7 @@
     width: 50%;
     border-radius: 5px;
     min-width: 20px;
+    margin-top: 8px;
 }
 .small-icons {
     display: inline-block;
@@ -166,6 +179,13 @@
     scroll-behavior: smooth;
 }
 
+.dropdown-button {
+    width:100%;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px;
+}
+
 @media only screen and (max-width:1850px) and (min-width:1600px) {
     #search-bar {width: 700px;}
 }
@@ -201,14 +221,14 @@
     .small-icons {display: none;}
     #search-bar {width: 50px; margin-left: 30px;}
     #right-dropdown {margin-left: 10px; width: 150px;}
-    #left-dropdown {margin-left: 30px;}
+    #left-dropdown {marginle-ft: 30px;}
 }
 @media only screen and (max-width:500px) {
     .small-icons {display: none;}
-    #search-bar {width: 50px; margin-left: 10px;}
-    #left-dropdown {margin-left: 10px;width: 70px;min-width: 70px;}
+    #search-bar {width: 50px; margin-left: 5px;}
+    #left-dropdown {margin-left: 10px;width: 30px;min-width: 65px;}
     #user-name-karma {display: none;}
-    #right-dropdown {margin-left: 10px; width: 60px;}
+    #right-dropdown {margin-left: 5px; width: 75px;}
     #dropdown-left-name{display: none}
 }
 
