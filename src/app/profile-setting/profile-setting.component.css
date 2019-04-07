@@ -1,0 +1,44 @@
+#tit
+{
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: rgb(124, 124, 124);
+    margin-bottom: 32px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgb(237, 239, 241);
+}
+#aset
+{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+    color: rgb(28, 28, 28);
+    fill: white;
+    max-width: 1200px;
+    padding: 16px 20px 20px;
+    margin: 0px auto;
+    vertical-align: center;
+}
+#hed
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 4px;
+    color: rgb(28, 28, 28);
+  
+}
+
+#box
+{
+    display: block;
+}
+body {
+    min-height: calc(100vh - 48px);
+    line-height: 1;
+    font-family: IBMPlexSans, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}

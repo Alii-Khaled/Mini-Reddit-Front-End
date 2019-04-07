@@ -5,9 +5,9 @@
     
      <div class=" row All">
        <div class="CommLogoName">
-    <img class="logo" src="http://i.imgur.com/sdO8tAw.png" alt="logo" viewBox="0 0 20 20">
+    <img class="logo" src="{{Community?.community_logo}}" alt="logo" viewBox="0 0 20 20">
     <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
-    <span class="Name">r/community</span>
+    <span class="Name">r/{{Community?.community_name}}</span>
       </div>
 
   
@@ -26,15 +26,15 @@
             </div>
             <div class="CommInfoAll panel-body panel-footer">
                 <div class="CommLogoNamei">
-                    <img class="logo" src="http://i.imgur.com/sdO8tAw.png" alt="logo" viewBox="0 0 20 20">
+                    <img class="logo" src="{{Community?.community_logo}}" alt="logo" viewBox="0 0 20 20">
                     <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
-                    <span class="Namei">r/community</span>
+                    <span class="Namei">r/ {{Community?.community_name }} </span>
                     <div  class="SubOnline">
                       <div style="flex: 1 1 0%;">
                       <div style="    font-size: 16px;
                       font-weight: 500;
                       line-height: 20px;" class="subscribersCnt">
-                        227k
+                        {{Community?.community_subscribers}}k
                       </div>
                       <div style=" font-size: 12px;font-weight: 500;line-height: 16px;display: inline-block;word-break: break-word; "> Subscribers</div>
                     </div>
@@ -54,7 +54,7 @@
             
                     </div>
                     <div class="Bio">
-                        This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.
+                      {{Community?.community_description}}
 </div>
 <button type="button" class="btn btn-primary btn-lg Subscribe">SUBSCRIBE</button>
 <button type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>

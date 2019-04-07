@@ -1,0 +1,45 @@
+body
+{
+  display:block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #1a1a1b;
+  font-family: IBMPlexSans,sans-serif;
+  padding: 765* 1236 ;
+}
+
+#tit
+{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 20px 0;
+}
+input[type=text]
+{
+    padding: 22px 12px 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 4px;
+    text-align: left;
+    background-color: #fcfcfb;
+    width:400px;
+    height: 48px;
+    display: inline-block;
+    box-sizing: border-box;
+
+}
+  
+  button {
+    background-color:#0079D3;
+    color: white;
+    text-emphasis: bold;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 170px;
+    height: 40px;
+    border-radius: 1mm;
+    text-align: center;
+  }

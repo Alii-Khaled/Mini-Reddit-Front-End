@@ -1,4 +1,16 @@
 {
+    "Community": [
+        {
+            "id":1,
+            "community_name": "community",
+            "community_subscribers": "227",
+            "community_logo": "http://i.imgur.com/sdO8tAw.png",
+            "community_description": "This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.",
+            "community_banner" : "http://i.imgur.com/sdO8tAw.png",
+            "community_rules" : "rules"
+
+        }
+    ],
     "communities": [
             {
                 "id": 1,

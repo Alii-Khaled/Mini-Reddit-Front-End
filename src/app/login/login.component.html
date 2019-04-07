@@ -24,10 +24,10 @@
           <br>
           <input type="password" placeholder="Password" formControlName="password" required>
           <br>
-          <button type="submit" id =signin (click)="login()">SIGN IN</button>
+          <button  type="submit" id =signin (click)="login()">SIGN IN</button>
           <br>
           <p id =forgot>
-          <a href="#"><strong>Forgot username</strong></a>
+          <a routerLink="./forgot-username" (click)="forgotUsername(template)"><strong>Forgot username</strong></a>
           .
           <a href="#"><strong>Forgot password</strong></a>
           </p>

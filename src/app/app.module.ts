@@ -4,7 +4,6 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { DropdownDirective } from './header/dropdown.directive';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
@@ -21,6 +20,13 @@ import { SignupComponent } from './signup/signup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AccountSettingComponent } from './account-setting/account-setting.component';
+import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
+import { ForgotUsernameComponent } from './forgot-username/forgot-username.component';
+
+
 
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -32,13 +38,16 @@ import {MatTabsModule} from '@angular/material/tabs';
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective,
     UserHeaderComponent,
     CommunityComponent,
     ProfileComponent,
     PostLayoutComponent,
     LoginComponent,
     SignupComponent,
+    UserSettingsComponent,
+    AccountSettingComponent,
+    ProfileSettingComponent,
+    ForgotUsernameComponent,
     /* ModalModule */
   ],
   imports: [
@@ -58,15 +67,12 @@ import {MatTabsModule} from '@angular/material/tabs';
     ReactiveFormsModule,
     FormsModule,
     MatMenuModule,
-    MatTabsModule
-
+    MatTabsModule,
+    RouterModule,
     // Http,
-    // Headers, 
-    // RequestOptions,
+    // Headers,
+    // RequestOptions
     // HttpHeaders,
-    
-   
-   
   ],
   providers: [],
   bootstrap: [AppComponent]

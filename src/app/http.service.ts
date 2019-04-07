@@ -3,8 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { catchError, tap} from 'rxjs/operators' ;
 
-import { UserCommunities } from './classes/user-communities';
-import { UserPublicInfo } from './classes/user-public-info';
+// import { UserCommunities } from './classes/user-communities';
+// import { UserPublicInfo } from './classes/user-public-info';
+// import {Communities} from './classes/community-info';
+import { UserCommunities } from './Profile_classes/user-communities';
+import { UserPublicInfo } from './Profile_classes/user-public-info';
 import {Communities} from './classes/community-info';
 import { PostsObjects } from './classes/posts-objects';
 
@@ -34,8 +37,10 @@ export class HttpService {
     /**
      * to get all community info 
      */
-    GetCommunityInfo(): Observable <Communities> {
-    return this.http.get<Communities>('http://localhost:3000/communities');
+    GetCommunityInfo(id:number): Observable <Communities> {
+    return this.http.get<Communities>('http://localhost:3000/Community/'+id);
+
+
     }
     /**
      * to send a request contains the user name & password
