@@ -50,7 +50,11 @@
           <button onclick="parent.location='localhost:4200'" mat-button id="giveAward" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
           
                 
-          <button onclick="parent.location='localhost:4200'" mat-button id="share" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
+          <button onclick="parent.location='localhost:4200'" mat-button [matMenuTriggerFor]="menu" id="share" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Item 1</button>
+              <button mat-menu-item>Item 2</button>
+            </mat-menu>
              
           <button onclick="parent.location='localhost:4200'" mat-button id="save" class="buttons" ><mat-icon>add_box</mat-icon> Save</button>
           
@@ -95,9 +99,13 @@
                <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon{{posts[i].post_id}}" class="buttons" ><mat-icon>{{posts[i].first_icon}}</mat-icon></button>
                <button onclick="parent.location='localhost:4200'" mat-button id="comment{{posts[i].post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts[i].comments_num}} Comments</button>
                <button onclick="parent.location='localhost:4200'" mat-button id="giveAward{{posts[i].post_id}}" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="share{{posts[i].post_id}}" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
+               <button mat-button [matMenuTriggerFor]="menu" id="share{{posts[i].post_id}}" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>Item 1</button>
+                  <button mat-menu-item>Item 2</button>
+                </mat-menu>
                <button onclick="parent.location='localhost:4200'" mat-button id="save{{posts[i].post_id}}" class="buttons" ><mat-icon>add_box</mat-icon> Save</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="hide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Hide</button>
+               <button mat-button id="hide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Hide</button>
                <button onclick="parent.location='localhost:4200'" mat-button id="report{{posts[i].post_id}}" class="buttons" ><mat-icon>flag</mat-icon> Report</button>
                
                    
@@ -107,6 +115,8 @@
          <br><br>
       </mat-card>
       </div>
+      
+      <div id="test">anything</div>
 
     </div>
 </div>

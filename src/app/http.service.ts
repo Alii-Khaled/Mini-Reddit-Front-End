@@ -5,7 +5,7 @@ import { catchError, tap} from 'rxjs/operators' ;
 
 import { UserCommunities } from './classes/user-communities';
 import { UserPublicInfo } from './classes/user-public-info';
-import{Communities} from './classes/community-info';
+import {Communities} from './classes/community-info';
 import { PostsObjects } from './classes/posts-objects';
 
 
