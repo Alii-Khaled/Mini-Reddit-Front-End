@@ -103,6 +103,16 @@ body{
     background-color: #EAEAEA;
 }
 
+.buttonsIcon{
+    font-size: 20px;
+    text-align: center;
+}
+
+mat-icon{
+    font-size: 20px;
+    text-align: center;
+}
+
 #test{
     font-size: 29px;
 }

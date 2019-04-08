@@ -63,7 +63,16 @@ export class PostsObjects {
                   }
                   }
 
-                  hidePost() {
+                  save() {
+                    this.saved = true;
+                  }
+                  unsave() {
+                    this.saved = false;
+                  }
+                  hide() {
                     this.hidden = true;
+                  }
+                  unhide() {
+                    this.hidden = false;
                   }
 }

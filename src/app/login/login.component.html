@@ -24,10 +24,10 @@
           <br>
           <input type="password" placeholder="Password" formControlName="password" required>
           <br>
-          <button  type="submit" id =signin (click)="login()">SIGN IN</button>
+          <button type="submit" id =signin (click)="login()">SIGN IN</button>
           <br>
           <p id =forgot>
-          <a routerLink="./forgot-username" (click)="forgotUsername(template)"><strong>Forgot username</strong></a>
+          <a href="#"><strong>Forgot username</strong></a>
           .
           <a href="#"><strong>Forgot password</strong></a>
           </p>
@@ -35,7 +35,7 @@
           <p>New to Reddit? <a href=# (click)="signup(template)"><strong>SIGN UP</strong></a> </p>
           <ng-template #template>
               <div class="modal-header">
-                <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>

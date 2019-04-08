@@ -11,9 +11,8 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   /**
-     * get all information needed in the database for the posts (id, comments, subscribed, ...)
+     * Get all information needed in the database for the posts (id, comments, subscribed, ...)
      */
-
     GetPostsObjects(): Observable<PostsObjects[]> {
       return this.http.get<PostsObjects[]>('http://localhost:3000/posts');
   }
