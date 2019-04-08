@@ -62,7 +62,6 @@ import { ProfileSettingComponent } from './profile-setting/profile-setting.compo
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-
     // Http,
     // Headers,
     // RequestOptions
