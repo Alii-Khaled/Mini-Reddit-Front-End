@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { text } from '@angular/core/src/render3';
 import { HttpService } from '../http.service';
 import { PostsObjects } from '../classes/posts-objects';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-post-layout',
@@ -17,7 +18,7 @@ export class PostLayoutComponent implements OnInit {
   /**
    * @param http for requests
    */
-  constructor(private http: HttpService) {
+  constructor(private postHttp: PostService) {
     // this.http.GetPostsObjects().subscribe((data: PostsObjects[]) => this.myPosts = data); 
   }
   /**
@@ -52,7 +53,7 @@ export class PostLayoutComponent implements OnInit {
     /**
      * to get posts objects information from the request
      */
-    this.http.GetPostsObjects().subscribe((data: PostsObjects[]) => this.posts = data);
+    this.postHttp.GetPostsObjects().subscribe((data: PostsObjects[]) => this.posts = data);
     // this.httpService.GetPostsObjects().subscribe(data => this.myPosts = data);
   }
 

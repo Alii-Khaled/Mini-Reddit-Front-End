@@ -52,6 +52,9 @@ export class LoginComponent implements OnInit {
   signup(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
+  forgotUsername(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 
 
 }

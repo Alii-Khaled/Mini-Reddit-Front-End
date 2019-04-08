@@ -54,5 +54,18 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  }
+  },
+  "description": "- Salma Mohammed ( Leader )\r - Mahmoud Mohammed\r - Muhanned Atef\r - Ahmed Adel\r - Amira Ahmed\r >>>>>>> 096bd6a0eda1c198a2ef1cdd4380af4f16d3d399",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alii-Khaled/Front-End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alii-Khaled/Front-End/issues"
+  },
+  "homepage": "https://github.com/Alii-Khaled/Front-End#readme"
 }

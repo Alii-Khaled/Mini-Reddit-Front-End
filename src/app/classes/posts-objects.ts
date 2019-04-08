@@ -62,4 +62,8 @@ export class PostsObjects {
                   this.downvoted = false;
                   }
                   }
+
+                  hidePost() {
+                    this.hidden = true;
+                  }
 }
