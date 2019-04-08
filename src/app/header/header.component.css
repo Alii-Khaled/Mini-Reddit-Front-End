@@ -26,13 +26,14 @@
 }
 #left-dropdown { 
     display: inline-block;
-      margin-left: 16px;
       border-style: solid;
+      margin-left: 16px;
       border-width: 2px;
       border-color: white;
       float: left;
       margin-top: 4px;
-      width: 210px;
+      width: 12.9375%;
+      min-width: 110px;
       border-radius: 5px;
       height: 40px;
 }

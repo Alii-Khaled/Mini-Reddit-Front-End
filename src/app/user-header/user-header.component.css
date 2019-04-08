@@ -28,13 +28,14 @@
 }
 #left-dropdown { 
     display: inline-block;
-      margin-left: 16px;
       border-style: solid;
+      margin-left: 16px;
       border-width: 2px;
       border-color: white;
       float: left;
       margin-top: 4px;
-      width: 210px;
+      width: 12.9375%;
+      min-width: 110px;
       border-radius: 5px;
       height: 40px;
 }
@@ -156,7 +157,7 @@
   /*right dropdown menu*/
   #right-dropdown {
       display: inline-block;
-      margin-left: 16px;
+      margin-left: 0px;
       border-style: solid;
       border-width: 2px;
       border-color: white;
@@ -201,10 +202,10 @@
 @media only screen and (max-width:1250px) and (min-width:1150px) {
     #search-bar {width: 300px;}
 }
-@media only screen and (max-width:1150px) and (min-width:950px) {
+@media only screen and (max-width:1150px) and (min-width:975px) {
     #search-bar {width: 200px;}
 }
-@media only screen and (max-width:950px) and (min-width:850px) {
+@media only screen and (max-width:975px) and (min-width:850px) {
     #search-bar {width: 100px;}
 }
 @media only screen and (max-width:850px) and (min-width:775px) {
@@ -217,18 +218,18 @@
     #search-bar {width: 100px;margin-left: 30px;}
     #left-dropdown {margin-left: 30px;}
 }
-@media only screen and (max-width:650px) and (min-width:500px) {
+@media only screen and (max-width:650px) and (min-width:520px) {
     .small-icons {display: none;}
     #search-bar {width: 50px; margin-left: 30px;}
-    #right-dropdown {margin-left: 10px; width: 150px;}
-    #left-dropdown {marginle-ft: 30px;}
+    #right-dropdown {margin-left: 10px; width: 170px;}
+    #left-dropdown {margin-left: 30px;}
 }
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:520px) {
     .small-icons {display: none;}
     #search-bar {width: 50px; margin-left: 5px;}
     #left-dropdown {margin-left: 10px;width: 30px;min-width: 65px;}
     #user-name-karma {display: none;}
-    #right-dropdown {margin-left: 5px; width: 75px;}
+    #right-dropdown {width: 75px;}
     #dropdown-left-name{display: none}
 }
 
