@@ -15,7 +15,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
-import { ProfileComponent } from '../profile/profile.component';
+import { ProfileComponent } from '../Profile_Components/profile/profile.component';
 import { CommunityComponent } from '../community/community.component';
 import { PostLayoutComponent } from '../post-layout/post-layout.component';
 

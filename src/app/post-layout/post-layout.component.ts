@@ -38,7 +38,9 @@ export class PostLayoutComponent implements OnInit {
     type: 'r/pics',
     link: 'https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/',
     upVoted: false,
-    downVoted: false
+    downVoted: false,
+    saved: 'false',
+    hidden: 'false'
   };
 
 
@@ -79,6 +81,20 @@ export class PostLayoutComponent implements OnInit {
       this.postObj.votes = this.postObj.votes + 1;
       this.postObj.downVoted = false;
     }
+  }
+
+  // dummyyyyyyyyy
+  save() {
+    this.postObj.saved = 'true';
+  }
+  unsave() {
+    this.postObj.saved = 'false';
+  }
+  hide() {
+    this.postObj.hidden = 'true';
+  }
+  unhide() {
+    this.postObj.hidden = 'false';
   }
 
 }
