@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(202, 208, 214);
+    margin-top: -20px;
+}
 #toolbar {
     height:40px;
     background-color: white;
@@ -25,7 +29,7 @@
     -webkit-text-fill-color: rgb(0, 121, 211);
 }
 .navbar-item:focus {
-    border-bottom-width: 2px;
+    border-bottom-width: 4px;
     border-style: solid;
     border-bottom-color: rgb(0, 121, 211);
     background-color: transparent;
@@ -51,13 +55,58 @@
 .dropdown-hidden-items {
     display: none;
 }
+.dropdown-hidden-items2 {
+    display: none;
+}
+
+#user-card {
+    width: 312px;
+    height: 267px;
+    border-radius: 5px;
+    background-color: white;
+    float: right;
+    margin-right: 25px;
+    margin-top: 25px;
+}
+
+#banner {
+    background-color:rgb(51, 168, 255);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+
+#pp {
+    margin-top:-60px;
+    margin-left:10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+}
+#new-post {
+    background-color: #0079d3;
+    -webkit-text-fill-color: white;
+    width: 288px;
+    height: auto;
+    text-align: center;
+    margin-left: 12px;
+}
+#new-post:hover {
+    background-color: #0889ec;
+}
+
+@media only screen and (max-width:960px) and (min-width:770px) {
+    #user-card {display: none;}
+}
 @media only screen and (max-width:770px) and (min-width:500px) {
     .dropdown-hidden-items {display: inline;}
     .asd {display: none;}
+    #user-card {display: none;}
 }
 @media only screen and (max-width:500px) {
     .dropdown-hidden-items {display: inline;}
     .asd {display: none;}
     .dropdown-hidden-items2 {display: inline;}
     .asd2 {display: none;}
+    #user-card {display: none;}
 }

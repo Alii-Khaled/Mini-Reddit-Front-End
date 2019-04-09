@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   constructor() { }
-
+  username = '7moda';
   ngOnInit() {
   }
-
 }

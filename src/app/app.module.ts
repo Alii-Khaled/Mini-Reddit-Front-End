@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './Profile_Components/profile/profile.component';
 import { PostLayoutComponent } from './post-layout/post-layout.component';
 import { MatButtonModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
@@ -30,6 +30,13 @@ import { ForgotUsernameComponent } from './forgot-username/forgot-username.compo
 
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import { OverviewComponent } from './Profile_Components/overview/overview.component';
+import { PostsComponent } from './Profile_Components/posts/posts.component';
+import { CommentsComponent } from './Profile_Components/comments/comments.component';
+import { SavedComponent } from './Profile_Components/saved/saved.component';
+import { HiddenComponent } from './Profile_Components/hidden/hidden.component';
+import { UpvotedComponent } from './Profile_Components/upvoted/upvoted.component';
+import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -48,6 +55,13 @@ import {MatTabsModule} from '@angular/material/tabs';
     AccountSettingComponent,
     ProfileSettingComponent,
     ForgotUsernameComponent,
+    OverviewComponent,
+    PostsComponent,
+    CommentsComponent,
+    SavedComponent,
+    HiddenComponent,
+    UpvotedComponent,
+    DownvotedComponent,
     /* ModalModule */
   ],
   imports: [
