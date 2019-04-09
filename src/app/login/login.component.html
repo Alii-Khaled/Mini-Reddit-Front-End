@@ -12,7 +12,7 @@
     
         
         <br><br>
-        <h4>Sign in</h4>
+        <h4 id="ssinn">Sign in</h4>
         <br><br>
     <form action="action_page.php"  [formGroup]="form" >
   
@@ -24,10 +24,18 @@
           <br>
           <input type="password" placeholder="Password" formControlName="password" required>
           <br>
-          <button  type="submit" id =signin (click)="login()">SIGN IN</button>
+          <button type="submit" id ="signin" (click)="login()">SIGN IN</button>
           <br>
           <p id =forgot>
-          <a routerLink="./forgot-username" (click)="forgotUsername(template)"><strong>Forgot username</strong></a>
+          <a (click)="forgotUsername(template)"><strong>Forgot username</strong></a>
+          <ng-template #template>
+            <div class="modal-header">
+              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <app-forgot-username></app-forgot-username>
+          </ng-template>
           .
           <a href="#"><strong>Forgot password</strong></a>
           </p>
