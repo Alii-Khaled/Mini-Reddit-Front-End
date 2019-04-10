@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../http.service';
+import { PostsObjects } from 'src/app/classes/posts-objects';
 
 @Component({
   selector: 'app-overview',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor() { }
+  posts: PostsObjects[];
+  /**
+   * @param http For requests
+   */
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
+    this.http.GetPostsObjects().subscribe((data: []) => this.posts = data);
   }
 
 }
