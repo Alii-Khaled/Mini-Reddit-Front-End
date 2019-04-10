@@ -15,54 +15,8 @@ export class PostLayoutComponent implements OnInit {
    */
   @Input()posts: PostsObjects;
 
-<<<<<<< HEAD
-  /**
-   * @param http for requests
-   */
-  constructor(private postHttp: PostService) {
-    // this.http.GetPostsObjects().subscribe((data: PostsObjects[]) => this.myPosts = data); 
-  }
-  /**
-   * variable to get image source
-   */
-  public imgsrc = 'https://i.pinimg.com/236x/cf/7f/83/cf7f83d1e0a270fa7f4e50a3bf1a62ee--emoticon-smile-face.jpg';
-  /**
-   * object of the first post which is the testing post
-   */
-  public postObj = {
-    votes: 5,
-    title: 'Skydiver catches pet bird mid-air',
-    srcImage: 'https://www.redditstatic.com/desktop2x/img/snoo_discovery@1x.png',
-    username: 'u/everyfatguyever',
-    date: '12 hours ago',
-    comments: 230,
-    type: 'r/pics',
-    link: 'https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/',
-    upVoted: false,
-    downVoted: false,
-    saved: 'false',
-    hidden: 'false'
-  };
-
-
-/**
- * these two lines are just for testing and applying child component
- */
-// tslint:disable-next-line: no-input-rename
-  @Input('parentData') public name;
-  @Output() public childEven = new EventEmitter();
-
-  ngOnInit() {
-    /**
-     * to get posts objects information from the request
-     */
-    this.postHttp.GetPostsObjects().subscribe((data: PostsObjects[]) => this.posts = data);
-    // this.httpService.GetPostsObjects().subscribe(data => this.myPosts = data);
-  }
-=======
   constructor() {}
   ngOnInit() { }
->>>>>>> profile
 
   /**
    * these are two functions for voting the first testing post
@@ -89,7 +43,7 @@ export class PostLayoutComponent implements OnInit {
   } */
 
   // dummyyyyyyyyy
-  save() {
+  /* save() {
     this.postObj.saved = 'true';
   }
   unsave() {
@@ -101,5 +55,5 @@ export class PostLayoutComponent implements OnInit {
   unhide() {
     this.postObj.hidden = 'false';
   }
-
+ */
 }

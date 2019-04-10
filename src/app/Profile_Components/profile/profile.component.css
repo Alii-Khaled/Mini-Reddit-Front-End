@@ -36,6 +36,14 @@ body {
     -webkit-text-fill-color: rgb(0, 121, 211);
     height: 45px;
 }
+.navbar-item:active {
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-bottom-color: rgb(0, 121, 211);
+    background-color: transparent;
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    height: 45px;
+}
 .fa-circle {
     font-size: 5px;
     margin-right: 1px;

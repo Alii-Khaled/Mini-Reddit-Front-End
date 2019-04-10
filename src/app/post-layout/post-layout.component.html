@@ -73,69 +73,6 @@
       </mat-card>
 
       
-<<<<<<< HEAD
-      <!-- make ngFor -->
-      <div *ngFor="let postsTemp of posts; index as i;">
-        <mat-divider *ngIf="posts[i].hidden === 'false'"></mat-divider>
-
-        <mat-card style="cursor:pointer" *ngIf="posts[i].hidden === 'false'">
-         <div class="division" id="first">
-           <div>
-             <button disableRipple mat-icon-button id="upVote{{posts[i].post_id}}" class="buttonUpVote" (click)="posts[i].up_voting()"><mat-icon>arrow_upward</mat-icon></button>
-             <h6 id="voteNum{{posts[i].post_id}}">{{posts[i].upvotes-posts[i].downvotes}}</h6>
-             <button disableRipple mat-icon-button id="downVote{{posts[i].post_id}}" class="buttonDownVote" (click)="posts[i].down_voting()"><mat-icon>arrow_downward</mat-icon></button>
-           </div>
-         </div>
-         <div class="division" id="second"><img src="{{posts[i].image}}" id="imgPost"></div>
-         <div class="division" id="third">
-           <div id="title" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">{{posts[i].title}}  <a id="postLink" href="https://{{posts[i].post_link}}">{{posts[i].post_link}}..<mat-icon>open_in_new</mat-icon></a></div>
-           <div id="userInfo">
-             <p>
-               <span class="hoving" id="postType" onclick="parent.location='https:'+'//www.reddit.com/'">
-                   {{posts[i].community}}</span> Posted by <span class="hoving">{{posts[i].username}}</span> <span class="hoving"> {{posts[i].date}}</span></p>
-             
-           </div>
-           
-               <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon{{posts[i].post_id}}" class="buttons" ><mat-icon>{{posts[i].first_icon}}</mat-icon></button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="comment{{posts[i].post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts[i].comments_num}} Comments</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="giveAward{{posts[i].post_id}}" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
-               <button mat-button [matMenuTriggerFor]="shareMenu" id="share{{posts[i].post_id}}" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
-                <mat-menu #shareMenu="matMenu">
-                  <button mat-menu-item class="buttons" id="copyLink{{posts[i].post_id}}"><mat-icon>link</mat-icon> Copy link</button>
-                  <button mat-menu-item class="buttons" id="crosspost{{posts[i].post_id}}"><mat-icon>share</mat-icon> Crosspost</button>
-                  <button mat-menu-item class="buttons" id="embed{{posts[i].post_id}}"><mat-icon>code</mat-icon> Embed</button>
-                </mat-menu> 
-               <button mat-button (click)="posts[i].save()" *ngIf="postObj.saved === 'false'; else elseBlockSave" id="save{{posts[i].post_id}}" class="buttons" ><mat-icon>add_box</mat-icon> Save</button>
-               <ng-template #elseBlockSave><button (click)="posts[i].unsave()" mat-button id="unSave{{posts[i].post_id}}" class="buttons" ><mat-icon>add</mat-icon> Unsave</button></ng-template>
-               <button mat-button (click)="posts[i].hide()" *ngIf="postObj.hidden === 'false'; else elseBlockHide" id="hide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Hide</button>
-               <ng-template #elseBlockHide><button mat-button (click)="posts[i].unhide()" id="unHide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Unhide</button></ng-template>
-               <button onclick="parent.location='localhost:4200'" mat-button id="report{{posts[i].post_id}}" class="buttons" ><mat-icon>flag</mat-icon> Report</button>
-               
-               
-         </div>
-         <br>
-         <br>
-         <br><br>
-      </mat-card>
-      </div>
-      
-      <div id="test">anything</div>
-
-      <button *ngIf="false; else elseBlock">Content to render when condition is true.</button>
-      <ng-template #elseBlock><button>Content to render when condition is false.</button> </ng-template>
-
-      <button *ngIf="false; else elseBlock2">true try</button>
-      <ng-template #elseBlock2><button>false try</button> </ng-template>
-
-      <button mat-button [matMenuTriggerFor]="menu2">click me</button>
-      <mat-menu #menu2="matMenu">
-        <button mat-menu-item class="buttons"><mat-icon>link</mat-icon> Copy link</button>
-        <button mat-menu-item class="buttons"><mat-icon>share</mat-icon> Crosspost</button>
-        <button mat-menu-item class="buttons"><mat-icon>code</mat-icon> Embed</button>
-      </mat-menu>
-
-=======
->>>>>>> profile
     </div>
 </div>
     
