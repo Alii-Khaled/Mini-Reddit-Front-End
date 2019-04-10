@@ -1,0 +1,42 @@
+#uset
+{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: rgb(28, 28, 28);
+    fill: white;
+    max-width: 1200px;
+    padding: 16px 20px 20px;
+    margin: 0px auto;
+    vertical-align: center;
+}
+#menubar
+{ width: 898px;
+  height: 20px;
+  padding: 0;
+  } 
+
+ul#menu, ul#menu li
+{ float: left;
+  margin: 0; 
+  padding: 0;}
+
+  ul#menu li
+  { list-style: none;}
+
+ul#menu li a
+{    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    color: rgb(28, 28, 28);
+    display: inline-block;
+    line-height: unset;
+    margin-right: 8px;
+  
+    padding: 15px 12px 12px;
+} 
+
+ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
+{   border-bottom: 3px solid rgb(0, 121, 211);
+    text-decoration-line: none
+}

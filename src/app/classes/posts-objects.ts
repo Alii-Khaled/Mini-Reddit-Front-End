@@ -18,6 +18,7 @@ export class PostsObjects {
     public downvoted: boolean;
     public first_icon: string;
     public post_link: string;
+    public votes: number;
 
     constructor(pId: number, pBody: string, pImage: string, pVideoUrl: string, pTitle: string, pUsername: string, pCommunity: string,
                 pSubscribed: boolean, pAuthorPhotoPath: string, pDownVotes: number, pUpVotes: number, pDate: string, pCommentsNum: number,
@@ -41,6 +42,7 @@ export class PostsObjects {
             this.downvoted = pDownVoted;
             this.first_icon = pFirstIcon;
             this.post_link = pPostLink;
+            this.votes = this.upvotes - this.downvotes;
         }
 
         OnclickUpVote() {
@@ -61,5 +63,18 @@ export class PostsObjects {
                   this.downvotes = this.downvotes - 1;
                   this.downvoted = false;
                   }
+                  }
+
+                  save() {
+                    this.saved = true;
+                  }
+                  unsave() {
+                    this.saved = false;
+                  }
+                  hide() {
+                    this.hidden = true;
+                  }
+                  unhide() {
+                    this.hidden = false;
                   }
 }

@@ -6,10 +6,10 @@
         <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png" width="106.65px" height="40px">
        </a>
     </div>
-    <div class="dropdown" id="left-dropdown"appDropdown>
-        <button class="btn btn-default dropdown-toggle" id="left-dropdown-button" type="button" (click)="OnclickLeftDropdown()">
-          <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px">
-          <b>Popular</b>
+    <div class="dropdown" id="left-dropdown">
+        <button data-toggle="dropdown"  class="dropdown-button" type="button" id="left-dropdown-button" role="button" (click)="OnclickLeftDropdown()">
+          <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px;float: left;">
+          <b id="dropdown-left-name" style="float:left">Popular</b>
         <span style="float: right;margin-top: 10px" class="caret" ></span>
         </button>
         <ul class="dropdown-menu" id="dropdown-menu-left">
@@ -24,7 +24,7 @@
           <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">
           Original content</a></li>
           <li class="dropdown-header">Subscriptions</li>
-          <li *ngFor="let com of MyCommunities"><a routerLink="/community/{{com.community_name}}" href="#"><img src="{{com?.community_logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+          <li *ngFor="let com of MyCommunities"><a routerLink="/community/{{com?.community_name}}" href="#"><img src="{{com?.community_logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
             {{com?.community_name}}</a></li>
           <li class="dropdown-header">Other</li>
           <li><a href="#"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
@@ -58,21 +58,22 @@
     <div class="small-icons" role="button" title="Creat post">
     <img src="https://cdn1.iconfinder.com/data/icons/action-states-vol-4-1/48/Sed-04-512.png" width="20px" height="20px" style="margin-top:6px">
     </div>
-    
-    <div class="dropdown" appDropdown id="right-dropdown" role="button">
+    <div class="dropdown" id="right-dropdown">
+    <button data-toggle="dropdown" class="dropdown-button" type="button" role="button" >
       <img src={{PublicInfo.photo_path}} width="25px"height="25px" style="float:left ;margin-left:10px;margin-top: 5px;border-radius: 5px;">
-      <div style="float:left; margin-left: 5px">
-        <b id="UserName">{{PublicInfo.username}}</b>
+      <div id="user-name-karma" style="float:left; margin-left: 5px">
+        <b id="UserName" style="float:left">{{PublicInfo.username}}</b>
         <br>
         <i class="fa fa-cog" style="color:coral; float: left;" aria-hidden="true"></i>
         <body style="float:left; margin-top: -3px; color:darkgray">{{PublicInfo.karma}} karma</body>
       </div> 
-      <i class="fa fa-caret-down" aria-hidden="true" style="float:right;margin-top:13px;margin-right: 10px;"></i>       
+      <i class="fa fa-caret-down" aria-hidden="true" style="float:right;margin-top:13px;margin-right: 10px;"></i> 
+    </button>      
         <ul class="dropdown-menu dropdown-menu-right" id="dropdown-menu-right">
           <li class="dropdown-header">My stuff</li>
-          <li><a routerLink="profile/{{PublicInfo.username}}" href="#"><img src="https://cdn1.iconfinder.com/data/icons/avatar-1-2/512/User2-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a routerLink="user/{{PublicInfo.username}}" href="#"><img src="https://cdn1.iconfinder.com/data/icons/avatar-1-2/512/User2-512.png" width="25" height="25" style="margin-right:15px">
           My profile</a></li>
-          <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Settings_black-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a routerLink="settings" href="#"><img src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Settings_black-512.png" width="25" height="25" style="margin-right:15px">
           User settings</a></li>
           <li class="dropdown-header">View opition</li>
           <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png" width="25" height="25" style="margin-right:15px">
