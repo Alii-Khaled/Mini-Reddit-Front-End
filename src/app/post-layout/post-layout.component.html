@@ -8,7 +8,6 @@
     <!-- this div is were all posts are put in and making all features for them -->
     <div id="posts">
       <br>
-<div class="PopularPosts">Popular posts</div>
       <!-- we make a mat-card for each post -->
       <!-- this first mat-card is just for trial to ensure making posts from a single object and getting all its attributes from it -->
       <mat-card style="cursor:pointer" *ngIf="postObj.hidden === 'false'">
@@ -17,7 +16,7 @@
           <div>
             <button disableRipple mat-icon-button id="upVote" class="buttonUpVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
                   
-            <h6 id="voteNum">{{postObj.votes}}</h6>
+            <h6 id="voteNum">{{posts.votes}}</h6>
             
             <button disableRipple mat-icon-button id="downVote" class="buttonDownVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
             
@@ -25,18 +24,18 @@
           
         </div>
         
-        <div class="division" id="second"><img src="{{imgsrc}}" id="imgPost"></div>
+        <div class="division" id="second"><img src="{{posts.image}}" id="imgPost"></div>
         
         <div class="division" id="third">
         
-          <div id="title" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">{{postObj.title}}  <a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg">https://i.redd.it/cw7oa5..<mat-icon>open_in_new</mat-icon></a></div>
+          <div id="title" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">{{posts.title}}  <a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg">https://i.redd.it/cw7oa5..<mat-icon>open_in_new</mat-icon></a></div>
         
           <div id="userInfo">
         
             <p>
         
               <span class="hoving" id="postType" onclick="parent.location='https:'+'//www.reddit.com/'">                        
-                {{postObj.type}}</span> Posted by <span class="hoving">{{postObj.username}}</span> {{postObj.date}}
+                {{posts.type}}</span> Posted by <span class="hoving">{{posts.username}}</span> {{posts.date}}
             </p>
                   
                 
@@ -44,7 +43,7 @@
           
           <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon" class="buttons" ><mat-icon>open_in_new</mat-icon></button>
           
-          <button onclick="parent.location='localhost:4200'" mat-button id="comment" class="buttons" ><mat-icon>mode_comment</mat-icon> {{postObj.comments}} Comments</button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="comment" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts.comments}} Comments</button>
           
                  
           <button onclick="parent.location='localhost:4200'" mat-button id="giveAward" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
@@ -74,6 +73,7 @@
       </mat-card>
 
       
+<<<<<<< HEAD
       <!-- make ngFor -->
       <div *ngFor="let postsTemp of posts; index as i;">
         <mat-divider *ngIf="posts[i].hidden === 'false'"></mat-divider>
@@ -134,6 +134,8 @@
         <button mat-menu-item class="buttons"><mat-icon>code</mat-icon> Embed</button>
       </mat-menu>
 
+=======
+>>>>>>> profile
     </div>
 </div>
     

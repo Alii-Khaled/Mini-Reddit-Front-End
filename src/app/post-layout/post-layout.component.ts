@@ -13,8 +13,9 @@ export class PostLayoutComponent implements OnInit {
   /**
    * object to receivearray of objects of posts information
    */
-  posts: PostsObjects[];
+  @Input()posts: PostsObjects;
 
+<<<<<<< HEAD
   /**
    * @param http for requests
    */
@@ -58,30 +59,34 @@ export class PostLayoutComponent implements OnInit {
     this.postHttp.GetPostsObjects().subscribe((data: PostsObjects[]) => this.posts = data);
     // this.httpService.GetPostsObjects().subscribe(data => this.myPosts = data);
   }
+=======
+  constructor() {}
+  ngOnInit() { }
+>>>>>>> profile
 
   /**
    * these are two functions for voting the first testing post
    * @param upVoted for knowing if it is clicked before or not
    */
-  upVote() {
-    if (this.postObj.upVoted === false) {
-      this.postObj.votes = this.postObj.votes + 1;
-      this.postObj.upVoted = true;
+ /*  upVote() {
+    if (this.post.upvoted === false) {
+      this.post.votes = this.post.votes + 1;
+      this.post.upvoted = true;
     } else {
-      this.postObj.votes = this.postObj.votes - 1;
-      this.postObj.upVoted = false;
+      this.post.votes = this.post.votes - 1;
+      this.post.upvoted = false;
     }
   }
 
   downVote() {
-    if (this.postObj.downVoted === false) {
-      this.postObj.votes = this.postObj.votes - 1;
-      this.postObj.downVoted = true;
+    if (this.post.downvoted === false) {
+      this.post.votes = this.postObj.votes - 1;
+      this.post.downvoted = true;
     } else {
-      this.postObj.votes = this.postObj.votes + 1;
-      this.postObj.downVoted = false;
+      this.post.votes = this.postObj.votes + 1;
+      this.post.downvoted = false;
     }
-  }
+  } */
 
   // dummyyyyyyyyy
   save() {
