@@ -10,7 +10,7 @@ import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PostLayoutComponent } from './post-layout/post-layout.component';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule,MatButtonToggleModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,6 +21,8 @@ import { SignupComponent } from './signup/signup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { EditCommunityComponent } from './edit-community/edit-community.component';
+
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -36,6 +38,7 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
     PostLayoutComponent,
     LoginComponent,
     SignupComponent,
+    EditCommunityComponent,
     /* ModalModule */
   ],
   imports: [
@@ -54,7 +57,7 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-
+    MatButtonToggleModule,
     // Http,
     // Headers, 
     // RequestOptions,

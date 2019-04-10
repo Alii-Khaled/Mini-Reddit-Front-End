@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required , Validators.minLength(3) , Validators.maxLength(20)],
       password: ['', Validators.required]
     });
+
    }
 
   ngOnInit() {
