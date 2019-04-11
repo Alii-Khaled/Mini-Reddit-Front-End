@@ -66,8 +66,8 @@
                 "comments_num": 6,
                 "saved": false,
                 "hidden": false,
-                "upvoted": true,
-                "downvoted": false,
+                "upvoted": false,
+                "downvoted": true,
                 "first_icon": "string",
                 "post_link": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             },
@@ -115,7 +115,40 @@
                 "first_icon": "string",
                 "post_link": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             }
+        ],
+        "comments": [
+            {
+                "comment_id": 1,
+                "body": "comment1",
+                "username": "ahmed",
+                "downvotes": 15,
+                "upvotes": 0,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true"
+            },
+            {
+                "comment_id": 2,
+                "body": "comment2",
+                "username": "ahmed",
+                "downvotes": 23,
+                "upvotes": 17,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "false"
+            },
+            {
+                "comment_id": 3,
+                "body": "comment3",
+                "username": "ahmed",
+                "downvotes": 31,
+                "upvotes": 78,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true"
+            }
         ]
+    
         
 
 }

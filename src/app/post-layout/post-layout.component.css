@@ -33,11 +33,11 @@
 
 
 .buttonUpVote:hover{
-    color: blue;
+    color: red;
 }
 
 .buttonDownVote:hover{
-    color: red;
+    color: blue;
 }
 
 #first{

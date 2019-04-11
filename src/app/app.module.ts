@@ -39,6 +39,7 @@ import { SavedComponent } from './Profile_Components/saved/saved.component';
 import { HiddenComponent } from './Profile_Components/hidden/hidden.component';
 import { UpvotedComponent } from './Profile_Components/upvoted/upvoted.component';
 import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.component';
+import { CommentsLayoutComponent } from './comments-layout/comments-layout.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -65,6 +66,7 @@ import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.com
     HiddenComponent,
     UpvotedComponent,
     DownvotedComponent,
+    CommentsLayoutComponent,
     /* ModalModule */
   ],
   imports: [
