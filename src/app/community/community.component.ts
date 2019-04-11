@@ -28,17 +28,20 @@ export class CommunityComponent implements OnInit {
 
     
    }
+   commId:number=1;
     btn;
    buttonName='SUBSCRIBE';
    
  
    toggleButton(SUBSCRIBED){
      if(SUBSCRIBED==false)
+     {
     this.buttonName='SUBSCRIBE';
-    
+    this.http.UnSubscribeCommunity(this.commId);
+     }
     else{
       this.buttonName='SUBSCRIBED' ;
-      
+      this.http.SubscribeCommunity(this.commId);
       
     }
   
@@ -53,6 +56,7 @@ export class CommunityComponent implements OnInit {
    /**
    * on initializing the page send a request to get current community info and display all info about it
    */
+  
   ngOnInit() {
      this.http.GetCommunityInfo(1).subscribe((data: Communities) => this.Community = data); 
    
