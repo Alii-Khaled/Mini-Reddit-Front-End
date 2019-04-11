@@ -14,6 +14,7 @@ export class PostLayoutComponent implements OnInit {
    * object to receivearray of objects of posts information
    */
   posts: PostsObjects[];
+  myPosts: PostsObjects[];
 
   /**
    * @param http for requests
@@ -43,6 +44,21 @@ export class PostLayoutComponent implements OnInit {
     hidden: 'false'
   };
 
+  public myPost = {
+    votes: 5,
+    title: 'Skydiver catches pet bird mid-air',
+    srcImage: 'https://www.redditstatic.com/desktop2x/img/snoo_discovery@1x.png',
+    username: 'u/everyfatguyever',
+    date: '12 hours ago',
+    comments: 230,
+    type: 'r/pics',
+    link: 'https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/',
+    upVoted: false,
+    downVoted: false,
+    saved: 'false',
+    hidden: 'false'
+  };
+
 
 /**
  * these two lines are just for testing and applying child component
@@ -57,6 +73,7 @@ export class PostLayoutComponent implements OnInit {
      */
     this.postHttp.GetPostsObjects().subscribe((data: PostsObjects[]) => this.posts = data);
     // this.httpService.GetPostsObjects().subscribe(data => this.myPosts = data);
+    this.postHttp.GetPostsObjects().subscribe((data: PostsObjects[]) => this.myPosts = data);
   }
 
   /**
@@ -84,8 +101,9 @@ export class PostLayoutComponent implements OnInit {
   }
 
   // dummyyyyyyyyy
-  save() {
+  save(i: number) {
     this.postObj.saved = 'true';
+    this.posts[i].saved = true;
   }
   unsave() {
     this.postObj.saved = 'false';
