@@ -1,0 +1,38 @@
+.comment-container{
+    width: 1100px;
+    height: auto;
+    font-size: 15px;
+    padding: 5px;
+    background-color: white;
+}
+
+.underlining:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+mat-icon{
+    font-size: 17px;
+}
+
+button{
+    background-color: transparent;
+    font-size: 13px;
+    color: grey;
+    width: auto;
+    float: left;
+    height: 30px;
+    padding: initial;
+}
+
+.lower{
+    height: 90px;
+}
+
+#more:hover{
+    background-color: #EAEAEA;
+}
+
+.others:hover{
+    color: black;
+}

@@ -6,6 +6,7 @@ import { UserCommunities } from './Profile_classes/user-communities';
 import { UserPublicInfo } from './Profile_classes/user-public-info';
 import {Communities} from './classes/community-info';
 import { PostsObjects } from './classes/posts-objects';
+import { comments } from './classes/comments';
 
 
 @Injectable({
@@ -48,6 +49,10 @@ export class HttpService {
 
     GetPostsObjects(): Observable<PostsObjects[]> {
         return this.http.get<PostsObjects[]>('http://localhost:3000/posts');
+    }
+
+    GetComments(): Observable<comments[]> {
+        return this.http.get<comments[]>('http://localhost:3000/comments');
     }
 
 

@@ -3,6 +3,7 @@ import { text } from '@angular/core/src/render3';
 import { HttpService } from '../http.service';
 import { PostsObjects } from '../classes/posts-objects';
 import { PostService } from '../post.service';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-post-layout',
@@ -16,7 +17,15 @@ export class PostLayoutComponent implements OnInit {
   @Input()posts: PostsObjects;
 
   constructor() {}
-  ngOnInit() { }
+  ngOnInit() {
+    // if (this.posts.upvoted === true) {
+    //   document.getElementById('upVote').style.color = 'red';
+    //   document.getElementById('voteNum').style.color = 'red';
+    // } else if (this.posts.downvoted === true) {
+    //   document.getElementById('downVote').style.color = 'blue';
+    //   document.getElementById('voteNum').style.color = 'blue';
+    // }
+   }
 
   /**
    * these are two functions for voting the first testing post
@@ -45,6 +54,7 @@ export class PostLayoutComponent implements OnInit {
   // dummyyyyyyyyy
   /* save() {
     this.postObj.saved = 'true';
+    this.posts[i].saved = true;
   }
   unsave() {
     this.postObj.saved = 'false';
@@ -56,4 +66,42 @@ export class PostLayoutComponent implements OnInit {
     this.postObj.hidden = 'false';
   }
  */
+upVote() {
+  // if(this.posts.downvoted === true){
+  //   // downvote();
+  // }
+  this.posts.downvoted = false;
+  if (this.posts.upvoted === true) {
+    this.posts.upvoted = false;
+    this.posts.upvotes --;
+  } else {
+    this.posts.upvoted = true;
+    this.posts.upvotes ++;
+  }
+}
+downVote() {
+  // if(this.posts.upvoted === true){
+  //   // upvote();
+  // }
+  this.posts.upvoted = false;
+  if (this.posts.downvoted === true) {
+    this.posts.downvoted = false;
+    this.posts.downvotes --;
+  } else {
+    this.posts.downvoted = true;
+    this.posts.downvotes ++;
+  }
+}
+unsave() {
+  this.posts.saved = !this.posts.saved;
+}
+save() {
+  this.posts.saved = true;
+}
+hide() {
+  this.posts.hidden = true;
+}
+unhide() {
+  this.posts.hidden = false;
+}
 }
