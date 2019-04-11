@@ -16,7 +16,7 @@ export class OverviewComponent implements OnInit {
   constructor(private http: HttpService) { }
 
   ngOnInit() {
-    this.http.GetPostsObjects().subscribe((data: []) => this.posts = data);
+    this.http.GetPostsObjects().subscribe((data: PostsObjects[]) => this.posts = data);
   }
 
 }

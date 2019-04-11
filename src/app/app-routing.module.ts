@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent},
   { path: 'forgot-username', component: ForgotUsernameComponent},
-  { path: 'user/:username', component: ProfileComponent },
   { path: './account-setting', component: AccountSettingComponent },
   { path: './profile-setting', component: ProfileSettingComponent },
   { path: './login', component: LoginComponent },
