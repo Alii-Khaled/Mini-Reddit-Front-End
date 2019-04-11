@@ -14,14 +14,21 @@
     <p>my comment {{comment}}</p>
     <!-- buttons -->
     <button mat-button id="reply" class="underlining">Reply</button>
-    <button mat-button id="share" class="underlining">Share</button>
-    <button mat-button id="more" class="buttons dropdown-toggle" data-toggle="dropdown"><mat-icon>linear_scale</mat-icon>
+    <button mat-button id="share" class="underlining dropdown-toggle" data-toggle="dropdown">Share
       <ul class="dropdown-menu dropdown-menu-right">
-        <li><a href="#" id="save"><mat-icon>bookmark</mat-icon> Save</a></li>
-        <li><a href="#"id="edit"><mat-icon>edit</mat-icon> Edit</a></li>
-        <li><a href="#" id="delete"><mat-icon>delete_forever</mat-icon> Delete</a></li>
+        <li><a href="#"><mat-icon>link</mat-icon> Copy link</a></li>
+        <li><a href="#"><mat-icon>code</mat-icon> Embed</a></li>
       </ul>
     </button>
+    <div>
+      <button mat-button id="more" class="dropdown-toggle" data-toggle="dropdown"><mat-icon>linear_scale</mat-icon>
+        <ul class="dropdown-menu dropdown-menu-right dropdown">
+          <li><a href="#" id="save"><mat-icon>bookmark</mat-icon> Save</a></li>
+          <li><a href="#"id="edit"><mat-icon>edit</mat-icon> Edit</a></li>
+          <li><a href="#" id="delete"><mat-icon>delete_forever</mat-icon> Delete</a></li>
+        </ul>
+      </button>
+    </div>
     <button mat-button id="remove" class="others"><mat-icon>delete</mat-icon> Remove</button>
     <button mat-button id="spam" class="others"><mat-icon>horizontal_split</mat-icon> Spam</button>
     <button mat-button class="others"><mat-icon>verified_user</mat-icon></button>
