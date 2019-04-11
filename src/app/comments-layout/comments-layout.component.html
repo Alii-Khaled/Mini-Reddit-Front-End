@@ -1,3 +1,23 @@
-<p>
-  comments-layout works!
-</p>
+<form class="comment-container">
+  <div class="upper" style="cursor: pointer;">
+    <p style="color:grey;"><mat-icon>mode_comment</mat-icon><span class="underlining" style="color:blue">user{{username}}</span>
+       commented on {{posts.title}} . <span class="underlining" style="font-weight: bold;color:black;">u/{{username}}</span>
+        . Posted by <span class="underlining">u/{{username}}</span>
+    </p>
+  </div>
+  <mat-divider></mat-divider>
+  <!-- second part -->
+  <div class="lower">
+    <p style="color:grey;"><span class="underlining" style="color:blue; font-weight: bold;">user{{username}}</span>
+      <mat-icon style="color:blue;">nature</mat-icon> n point . <span class="underlining">time{{time}}</span>
+    </p>
+    <p>my comment {{comment}}</p>
+    <!-- buttons -->
+    <button mat-button class="underlining">Reply</button>
+    <button mat-button class="underlining">Share</button>
+    <button mat-button><mat-icon>linear_scale</mat-icon></button>
+    <button mat-button><mat-icon>delete</mat-icon> Remove</button>
+    <button mat-button><mat-icon>horizontal_split</mat-icon> Spam</button>
+    <button mat-button><mat-icon>verified_user</mat-icon></button>
+  </div>
+</form>

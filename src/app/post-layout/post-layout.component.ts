@@ -67,9 +67,10 @@ export class PostLayoutComponent implements OnInit {
   }
  */
 upVote() {
-  if(this.posts.downvoted === true){
-    // downvote();
-  }
+  // if(this.posts.downvoted === true){
+  //   // downvote();
+  // }
+  this.posts.downvoted = false;
   if (this.posts.upvoted === true) {
     this.posts.upvoted = false;
     this.posts.upvotes --;
@@ -79,9 +80,10 @@ upVote() {
   }
 }
 downVote() {
-  if(this.posts.upvoted === true){
-    // upvote();
-  }
+  // if(this.posts.upvoted === true){
+  //   // upvote();
+  // }
+  this.posts.upvoted = false;
   if (this.posts.downvoted === true) {
     this.posts.downvoted = false;
     this.posts.downvotes --;

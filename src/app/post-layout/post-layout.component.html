@@ -2,7 +2,6 @@
 
 <div>
       <form class="post-container" style="cursor:pointer">
-        <!--  -->
         <div class="division" id="first">
           <div>
             <button disableRipple mat-icon-button id="upVote{{posts.post_id}}" class="buttonUpVote" (click)="upVote()" [ngStyle]="{'color': posts.upvoted? 'red' : ''}"><mat-icon >arrow_upward</mat-icon></button>
@@ -27,12 +26,13 @@
           
                  
           <button onclick="parent.location='localhost:4200'" mat-button id="giveAward{{posts.post_id}}" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
-          <button mat-button [matMenuTriggerFor]="shareMenu" id="share{{posts.post_id}}" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
-            <mat-menu #shareMenu="matMenu">
-              <button mat-menu-item class="buttons" id="copyLink{{posts.post_id}}"><mat-icon>link</mat-icon> Copy link</button>
-              <button mat-menu-item class="buttons" id="crosspost{{posts.post_id}}"><mat-icon>share</mat-icon> Crosspost</button>
-              <button mat-menu-item class="buttons" id="embed{{posts.post_id}}"><mat-icon>code</mat-icon> Embed</button>
-            </mat-menu>
+          <button mat-button id="share{{posts.post_id}}" class="buttons dropdown-toggle" data-toggle="dropdown"><mat-icon>reply</mat-icon> Share
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#"><mat-icon>link</mat-icon> Copy link</a></li>
+            <li><a href="#"><mat-icon>share</mat-icon> Crosspost</a></li>
+            <li><a href="#"><mat-icon>code</mat-icon> Embed</a></li>
+            </ul>
+          </button>
           <button mat-button (click)="save()" *ngIf="posts.saved === false; else elseBlockSave" id="save{{posts.post_id}}" class="buttons" ><mat-icon>bookmark_border</mat-icon> Save</button>
           <ng-template #elseBlockSave><button (click)="unsave()" mat-button id="unSave{{posts.post_id}}" class="buttons" ><mat-icon>bookmark</mat-icon> Unsave</button></ng-template>
           <button mat-button (click)="hide()" *ngIf="posts.hidden === false; else elseBlockHide" id="hide{{posts.post_id}}" class="buttons" ><mat-icon>block</mat-icon> Hide</button>

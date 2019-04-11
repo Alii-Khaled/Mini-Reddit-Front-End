@@ -1,0 +1,21 @@
+.comment-container{
+    width: 1100px;
+    height: auto;
+    font-size: 15px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.underlining:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+mat-icon{
+    font-size: 15px;
+}
+
+button{
+    background-color: transparent;
+    font-size: 13px;
+}
