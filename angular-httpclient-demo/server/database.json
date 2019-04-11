@@ -46,6 +46,75 @@
                 "photo_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
                 "cover_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             }
+        ],
+        "posts": [
+            {
+
+                "id": 1,
+                "post_id": 1,
+                "body": "string",
+                "video_url": "none",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "title": "string",
+                "username": "7moda",
+                "community": "none",
+                "subscribed": true,
+                "author_photo_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "downvotes": 5,
+                "upvotes": 7,
+                "date": "April 7,2019",
+                "comments_num": 6,
+                "saved": false,
+                "hidden": false,
+                "upvoted": true,
+                "downvoted": false,
+                "first_icon": "string",
+                "post_link": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
+            },
+            {
+                "id": 2,
+                "post_id": 2,
+                "body": "string",
+                "video_url": "none",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "title": "string",
+                "username": "7moda",
+                "community": "none",
+                "subscribed": true,
+                "author_photo_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "downvotes": 5,
+                "upvotes": 7,
+                "date": "April 7,2019",
+                "comments_num": 6,
+                "saved": false,
+                "hidden": false,
+                "upvoted": true,
+                "downvoted": false,
+                "first_icon": "string",
+                "post_link": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
+            },
+            {
+                "id": 3,
+                "post_id": 3,
+                "body": "string",
+                "video_url": "none",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "title": "string",
+                "username": "7moda",
+                "community": "none",
+                "subscribed": true,
+                "author_photo_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "downvotes": 5,
+                "upvotes": 7,
+                "date": "April 7,2019",
+                "comments_num": 6,
+                "saved": false,
+                "hidden": false,
+                "upvoted": true,
+                "downvoted": false,
+                "first_icon": "string",
+                "post_link": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
+            }
         ]
         
 

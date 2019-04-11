@@ -7,9 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './Profile_Components/profile/profile.component';
 import { PostLayoutComponent } from './post-layout/post-layout.component';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule,MatButtonToggleModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,6 +20,8 @@ import { SignupComponent } from './signup/signup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { EditCommunityComponent } from './edit-community/edit-community.component';
+
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
@@ -30,6 +32,13 @@ import { ForgotUsernameComponent } from './forgot-username/forgot-username.compo
 
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import { OverviewComponent } from './Profile_Components/overview/overview.component';
+import { PostsComponent } from './Profile_Components/posts/posts.component';
+import { CommentsComponent } from './Profile_Components/comments/comments.component';
+import { SavedComponent } from './Profile_Components/saved/saved.component';
+import { HiddenComponent } from './Profile_Components/hidden/hidden.component';
+import { UpvotedComponent } from './Profile_Components/upvoted/upvoted.component';
+import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -44,10 +53,18 @@ import {MatTabsModule} from '@angular/material/tabs';
     PostLayoutComponent,
     LoginComponent,
     SignupComponent,
+    EditCommunityComponent,
     UserSettingsComponent,
     AccountSettingComponent,
     ProfileSettingComponent,
     ForgotUsernameComponent,
+    OverviewComponent,
+    PostsComponent,
+    CommentsComponent,
+    SavedComponent,
+    HiddenComponent,
+    UpvotedComponent,
+    DownvotedComponent,
     /* ModalModule */
   ],
   imports: [
@@ -66,6 +83,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    MatButtonToggleModule,
     MatMenuModule,
     MatTabsModule,
     RouterModule,

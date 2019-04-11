@@ -4,7 +4,7 @@ import {HttpService} from '../http.service';
 import {FormBuilder, FormControlName , FormGroup , Validator, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
-import { MatDialogRef } from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

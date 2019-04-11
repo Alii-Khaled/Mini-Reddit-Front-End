@@ -8,7 +8,6 @@
     <!-- this div is were all posts are put in and making all features for them -->
     <div id="posts">
       <br>
-<div class="PopularPosts">Popular posts</div>
       <!-- we make a mat-card for each post -->
       <!-- this first mat-card is just for trial to ensure making posts from a single object and getting all its attributes from it -->
       <mat-card style="cursor:pointer" *ngIf="postObj.hidden === 'false'">
@@ -16,21 +15,26 @@
         <div class="division" id="first">
           <div>
             <button disableRipple mat-icon-button id="upVote" class="buttonUpVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
-            <h6 id="voteNum">{{postObj.votes}}</h6>
+                  
+            <h6 id="voteNum">{{posts.votes}}</h6>
+            
             <button disableRipple mat-icon-button id="downVote" class="buttonDownVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
           </div>
         </div>
        <div class="division" id="second"><img src="{{imgsrc}}" id="imgPost"></div>
         <div class="division" id="third">
-        <div id="title" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">{{postObj.title}}  <a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
+        <div id="title" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">{{posts.title}}  <a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
           <div id="userInfo">
             <p>
               <span class="hoving" id="postType" onclick="parent.location='https:'+'//www.reddit.com/'">                        
-                {{postObj.type}}</span> Posted by <span class="hoving">{{postObj.username}}</span> {{postObj.date}}
+                {{posts.type}}</span> Posted by <span class="hoving">{{posts.username}}</span> {{posts.date}}
             </p>
           </div>
           <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon" class="buttons" ><mat-icon>open_in_new</mat-icon></button>
-          <button onclick="parent.location='localhost:4200'" mat-button id="comment" class="buttons" ><mat-icon>mode_comment</mat-icon> {{postObj.comments}} Comments</button>
+          
+          <button onclick="parent.location='localhost:4200'" mat-button id="comment" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts.comments}} Comments</button>
+          
+                 
           <button onclick="parent.location='localhost:4200'" mat-button id="giveAward" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
           <button mat-button [matMenuTriggerFor]="menu" id="share" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
             <mat-menu #menu="matMenu">
@@ -48,131 +52,6 @@
         <br><br><br><br>
       </mat-card>
       
-      <!-- make ngFor -->
-      <div *ngFor="let postsTemp of posts; index as i;">
-        <mat-divider *ngIf="posts[i].hidden === 'false'"></mat-divider>
-
-        <mat-card style="cursor:pointer" *ngIf="posts[i].hidden === 'false'">
-         <div class="division" id="first">
-           <div>
-             <button disableRipple mat-icon-button id="upVote{{posts[i].post_id}}" class="buttonUpVote" (click)="posts[i].up_voting()"><mat-icon>arrow_upward</mat-icon></button>
-             <h6 id="voteNum{{posts[i].post_id}}">{{posts[i].upvotes-posts[i].downvotes}}</h6>
-             <button disableRipple mat-icon-button id="downVote{{posts[i].post_id}}" class="buttonDownVote" (click)="posts[i].down_voting()"><mat-icon>arrow_downward</mat-icon></button>
-           </div>
-         </div>
-         <div class="division" id="second"><img src="{{posts[i].image}}" id="imgPost"></div>
-         <div class="division" id="third">
-           <div id="title" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">{{posts[i].title}}  <a id="postLink" href="https://{{posts[i].post_link}}"></a></div>
-           <div id="userInfo">
-             <p>
-               <span class="hoving" id="postType" onclick="parent.location='https:'+'//www.reddit.com/'">
-                   {{posts[i].community}}</span> Posted by <span class="hoving">{{posts[i].username}}</span> <span class="hoving"> {{posts[i].date}}</span></p>
-             
-           </div>
-           
-               <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon{{posts[i].post_id}}" class="buttons" ><mat-icon>{{posts[i].first_icon}}</mat-icon></button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="comment{{posts[i].post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts[i].comments_num}} Comments</button>
-               <button onclick="parent.location='localhost:4200'" mat-button id="giveAward{{posts[i].post_id}}" class="buttons" ><mat-icon>stars</mat-icon> Give Award</button>
-               <button mat-button [matMenuTriggerFor]="shareMenu" id="share{{posts[i].post_id}}" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
-                <mat-menu #shareMenu="matMenu">
-                  <button mat-menu-item class="buttons" id="copyLink{{posts[i].post_id}}"><mat-icon>link</mat-icon> Copy link</button>
-                  <button mat-menu-item class="buttons" id="crosspost{{posts[i].post_id}}"><mat-icon>share</mat-icon> Crosspost</button>
-                  <button mat-menu-item class="buttons" id="embed{{posts[i].post_id}}"><mat-icon>code</mat-icon> Embed</button>
-                </mat-menu> 
-               <button mat-button (click)="posts[i].save()" *ngIf="posts[i].saved === 'false'; else elseBlockSave" id="save{{posts[i].post_id}}" class="buttons" ><mat-icon>bookmark_border</mat-icon> Save</button>
-               <ng-template #elseBlockSave><button (click)="posts[i].unsave()" mat-button id="unSave{{posts[i].post_id}}" class="buttons" ><mat-icon>bookmark</mat-icon> Unsave</button></ng-template>
-               <button mat-button (click)="posts[i].hide()" *ngIf="posts[i].hidden === 'false'; else elseBlockHide" id="hide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Hide</button>
-               <ng-template #elseBlockHide><button mat-button (click)="posts[i].unhide()" id="unHide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Unhide</button></ng-template>
-               <button onclick="parent.location='localhost:4200'" mat-button id="report{{posts[i].post_id}}" class="buttons" ><mat-icon>flag</mat-icon> Report</button>
-               
-               
-         </div>
-         <br>
-         <br>
-         <br><br>
-      </mat-card>
-      </div>
-      <!-- end div of the ngFor posts -->
-
-      <br><br><br>
-
-      <!-- my posts -->
-      <div *ngFor="let postsTemp of myPosts; index as i;">
-      <!-- a post that I have posted -->
-      <mat-divider *ngIf="myPosts[i].hidden === 'false'"></mat-divider>
-        <mat-card style="cursor:pointer" *ngIf="myPosts[i].hidden === 'false'">
-          <!-- first part (votes) -->
-          <div class="division" id="first">
-            <div>
-              <button disableRipple mat-icon-button id="upVote" class="buttonUpVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
-              <h6 id="voteNum">{{myPosts[i].upvotes-myPosts[i].downvotes}}</h6>
-              <button disableRipple mat-icon-button id="downVote" class="buttonDownVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
-            </div>
-          </div>
-          <!-- second part (pic) -->
-        <div class="division" id="second"><img src="{{myPosts[i].image}}" id="imgPost"></div>
-        <!-- third part -->
-          <div class="division" id="third">
-            <!-- title -->
-          <div id="title" onclick="parent.location='https://www.reddit.com/r/MovieDetails/comments/b2yiz6/in_blade_runner_2049_2017_replicants_can_be/'">{{myPosts[i].title}}  <a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
-            <!-- second line -->
-            <div id="userInfo">
-              <p>
-                <span class="hoving" id="postCommunity{{myPosts[i].post_id}}" onclick="parent.location='https:'+'//www.reddit.com/'">                        
-                  {{myPosts[i].community}}</span><button mat-button id="add" color="primary" style="padding:initial;"><mat-icon>add_box</mat-icon></button>
-                  Posted by <span class="hoving">{{myPosts[i].username}}</span> {{myPosts[i].date}}
-              </p>
-            </div>
-            <!-- buttons -->
-            <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon{{myPosts[i].post_id}}" class="buttons" ><mat-icon>open_in_new</mat-icon></button>
-            <button onclick="parent.location='localhost:4200'" mat-button id="comment{{myPosts[i].post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{myPosts[i].comments_num}} Comments</button>
-            <button mat-button [matMenuTriggerFor]="share" id="share{{myPosts[i].post_id}}" class="buttons" ><mat-icon>reply</mat-icon> Share</button>
-              <mat-menu #share="matMenu">
-                <button mat-menu-item class="buttons" id="copyLink{{myPosts[i].post_id}}"><mat-icon>link</mat-icon> Copy link</button>
-                <button mat-menu-item class="buttons" id="crosspost{{myPosts[i].post_id}}"><mat-icon>share</mat-icon> Crosspost</button>
-                <button mat-menu-item class="buttons" id="embed{{myPosts[i].post_id}}"><mat-icon>code</mat-icon> Embed</button>
-              </mat-menu>
-            <button mat-button id="approve{{myPosts[i].post_id}}" class="buttons" ><mat-icon>done</mat-icon> Approve</button>
-            <button mat-button id="remove{{myPosts[i].post_id}}" class="buttons" ><mat-icon>delete</mat-icon> Remove</button>
-            <button mat-button id="spam{{myPosts[i].post_id}}" class="buttons" ><mat-icon>horizontal_split</mat-icon> Spam</button>
-            <button mat-button id="award{{myPosts[i].post_id}}" class="buttons" ><mat-icon>verified_user</mat-icon></button>
-            <button mat-button id="more{{myPosts[i].post_id}}" [matMenuTriggerFor]="more" class="buttons" ><mat-icon>linear_scale</mat-icon></button>
-            <mat-menu #more="matMenu">
-                <button mat-menu-item id="edit{{myPosts[i].post_id}}" class="buttons" ><mat-icon>edit</mat-icon> Edit Post</button>
-                <!-- <button mat-button (click)="posts[i].save()" *ngIf="postObj.saved === 'false'; else elseBlockSave" id="save{{posts[i].post_id}}" class="buttons" ><mat-icon>bookmark_border</mat-icon> Save</button>
-                <ng-template #elseBlockSave><button (click)="posts[i].unsave()" mat-button id="unSave{{posts[i].post_id}}" class="buttons" ><mat-icon>bookmark</mat-icon> Unsave</button></ng-template>
-                <button mat-button (click)="posts[i].hide()" *ngIf="postObj.hidden === 'false'; else elseBlockHide" id="hide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Hide</button>
-                <ng-template #elseBlockHide><button mat-button (click)="posts[i].unhide()" id="unHide{{posts[i].post_id}}" class="buttons" ><mat-icon>block</mat-icon> Unhide</button></ng-template> -->
-                <button mat-menu-item id="delete{{myPosts[i].post_id}}" class="buttons" ><mat-icon>delete_forever</mat-icon> Delete</button>
-            </mat-menu>
-            <!-- <button mat-button (click)="save()" *ngIf="postObj.saved === 'false'; else elseBlockSave" id="save" class="buttons" ><mat-icon>add_box</mat-icon> Save</button>
-            <ng-template #elseBlockSave><button (click)="unsave()" mat-button id="unSave" class="buttons" ><mat-icon>add</mat-icon> Unsave</button></ng-template>
-            <button mat-button (click)="hide()" *ngIf="postObj.hidden === 'false'; else elseBlockHide" id="hide" class="buttons" ><mat-icon>block</mat-icon> Hide</button>
-            <ng-template #elseBlockHide><button mat-button (click)="unhide()" id="unHide" class="buttons" ><mat-icon>block</mat-icon> Unhide</button></ng-template>
-            <button onclick="parent.location='localhost:4200'" mat-button id="report" class="buttons" ><mat-icon>flag</mat-icon> Report</button> -->
-            <br>
-            <br>
-          </div>
-          <br><br><br><br><br>
-        </mat-card>
-      </div>
-      <!-- end my post -->
-      
-      <div id="test">anything</div>
-
-      <button *ngIf="false; else elseBlock">Content to render when condition is true.</button>
-      <ng-template #elseBlock><button>Content to render when condition is false.</button> </ng-template>
-
-      <button *ngIf="false; else elseBlock2">true try</button>
-      <ng-template #elseBlock2><button>false try</button> </ng-template>
-
-      <button mat-button [matMenuTriggerFor]="menu2">click me</button>
-      <mat-menu #menu2="matMenu">
-        <button mat-menu-item class="buttons"><mat-icon>link</mat-icon> Copy link</button>
-        <button mat-menu-item class="buttons"><mat-icon>share</mat-icon> Crosspost</button>
-        <button mat-menu-item class="buttons"><mat-icon>code</mat-icon> Embed</button>
-      </mat-menu>
-
     </div>
 </div>
     

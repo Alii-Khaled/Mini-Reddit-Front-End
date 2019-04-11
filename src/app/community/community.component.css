@@ -50,12 +50,12 @@ width: 100%;
     z-index: 40;
 }
 
-.CommLogoNamei{
+/* .CommLogoNamei{
  
   
     
     
-}
+} */
 .Namei{
     color: black;
 margin-top: 10px;
@@ -79,6 +79,7 @@ display: inline-block;
     display: block;
     width: 100%;
   margin-top: 5px;
+  
     
 }
 .CreatePost{
@@ -221,8 +222,29 @@ height: 40px;
     line-height: 21px;
    
     overflow-wrap: break-word
-
 }
+
+.mat-button-toggle{
+    background-color: #0179D3;
+    width: 287PX;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    height:33px;
+    
+}
+.mat-button-toggle-checked:hover {
+    background-color: red;
+    
+  }
+  
+ 
 @media screen and (max-width: 1235px) {
     .All {
         margin-left: 30px;
