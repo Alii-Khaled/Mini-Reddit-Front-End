@@ -24,14 +24,11 @@
           <br>
           <input type="password" placeholder="Password" formControlName="password" required>
           <br>
-          <div *ngIf="disabld; then thenBlock else elseBlock"></div>
-          <ng-template #thenBlock><button disabled>SIGN IN</button></ng-template>
-          <ng-template #elseBlock><button type="submit" id ="signin" (click)="login()">SIGN IN</button></ng-template>
-          
+          <button type="submit" id ="signin" (click)="login()">SIGN IN</button>
           <br>
           <p id =forgot>
           <a (click)="forgotUsername(template)"><strong>Forgot username</strong></a>
-          <ng-template #template2>
+          <ng-template #template>
             <div class="modal-header">
               <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
                 <span aria-hidden="true">&times;</span>
