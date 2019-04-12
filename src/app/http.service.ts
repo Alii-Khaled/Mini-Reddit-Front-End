@@ -14,48 +14,18 @@ import { comments } from './classes/comments';
 })
 export class HttpService {
     constructor(private http: HttpClient) {}
+
+    /**
+     * To get all community info
+     */
+    GetCommunityInfo(id: number): Observable <Communities> {
+        return this.http.get<Communities>('http://localhost:3000/Community/' + id);
+
+
+        }
     GetCommNameAndLogo(): Observable<any> {
         return this.http.get('http://localhost:3000/communities');
     }
-    /**
-     * to get all communities subscribed by this user
-     */
-    GetMyCommunities(): Observable<UserCommunities[]> {
-        return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
-    }
-    /**
-     * get user public info like (karma,name,username,...)
-     * @param id now we use id to get specific user but when connect to back-end we will use username
-     */
-    GetUserPublicInfo(id: number): Observable<UserPublicInfo> {
-        return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + id);
-    }
-
-    /**
-     * to get all community info
-     */
-    GetCommunityInfo(id: number): Observable <Communities> {
-    return this.http.get<Communities>('http://localhost:3000/Community/' + id);
-
-
-    }
-    /**
-     * to send a request contains the user name & password
-     */
-
-    /**
-     * get all information needed in the database for the posts (id, comments, subscribed, ...)
-     */
-
-    GetPostsObjects(): Observable<PostsObjects[]> {
-        return this.http.get<PostsObjects[]>('http://localhost:3000/posts');
-    }
-
-    GetComments(): Observable<comments[]> {
-        return this.http.get<comments[]>('http://localhost:3000/comments');
-    }
-
-
     // login(username: string , password: string): Observable<any> {
     //     return this.http.post( 'request', {username, password});
     // }
@@ -99,21 +69,21 @@ export class HttpService {
     }
 
     RemoveCommunity(id: number): Observable <any> {
-       
+
         const headers = new HttpHeaders ({
             "Accept": "application/json",
             "Authorization": "Bearer: {token}",
             "Content-Type": "application/json",
         });
-        
+
         const body = {
             "community_id": id
         };
 
 
-        return this.http.post<any>('http://localhost/api/auth/removeCommunity',body ,{ headers }); 
+        return this.http.post<any>('http://localhost/api/auth/removeCommunity',body ,{ headers });
 
-    
+
         }
         SubscribeCommunity(id: number): Observable <any> {
             let headers = {
@@ -121,11 +91,11 @@ export class HttpService {
                 "Authorization": "Bearer: {token}",
                 "Content-Type": "application/json",
             }
-            
+
             let body = {
                 "community_id": id
             }
-            return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers }); 
+            return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers });
         }
 
        UnSubscribeCommunity(id: number): Observable <any> {
@@ -134,20 +104,20 @@ export class HttpService {
                 "Authorization": "Bearer: {token}",
                 "Content-Type": "application/json",
             }
-            
+
             let body = {
                 "community_id": id
             }
-            return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers }); 
-        } 
-        
+            return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers });
+        }
+
         editCommunity(id:number ,rules: string , bio: string, banner: string, logo: string){
             let headers = {
                 "Accept": "application/json",
                 "Authorization": "Bearer: {token}",
                 "Content-Type": "application/json",
             }
-            
+
             let body = {
                 "community_id": id,
                 "rules_content": rules,

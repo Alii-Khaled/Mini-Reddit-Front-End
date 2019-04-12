@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsObjects } from 'src/app/classes/posts-objects';
+import { ProfileHttpService } from '../profile.http.service';
 
 @Component({
   selector: 'app-hidden',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HiddenComponent implements OnInit {
 
-  constructor() { }
+  hidden: PostsObjects[];
+  /**
+   * @param http For requests
+   */
+  constructor(private http: ProfileHttpService) { }
 
   ngOnInit() {
+    /**
+     * Send request to get hidden psosts
+     */
+    this.http.GetHidden().subscribe((data: PostsObjects[]) => this.hidden = data);
   }
 
 }

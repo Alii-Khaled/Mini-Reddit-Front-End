@@ -22,7 +22,7 @@ export class EditCommunityComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.GetCommunityInfo(1).subscribe((data: Communities) => this.Community = data); 
+  // this.http.GetCommunityInfo(1).subscribe((data: Communities) => this.Community = data); 
   // this.commname = this.Community.community_name ;
   // this.rules =this.Community.community_rules;
   // this.bio =this.Community.community_description ;

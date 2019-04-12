@@ -1,39 +1,39 @@
 /**
- * this class to store user public info
+ * This class to store user public info
  */
 export class UserPublicInfo {
     /**
-     * username of this user
+     * Username of this user
      */
     public username: string;
     /**
-     * karma of this user
+     * Karma of this user
      */
     public karma: number;
     /**
-     * birth day of this user
+     * Birth day of this user
      */
 // tslint:disable-next-line: variable-name
     public cake_day: string;
     /**
-     * about for this user
+     * About for this user
      */
     public about: string;
     /**
-     * profile pic URL of this user
+     * Profile pic URL of this user
      */
 // tslint:disable-next-line: variable-name
     public photo_path: string;
     /**
-     * banner pic URL of this user
+     * Banner pic URL of this user
      */
     public cover_path: string;
     /**
-     * user display name
+     * User display name
      */
     public name:string;
     /**
-     * constructor takes every value of the class and assign it to this user
+     * Constructor takes every value of the class and assign it to this user
      */
     constructor(username: string, karma: number,cake_day: string,about: string,photo_path: string,cover_path: string, name: string) {
         this.username = username;

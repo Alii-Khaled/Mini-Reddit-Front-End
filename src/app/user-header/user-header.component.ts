@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserCommunities } from 'src/app/Profile_classes/user-communities';
-import { HttpService } from '../http.service';
 import { ActivatedRoute } from '@angular/router';
 import { UserPublicInfo } from 'src/app/Profile_classes/user-public-info';
+import { ProfileHttpService } from '../Profile_Components/profile.http.service';
 
 @Component({
   selector: 'app-user-header',
@@ -23,7 +23,7 @@ export class UserHeaderComponent implements OnInit {
    * @param http For requests
    * @param route To use it when we want send parameters for current user (username) in the request
    */
-  constructor(private http: HttpService, private route: ActivatedRoute) { }
+  constructor(private http: ProfileHttpService, private route: ActivatedRoute) { }
   /**
    * On initializing the page send a request to get current user public info and display his/her name and karma
    * In the right dropdown
