@@ -18,12 +18,17 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   modalRef: BsModalRef;
   disabld: boolean;
+  myInput = document.getElementById('UName');
+  length = document.getElementById('length');
   constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
     this.form = this.fb.group({
-      username: ['', Validators.required , Validators.minLength(3) , Validators.maxLength(20)],
+      username: ['', Validators.required ,
+                     Validators.minLength(3) ,
+                     Validators.maxLength(20),
+                     Validators.pattern('{3,20}')],
       password: ['', Validators.required]
     });
-    this.disabld = this.form.valid;
+    this.disabld = !(this.form.valid);
    }
 
   ngOnInit() {
@@ -55,7 +60,5 @@ export class LoginComponent implements OnInit {
   forgotUsername(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
-
-
 }
 
