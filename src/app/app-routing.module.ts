@@ -19,7 +19,7 @@ import { EditCommunityComponent } from './edit-community/edit-community.componen
 
 const routes: Routes = [
 
-  { path: 'community/:CommunityName', component: CommunityComponent },
+  
   { path: 'account-setting', component: AccountSettingComponent },
   { path: 'profile-setting', component: ProfileSettingComponent },
   { path: 'login', component: LoginComponent },
@@ -36,11 +36,10 @@ const routes: Routes = [
       { path: 'downvoted', component: DownvotedComponent },
     ]
   },
-  { path: 'community/:CommunityName', component: CommunityComponent ,
-    children: [
-        {path: 'Edit_community', component: EditCommunityComponent}
-    ]
-  },
+  { path: 'community/:CommunityName', component: CommunityComponent },
+  { path: 'community/:CommunityName/Edit_community', component: EditCommunityComponent },
+ 
+  
   { path: 'settings', component: UserSettingsComponent },
 ];
 
