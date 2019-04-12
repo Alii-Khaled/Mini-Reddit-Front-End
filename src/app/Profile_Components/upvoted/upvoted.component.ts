@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsObjects } from 'src/app/classes/posts-objects';
+import { ProfileHttpService } from '../profile.http.service';
 
 @Component({
   selector: 'app-upvoted',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpvotedComponent implements OnInit {
 
-  constructor() { }
+  UpVoted: PostsObjects[];
+  /**
+   * @param http For requests
+   */
+  constructor(private http: ProfileHttpService) { }
 
   ngOnInit() {
+    /**
+     * Send request to get Upvoted psosts
+     */
+    this.http.GetUpVoted('Ahmed').subscribe((data: PostsObjects[]) => this.UpVoted = data);
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsObjects } from 'src/app/classes/posts-objects';
+import { ProfileHttpService } from '../profile.http.service';
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  posts: PostsObjects[];
+  /**
+   * @param http For requests
+   */
+  constructor(private http: ProfileHttpService) { }
 
   ngOnInit() {
+    /**
+     * Send request to get psosts
+     */
+    this.http.GetUpVoted('ahmed').subscribe((data: PostsObjects[]) => this.posts = data);
   }
-
 }
