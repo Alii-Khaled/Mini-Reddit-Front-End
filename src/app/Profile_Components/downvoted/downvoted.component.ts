@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsObjects } from 'src/app/classes/posts-objects';
+import { ProfileHttpService } from '../profile.http.service';
+
 
 @Component({
   selector: 'app-downvoted',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DownvotedComponent implements OnInit {
 
-  constructor() { }
+  downvoted: PostsObjects[];
+  /**
+   * @param http For requests
+   */
+  constructor(private http: ProfileHttpService) { }
 
   ngOnInit() {
+    /**
+     * Send request to get downvoted psosts
+     */
+    this.http.GetDownVoted('Ahmed').subscribe((data: PostsObjects[]) => this.downvoted = data);
   }
 
 }

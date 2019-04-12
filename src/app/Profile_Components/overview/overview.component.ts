@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../http.service';
+import { ProfileHttpService } from '../profile.http.service';
 import { PostsObjects } from 'src/app/classes/posts-objects';
 
 @Component({
@@ -13,10 +13,10 @@ export class OverviewComponent implements OnInit {
   /**
    * @param http For requests
    */
-  constructor(private http: HttpService) { }
+  constructor(private http: ProfileHttpService) { }
 
   ngOnInit() {
-    this.http.GetPostsObjects().subscribe((data: PostsObjects[]) => this.posts = data);
+    this.http.GetPostsObjects('ahmed').subscribe((data: PostsObjects[]) => this.posts = data);
   }
 
 }
