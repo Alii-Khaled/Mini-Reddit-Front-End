@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
+import {MatSnackBarModule} from '@angular/material';
+
+import {MatDialogModule} from '@angular/material';
 import { ProfileComponent } from './Profile_Components/profile/profile.component';
 import { PostLayoutComponent } from './post-layout/post-layout.component';
 import { MatButtonModule,MatButtonToggleModule } from '@angular/material';
@@ -40,6 +43,7 @@ import { HiddenComponent } from './Profile_Components/hidden/hidden.component';
 import { UpvotedComponent } from './Profile_Components/upvoted/upvoted.component';
 import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.component';
 import { CommentsLayoutComponent } from './comments-layout/comments-layout.component';
+import { from } from 'rxjs';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -89,6 +93,10 @@ import { CommentsLayoutComponent } from './comments-layout/comments-layout.compo
     MatMenuModule,
     MatTabsModule,
     RouterModule,
+    MatSnackBarModule,
+    MatDialogModule,
+
+    
     // Http,
     // Headers,
     // RequestOptions

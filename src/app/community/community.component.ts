@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Communities } from 'src/app/classes/community-info';
 import { HttpService } from '../http.service';
 import { CheckboxControlValueAccessor } from '@angular/forms';
-
+import {communityHttpService} from '../community/community.http.service'
 @Component({
   selector: 'app-community',
   templateUrl: './community.component.html',
@@ -24,7 +24,7 @@ export class CommunityComponent implements OnInit {
  /* public comm =new Communities('community','http://i.imgur.com/sdO8tAw.png','http://i.imgur.com/sdO8tAw.png','This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.','rules');
  */
 
-  constructor(private http: HttpService) {
+  constructor(private http: communityHttpService) {
 
     
    }
