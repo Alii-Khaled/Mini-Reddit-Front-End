@@ -11,6 +11,10 @@ body
     padding: 765* 1236 ;
     display:block
 }
+.modal-header
+{
+  padding: 10px;
+}
 
 form {
    
@@ -34,7 +38,7 @@ form {
   }
   
   /* Set a style for all buttons */
-  button{
+  button[type="submit"]{
     font-family: IBMPlexSans,sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -72,6 +76,8 @@ form {
     line-height: 18px;
     color: #1a1a1b;
     font-family: IBMPlexSans,sans-serif;
+   width: 397;
+   height: 392;
   }
   #ssinn{
     display: block;

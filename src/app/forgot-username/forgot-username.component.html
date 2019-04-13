@@ -4,11 +4,16 @@
 
   </head>
   <body>
+    <img alt="side" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Red_rose_with_black_background.jpg"  width="156px" height="430px" style="position: absolute">
+    
+    
     <div class = "container">
-        <p id = tit>
+      <br><br><br><br>
+      <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Reddit_logo_orange.svg/128px-Reddit_logo_orange.svg.png" class="logo" width="40" height="40">
+      <p id = tit>
           Recover your username
-        </p>
-        <p id = "cont">
+      </p>
+      <p id = "cont">
           Don't worry! 
           You may have forgotten your username, 
           but we can help you out. 
@@ -18,13 +23,33 @@
           <input type="text" placeholder="Email" name="email"  formControlName="email" required >
           <button type="submit" ><strong>EMAIL ME</strong></button>
         </form>
-        <br>
-        <P>
-            If you are having trouble accessing your account, follow
-             <a href=#> this link</a>.
-        </P>
-        <a routerLink="./login" routerLinkActive="active"><strong>LOG IN</strong></a>
-        <a routerLink="./signup" routerLinkActive="active"><strong>SIGN UP</strong></a>
+     
+      <br>
+      <P id="trb">
+      If you are having trouble accessing your account, follow
+        <a href=#> this link</a>.
+      </P>
+      <div class="aa">
+      <a (click)="openModal(template1)"><strong>LOG IN</strong></a>
+          <ng-template #template1>
+            <div class="modal-header">
+              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <app-login></app-login>
+          </ng-template>
+.
+          <a (click)="openModal(template2)"><strong>SIGN UP</strong></a>
+          <ng-template #template2>
+            <div class="modal-header">
+              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <app-signup></app-signup>
+          </ng-template>
+        </div>
 
        
               

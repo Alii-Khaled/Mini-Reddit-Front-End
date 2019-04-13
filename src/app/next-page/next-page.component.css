@@ -1,0 +1,28 @@
+input[type=text], input[type=password]
+{
+ 
+ padding: 22px 12px 10px;
+ border: 1px solid rgba(0,0,0,.1);
+ border-radius: 4px;
+ text-align: left;
+ background-color: #fcfcfb;
+ width:400px;
+ height: 48px;
+ display: inline-block;
+ box-sizing: border-box
+}
+#intro
+{
+  font-family: Noto Sans,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+    
+}
+#fff
+{
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  margin: 20px 0;
+}

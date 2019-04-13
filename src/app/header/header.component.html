@@ -38,8 +38,8 @@
     <div class="small-icons" role="button" title="original content">
     <img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="20px" height="20px" style="margin-top:6px">
     </div>
-    <button type="button" class="btn btn-outline-primary" (click)="openModal(template)" id="log-in"><b>Log in</b></button>
-    <ng-template #template>
+    <button type="button" class="btn btn-outline-primary" (click)="openModal(template1)" id="log-in"><b>Log in</b></button>
+    <ng-template #template1>
       <div class="modal-header">
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
           <span aria-hidden="true">&times;</span>
@@ -47,8 +47,15 @@
       </div>
       <app-login></app-login>
     </ng-template>
-    <button type="button" class="btn btn-outline-primary" id="sign-up"><b>Sign up</b></button>
-    
+    <button type="button" class="btn btn-outline-primary" (click)="openModal(template2)" id="sign-up"><b>Sign up</b></button>
+    <ng-template #template2>
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <app-signup></app-signup>
+    </ng-template>
     <div class="dropdown" id="right-dropdown">
         <button data-toggle="dropdown" class="dropdown-button" type="button" role="button" >
             <i class="fa fa-user" aria-hidden="false" style="margin-right:20px"></i>

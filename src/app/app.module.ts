@@ -44,6 +44,7 @@ import { UpvotedComponent } from './Profile_Components/upvoted/upvoted.component
 import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.component';
 import { CommentsLayoutComponent } from './comments-layout/comments-layout.component';
 import { from } from 'rxjs';
+import { NextPageComponent } from './next-page/next-page.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -71,6 +72,7 @@ import { from } from 'rxjs';
     UpvotedComponent,
     DownvotedComponent,
     CommentsLayoutComponent,
+    NextPageComponent,
     /* ModalModule */
   ],
   imports: [

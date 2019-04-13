@@ -27,8 +27,8 @@
           <button type="submit" id ="signin" (click)="login()">SIGN IN</button>
           <br>
           <p id =forgot>
-          <a (click)="forgotUsername(template)"><strong>Forgot username</strong></a>
-          <ng-template #template>
+          <a (click)="openModal(template1)"><strong>Forgot username</strong></a>
+          <ng-template #template1>
             <div class="modal-header">
               <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
                 <span aria-hidden="true">&times;</span>
@@ -37,11 +37,19 @@
             <app-forgot-username></app-forgot-username>
           </ng-template>
           .
-          <a href="#"><strong>Forgot password</strong></a>
+          <a (click)="openModal(template2)"><strong>Forgot password</strong></a>
+          <ng-template #template2>
+            <div class="modal-header">
+              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <app-forgot-username></app-forgot-username>
+          </ng-template>
           </p>
           <br><br>
-          <p>New to Reddit? <a href=# (click)="signup(template)"><strong>SIGN UP</strong></a> </p>
-          <ng-template #template>
+          <p>New to Reddit? <a href=# (click)="openModal(template3)"><strong>SIGN UP</strong></a> </p>
+          <ng-template #template3>
               <div class="modal-header">
                 <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
                   <span aria-hidden="true">&times;</span>
