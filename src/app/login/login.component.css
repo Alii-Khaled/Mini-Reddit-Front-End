@@ -11,6 +11,10 @@ body
     padding: 765* 1236 ;
     display:block
 }
+.modal-header
+{
+  padding: 10px;
+}
 
 form {
    
