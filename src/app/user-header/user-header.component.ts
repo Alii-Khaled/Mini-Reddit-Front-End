@@ -11,6 +11,14 @@ import { ProfileHttpService } from '../Profile_Components/profile.http.service';
 })
 export class UserHeaderComponent implements OnInit {
   /**
+   * Username of the logged in user
+   */
+  username: string;
+  /**
+   * If getting user name succeed
+   */
+  success: boolean;
+  /**
    * List of communities that the user subscribed
    */
   MyCommunities: UserCommunities[];
@@ -29,10 +37,19 @@ export class UserHeaderComponent implements OnInit {
    * In the right dropdown
    */
   ngOnInit() {
-      this.http.GetUserPublicInfo(1).subscribe((data: UserPublicInfo) => this.PublicInfo = data);
-   }
+      /**
+       * Getting user name
+       */
+      this.http.GetUserName().subscribe((data: any) =>  {
+        this.username = data.username;
+        this.success = data.success;
+      },
+      (error: any) => {console.log('Error Exists')} ,
+      () => this.http.GetUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => this.PublicInfo = data)
+      );
+    }
    /**
-    * On clicking the left dropdown send a request to get this user's subscribed communities 
+    * On clicking the left dropdown send a request to get this user's subscribed communities
     * And display it in this dropdown menu
     */
    OnclickLeftDropdown() {

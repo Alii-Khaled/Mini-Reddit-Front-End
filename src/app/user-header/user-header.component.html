@@ -60,18 +60,18 @@
     </div>
     <div class="dropdown" id="right-dropdown">
     <button data-toggle="dropdown" class="dropdown-button" type="button" role="button" >
-      <img src={{PublicInfo.photo_path}} width="25px"height="25px" style="float:left ;margin-left:10px;margin-top: 5px;border-radius: 5px;">
+      <img src={{PublicInfo?.photo_path}} width="25px"height="25px" style="float:left ;margin-left:10px;margin-top: 5px;border-radius: 5px;">
       <div id="user-name-karma" style="float:left; margin-left: 5px">
-        <b id="UserName" style="float:left">{{PublicInfo.username}}</b>
+        <b id="UserName" style="float:left">{{PublicInfo?.username}}</b>
         <br>
         <i class="fa fa-cog" style="color:coral; float: left;" aria-hidden="true"></i>
-        <body style="float:left; margin-top: -3px; color:darkgray">{{PublicInfo.karma}} karma</body>
+        <body style="float:left; margin-top: -3px; color:darkgray">{{PublicInfo?.karma}} karma</body>
       </div> 
       <i class="fa fa-caret-down" aria-hidden="true" style="float:right;margin-top:13px;margin-right: 10px;"></i> 
     </button>      
         <ul class="dropdown-menu dropdown-menu-right" id="dropdown-menu-right">
           <li class="dropdown-header">My stuff</li>
-          <li><a routerLink="user/{{PublicInfo.username}}" href="#"><img src="https://cdn1.iconfinder.com/data/icons/avatar-1-2/512/User2-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a routerLink="user/{{PublicInfo?.username}}" href="#"><img src="https://cdn1.iconfinder.com/data/icons/avatar-1-2/512/User2-512.png" width="25" height="25" style="margin-right:15px">
           My profile</a></li>
           <li><a routerLink="settings" href="#"><img src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Settings_black-512.png" width="25" height="25" style="margin-right:15px">
           User settings</a></li>
@@ -96,4 +96,3 @@
     </div>
   </div>
 </nav>
-

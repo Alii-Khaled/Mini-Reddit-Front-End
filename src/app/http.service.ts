@@ -40,7 +40,6 @@ export class HttpService {
             'username': username,
             'password': password
         };
-        console.log('Hello');
         return this.http.post('http://localhost:8000/api/unauth/signIn', body, { headers });
     }
 
@@ -60,14 +59,6 @@ export class HttpService {
 
         return this.http.post('http://localhost:8000/api/unauth/signIn', body, { headers });
     }
-    /**
-     * to send a request contains the email
-     */
-    next(email: string): Observable<any> {
-        return this.http.post( 'request', {email});
-
-    }
-
     RemoveCommunity(id: number): Observable <any> {
 
         const headers = new HttpHeaders ({

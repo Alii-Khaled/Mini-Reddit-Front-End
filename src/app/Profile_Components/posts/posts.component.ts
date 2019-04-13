@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsObjects } from 'src/app/classes/posts-objects';
 import { ProfileHttpService } from '../profile.http.service';
-
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',

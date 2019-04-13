@@ -1,10 +1,8 @@
 import { Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { catchError, tap} from 'rxjs/operators' ;
 import { UserCommunities } from '../Profile_classes/user-communities';
 import { UserPublicInfo } from '../Profile_classes/user-public-info';
-import { Communities } from '../classes/community-info';
 import { PostsObjects } from '../classes/posts-objects';
 import { comments } from '../classes/comments';
 
@@ -17,11 +15,11 @@ export class ProfileHttpService {
     /**
      * Variable to know from which server we get data (mock or API)
      */
-    IsApi = false;
+    IsApi = true;
     /**
      * To get all communities subscribed by this user
      */
-    GetMyCommunities(): Observable<UserCommunities[]> {
+    GetMyCommunities(): Observable<any[]> {
         /**
          * Choose from where i'll get my data
          */
@@ -32,8 +30,50 @@ export class ProfileHttpService {
              */
         return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
         } else {
-        return this.http.get<UserCommunities[]>('"http://localhost/api/unauth/viewUserCommunities"');
+             /**
+              * Getting token
+              */
+            var token = localStorage.getItem('token');
+            /**
+             * set headers
+             */
+            const headers = new HttpHeaders ({
+                "Accept": "application/json",
+                "Authorization": "Bearer: {"+ token +"}",
+            });
+            console.log('Here is a token: ' + token);
+            return this.http.get<any[]>('http://localhost/api/unauth/viewUserCommunities', { headers });
         }
+    }
+
+     /**
+      * Getting username for the logged in user
+      */
+    GetUserName(): Observable<any> {
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * Getting username from mock server
+             */
+        return this.http.get<any>('http://localhost:3000/get_my_user_name');
+        } else {
+            /**
+             * Getting token
+             */
+            var token = localStorage.getItem('token');
+
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            /**
+             * Getting username from Api
+             */
+            return this.http.get<any>('http://localhost:8000/api/auth/getUsername' , {headers});
+            }
     }
     /**
      * Get user public info like (karma,name,username,...)
@@ -48,15 +88,19 @@ export class ProfileHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + id);
-        } else {
+        return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + 1);
+        } else { 
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            });
+
             /**
              * Here id represent username of the profile owner user
              */
-        return this.http.get<UserPublicInfo>('http://localhost/api/unauth/viewPublicUserInfo"' + id);
+        return this.http.get<UserPublicInfo>('http://localhost:8000/api/unauth/viewPublicUserInfo?username=' + id, {headers});
         }
     }
-
 
     /**
      * Get user's posts

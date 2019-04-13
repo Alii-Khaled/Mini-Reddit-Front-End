@@ -11,6 +11,10 @@
 
         }
     ],
+    "get_my_user_name": {
+            "success": true,
+            "username": "7moda"
+        },
     "communities": [
             {
                 "id": 1,

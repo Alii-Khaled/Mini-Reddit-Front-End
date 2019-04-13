@@ -25,9 +25,8 @@ form: FormGroup;
       password: ['', Validators.required, Validators.minLength(8)],
       password_confirmation: ['', Validators.required, Validators.minLength(8)]
     });
-   } */
-  
-
+   } */         
+  email: string;
   form: FormGroup;
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
@@ -43,22 +42,14 @@ form: FormGroup;
      */
   next() {
     const val = this.form.value;
-    this.service.next( val.email).subscribe((data: any) => {
-    this.router.navigateByUrl('#');
-    },
-    err => {if (err.status === 400) {
-      console.log('error');
-
-    }});
+    this.email = val.email;
    }
 
   SignUp() {
     const val = this.form.value;
     this.service.SignUp(val.username , val.password, val.email, val.password_confirmation).subscribe((data: any) => {
       localStorage.setItem('token', data.token );
-      var test =localStorage.getItem('token');
-      
-      this.router.navigateByUrl('profile/' + test);
+      this.router.navigateByUrl('#');
     },
     err => {if (err.status === 400) {
       console.log('error');
