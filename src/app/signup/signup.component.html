@@ -28,7 +28,15 @@
             <input type="text" placeholder="Email" name="email"  formControlName="email" required >
             <br><br>
             
-            <button type="submit" (click)="next()"><strong>Next</strong></button>
+            <button type="submit" (click)="next(template1)"><strong>Next</strong></button>
+            <ng-template #template1>
+                <div class="modal-header">
+                  <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <app-next-page></app-next-page>
+              </ng-template>
             <br>
             <p>
             Already a Redditor?

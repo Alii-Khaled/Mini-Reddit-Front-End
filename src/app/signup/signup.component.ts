@@ -48,15 +48,15 @@ form: FormGroup;
     /**
      * take the user's input(email) from the input form
      */
-  next() {
+  next(template: TemplateRef<any>) {
     const val = this.form.value;
     this.service.next( val.email).subscribe((data: any) => {
-    this.router.navigateByUrl('#');
     },
     err => {if (err.status === 400) {
       console.log('error');
 
     }});
+    this.openModal(template);
    }
    openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
@@ -67,7 +67,7 @@ form: FormGroup;
     this.service.SignUp(val.username , val.password, val.email, val.password_confirmation).subscribe((data: any) => {
       localStorage.setItem('token', data.token );
       var test = localStorage.getItem('token');
-      
+
       this.router.navigateByUrl('profile/' + test);
     },
     err => {if (err.status === 400) {
