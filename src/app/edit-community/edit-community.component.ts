@@ -42,50 +42,38 @@ export class EditCommunityComponent implements OnInit {
   message;
   action;
 
-
+theresponse:boolean;
 
 OnRemovingCommunity(){
-this.http.RemoveCommunity(2).subscribe((data:any) => {
-   
-   err => {
-     if (err.success === 'true') 
-   {
-    this.message='Community has been deleted'
-    
-    setTimeout(()=>this.snackBar.open(this.message, 'undefined', {
-      duration: 4000,
-      verticalPosition: 'bottom',
-      horizontalPosition:'center',
-      panelClass:'snack-remove-button',
-    }),4000);
-    this.router.navigateByUrl('#');
-   }
-   else if (err.error==='UnAuthorized'){
-    this.message="You can't Remove Community"
-    this.snackBar.open(this.message, 'undefined', {
-      duration: 4000,
-      verticalPosition: 'bottom',
-      horizontalPosition:'center',
-      panelClass:'snack-remove-button',
-      
-      
-    });
-  }
-    else if (err.error==='UnAuthorized'){
-      this.message="You can't Remove Community"
-      this.snackBar.open(this.message, 'undefined', {
-        duration: 4000,
-        verticalPosition: 'bottom',
-        horizontalPosition:'center',
-        panelClass:'snack-remove-button',
-        
-        
-      });
-   }
+this.http.RemoveCommunity(2).subscribe(
+  response => {
+    this.message='Community has been deleted';
+this.snackBar.open(this.message, undefined, {
+  duration: 4000,
+  verticalPosition: 'bottom',
+  horizontalPosition:'center',
+  panelClass:'snack-remove-button',
 
+}); 
+this.theresponse=true;
+  },
+  err => {
+  this.message='Community has not been deleted';
+this.snackBar.open(this.message, undefined, {
+  duration: 4000,
+  verticalPosition: 'bottom',
+  horizontalPosition:'center',
+  panelClass:'snack-remove-button',
+}); 
+this.theresponse=false;
+  },
+  () => {
+  if(this.theresponse)
+{
+  this.router.navigateByUrl('#');
 }
-    
-});
+  }
+);
 /* this.message='Community has been deleted'
 this.snackBar.open(this.message, 'undefined', {
   duration: 4000,
