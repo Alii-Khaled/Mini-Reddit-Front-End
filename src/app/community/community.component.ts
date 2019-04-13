@@ -33,7 +33,7 @@ export class CommunityComponent implements OnInit {
    buttonName='SUBSCRIBE';
    
  
-   toggleButton(SUBSCRIBED){
+   toggleButton(SUBSCRIBED:boolean){
      if(SUBSCRIBED==false)
      {
     this.buttonName='SUBSCRIBE';

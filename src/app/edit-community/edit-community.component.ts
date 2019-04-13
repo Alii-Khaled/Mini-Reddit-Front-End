@@ -4,6 +4,8 @@ import { Communities } from 'src/app/classes/community-info';
 import { catchError } from 'rxjs/operators';
 import {communityHttpService} from '../community/community.http.service'
 import {MatSnackBar, MatSnackBarModule} from "@angular/material";
+import { Router } from '@angular/router';
+import { timeout } from 'q';
 @Component({
   selector: 'app-edit-community',
   templateUrl: './edit-community.component.html',
@@ -18,18 +20,23 @@ export class EditCommunityComponent implements OnInit {
   banner;
   avatar ;
   
-  constructor(private http: communityHttpService,public snackBar: MatSnackBar) { 
+  constructor(private http: communityHttpService,public snackBar: MatSnackBar,private router:Router) { 
 
   }
 
   ngOnInit() 
   {
-  // this.http.GetCommunityInfo(1).subscribe((data: Communities) => this.Community = data); 
-  // this.commname = this.Community.community_name ;
-  // this.rules =this.Community.community_rules;
-  // this.bio =this.Community.community_description ;
-  // this.banner=this.Community.community_banner ;
-  // this.avatar =this.Community.community_logo ;
+  this.http.GetCommunityInfo(1).subscribe((data: Communities) => {
+   this.commname = data.community_name ;
+   this.rules =data.community_rules;
+   this.bio =data.community_description ;
+   this.banner=data.community_banner ;
+   this.avatar =data.community_logo ;   
+  
+  }
+    )
+ 
+ 
   }
 
   message;
@@ -38,18 +45,60 @@ export class EditCommunityComponent implements OnInit {
 
 
 OnRemovingCommunity(){
-this.http.RemoveCommunity(2).subscribe(() => console.log('community with id = 4 was deleted'));
-this.message='Community has been deleted'
-this.snackBar.open(this.message, undefined, {
+this.http.RemoveCommunity(2).subscribe((data:any) => {
+   
+   err => {
+     if (err.success === 'true') 
+   {
+    this.message='Community has been deleted'
+    
+    setTimeout(()=>this.snackBar.open(this.message, 'undefined', {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition:'center',
+      panelClass:'snack-remove-button',
+    }),4000);
+    this.router.navigateByUrl('#');
+   }
+   else if (err.error==='UnAuthorized'){
+    this.message="You can't Remove Community"
+    this.snackBar.open(this.message, 'undefined', {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition:'center',
+      panelClass:'snack-remove-button',
+      
+      
+    });
+  }
+    else if (err.error==='UnAuthorized'){
+      this.message="You can't Remove Community"
+      this.snackBar.open(this.message, 'undefined', {
+        duration: 4000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'center',
+        panelClass:'snack-remove-button',
+        
+        
+      });
+   }
+
+}
+    
+});
+/* this.message='Community has been deleted'
+this.snackBar.open(this.message, 'undefined', {
   duration: 4000,
   verticalPosition: 'bottom',
   horizontalPosition:'center',
   panelClass:'snack-remove-button',
   
   
-});
+}); */
 
 }
+
+
 onEditCommunity(){
 
   this.http.editCommunity(this.commId,this.rules,this.bio,this.banner,this.avatar);

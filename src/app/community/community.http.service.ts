@@ -42,10 +42,10 @@ export class communityHttpService {
      */
 
     RemoveCommunity(id: number): Observable <any> {
-
+       var token =localStorage.getItem('token');
         const headers = new HttpHeaders ({
             "Accept": "application/json",
-            "Authorization": "Bearer: {token}",
+            "Authorization": "Bearer: {"+token+"}",
             "Content-Type": "application/json",
         });
 
@@ -75,9 +75,10 @@ else
      *@param id now we use id to subscribe to Specific Community
      */
     SubscribeCommunity(id: number): Observable <any> {
+        var token =localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",
-            "Authorization": "Bearer: {token}",
+            "Authorization": "Bearer: {"+token+"}",
             "Content-Type": "application/json",
         }
 
@@ -104,9 +105,10 @@ else
      *@param id now we use id to unsubscribe to Specific Community
      */
     UnSubscribeCommunity(id: number): Observable <any> {
+        var token =localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",
-            "Authorization": "Bearer: {token}",
+            "Authorization": "Bearer: {"+token+"}",
             "Content-Type": "application/json",
         }
 
@@ -138,9 +140,10 @@ else
         *@param logo now we use id to edit to Specific Community's avatar
      */
     editCommunity(id:number ,rules: string , bio: string, banner: string, logo: string){
+        var token =localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",
-            "Authorization": "Bearer: {token}",
+            "Authorization": "Bearer: {"+token+"}",
             "Content-Type": "application/json",
         }
 
