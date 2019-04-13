@@ -34,7 +34,7 @@ form {
   }
   
   /* Set a style for all buttons */
-  button{
+  button[type="submit"]{
     font-family: IBMPlexSans,sans-serif;
     font-size: 14px;
     font-weight: 600;

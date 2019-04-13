@@ -9,7 +9,7 @@
     <div id="intro">
 
       <h4>
-       <strong id ="ff">Join the worldwide conversation.</strong> 
+       <b id ="ff">Join the worldwide conversation.</b> 
       </h4>
       By having a Reddit account, you can subscribe, vote, and
       <br>
@@ -33,7 +33,15 @@
             <p>
             Already a Redditor?
             .
-            <a routerLink="./login" routerLinkActive="active"><strong>LOG IN</strong></a>
+            <a href="#" (click)="openModal(template2)"><b>LOG IN</b></a>
+            <ng-template #template2>
+              <div class="modal-header">
+                <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <app-login></app-login>
+            </ng-template>
             </p>
           <P>
             By signing up, you agree to our <a href=#>Terms</a> and that you have read our

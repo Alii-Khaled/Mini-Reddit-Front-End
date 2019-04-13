@@ -24,10 +24,7 @@
           <br>
           <input type="password" placeholder="Password" formControlName="password" required>
           <br>
-          <div *ngIf="disabld; then thenBlock else elseBlock"></div>
-          <ng-template #thenBlock><button disabled>SIGN IN</button></ng-template>
-          <ng-template #elseBlock><button type="submit" id ="signin" (click)="login()">SIGN IN</button></ng-template>
-          
+          <button type="submit" id ="signin" (click)="login()">SIGN IN</button>
           <br>
           <p id =forgot>
           <a (click)="openModal(template1)"><strong>Forgot username</strong></a>

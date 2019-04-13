@@ -26,10 +26,17 @@ form: FormGroup;
       password_confirmation: ['', Validators.required, Validators.minLength(8)]
     });
    } */
-  
+
 
   form: FormGroup;
   modalRef: BsModalRef;
+  config = {
+    animated: true,
+    keyboard: true,
+    backdrop: true,
+    ignoreBackdropClick: false,
+    class: 'my-modal'
+  };
   constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
     this.form = this.fb.group({
     email: ['', Validators.required]
@@ -51,12 +58,15 @@ form: FormGroup;
 
     }});
    }
+   openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
+  }
 
   SignUp() {
     const val = this.form.value;
     this.service.SignUp(val.username , val.password, val.email, val.password_confirmation).subscribe((data: any) => {
       localStorage.setItem('token', data.token );
-      var test =localStorage.getItem('token');
+      var test = localStorage.getItem('token');
       
       this.router.navigateByUrl('profile/' + test);
     },
