@@ -30,7 +30,7 @@
           
           <br>
           <p id =forgot>
-          <ng-template #template>
+          <a (click)="openModal(template1)"><strong>Forgot username</strong></a>
           <ng-template #template1>
             <div class="modal-header">
               <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
