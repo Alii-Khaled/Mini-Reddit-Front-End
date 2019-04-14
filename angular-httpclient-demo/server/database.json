@@ -26,11 +26,13 @@
     "communities": [
             {
                 "id": 1,
+                "community_id":1,
                 "community_name":"Ali",
                 "community_logo":"https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             },
             {
                 "id": 2,
+                "community_id":2,
                 "community_name":"Ahmed",
                 "community_logo":"https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             }
