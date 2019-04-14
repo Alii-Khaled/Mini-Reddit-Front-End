@@ -41,7 +41,10 @@ export class ProfileComponent implements OnInit {
         this.success = data.success;
       },
       (error: any) => console.log('Error Exists'),
-      () => this.http.GetUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => this.PublicInfo = data)
+      () => this.http.GetUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
+        this.PublicInfo = data;
+        this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
+    })
       );
     }
 }
