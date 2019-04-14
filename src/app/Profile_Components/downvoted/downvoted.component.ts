@@ -20,7 +20,7 @@ export class DownvotedComponent implements OnInit {
     /**
      * Send request to get downvoted psosts
      */
-    this.http.GetDownVoted('Ahmed').subscribe((data: PostsObjects[]) => this.downvoted = data);
+    this.http.GetDownVoted().subscribe((data: any) => this.downvoted = data.posts);
   }
 
 }

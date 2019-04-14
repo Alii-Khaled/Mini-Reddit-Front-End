@@ -16,7 +16,10 @@ export class OverviewComponent implements OnInit {
   constructor(private http: ProfileHttpService) { }
 
   ngOnInit() {
-    this.http.GetPostsObjects('ahmed').subscribe((data: PostsObjects[]) => this.posts = data);
+    /**
+     * Request for overview bun not completed yet
+     */
+    this.http.GetOverView('ahmed').subscribe((data: PostsObjects[]) => this.posts = data);
   }
 
 }

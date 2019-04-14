@@ -19,20 +19,21 @@ describe('CommunityComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create the app',async( () => {
-    let fixture=TestBed.createComponent(CommunityComponent);
-    let comm =fixture.debugElement.componentInstance;
+  it('should create the app', async( () => {
+    let fixture = TestBed.createComponent(CommunityComponent);
+    let comm = fixture.debugElement.componentInstance;
     expect(comm).toBeTruthy();
   }));
-  
-  /* it('should render BannerBar with bg color blue',async( () => {
-    let fixture=TestBed.createComponent(CommunityComponent);
-    fixture.detectChanges();
-    let compiled =fixture.debugElement.nativeElement;
-    expect(compiled.querySelector).toBeTruthy();
-  }
-   */
-  
-  
-  
+
+  describe('toggleButton', () => {
+    it('should change buttonname to SUBSCRIBED if input is true',()=>{
+      this.toggleButton(true);
+      expect(this.buttonName).toBe('SUBSCRIBED');
+    });
+    it('should change buttonname to SUBSCRIBE if input is false',()=>{
+      this.toggleButton(false);
+      expect(this.buttonName).toBe('SUBSCRIBE');
+    });
+  });
+
 });

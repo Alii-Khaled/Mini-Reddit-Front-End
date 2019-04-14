@@ -50,12 +50,12 @@ form: FormGroup;
      */
   next(template: TemplateRef<any>) {
     const val = this.form.value;
-    this.service.next( val.email).subscribe((data: any) => {
+    /* this.service.next( val.email).subscribe((data: any) => {
     },
     err => {if (err.status === 400) {
       console.log('error');
 
-    }});
+    }}); */
     this.openModal(template);
    }
    openModal(template: TemplateRef<any>) {
