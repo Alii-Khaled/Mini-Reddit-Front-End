@@ -31,7 +31,7 @@ export class UserPublicInfo {
     /**
      * user display name
      */
-    public name:string;
+    public name: string;
     /**
      * constructor takes every value of the class and assign it to this user
      */

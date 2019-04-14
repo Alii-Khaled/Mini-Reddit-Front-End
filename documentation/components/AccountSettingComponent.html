@@ -62,7 +62,7 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
-                                    <a href="../modules/AppModule.html"  class="active" >AppModule</a>
+                                    <a href="../modules/AppModule.html" >AppModule</a>
                                 </li>
                         </ul>
                     </li>
@@ -79,7 +79,7 @@
                                 id="xs-components-links"
                             >
                                 <li class="link">
-                                    <a href="../components/AccountSettingComponent.html" >AccountSettingComponent</a>
+                                    <a href="../components/AccountSettingComponent.html"  class="active" >AccountSettingComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/AppComponent.html" >AppComponent</a>
@@ -273,7 +273,7 @@
                                        id="modules-links"
                    >
                                        <li class="link">
-                                           <a href="../modules/AppModule.html"  class="active" >AppModule</a>
+                                           <a href="../modules/AppModule.html" >AppModule</a>
                                        </li>
                                </ul>
                            </li>
@@ -290,7 +290,7 @@
                                        id="components-links"
                    >
                                        <li class="link">
-                                           <a href="../components/AccountSettingComponent.html" >AccountSettingComponent</a>
+                                           <a href="../components/AccountSettingComponent.html"  class="active" >AccountSettingComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/AppComponent.html" >AppComponent</a>
@@ -436,231 +436,110 @@
                    
                    </nav>
                </div>
-               <div class="content module">
+               <div class="content component">
                    <div class="content-data">
 
+
 <ol class="breadcrumb">
-  <li>Modules</li>
-  <li>AppModule</li>
+  <li>Components</li>
+  <li>AccountSettingComponent</li>
 </ol>
 
-<div class="text-center">
-    <object id="demo-svg" type="image/svg+xml" data="../modules/AppModule/dependencies.svg" style="width: 100%; height: 250px;">
-            Your browser does not support SVG
-    </object>
-    <div class="btn-group">
-        <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
-        <button id="reset" class="btn btn-default btn-sm">Reset</button>
-        <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
-    </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/account-setting/account-setting.component.ts</code>
+</p>
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-account-setting</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>account-setting.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>account-setting.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor()</code>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+
 </div>
-<script src="../js/libs/svg-pan-zoom.min.js"></script>
-<script src="../js/svg-pan-zoom.controls.js"></script>
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
-<ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-    </li>
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-    </li>
-</ul>
+@Component({
+  selector: &#x27;app-account-setting&#x27;,
+  templateUrl: &#x27;./account-setting.component.html&#x27;,
+  styleUrls: [&#x27;./account-setting.component.css&#x27;]
+})
+export class AccountSettingComponent implements OnInit {
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
-        <p class="comment">
-            <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/app/app.module.ts</code>
-        </p>
+  constructor() { }
 
+  ngOnInit() {
+  }
 
-        <div class="container-fluid module">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#declarations-anchor" target="_blank"><span class="fa fa-info-circle"></span></a></h3>
-                    <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../components/AppComponent.html">AppComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/HeaderComponent.html">HeaderComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/UserHeaderComponent.html">UserHeaderComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/CommunityComponent.html">CommunityComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/ProfileComponent.html">ProfileComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/PostLayoutComponent.html">PostLayoutComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/LoginComponent.html">LoginComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/SignupComponent.html">SignupComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/EditCommunityComponent.html">EditCommunityComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/UserSettingsComponent.html">UserSettingsComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/AccountSettingComponent.html">AccountSettingComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/ProfileSettingComponent.html">ProfileSettingComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/ForgotUsernameComponent.html">ForgotUsernameComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/OverviewComponent.html">OverviewComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/PostsComponent.html">PostsComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/CommentsComponent.html">CommentsComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/SavedComponent.html">SavedComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/HiddenComponent.html">HiddenComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/UpvotedComponent.html">UpvotedComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/DownvotedComponent.html">DownvotedComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../components/CommentsLayoutComponent.html">CommentsLayoutComponent</a>
-                            </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Bootstrap<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#bootstrap-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
-                    <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../components/AppComponent.html" >AppComponent</a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
+}
+</code></pre>
         </div>
     </div>
-    <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
-import { NgModule } from &#x27;@angular/core&#x27;;
-import { HttpClientModule} from &#x27;@angular/common/http&#x27;;
-import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
-import { AppComponent } from &#x27;./app.component&#x27;;
-import { HeaderComponent } from &#x27;./header/header.component&#x27;;
-import { AngularFontAwesomeModule } from &#x27;angular-font-awesome&#x27;;
-import { UserHeaderComponent } from &#x27;./user-header/user-header.component&#x27;;
-import { CommunityComponent } from &#x27;./community/community.component&#x27;;
-import { ProfileComponent } from &#x27;./Profile_Components/profile/profile.component&#x27;;
-import { PostLayoutComponent } from &#x27;./post-layout/post-layout.component&#x27;;
-import { MatButtonModule,MatButtonToggleModule } from &#x27;@angular/material&#x27;;
-import { MatDividerModule } from &#x27;@angular/material/divider&#x27;;
-import { MatListModule } from &#x27;@angular/material/list&#x27;;
-import { MatToolbarModule } from &#x27;@angular/material/toolbar&#x27;;
-import { MatCardModule } from &#x27;@angular/material/card&#x27;;
-import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
-import { LoginComponent } from &#x27;./login/login.component&#x27;;
-import { SignupComponent } from &#x27;./signup/signup.component&#x27;;
-import { ModalModule } from &#x27;ngx-bootstrap/modal&#x27;;
-import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
-import {ReactiveFormsModule, FormsModule} from &#x27;@angular/forms&#x27;;
-import { EditCommunityComponent } from &#x27;./edit-community/edit-community.component&#x27;;
-
-import { UserSettingsComponent } from &#x27;./user-settings/user-settings.component&#x27;;
-import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
-import { AccountSettingComponent } from &#x27;./account-setting/account-setting.component&#x27;;
-import { ProfileSettingComponent } from &#x27;./profile-setting/profile-setting.component&#x27;;
-import { ForgotUsernameComponent } from &#x27;./forgot-username/forgot-username.component&#x27;;
-
-
-
-import {MatMenuModule} from &#x27;@angular/material/menu&#x27;;
-import {MatTabsModule} from &#x27;@angular/material/tabs&#x27;;
-import { OverviewComponent } from &#x27;./Profile_Components/overview/overview.component&#x27;;
-import { PostsComponent } from &#x27;./Profile_Components/posts/posts.component&#x27;;
-import { CommentsComponent } from &#x27;./Profile_Components/comments/comments.component&#x27;;
-import { SavedComponent } from &#x27;./Profile_Components/saved/saved.component&#x27;;
-import { HiddenComponent } from &#x27;./Profile_Components/hidden/hidden.component&#x27;;
-import { UpvotedComponent } from &#x27;./Profile_Components/upvoted/upvoted.component&#x27;;
-import { DownvotedComponent } from &#x27;./Profile_Components/downvoted/downvoted.component&#x27;;
-import { CommentsLayoutComponent } from &#x27;./comments-layout/comments-layout.component&#x27;;
-
-// import {Headers} from &#x27;@angular/http&#x27;;
-// import {HttpHeaders} from &#x27;@angular/common/http&#x27;;
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    UserHeaderComponent,
-    CommunityComponent,
-    ProfileComponent,
-    PostLayoutComponent,
-    LoginComponent,
-    SignupComponent,
-    EditCommunityComponent,
-    UserSettingsComponent,
-    AccountSettingComponent,
-    ProfileSettingComponent,
-    ForgotUsernameComponent,
-    OverviewComponent,
-    PostsComponent,
-    CommentsComponent,
-    SavedComponent,
-    HiddenComponent,
-    UpvotedComponent,
-    DownvotedComponent,
-    CommentsLayoutComponent,
-    /* ModalModule */
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AngularFontAwesomeModule,
-    HttpClientModule,
-    AngularFontAwesomeModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatListModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatIconModule,
-    ModalModule.forRoot(),
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatButtonToggleModule,
-    MatMenuModule,
-    MatTabsModule,
-    RouterModule,
-    // Http,
-    // Headers,
-    // RequestOptions
-    // HttpHeaders,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-</code></pre>
-    </div>
-</div>
 
 
 

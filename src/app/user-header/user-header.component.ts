@@ -32,7 +32,7 @@ export class UserHeaderComponent implements OnInit {
       this.http.GetUserPublicInfo(1).subscribe((data: UserPublicInfo) => this.PublicInfo = data);
    }
    /**
-    * On clicking the left dropdown send a request to get this user's subscribed communities 
+    * On clicking the left dropdown send a request to get this user's subscribed communities
     * And display it in this dropdown menu
     */
    OnclickLeftDropdown() {

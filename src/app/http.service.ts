@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable} from 'rxjs';
-import { catchError, tap} from 'rxjs/operators' ;
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable, throwError} from 'rxjs';
+import { catchError, tap, retry} from 'rxjs/operators' ;
 import { UserCommunities } from './Profile_classes/user-communities';
 import { UserPublicInfo } from './Profile_classes/user-public-info';
 import {Communities} from './classes/community-info';
@@ -13,7 +13,16 @@ import { comments } from './classes/comments';
     providedIn: 'root'
 })
 export class HttpService {
+
     constructor(private http: HttpClient) {}
+
+    ss = 'www.server.com/api';
+     // Http Options
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }  
     GetCommNameAndLogo(): Observable<any> {
         return this.http.get('http://localhost:3000/communities');
     }
@@ -64,11 +73,11 @@ export class HttpService {
 
         const headers = new HttpHeaders ({
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
+            Accept: 'application/json',
         });
         const body = {
-            'username': username,
-            'password': password
+            username,
+            password
         };
         console.log('Hello');
         return this.http.post('http://localhost:8000/api/unauth/signIn', body, { headers });
@@ -79,13 +88,13 @@ export class HttpService {
 
         const headers = new HttpHeaders ({
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
+            Accept: 'application/json',
         });
         const body = {
-            'username': username,
-            'email': email,
-            'password': password,
-            'password_confirmation' : password_confirmation
+            username,
+            email,
+            password,
+            password_confirmation
         };
 
         return this.http.post('http://localhost:8000/api/unauth/signIn', body, { headers });
@@ -97,5 +106,6 @@ export class HttpService {
         return this.http.post( 'request', {email});
 
     }
-}
 
+    
+}
