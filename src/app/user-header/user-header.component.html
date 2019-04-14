@@ -23,6 +23,9 @@
           All</a></li>
           <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">
           Original content</a></li>
+          <li class="dropdown-header">Profiles</li>
+          <li *ngFor="let followong of MyFollowing"><a routerLink="/user/{{following?.username}}" href="#"><img src="{{follower?.photo_path}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+            {{follower?.name}}</a></li>
           <li class="dropdown-header">Subscriptions</li>
           <li *ngFor="let com of MyCommunities"><a routerLink="/community/{{com?.community_id}}" href="#"><img src="{{com?.community_logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
             {{com?.community_name}}</a></li>
