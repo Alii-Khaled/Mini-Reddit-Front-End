@@ -3,6 +3,9 @@ import { Communities } from 'src/app/classes/community-info';
 import { HttpService } from '../http.service';
 import { CheckboxControlValueAccessor } from '@angular/forms';
 import {communityHttpService} from '../community/community.http.service'
+import {MatSnackBar, MatSnackBarModule} from "@angular/material";
+import { Router } from '@angular/router';
+import {ActivatedRoute}from '@angular/router';
 @Component({
   selector: 'app-community',
   templateUrl: './community.component.html',
@@ -11,24 +14,26 @@ import {communityHttpService} from '../community/community.http.service'
 export class CommunityComponent implements OnInit {
   
 
-  /**
-   * list of communities that the user subscribed
-   */
+  message;
+  theresponse;
   Community : Communities;
- 
+ commId;
   /**
    * 
    * @param http for requests
    */
   
- /* public comm =new Communities('community','http://i.imgur.com/sdO8tAw.png','http://i.imgur.com/sdO8tAw.png','This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.','rules');
- */
+ 
 
-  constructor(private http: communityHttpService) {
-
-    
+  constructor(private http: communityHttpService,public snackBar: MatSnackBar,private router:Router,route:ActivatedRoute) {
+    route.params.subscribe(val => {
+    this.commId=parseInt(this.router.url.substr(11));
+    console.log(this.commId);
+     this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
+    });
+   
    }
-   commId:number=1;
+  
     btn;
    buttonName='SUBSCRIBE';
    
@@ -37,29 +42,95 @@ export class CommunityComponent implements OnInit {
      if(SUBSCRIBED==false)
      {
     this.buttonName='SUBSCRIBE';
-    this.http.UnSubscribeCommunity(this.commId);
+    this.http.UnSubscribeCommunity(this.commId).subscribe(
+      response => {
+        this.message='Subscribed Successfully';
+    this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition:'center',
+      panelClass:'snack-remove-button',
+    
+    }); 
+    this.theresponse=true;
+      },
+      err => {
+        if(err.error==='UnAuthorized')
+        {
+           this.message='Subscribed Failed because you are not authorized';
+        }
+        else{
+      this.message='Subscribed Failed';
+        }
+    this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition:'center',
+      panelClass:'snack-remove-button',
+    }); 
+    this.theresponse=false;
+      },
+      () => {
+      if(this.theresponse)
+    {
+     
+    
+    }
+      }
+    );
      }
     else{
+
       this.buttonName='SUBSCRIBED' ;
-      this.http.SubscribeCommunity(this.commId);
+      this.http.SubscribeCommunity(this.commId).subscribe(
+      response => {
+        this.message='Unsubscribed Successfully';
+    this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition:'center',
+      panelClass:'snack-remove-button',
+    
+    }); 
+    this.theresponse=true;
+      },
+      err => {
+        if(err.error==='UnAuthorized')
+        {
+           this.message='Unsubscribed Failed because you are not authorized';
+        }
+        else{
+      this.message='Unsubscribed Failed';
+        }
+    this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition:'center',
+      panelClass:'snack-remove-button',
+    }); 
+    this.theresponse=false;
+      },
+      () => {
+      if(this.theresponse)
+    {
+     
+    
+    }
+      }
+    );
       
     }
   
    }
    
-  /*  unsubscribed(){
-    this.buttonName='UNSUBSCRIBE';
-   
-   } 
-   */
 
    /**
    * on initializing the page send a request to get current community info and display all info about it
    */
   
   ngOnInit() {
-     this.http.GetCommunityInfo(1).subscribe((data: Communities) => this.Community = data); 
    
+    this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
   }
 
 }

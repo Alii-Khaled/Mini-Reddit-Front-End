@@ -13,7 +13,7 @@ export class communityHttpService {
     /**
      * Variable to know from which server we get data (mock or API)
      */
-    IsApi = false;
+    IsApi = true;
     /**
      * To get all communities info
      *   @param id now we use id to get Specific Community 
@@ -32,7 +32,8 @@ export class communityHttpService {
         
         }
         else{
-            return this.http.get<Communities>('http://localhost:3000/http://localhost/api/unauth/communityInformation/' + id);
+            /*get community info not now in backend*/
+            return this.http.get<Communities>('http://localhost:3000/Community/' + id);
         }
     }
 
@@ -40,12 +41,13 @@ export class communityHttpService {
      * Remove Community 
      *  @param id now we use id to Remove Specific Community 
      */
+    
 
     RemoveCommunity(id: number): Observable <any> {
        var token =localStorage.getItem('token');
         const headers = new HttpHeaders ({
             "Accept": "application/json",
-            "Authorization": "Bearer: {"+token+"}",
+            "Authorization": "Bearer "+token,
             "Content-Type": "application/json",
         });
 
@@ -66,7 +68,7 @@ export class communityHttpService {
         }
 else
         {
-        return this.http.post<any>('http://localhost/api/auth/removeCommunity',body ,{ headers });
+        return this.http.post<any>('https://4b65b106.ngrok.io/api/auth/removeCommunity',body ,{ headers });
 
         }
     }
@@ -78,7 +80,7 @@ else
         var token =localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",
-            "Authorization": "Bearer: {"+token+"}",
+            "Authorization": "Bearer "+token,
             "Content-Type": "application/json",
         }
 
@@ -97,7 +99,7 @@ else
         return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers });
         }
         else{
-            return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers });
+        return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers });
         }
     }
       /**
@@ -108,7 +110,7 @@ else
         var token =localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",
-            "Authorization": "Bearer: {"+token+"}",
+            "Authorization": "Bearer "+token,
             "Content-Type": "application/json",
         }
 
@@ -127,7 +129,7 @@ else
             return this.http.post<any>('http://localhost/api/auth/unSubscribeCommunity',body ,{ headers });
         }
         else{
-            return this.http.post<any>('http://localhost/api/auth/unSubscribeCommunity',body ,{ headers });
+            return this.http.post<any>('https://4b65b106.ngrok.io/api/auth/unSubscribeCommunity',body ,{ headers });
         }
        
     }
@@ -143,7 +145,7 @@ else
         var token =localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",
-            "Authorization": "Bearer: {"+token+"}",
+            "Authorization": "Bearer "+token,
             "Content-Type": "application/json",
         }
 
@@ -159,10 +161,10 @@ else
          */
         if (this.IsApi === false) 
         {
-        this.http.patch("http://localhost/api/auth/editCommunity", body, { headers })
+        return this.http.post("http://localhost/api/auth/editCommunity", body, { headers })
     }
     else{
-        this.http.patch("http://localhost/api/auth/editCommunity", body, { headers }) 
+       return this.http.post("http://localhost/api/auth/editCommunity", body, { headers }) 
     }
     }
 
