@@ -68,7 +68,7 @@ export class communityHttpService {
         }
 else
         {
-        return this.http.post<any>('https://4b65b106.ngrok.io/api/auth/removeCommunity',body ,{ headers });
+        return this.http.post<any>('https://921b64a9.ngrok.io/api/auth/removeCommunity',body ,{ headers });
 
         }
     }
@@ -129,7 +129,7 @@ else
             return this.http.post<any>('http://localhost/api/auth/unSubscribeCommunity',body ,{ headers });
         }
         else{
-            return this.http.post<any>('https://4b65b106.ngrok.io/api/auth/unSubscribeCommunity',body ,{ headers });
+            return this.http.post<any>('https://921b64a9.ngrok.io/api/auth/unSubscribeCommunity',body ,{ headers });
         }
        
     }
