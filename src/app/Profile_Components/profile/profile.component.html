@@ -1,21 +1,21 @@
 <nav style="margin-top:48px"  class="navbar navbar-default" id="toolbar">
   <div class="container-fluid">
     <div class="nav nav-tabs" id="navbar">
-      <li><a routerLink="/user/{{PublicInfo?.username}}" class="navbar-item">Overview</a></li>
-      <li><a routerLink="/user/{{PublicInfo?.username}}/posts" class="navbar-item">Posts</a></li>
-      <li><a routerLink="/user/{{PublicInfo?.username}}/comments" class="navbar-item asd2">Comments</a></li>
-      <li><a routerLink="/user/{{PublicInfo?.username}}/saved" class="navbar-item asd2">Saved</a></li>
-      <li><a routerLink="/user/{{PublicInfo?.username}}/hidden" class="navbar-item asd">Hidden</a></li>
-      <li><a routerLink="/user/{{PublicInfo?.username}}/upvoted" class="navbar-item asd">Upvoted</a></li>
-      <li><a routerLink="/user/{{PublicInfo?.username}}/downvoted" class="navbar-item asd">Downvoted</a></li>
+      <li><a routerLink="/user/{{PublicInfo?.username}}" id="overview" class="navbar-item">Overview</a></li>
+      <li><a routerLink="/user/{{PublicInfo?.username}}/posts" id="posts" class="navbar-item">Posts</a></li>
+      <li><a routerLink="/user/{{PublicInfo?.username}}/comments" id="comments" class="navbar-item asd2">Comments</a></li>
+      <li><a routerLink="/user/{{PublicInfo?.username}}/saved" id="saved" class="navbar-item asd2">Saved</a></li>
+      <li><a routerLink="/user/{{PublicInfo?.username}}/hidden" id="hidden" class="navbar-item asd">Hidden</a></li>
+      <li><a routerLink="/user/{{PublicInfo?.username}}/upvoted" id="upvoted" class="navbar-item asd">Upvoted</a></li>
+      <li><a routerLink="/user/{{PublicInfo?.username}}/downvoted" id="downvoted" class="navbar-item asd">Downvoted</a></li>
       <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i></a>
           <ul class="dropdown-menu dropdown-menu-right">
-            <li><a routerLink="/user/{{PublicInfo?.username}}/comments" class="dropdown-hidden-items2" >Comments</a></li>
-            <li><a routerLink="/user/{{PublicInfo?.username}}/saved" class="dropdown-hidden-items2" >Saved</a></li> 
-            <li><a routerLink="/user/{{PublicInfo?.username}}/hidden" class="dropdown-hidden-items" >Hidden</a></li>
-            <li><a routerLink="/user/{{PublicInfo?.username}}/upvoted" class="dropdown-hidden-items" >Upvoted</a></li>
-            <li><a routerLink="/user/{{PublicInfo?.username}}/downvoted" class="dropdown-hidden-items">Downvoted</a></li>
+            <li><a routerLink="/user/{{PublicInfo?.username}}/comments" id="commnts_h" class="dropdown-hidden-items2" >Comments</a></li>
+            <li><a routerLink="/user/{{PublicInfo?.username}}/saved" id="saved_h" class="dropdown-hidden-items2" >Saved</a></li> 
+            <li><a routerLink="/user/{{PublicInfo?.username}}/hidden" id="hidden_h" class="dropdown-hidden-items" >Hidden</a></li>
+            <li><a routerLink="/user/{{PublicInfo?.username}}/upvoted" id="upvoted_h" class="dropdown-hidden-items" >Upvoted</a></li>
+            <li><a routerLink="/user/{{PublicInfo?.username}}/downvoted" id="downvoted_h" class="dropdown-hidden-items">Downvoted</a></li>
             <li><a routerLink="/user/{{PublicInfo?.username}}" href="#">Gilded (legacy)</a></li>
           </ul>
       </li>
