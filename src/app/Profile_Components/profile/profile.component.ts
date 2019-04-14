@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserPublicInfo } from 'src/app/Profile_classes/user-public-info';
 import { ProfileHttpService } from '../profile.http.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -25,9 +25,9 @@ export class ProfileComponent implements OnInit {
   /**
    * 
    * @param http For requests
-   * @param route To use it when we want send parameters for current user (username) in the request
+   * @param router To rout to another url if there was an error
    */
-  constructor(private http: ProfileHttpService, private route: ActivatedRoute) { }
+  constructor(private http: ProfileHttpService, private router: Router) { }
   /**
    * On initializing the page send a request to get current user public info and display his/her name and karma
    * In the right dropdown
@@ -37,12 +37,29 @@ export class ProfileComponent implements OnInit {
        * Getting user name
        */
       this.http.GetUserName().subscribe((data: any) =>  {
+        /**
+         * Get username
+         */
         this.username = data.username;
+        /**
+         * Get success status
+         */
         this.success = data.success;
       },
-      (error: any) => console.log('Error Exists'),
+      (error: any) => {
+        /**
+         * If there is error getting user name navigate to homepage
+         */
+        this.router.navigateByUrl('#');
+      },
+      /**
+       * Request to get user's public info
+       */
       () => this.http.GetUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
         this.PublicInfo = data;
+        /**
+         * To split cake day from day and hour to day only
+         */
         this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
     })
       );

@@ -2,7 +2,7 @@
          * This class is used for getting names and logos of communities that user subscribe
          */
 export class UserCommunities {
-            /**
+        /**
          * To display community number
          */
         public community_id: number;
