@@ -8,436 +8,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	    <link rel="stylesheet" href="../styles/style.css">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">reddit documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="../">reddit documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="../overview.html" 
-                                         href="../overview.html" 
-                                        >
-                                        <span class="fa fa-th"></span>Overview
-                                    </a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            ></span>
-                        </a>
-                        <ul class="links collapse in"
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="../modules/AppModule.html" >AppModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="../components/AccountSettingComponent.html" >AccountSettingComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/AppComponent.html" >AppComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/CommentsComponent.html" >CommentsComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/CommentsLayoutComponent.html" >CommentsLayoutComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/CommunityComponent.html" >CommunityComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/DownvotedComponent.html" >DownvotedComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/EditCommunityComponent.html" >EditCommunityComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/ForgotUsernameComponent.html" >ForgotUsernameComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HiddenComponent.html" >HiddenComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/OverviewComponent.html" >OverviewComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/PostLayoutComponent.html" >PostLayoutComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/PostsComponent.html" >PostsComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/ProfileSettingComponent.html" >ProfileSettingComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/SavedComponent.html" >SavedComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/SignupComponent.html" >SignupComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/UpvotedComponent.html" >UpvotedComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/UserHeaderComponent.html" >UserHeaderComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/UserSettingsComponent.html" >UserSettingsComponent</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-file-code-o"></span>
-                            <span>Classes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-classes-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-classes-links"
-                            >
-                                <li class="link">
-                                    <a href="../classes/AppPage.html" >AppPage</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/Communities.html"  class="active" >Communities</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/PostsObjects.html" >PostsObjects</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/UserCommunities.html" >UserCommunities</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/UserPublicInfo.html" >UserPublicInfo</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/comments.html" >comments</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-long-arrow-down"></span>
-                            <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-injectables-links"
-                            >
-                                <li class="link">
-                                    <a href="../injectables/CommunityHttpServiceBackend.html" >CommunityHttpServiceBackend</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/CommunityHttpServiceRestApi.html" >CommunityHttpServiceRestApi</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/HttpService.html" >HttpService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/PostService.html" >PostService</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                    </li>
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-                    <li class="divider"></li>
-                    <li class="copyright">
-                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                            </a>
-                    </li>
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="../">reddit documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="../overview.html" 
-                                                href="../overview.html" 
-                                               >
-                                               <span class="fa fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   ></span>
-                               </a>
-                               <ul class="links collapse in"
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="../modules/AppModule.html" >AppModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="../components/AccountSettingComponent.html" >AccountSettingComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/AppComponent.html" >AppComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/CommentsComponent.html" >CommentsComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/CommentsLayoutComponent.html" >CommentsLayoutComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/CommunityComponent.html" >CommunityComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/DownvotedComponent.html" >DownvotedComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/EditCommunityComponent.html" >EditCommunityComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/ForgotUsernameComponent.html" >ForgotUsernameComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HiddenComponent.html" >HiddenComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/OverviewComponent.html" >OverviewComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/PostLayoutComponent.html" >PostLayoutComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/PostsComponent.html" >PostsComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/ProfileSettingComponent.html" >ProfileSettingComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/SavedComponent.html" >SavedComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/SignupComponent.html" >SignupComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/UpvotedComponent.html" >UpvotedComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/UserHeaderComponent.html" >UserHeaderComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/UserSettingsComponent.html" >UserSettingsComponent</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-file-code-o"></span>
-                                   <span>Classes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#classes-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="classes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../classes/AppPage.html" >AppPage</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/Communities.html"  class="active" >Communities</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/PostsObjects.html" >PostsObjects</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/UserCommunities.html" >UserCommunities</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/UserPublicInfo.html" >UserPublicInfo</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/comments.html" >comments</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-long-arrow-down"></span>
-                                   <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="injectables-links"
-                   >
-                                       <li class="link">
-                                           <a href="../injectables/CommunityHttpServiceBackend.html" >CommunityHttpServiceBackend</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/CommunityHttpServiceRestApi.html" >CommunityHttpServiceRestApi</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/HttpService.html" >HttpService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/PostService.html" >PostService</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
-                           </li>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                           <li class="copyright">
-                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
-                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
-                                   </a>
-                           </li>
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content class">
                    <div class="content-data">
+
+
+
+
+
 
 
 
@@ -450,16 +46,16 @@
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-    </li>
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-    </li>
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
+    <div class="tab-pane fade active in" id="c-info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -475,160 +71,391 @@
 
             </p>
 
-            <section>
-                <h3 id="constructor">Constructor</h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <code>constructor(name: string, logo: string, banner: string, description: string, rules: string, subscribers: number)</code>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>constructor takes every value of the class and assign it to this community</p>
-            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </section>
 
 
 
             <section>
-                <h3 id="inputs">Properties</h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> community_banner</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>community_banner:     <code>string</code>
-            </bcode>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>banner of this community</p>
-            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> community_description</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>community_description:     <code>string</code>
-            </bcode>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>description of this community</p>
-            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> community_logo</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>community_logo:     <code>string</code>
-            </bcode>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>logo of this community</p>
-            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> community_name</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>community_name:     <code>string</code>
-            </bcode>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>name of this community</p>
-            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> community_rules</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>community_rules:     <code>string</code>
-            </bcode>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>rules of this community</p>
-            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Public</span> community_subscribers</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-circle"></span><code>community_subscribers:     <code>number</code>
-            </bcode>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>number of subscribers of this community</p>
-            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#community_banner">community_banner</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#community_description">community_description</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#community_logo">community_logo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#community_name">community_name</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#community_rules">community_rules</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#community_subscribers">community_subscribers</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, logo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, banner: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, description: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, rules: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, subscribers: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/classes/community-info.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>constructor takes every value of the class and assign it to this community</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>name</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>banner</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>description</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>rules</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>subscribers</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="community_banner"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            community_banner</b>
+                            <a href="#community_banner"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/classes/community-info.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>banner of this community</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="community_description"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            community_description</b>
+                            <a href="#community_description"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/classes/community-info.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>description of this community</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="community_logo"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            community_logo</b>
+                            <a href="#community_logo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/classes/community-info.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>logo of this community</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="community_name"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            community_name</b>
+                            <a href="#community_name"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/classes/community-info.ts:8</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>name of this community</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="community_rules"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            community_rules</b>
+                            <a href="#community_rules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/classes/community-info.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>rules of this community</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="community_subscribers"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            community_subscribers</b>
+                            <a href="#community_subscribers"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/classes/community-info.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>number of subscribers of this community</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+
+
     </div>
-    <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">export class Communities {
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class Communities {
  /**
      * name of this community
      */
@@ -673,9 +500,11 @@
 
 
 
+
+
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -683,8 +512,21 @@
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'Communities.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -695,20 +537,17 @@
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
+       <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
-       <script src="../js/libs/highlight.pack.js"></script>
-       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
-       <script src="../js/search/search_index.js"></script>
-       <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                hljs.initHighlightingOnLoad();
-                hljs.initLineNumbersOnLoad();
-            });
-       </script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
 
     </body>
 </html>

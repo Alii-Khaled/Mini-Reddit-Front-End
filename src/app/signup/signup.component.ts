@@ -26,10 +26,17 @@ form: FormGroup;
       password_confirmation: ['', Validators.required, Validators.minLength(8)]
     });
    } */
-  
+
 
   form: FormGroup;
   modalRef: BsModalRef;
+  config = {
+    animated: true,
+    keyboard: true,
+    backdrop: true,
+    ignoreBackdropClick: false,
+    class: 'my-modal'
+  };
   constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
     this.form = this.fb.group({
     email: ['', Validators.required]
@@ -41,23 +48,26 @@ form: FormGroup;
     /**
      * take the user's input(email) from the input form
      */
-  next() {
+  next(template: TemplateRef<any>) {
     const val = this.form.value;
-    this.service.next( val.email).subscribe((data: any) => {
-    this.router.navigateByUrl('#');
+    /* this.service.next( val.email).subscribe((data: any) => {
     },
     err => {if (err.status === 400) {
       console.log('error');
 
-    }});
+    }}); */
+    this.openModal(template);
    }
+   openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
+  }
 
   SignUp() {
     const val = this.form.value;
     this.service.SignUp(val.username , val.password, val.email, val.password_confirmation).subscribe((data: any) => {
       localStorage.setItem('token', data.token );
-      var test =localStorage.getItem('token');
-      
+      var test = localStorage.getItem('token');
+
       this.router.navigateByUrl('profile/' + test);
     },
     err => {if (err.status === 400) {

@@ -16,55 +16,17 @@ export class HttpService {
 
     constructor(private http: HttpClient) {}
 
-    ss = 'www.server.com/api';
-     // Http Options
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }  
+    /**
+     * To get all community info
+     */
+    GetCommunityInfo(id: number): Observable <Communities> {
+        return this.http.get<Communities>('http://localhost:3000/Community/' + id);
+
+
+        }
     GetCommNameAndLogo(): Observable<any> {
         return this.http.get('http://localhost:3000/communities');
     }
-    /**
-     * to get all communities subscribed by this user
-     */
-    GetMyCommunities(): Observable<UserCommunities[]> {
-        return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
-    }
-    /**
-     * get user public info like (karma,name,username,...)
-     * @param id now we use id to get specific user but when connect to back-end we will use username
-     */
-    GetUserPublicInfo(id: number): Observable<UserPublicInfo> {
-        return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + id);
-    }
-
-    /**
-     * to get all community info
-     */
-    GetCommunityInfo(id: number): Observable <Communities> {
-    return this.http.get<Communities>('http://localhost:3000/Community/' + id);
-
-
-    }
-    /**
-     * to send a request contains the user name & password
-     */
-
-    /**
-     * get all information needed in the database for the posts (id, comments, subscribed, ...)
-     */
-
-    GetPostsObjects(): Observable<PostsObjects[]> {
-        return this.http.get<PostsObjects[]>('http://localhost:3000/posts');
-    }
-
-    GetComments(): Observable<comments[]> {
-        return this.http.get<comments[]>('http://localhost:3000/comments');
-    }
-
-
     // login(username: string , password: string): Observable<any> {
     //     return this.http.post( 'request', {username, password});
     // }
@@ -79,7 +41,6 @@ export class HttpService {
             username,
             password
         };
-        console.log('Hello');
         return this.http.post('http://localhost:8000/api/unauth/signIn', body, { headers });
     }
 
@@ -107,5 +68,4 @@ export class HttpService {
 
     }
 
-    
 }

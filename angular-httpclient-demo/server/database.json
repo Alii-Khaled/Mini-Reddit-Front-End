@@ -1,24 +1,38 @@
 {
-    "Community": [
-        {
-            "id":1,
-            "community_name": "community",
-            "community_subscribers": "227",
-            "community_logo": "http://i.imgur.com/sdO8tAw.png",
-            "community_description": "This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.",
-            "community_banner" : "http://i.imgur.com/sdO8tAw.png",
-            "community_rules" : "rules"
-
-        }
+  "Community": [
+    {
+      "id": 1,
+      "community_name": "Ali",
+      "community_subscribers": "227",
+      "community_logo": "http://i.imgur.com/sdO8tAw.png",
+      "community_description": "This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.",
+      "community_banner": "http://i.imgur.com/sdO8tAw.png",
+      "community_rules": "rules"
+    },
+    {
+      "id": 2,
+      "community_name": "Ahmed",
+      "community_subscribers": "227",
+      "community_logo": "http://i.imgur.com/sdO8tAw.png",
+      "community_description": "This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.",
+      "community_banner": "http://i.imgur.com/sdO8tAw.png",
+      "community_rules": "rules"
+    }
     ],
+    "get_my_user_name": {
+            "success": true,
+            "username": "7moda"
+        },
     "communities": [
             {
                 "id": 1,
+                "community_id":1,
                 "community_name":"Ali",
                 "community_logo":"https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             },
             {
                 "id": 2,
+                "community_id":2,
                 "community_name":"Ahmed",
                 "community_logo":"https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             }
@@ -47,7 +61,7 @@
                 "cover_path": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             }
         ],
-        "posts": [
+        "overview": [
             {
 
                 "id": 1,
@@ -146,6 +160,174 @@
                 "date": " 2 days ago ",
                 "comments_num": 0,
                 "saved": "true"
+            }
+        ],
+        "upvoted": [
+            {
+                "post_id": 1,
+                "body": "post1",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "none",
+                "community_id": -1,
+                "subscribed": "true",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 17,
+                "upvotes": 30,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
+            },
+            {
+                "post_id": 2,
+                "body": "post2",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "none",
+                "community_id": -1,
+                "subscribed": "false",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 15,
+                "upvotes": 20,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
+            },
+            {
+                "post_id": 3,
+                "body": "post3",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "laravel",
+                "community_id": 1,
+                "subscribed": "true",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 15,
+                "upvotes": 20,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
+            }
+        ],
+        "hidden": [
+            {
+                "post_id": 1,
+                "body": "post1",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "none",
+                "community_id": -1,
+                "subscribed": "true",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 17,
+                "upvotes": 30,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
+            },
+            {
+                "post_id": 2,
+                "body": "post2",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "none",
+                "community_id": -1,
+                "subscribed": "false",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 15,
+                "upvotes": 20,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
+            },
+            {
+                "post_id": 3,
+                "body": "post3",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "laravel",
+                "community_id": 1,
+                "subscribed": "true",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 15,
+                "upvotes": 20,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
+            }
+        ],
+        "downvoted": [
+            {
+                "post_id": 1,
+                "body": "post1",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "none",
+                "community_id": -1,
+                "subscribed": "true",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 17,
+                "upvotes": 30,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
+            },
+            {
+                "post_id": 2,
+                "body": "post2",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "none",
+                "community_id": -1,
+                "subscribed": "false",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 15,
+                "upvotes": 20,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
+            },
+            {
+                "post_id": 3,
+                "body": "post3",
+                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "video_url": "https:\/\/www.youtube.com",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "laravel",
+                "community_id": 1,
+                "subscribed": "true",
+                "author_photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 15,
+                "upvotes": 20,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false"
             }
         ]
     
