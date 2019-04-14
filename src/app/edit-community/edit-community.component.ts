@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Communities } from 'src/app/classes/community-info';
 import { catchError } from 'rxjs/operators';
-import { communityHttpService } from '../community/community.http.service'
-import { MatSnackBar, MatSnackBarModule } from "@angular/material";
+import {communityHttpService} from '../community/community.http.service';
+import {MatSnackBar, MatSnackBarModule} from "@angular/material";
 import { Router } from '@angular/router';
 import { timeout, delay } from 'q';
 @Component({
