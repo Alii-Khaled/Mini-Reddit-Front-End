@@ -25,13 +25,12 @@ describe('CommunityComponent', () => {
     expect(comm).toBeTruthy();
   }));
   
-  /* it('should render BannerBar with bg color blue',async( () => {
-    let fixture=TestBed.createComponent(CommunityComponent);
-    fixture.detectChanges();
-    let compiled =fixture.debugElement.nativeElement;
-    expect(compiled.querySelector).toBeTruthy();
-  }
-   */
+  describe('toggleButton',()=>{
+    it('should change buttonname to SUBSCRIBE if input is true',()=>{
+      this.toggleButton(true);
+      expect(this.buttonName).toBe('SUBSCRIBED');
+    })
+  })
   
   
   
