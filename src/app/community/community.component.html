@@ -57,10 +57,11 @@
                       {{Community?.community_description}}
 </div>
 <!-- <button type="button" class="btn btn-primary btn-lg Subscribe">SUBSCRIBE</button> -->
-<mat-button-toggle  [checked]="SUBSCRIBED"
-(change)="toggleButton(toggleBtn.checked)" (onmouseover)="unsubscribed()" #toggleBtn> {{buttonName}} </mat-button-toggle>
+<mat-button-toggle  
+(change)="toggleButton(toggleBtn.checked)"  #toggleBtn> {{buttonName}} </mat-button-toggle>
 
 <button type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
+<button routerLink="/community/{{Community?.id}}/Edit_community" type="button" class="btn btn-primary btn-lg CreatePost">EDIT COMMUNITY</button>
             </div>
             
                   </div>

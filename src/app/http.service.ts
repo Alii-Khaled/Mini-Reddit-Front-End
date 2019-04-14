@@ -59,65 +59,13 @@ export class HttpService {
 
         return this.http.post('http://localhost:8000/api/unauth/signIn', body, { headers });
     }
-    RemoveCommunity(id: number): Observable <any> {
+    /**
+     * to send a request contains the email
+     */
+    next(email: string): Observable<any> {
+        return this.http.post( 'request', {email});
 
-        const headers = new HttpHeaders ({
-            "Accept": "application/json",
-            "Authorization": "Bearer: {token}",
-            "Content-Type": "application/json",
-        });
-
-        const body = {
-            "community_id": id
-        };
-
-
-        return this.http.post<any>('http://localhost/api/auth/removeCommunity',body ,{ headers });
-
-
-        }
-        SubscribeCommunity(id: number): Observable <any> {
-            let headers = {
-                "Accept": "application/json",
-                "Authorization": "Bearer: {token}",
-                "Content-Type": "application/json",
-            }
-
-            let body = {
-                "community_id": id
-            }
-            return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers });
-        }
-
-       UnSubscribeCommunity(id: number): Observable <any> {
-            let headers = {
-                "Accept": "application/json",
-                "Authorization": "Bearer: {token}",
-                "Content-Type": "application/json",
-            }
-
-            let body = {
-                "community_id": id
-            }
-            return this.http.post<any>('http://localhost/api/auth/subscribeCommunity',body ,{ headers });
-        }
-
-        editCommunity(id:number ,rules: string , bio: string, banner: string, logo: string){
-            let headers = {
-                "Accept": "application/json",
-                "Authorization": "Bearer: {token}",
-                "Content-Type": "application/json",
-            }
-
-            let body = {
-                "community_id": id,
-                "rules_content": rules,
-                "des_content":bio,
-                "banner": banner,
-                "logo": logo
-            }
-            this.http.patch("http://localhost/api/auth/editCommunity", body, { headers })
-        }
+    }
 
 }
 

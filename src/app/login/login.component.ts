@@ -18,6 +18,16 @@ import { AppComponent } from '../app.component';
          */
 
 export class LoginComponent implements OnInit {
+  form: FormGroup;
+  modalRef: BsModalRef;
+  disabld: boolean;
+  config = {
+    animated: true,
+    keyboard: true,
+    backdrop: true,
+    ignoreBackdropClick: false,
+    class: 'my-modal'
+  };
   constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
     this.form = this.fb.group({
       username: ['', Validators.required , Validators.minLength(3) , Validators.maxLength(20)],
@@ -26,9 +36,6 @@ export class LoginComponent implements OnInit {
     this.disabld = this.form.valid;
    }
 
-  form: FormGroup;
-  modalRef: BsModalRef;
-  disabld: boolean;
   ngOnInit() {
   }
     /**
@@ -50,12 +57,9 @@ export class LoginComponent implements OnInit {
     /**
      * supposed to open sign up page as pop up
      */
-  signup(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
-  forgotUsername(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
+    openModal(template: TemplateRef<any>) {
+      this.modalRef = this.modalService.show(template, this.config);
+    }
 
 
 }
