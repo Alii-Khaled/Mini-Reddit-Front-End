@@ -1,10 +1,8 @@
 import { Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { catchError, tap} from 'rxjs/operators' ;
 import { UserCommunities } from '../Profile_classes/user-communities';
 import { UserPublicInfo } from '../Profile_classes/user-public-info';
-import { Communities } from '../classes/community-info';
 import { PostsObjects } from '../classes/posts-objects';
 import { comments } from '../classes/comments';
 
@@ -17,11 +15,11 @@ export class ProfileHttpService {
     /**
      * Variable to know from which server we get data (mock or API)
      */
-    IsApi = false;
+    IsApi = true;
     /**
      * To get all communities subscribed by this user
      */
-    GetMyCommunities(): Observable<UserCommunities[]> {
+    GetMyCommunities(): Observable<any[]> {
         /**
          * Choose from where i'll get my data
          */
@@ -32,8 +30,50 @@ export class ProfileHttpService {
              */
         return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
         } else {
-        return this.http.get<UserCommunities[]>('"http://localhost/api/unauth/viewUserCommunities"');
+             /**
+              * Getting token
+              */
+            var token = localStorage.getItem('token');
+            /**
+             * set headers
+             */
+            const headers = new HttpHeaders ({
+                "Accept": "application/json",
+                "Authorization": "Bearer: {"+ token +"}",
+            });
+            console.log('Here is a token: ' + token);
+            return this.http.get<any[]>('https://4b65b106.ngrok.io/api/unauth/viewUserCommunities', { headers });
         }
+    }
+
+     /**
+      * Getting username for the logged in user
+      */
+    GetUserName(): Observable<any> {
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * Getting username from mock server
+             */
+        return this.http.get<any>('http://localhost:3000/get_my_user_name');
+        } else {
+            /**
+             * Getting token
+             */
+            var token = localStorage.getItem('token');
+
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            /**
+             * Getting username from Api
+             */
+            return this.http.get<any>('https://4b65b106.ngrok.io/api/auth/getUsername' , {headers});
+            }
     }
     /**
      * Get user public info like (karma,name,username,...)
@@ -48,45 +88,64 @@ export class ProfileHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + id);
-        } else {
+        return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + 1);
+        } else { 
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            });
+
             /**
              * Here id represent username of the profile owner user
              */
-        return this.http.get<UserPublicInfo>('http://localhost/api/unauth/viewPublicUserInfo"' + id);
+            return this.http.get<UserPublicInfo>('https://4b65b106.ngrok.io/api/unauth/viewPublicUserInfo?username=' + id , {headers});
         }
     }
-
 
     /**
      * Get user's posts
      */
-
-    GetPostsObjects(username: string): Observable<PostsObjects[]> {
+    GetOverView(username: string): Observable<PostsObjects[]> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<PostsObjects[]>('http://localhost:3000/posts');
+        return this.http.get<PostsObjects[]>('http://localhost:3000/overview');
         } else {
-            return this.http.get<PostsObjects[]>('http://localhost/api/unauth/ViewPosts' + username);
+            var token = localStorage.getItem('token');
+
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            const body = {
+                'username': username
+            };
+            return this.http.get<PostsObjects[]>('https://4b65b106.ngrok.io/api/auth/viewOverview"' + body + { headers });
         }
     }
 
     /**
      * Getting user's downvoted posts
-     * @param username username for user profile owner
+     * @param type type for upvoted or down voted
      */
-    GetDownVoted(username): Observable<PostsObjects[]> {
+    GetDownVoted(): Observable<any> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<PostsObjects[]>('http://localhost:3000/downvoted');
+        return this.http.get<any>('http://localhost:3000/downvoted');
         } else {
-            return this.http.get<PostsObjects[]>('http://localhost/api/auth/viewUpOrDownvotedPosts' + username + 0);
+            var token = localStorage.getItem('token');
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            return this.http.get<any>('https://4b65b106.ngrok.io/api/auth/viewUpOrDownvotedPosts?type=0', {headers} );
         }
     }
 
@@ -94,15 +153,43 @@ export class ProfileHttpService {
      * Getting user's upvoted posts
      * @param username username for user profile owner
      */
-    GetUpVoted(username: string): Observable<PostsObjects[]> {
+    GetUpVoted(): Observable<any> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<PostsObjects[]>('http://localhost:3000/upvoted');
+        return this.http.get<any>('http://localhost:3000/upvoted');
         } else {
-            return this.http.get<PostsObjects[]>('http://localhost/api/auth/viewUpOrDownvotedPosts' + username + 1);
+            var token = localStorage.getItem('token');
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            return this.http.get<any>('https://4b65b106.ngrok.io/api/auth/viewUpOrDownvotedPosts?type=1' , {headers} );
+        }
+    }
+
+    /**
+     * Getting user's posts
+     * @param username username for user profile owner
+     */
+    GetMyPosts(username: string): Observable<any> {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        return this.http.get<any>('http://localhost:3000/posts');
+        } else {
+            var token = localStorage.getItem('token');
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            return this.http.get<any>('https://4b65b106.ngrok.io/api/unauth/ViewPosts?username=' + username ,  {headers} );
         }
     }
 
@@ -132,11 +219,11 @@ export class ProfileHttpService {
              */
         return this.http.get<comments[]>('http://localhost:3000/comments');
         } else {
-            return this.http.get<comments[]>('http://localhost/api/unauth/viewComments' + username);
+            return this.http.get<comments[]>('https://4b65b106.ngrok.io/api/unauth/viewComments' + username);
         }
     }
 
-    GetMyFollowing(): Observable<UserCommunities[]> {
+    GetMyFollowing(username): Observable<any> {
         /**
          * Choose from where i'll get my data
          */
@@ -145,9 +232,15 @@ export class ProfileHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
+        return this.http.get<any>('http://localhost:3000/communities');
         } else {
-        return this.http.get<UserCommunities[]>('"http://localhost/api/unauth/viewUserCommunities"');
+            var token = localStorage.getItem('token');
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            return this.http.get<any>('https://4b65b106.ngrok.io/api/auth/following?username=' + username , { headers });
         }
     }
 
