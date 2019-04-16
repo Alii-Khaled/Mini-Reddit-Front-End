@@ -91,13 +91,13 @@
 <polygon fill="#000000" stroke="#000000" points="1812.8774,-171.5001 1802.8774,-175 1812.8773,-178.5001 1812.8774,-171.5001"/>
 </g>
 <!-- CommunityComponent -->
-<g id="node5" class="node">
+<g id="node4" class="node">
 <title>CommunityComponent</title>
 <polygon fill="#ffffb3" stroke="#000000" points="2955.2316,-122 2806.7684,-122 2806.7684,-86 2955.2316,-86 2955.2316,-122"/>
 <text text-anchor="middle" x="2881" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommunityComponent</text>
 </g>
 <!-- CommunityComponent&#45;&gt;AppModule -->
-<g id="edge5" class="edge">
+<g id="edge4" class="edge">
 <title>CommunityComponent&#45;&gt;AppModule</title>
 <path fill="none" stroke="#000000" d="M2881,-122.2228C2881,-142.3652 2881,-172 2881,-172 2881,-172 1812.8612,-172 1812.8612,-172"/>
 <polygon fill="#000000" stroke="#000000" points="1812.8613,-168.5001 1802.8612,-172 1812.8612,-175.5001 1812.8613,-168.5001"/>

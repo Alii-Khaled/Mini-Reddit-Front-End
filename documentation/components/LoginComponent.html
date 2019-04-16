@@ -595,6 +595,7 @@ export class LoginComponent implements OnInit {
      * take the user&#x27;s input (username &amp; password) from the input form and set token
      */
   login() {
+    console.log(&#x27;welcome&#x27;);
     const val &#x3D; this.form.value;
     this.service.login(val.username , val.password).subscribe((data: any) &#x3D;&gt; {
      localStorage.setItem(&#x27;token&#x27;, data.token );

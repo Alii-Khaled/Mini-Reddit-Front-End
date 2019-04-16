@@ -26,11 +26,13 @@
     "communities": [
             {
                 "id": 1,
+                "community_id":1,
                 "community_name":"Ali",
                 "community_logo":"https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             },
             {
                 "id": 2,
+                "community_id":2,
                 "community_name":"Ahmed",
                 "community_logo":"https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             }
@@ -66,7 +68,7 @@
                 "post_id": 1,
                 "body": "string",
                 "video_url": "none",
-                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "image": "https://media.giphy.com/media/12xykIpZZw4JKE/giphy.gif",
                 "title": "stringssss",
                 "username": "7moda",
                 "community": "none",
@@ -88,7 +90,7 @@
                 "post_id": 2,
                 "body": "string",
                 "video_url": "none",
-                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "image": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/04/Reddit-now-has-more-active-users-than-Twitter-%E2%80%94-and-is-more-engaging-than-porn-796x417.png",
                 "title": "string",
                 "username": "7moda",
                 "community": "none",
@@ -110,7 +112,7 @@
                 "post_id": 3,
                 "body": "string",
                 "video_url": "none",
-                "image": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4",
+                "image": "https://media-assets-05.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-90538-reddit_main_2--2x1--940.jpg",
                 "title": "string",
                 "username": "7moda",
                 "community": "none",
@@ -121,7 +123,7 @@
                 "date": "April 7,2019",
                 "comments_num": 6,
                 "saved": false,
-                "hidden": false,
+                "hidden": true,
                 "upvoted": true,
                 "downvoted": false,
                 "first_icon": "string",

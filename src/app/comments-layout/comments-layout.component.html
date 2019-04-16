@@ -1,4 +1,4 @@
-<form class="comment-container">
+<form class="comment-container" id="commenting{{comments.comment_id}}">
   <div class="upper" style="cursor: pointer;">
     <p style="color:grey;"><mat-icon>mode_comment</mat-icon><span class="underlining" style="color:blue">user</span>
        commented on  . <span class="underlining" style="font-weight: bold;color:black;">u/</span>
@@ -21,17 +21,21 @@
       </ul>
     </button>
     <div>
-      <button mat-button id="more" class="dropdown-toggle" data-toggle="dropdown"><mat-icon>linear_scale</mat-icon>
+      <button mat-button id="more{{comments.commente_id}}" class="dropdown-toggle" data-toggle="dropdown"><mat-icon>linear_scale</mat-icon>
         <ul class="dropdown-menu dropdown-menu-right dropdown">
           <li><a *ngIf="true; else elseBlockSave" href="#" id="save"><mat-icon>bookmark_border</mat-icon> Save</a></li>
           <ng-template #elseBlockSave><a href="#" id="save" style="color:blue;"><mat-icon>bookmark</mat-icon> Unsave</a></ng-template>
-          <li><a href="#"id="edit"><mat-icon>edit</mat-icon> Edit</a></li>
-          <li><a href="#" id="delete"><mat-icon>delete_forever</mat-icon> Delete</a></li>
+          <li><a href="#"id="edit{{comments.commente_id}}"><mat-icon>edit</mat-icon> Edit</a></li>
+          <li><a href="#" id="delete{{comments.commente_id}}"><mat-icon>delete_forever</mat-icon> Delete</a></li>
+          <li><a href="#" id="_remove{{comments.commente_id}}" class="others" *ngIf="innerWidth < 268;"><mat-icon>delete</mat-icon> Remove</a></li>
+          <li><a href="#" id="_spam{{comments.commente_id}}" class="others" *ngIf="innerWidth < 268;"><mat-icon>horizontal_split</mat-icon> Spam</a></li>
+          <li><a href="#" id="_verify{{comments.commente_id}}" class="others" *ngIf="innerWidth < 268;"><mat-icon>verified_user</mat-icon></a></li>
         </ul>
       </button>
     </div>
-    <button mat-button id="remove" class="others"><mat-icon>delete</mat-icon> Remove</button>
-    <button mat-button id="spam" class="others"><mat-icon>horizontal_split</mat-icon> Spam</button>
-    <button mat-button class="others"><mat-icon>verified_user</mat-icon></button>
+    <button mat-button *ngIf="innerWidth >= 494;"><mat-icon></mat-icon></button>
+    <button mat-button id="remove{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 268;"><mat-icon>delete</mat-icon> Remove</button>
+    <button mat-button id="spam{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 332;"><mat-icon>horizontal_split</mat-icon> Spam</button>
+    <button mat-button id="verify{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 397;"><mat-icon>verified_user</mat-icon></button>
   </div>
 </form>

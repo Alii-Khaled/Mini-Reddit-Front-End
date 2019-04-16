@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, HostListener } from '@angular/core';
 import { text } from '@angular/core/src/render3';
 import { HttpService } from '../http.service';
 import { PostsObjects } from '../classes/posts-objects';
 import { PostService } from '../post.service';
 import { post } from 'selenium-webdriver/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-layout',
@@ -11,65 +12,27 @@ import { post } from 'selenium-webdriver/http';
   styleUrls: ['./post-layout.component.css']
 })
 export class PostLayoutComponent implements OnInit {
+  innerWidth2: number;
+
+  constructor(private apiService: HttpService, public router: Router) {}
   /**
    * object to receivearray of objects of posts information
    */
   @Input()posts: PostsObjects;
+  innerWidth = 1268;
+  public type: string;
 
-  constructor() {}
+  public size = '';
+  public id = '';
   ngOnInit() {
-    // if (this.posts.upvoted === true) {
-    //   document.getElementById('upVote').style.color = 'red';
-    //   document.getElementById('voteNum').style.color = 'red';
-    // } else if (this.posts.downvoted === true) {
-    //   document.getElementById('downVote').style.color = 'blue';
-    //   document.getElementById('voteNum').style.color = 'blue';
-    // }
    }
 
   /**
    * these are two functions for voting the first testing post
    * @param upVoted for knowing if it is clicked before or not
    */
- /*  upVote() {
-    if (this.post.upvoted === false) {
-      this.post.votes = this.post.votes + 1;
-      this.post.upvoted = true;
-    } else {
-      this.post.votes = this.post.votes - 1;
-      this.post.upvoted = false;
-    }
-  }
 
-  downVote() {
-    if (this.post.downvoted === false) {
-      this.post.votes = this.postObj.votes - 1;
-      this.post.downvoted = true;
-    } else {
-      this.post.votes = this.postObj.votes + 1;
-      this.post.downvoted = false;
-    }
-  } */
-
-  // dummyyyyyyyyy
-  /* save() {
-    this.postObj.saved = 'true';
-    this.posts[i].saved = true;
-  }
-  unsave() {
-    this.postObj.saved = 'false';
-  }
-  hide() {
-    this.postObj.hidden = 'true';
-  }
-  unhide() {
-    this.postObj.hidden = 'false';
-  }
- */
 upVote() {
-  // if(this.posts.downvoted === true){
-  //   // downvote();
-  // }
   this.posts.downvoted = false;
   if (this.posts.upvoted === true) {
     this.posts.upvoted = false;
@@ -80,9 +43,6 @@ upVote() {
   }
 }
 downVote() {
-  // if(this.posts.upvoted === true){
-  //   // upvote();
-  // }
   this.posts.upvoted = false;
   if (this.posts.downvoted === true) {
     this.posts.downvoted = false;
@@ -104,4 +64,29 @@ hide() {
 unhide() {
   this.posts.hidden = false;
 }
+
+/**
+ * 
+ * @param event this is a responsive auto update
+ */
+@HostListener('window:resize', ['$event'])
+onResize(event) {
+  if (window.innerWidth > 960) {
+    this.innerWidth = window.innerWidth - 350;
+  } else {
+    this.innerWidth = window.innerWidth;
+  }
+  this.innerWidth = this.innerWidth - 100;
+  this.size = this.innerWidth.toString();
+  this.size = this.size + 'px';
+  this.id = 'posting' + this.posts.post_id;
+  document.getElementById(this.id).style.width = this.size;
+  // for third part in the form of the post
+  this.innerWidth = this.innerWidth - 150;
+  this.size = this.innerWidth.toString();
+  this.size = this.size + 'px';
+  this.id = 'third' + this.posts.post_id;
+  document.getElementById(this.id).style.width = this.size;
+}
+
 }
