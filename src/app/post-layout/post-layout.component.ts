@@ -71,7 +71,11 @@ unhide() {
  */
 @HostListener('window:resize', ['$event'])
 onResize(event) {
-  this.innerWidth = window.innerWidth;
+  if (window.innerWidth > 960) {
+    this.innerWidth = window.innerWidth - 350;
+  } else {
+    this.innerWidth = window.innerWidth;
+  }
   this.innerWidth = this.innerWidth - 100;
   this.size = this.innerWidth.toString();
   this.size = this.size + 'px';

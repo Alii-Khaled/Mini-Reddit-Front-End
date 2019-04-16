@@ -9,15 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
   /**
-   * Username of the logged in user
+   * Username of the profile owner user
    */
   username: string;
-  /**
-   * If getting user name succeed
-   */
-  success: boolean;
   /**
    * Current user public info
    */
@@ -34,34 +29,14 @@ export class ProfileComponent implements OnInit {
    */
   ngOnInit() {
       /**
-       * Getting user name
-       */
-      this.http.GetUserName().subscribe((data: any) =>  {
-        /**
-         * Get username
-         */
-        this.username = data.username;
-        /**
-         * Get success status
-         */
-        this.success = data.success;
-      },
-      (error: any) => {
-        /**
-         * If there is error getting user name navigate to homepage
-         */
-        this.router.navigateByUrl('#');
-      },
-      /**
        * Request to get user's public info
        */
-      () => this.http.GetUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
+      this.http.GetUserPublicInfo(localStorage.getItem('username')).subscribe((data: UserPublicInfo) => {
         this.PublicInfo = data;
         /**
          * To split cake day from day and hour to day only
          */
         this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
-    })
-      );
+    });
     }
 }
