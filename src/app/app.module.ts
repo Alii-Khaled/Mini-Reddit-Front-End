@@ -45,6 +45,7 @@ import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.com
 import { CommentsLayoutComponent } from './comments-layout/comments-layout.component';
 import { from } from 'rxjs';
 import { NextPageComponent } from './next-page/next-page.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -73,6 +74,7 @@ import { NextPageComponent } from './next-page/next-page.component';
     DownvotedComponent,
     CommentsLayoutComponent,
     NextPageComponent,
+    ForgotPasswordComponent,
     /* ModalModule */
   ],
   imports: [

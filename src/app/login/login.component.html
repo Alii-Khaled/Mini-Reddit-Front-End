@@ -19,15 +19,16 @@
         
         <div class="container">
           
-          <input type="text" placeholder="Username" formControlName="username" required >
+          <input type="text" placeholder="USERNAME" formControlName="username" required >
           <br>
           <br>
-          <input type="password" placeholder="Password" formControlName="password" required>
+          <input type="password" placeholder="PASSWORD" formControlName="password" required>
+          <br>
           <br>
           <button type="submit" id ="signin" (click)="login()">SIGN IN</button>
           <br>
           <p id =forgot>
-          <a (click)="openModal(template1)"><strong>Forgot username</strong></a>
+          <a id="Uname" (click)="userName(template1)"><strong>Forgot username</strong></a>
           <ng-template #template1>
             <div class="modal-header">
               <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
@@ -37,14 +38,14 @@
             <app-forgot-username></app-forgot-username>
           </ng-template>
           .
-          <a (click)="openModal(template2)"><strong>Forgot password</strong></a>
+          <a id="pass" (click)="openModal(template2)"><strong>Forgot password</strong></a>
           <ng-template #template2>
             <div class="modal-header">
               <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <app-forgot-username></app-forgot-username>
+            <app-forgot-password></app-forgot-password>
           </ng-template>
           </p>
           <br><br>
