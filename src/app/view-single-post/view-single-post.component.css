@@ -1,0 +1,46 @@
+.division{
+    float: left;  
+    background-color: white;
+    display: inline-block;
+}
+
+.left{
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    background-color: white;
+    float: left;
+    height: 100%;
+}
+
+.right{
+    text-align: center;
+    display: inline-block;
+    float: left;
+    /* margin-top: 15px; */
+}
+
+.row{
+    padding: 50px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    margin-left: 25px;
+}
+
+.column {
+    float: left;
+    /* width: 33.33%; */
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.vote{
+    background-color: transparent;
+    display: inline-block;
+    width:25px;
+    height:15px;
+}

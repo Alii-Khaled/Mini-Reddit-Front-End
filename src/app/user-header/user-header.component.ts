@@ -88,7 +88,7 @@ export class UserHeaderComponent implements OnInit {
      /**
       * Getting communities that the user subscribes
       */
-    // this.http.GetMyCommunities().subscribe((data: UserCommunities[]) => this.MyCommunities = data);
+    this.http.GetMyCommunities().subscribe((data: UserCommunities[]) => this.MyCommunities = data);
     /**
      * Getting usernames of people that the user follows
      */

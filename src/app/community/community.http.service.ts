@@ -67,7 +67,7 @@ export class communityHttpService {
         }
 else
         {
-        return this.http.post<any>('https://921b64a9.ngrok.io/api/auth/removeCommunity',body ,{ headers });
+        return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/removeCommunity',body ,{ headers });
 
         }
     }
@@ -97,7 +97,7 @@ else
             return this.http.post<any>('http://localhost/api/auth/subscribeCommunity', body, { headers });
         }
         else {
-            return this.http.post<any>('https://921b64a9.ngrok.io/api/auth/subscribeCommunity', body, { headers });
+            return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/subscribeCommunity', body, { headers });
         }
     }
   /**
@@ -126,7 +126,7 @@ else
             return this.http.post<any>('http://localhost/api/auth/unSubscribeCommunity', body, { headers });
         }
         else{
-            return this.http.post<any>('https://921b64a9.ngrok.io/api/auth/unSubscribeCommunity',body ,{ headers });
+            return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/unSubscribeCommunity',body ,{ headers });
         }
 
     }
@@ -160,7 +160,7 @@ else
             return this.http.post("http://localhost/api/auth/editCommunity", body, { headers })
         }
         else {
-            return this.http.post("https://921b64a9.ngrok.io/api/auth/editCommunity", body, { headers })
+            return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
         }
     }
 
