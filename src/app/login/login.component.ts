@@ -45,13 +45,13 @@ export class LoginComponent implements OnInit {
     const val = this.form.value;
     this.service.login(val.username , val.password).subscribe((data: any) => {
      localStorage.setItem('token', data.token );
-     AppComponent.nav = true;
+     localStorage.setItem('navbar', 'true' );
      this.router.navigateByUrl('#');
+     window.location.reload();
    },
    err => {if (err.status === 422) {
-     this.router.navigateByUrl('profile/' + '#');
+     this.router.navigateByUrl('#');
      console.log('error');
-
    }});
   }
     /**

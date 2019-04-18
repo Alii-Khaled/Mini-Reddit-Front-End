@@ -17,6 +17,10 @@ export class ProfileHttpService {
      */
     IsApi = false;
     /**
+     * Back-end link
+     */
+    BackEnd = 'http://35.204.169.121';
+    /**
      * To get all communities subscribed by this user
      */
     GetMyCommunities(): Observable<any[]> {
@@ -42,7 +46,8 @@ export class ProfileHttpService {
                 "Authorization": "Bearer: {"+ token +"}",
             });
             console.log('Here is a token: ' + token);
-            return this.http.get<any[]>('http://localhost:3000/communities');
+            // return this.http.get<any[]>('http://localhost:3000/communities');
+            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewUserCommunities', { headers });
         }
     }
 
@@ -77,7 +82,8 @@ export class ProfileHttpService {
             /**
              * Getting username from Api
              */
-            return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/getUsername' , {headers});
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/getUsername' , {headers});
+            return this.http.get<any>(this.BackEnd + '/api/auth/getUsername' , {headers});
             }
     }
     /**
@@ -106,7 +112,8 @@ export class ProfileHttpService {
             /**
              * Here id represent username of the profile owner user
              */
-            return this.http.get<UserPublicInfo>('https://930d0c7c.ngrok.io/api/unauth/viewPublicUserInfo?username=' + id , {headers});
+            // return this.http.get<UserPublicInfo>('https://930d0c7c.ngrok.io/api/unauth/viewPublicUserInfo?username=' + id , {headers});
+            return this.http.get<UserPublicInfo>(this.BackEnd + '/api/unauth/viewPublicUserInfo?username=' + id , {headers});
         }
     }
 
@@ -136,7 +143,8 @@ export class ProfileHttpService {
             const body = {
                 'username': username
             };
-            return this.http.get<PostsObjects[]>('https://930d0c7c.ngrok.io/api/auth/viewOverview"' + body + { headers });
+            // return this.http.get<PostsObjects[]>('https://930d0c7c.ngrok.io/api/auth/viewOverview"' + body + { headers });
+            return this.http.get<PostsObjects[]>(this.BackEnd + '/api/auth/viewOverview"' + body + { headers });
         }
     }
 
@@ -164,7 +172,8 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/viewUpOrDownvotedPosts?type=0', {headers} );
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/viewUpOrDownvotedPosts?type=0', {headers} );
+            return this.http.get<any>(this.BackEnd + '/api/auth/viewUpOrDownvotedPosts?type=0', {headers} );
         }
     }
 
@@ -192,7 +201,8 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/viewUpOrDownvotedPosts?type=1' , {headers} );
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/viewUpOrDownvotedPosts?type=1' , {headers} );
+            return this.http.get<any>(this.BackEnd + '/api/auth/viewUpOrDownvotedPosts?type=1' , {headers} );
         }
     }
 
@@ -220,7 +230,8 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any>('https://930d0c7c.ngrok.io/api/unauth/ViewPosts?username=' + username ,  {headers} );
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/unauth/ViewPosts?username=' + username ,  {headers} );
+            return this.http.get<any>(this.BackEnd + '/api/unauth/ViewPosts?username=' + username ,  {headers} );
         }
     }
 
@@ -250,7 +261,8 @@ export class ProfileHttpService {
              */
         return this.http.get<comments[]>('http://localhost:3000/comments');
         } else {
-            return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
+            // return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
+            return this.http.get<comments[]>(this.BackEnd + '/api/unauth/viewComments' + username);
         }
     }
 
@@ -277,10 +289,41 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/following?username=' + username , { headers });
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/following?username=' + username , { headers });
+            return this.http.get<any>(this.BackEnd + '/api/auth/following?username=' + username , { headers });
         }
     }
 
+/**
+ * SignOut
+ */
+SignOut(){
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {};
+        return this.http.post(this.BackEnd + '/api/auth/signOut' , body, {headers});
+    }
+}
+
+
 
 }
+
+
 

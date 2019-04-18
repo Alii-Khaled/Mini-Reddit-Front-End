@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!-- <app-post-layout></app-post-layout> -->
-<app-header></app-header>  
-<!-- <app-user-header></app-user-header> -->
-<app-view-single-post></app-view-single-post>
+<app-header *ngIf="nav == 'false'"></app-header>  
+<app-user-header *ngIf="nav == 'true'"></app-user-header>
 <router-outlet></router-outlet>
 

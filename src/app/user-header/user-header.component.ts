@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserCommunities } from 'src/app/Profile_classes/user-communities';
-import {MatSnackBar, MatSnackBarModule} from "@angular/material";
+import {MatSnackBar, MatSnackBarModule} from '@angular/material';
 import { UserPublicInfo } from 'src/app/Profile_classes/user-public-info';
 import { ProfileHttpService } from '../Profile_Components/profile.http.service';
 import { Router } from '@angular/router';
@@ -67,7 +67,9 @@ export class UserHeaderComponent implements OnInit {
         }
       },
       () => this.http.GetUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
-        this.PublicInfo = data; },
+        this.PublicInfo = data;
+        localStorage.setItem('username', this.PublicInfo.username);
+      },
         (error: any) => {
           /**
            * Redirect the user to the home page if the user name which tring to goto his profile isn't exist
@@ -141,5 +143,25 @@ export class UserHeaderComponent implements OnInit {
         }
         );
     }
+  }
+  logout() {
+    this.http.SignOut().subscribe(
+      response => {},
+      err => {
+          this.message = 'Failed to logout';
+          this.snackBar.open(this.message, undefined, {
+          duration: 4000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'center',
+          panelClass: 'snack-remove-button',
+        });
+          return ;
+      },
+    );
+    this.router.navigateByUrl('/');
+    localStorage.removeItem('navbar');
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    window.location.reload();
   }
 }

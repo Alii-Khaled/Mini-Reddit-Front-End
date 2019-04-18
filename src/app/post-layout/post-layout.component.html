@@ -6,36 +6,36 @@
           <div>
             <button disableRipple mat-icon-button id="upVote{{posts.post_id}}" class="buttonUpVote" (click)="upVote()" [ngStyle]="{'color': posts.upvoted? 'red' : ''}"><mat-icon >arrow_upward</mat-icon></button>
                   
-            <h6 id="voteNum{{posts.post_id}}" [ngStyle]="{'color': posts.downvoted? 'blue' : posts.upvoted? 'red' : ''}">{{posts.upvotes-posts.downvotes}}</h6>
+            <h6 id="voteNum{{posts?.post_id}}" [ngStyle]="{'color': posts.downvoted? 'blue' : posts.upvoted? 'red' : ''}">{{posts?.upvotes-posts.downvotes}}</h6>
             
             <button disableRipple mat-icon-button id="downVote{{posts.post_id}}" class="buttonDownVote" (click)="downVote()" [ngStyle]="{'color': posts.downvoted? 'blue' : ''}"><mat-icon>arrow_downward</mat-icon></button>
           </div>
         </div>
-       <div class="division" id="second"><img width="80px" height="60px" src="{{posts.image}}" id="imgPost"></div>
+       <div class="division" id="second"><img width="80px" height="60px" src="{{posts?.image}}" id="imgPost"></div>
         <div class="division third" id="third{{posts.post_id}}">
-        <div id="title">{{innerWidth}}{{posts.title | slice : 0 : 90 }}<a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
+        <div id="title">{{posts.title | slice : 0 : 90 }}<a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
           <div id="userInfo">
             <p>
               <span class="hoving" id="postCommunity" onclick="parent.location='https:'+'//www.reddit.com/'">                        
-                {{posts.community}}</span> Posted by <span class="hoving">{{posts.username}}</span> {{posts.date}}
+                {{posts?.community}}</span> Posted by <span class="hoving">{{posts?.username}}</span> {{posts.date}}
             </p>
           </div>
-          <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon{{posts.post_id}}" class="buttons" ><mat-icon>open_in_new</mat-icon></button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="firstIcon{{posts?.post_id}}" class="buttons" ><mat-icon>open_in_new</mat-icon></button>
           
-          <button onclick="parent.location='localhost:4200'" mat-button id="comment{{posts.post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts.comments_num}} Comments</button>
+          <button onclick="parent.location='localhost:4200'" mat-button id="comment{{posts?.post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts?.comments_num}} Comments</button>
           
                 
-          <button mat-button id="giveAward{{posts.post_id}}" class="buttons" *ngIf="innerWidth >= 241;"><mat-icon>stars</mat-icon> Give Award</button>
-          <button mat-button id="share{{posts.post_id}}" class="buttons dropdown-toggle" data-toggle="dropdown" *ngIf="innerWidth >= 300;"><mat-icon>reply</mat-icon> Share
+          <button mat-button id="giveAward{{posts?.post_id}}" class="buttons" *ngIf="innerWidth >= 241;"><mat-icon>stars</mat-icon> Give Award</button>
+          <button mat-button id="share{{posts?.post_id}}" class="buttons dropdown-toggle" data-toggle="dropdown" *ngIf="innerWidth >= 300;"><mat-icon>reply</mat-icon> Share
           <ul class="dropdown-menu dropdown-menu-right">
-            <li><a href="#" id="copyLink{{posts.post_id}}"><mat-icon>link</mat-icon> Copy link</a></li>
-            <li><a href="#" id="crosspost{{posts.post_id}}"><mat-icon>share</mat-icon> Crosspost</a></li>
-            <li><a href="#" id="embed{{posts.post_id}}"><mat-icon>code</mat-icon> Embed</a></li>
+            <li><a href="#" id="copyLink{{posts?.post_id}}"><mat-icon>link</mat-icon> Copy link</a></li>
+            <li><a href="#" id="crosspost{{posts?.post_id}}"><mat-icon>share</mat-icon> Crosspost</a></li>
+            <li><a href="#" id="embed{{posts?.post_id}}"><mat-icon>code</mat-icon> Embed</a></li>
           </ul>
           </button>
-          <button mat-button (click)="save()" *ngIf="posts.saved === false && innerWidth >= 366; else elseBlockSave" id="save{{posts.post_id}}" class="buttons" ><mat-icon>bookmark_border</mat-icon> Save</button>
+          <button mat-button (click)="save()" *ngIf="posts.saved === false && innerWidth >= 366; else elseBlockSave" id="save{{posts?.post_id}}" class="buttons" ><mat-icon>bookmark_border</mat-icon> Save</button>
           <ng-template #elseBlockSave><button (click)="unsave()" mat-button id="unSave{{posts.post_id}}" class="buttons" *ngIf="innerWidth >= 366;"><mat-icon>bookmark</mat-icon> Unsave</button></ng-template>
-          <button mat-button (click)="hide()" *ngIf="posts.hidden === false &&  innerWidth >= 428; else elseBlockHide" id="hide{{posts.post_id}}" class="buttons"><mat-icon>block</mat-icon> Hide</button>
+          <button mat-button (click)="hide()" *ngIf="posts.hidden === false &&  innerWidth >= 428; else elseBlockHide" id="hide{{posts?.post_id}}" class="buttons"><mat-icon>block</mat-icon> Hide</button>
           <ng-template #elseBlockHide><button mat-button (click)="unhide()" id="unHide{{posts.post_id}}" class="buttons" *ngIf="innerWidth >= 428;"><mat-icon>block</mat-icon> Unhide</button></ng-template>
           <button mat-button id="report" class="buttons" *ngIf="innerWidth >= 494;"><mat-icon>flag</mat-icon> Report</button>
         </div>
