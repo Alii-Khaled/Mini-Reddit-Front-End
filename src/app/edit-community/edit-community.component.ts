@@ -75,7 +75,6 @@ export class EditCommunityComponent implements OnInit {
           verticalPosition: 'bottom',
           horizontalPosition: 'center',
           panelClass: 'snack-remove-button',
-
         });
 
         this.theresponse = true;
@@ -90,7 +89,7 @@ export class EditCommunityComponent implements OnInit {
         else {
           this.message = 'Community has not been deleted';
         }
-        this.snackBar.open(this.message, undefined, {
+        this.snackBar.open(this.message, 'dismiss', {
           duration: 4000,
           verticalPosition: 'bottom',
           horizontalPosition: 'center',

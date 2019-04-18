@@ -228,3 +228,6 @@
     -webkit-transform: translateY(200%);
     transform: translateY(200%);
 }
+.mat-simple-snackbar-action {
+    color: #0079d3;
+}
