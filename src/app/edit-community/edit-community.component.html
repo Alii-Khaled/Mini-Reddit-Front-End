@@ -1,8 +1,8 @@
 <div class="container-fluid Communityset">Community settings
   <body>
   <form id="user-card">
-    <img id="banner" width="100%" height="94px" >
-    <img id="pp" width="80px" height="80px" src="https://theme.zdassets.com/theme_assets/2219439/89cbe072bbb76fc29a82367bd19b511df487d018.png">
+    <img id="banner" width="100%" height="94px" [src]="bannerUrl" >
+    <img id="pp" width="80px" height="80px"  [src]="avatarUrl" >
     <p  style="margin-left:10px;">r/{{commname}}</p>
     <div class="bioooo" style="margin-left:10px;float: left;">{{bio}}</div>
    
@@ -47,19 +47,39 @@ Community Information
           <div class="row">
          <div class="col-md-6">
          <div class="avatarbox">
+       <label class="image-upload-container btn btn-bwm">
+         <input type="file" accept="image/*"  (change)="processAvatar($event)" id="avatarUp">
           <svg class="uploadavatar" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g><polygon fill="inherit" opacity="0" points="0.610673352 20 20.625 20 20.625 0 0.610673352 0"></polygon><path d="M17.451,9.14823765 C17.03,5.40791696 13.8555,2.5 10,2.5 C6.1445,2.5 2.97,5.40791696 2.549,9.14823765 C1.0455,9.84024195 0,11.3551568 0,13.1173944 C0,15.531665 1.959,17.4892627 4.375,17.4892627 L7.8125,17.4892627 L7.8125,12.8051181 L5,12.8051181 C4.8735,12.8051181 4.7595,12.7291725 4.7115,12.6122563 C4.6625,12.49534 4.6895,12.3614359 4.779,12.272 L9.779,7.2755791 C9.901,7.15366643 10.099,7.15366643 10.221,7.2755791 L15.187,12.2375247 C15.2665,12.2944839 15.3185,12.3874173 15.3185,12.4928418 C15.3185,12.6652183 15.1785,12.8051181 15.006,12.8051181 L15,12.8051181 L12.1875,12.8051181 L12.1875,17.4892627 L15.625,17.4892627 C18.041,17.4892627 20,15.531665 20,13.1173944 C20,11.3551568 18.954,9.84024195 17.451,9.14823765" fill="inherit"></path></g></svg>
           <div class="uploadavtartext">Drag and Drop or Upload Avatar Image</div>
+        </label>
+     
          </div>
+     
         </div>
+        
         <div class="col-md-6">
          <div class="bannerbox"> 
+            <label class="image-upload-container btn btn-bwm">
+                <input type="file" accept="image/*" (change)="processBanner($event)" id="bannerUp">
             <svg class="uploadavatar" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g><polygon fill="inherit" opacity="0" points="0.610673352 20 20.625 20 20.625 0 0.610673352 0"></polygon><path d="M17.451,9.14823765 C17.03,5.40791696 13.8555,2.5 10,2.5 C6.1445,2.5 2.97,5.40791696 2.549,9.14823765 C1.0455,9.84024195 0,11.3551568 0,13.1173944 C0,15.531665 1.959,17.4892627 4.375,17.4892627 L7.8125,17.4892627 L7.8125,12.8051181 L5,12.8051181 C4.8735,12.8051181 4.7595,12.7291725 4.7115,12.6122563 C4.6625,12.49534 4.6895,12.3614359 4.779,12.272 L9.779,7.2755791 C9.901,7.15366643 10.099,7.15366643 10.221,7.2755791 L15.187,12.2375247 C15.2665,12.2944839 15.3185,12.3874173 15.3185,12.4928418 C15.3185,12.6652183 15.1785,12.8051181 15.006,12.8051181 L15,12.8051181 L12.1875,12.8051181 L12.1875,17.4892627 L15.625,17.4892627 C18.041,17.4892627 20,15.531665 20,13.1173944 C20,11.3551568 18.954,9.84024195 17.451,9.14823765" fill="inherit"></path></g></svg>
            <div class="uploadbannertext uploadavtartext">Drag and Drop or Upload Banner Image</div>
+           
+          </label>
+        <!--   <div *ngIf="uploadedBanner" class="img-preview-container">
+            <div class="img-preview"  [ngStyle]="{'background-image': 'url('+ uploadedBanner.src +')'}">
+           
+            </div>
+          </div> -->
           </div>
           </div>
        
        </div>
       </div>
+ <!--      <div *ngIf="uploadedAvatar" class="img-preview-container">
+          <div class="img-preview" [ngStyle]="{'background-image': 'url(' + uploadedAvatar.src + ')'}" >
+          
+          </div>
+        </div>    -->
        <button type="button" class="btn btn-outline-primary" id="new-postt" (click)="onEditCommunity()"><b>Edit</b></button>
       
          

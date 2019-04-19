@@ -6,6 +6,7 @@ import {communityHttpService} from '../community/community.http.service';
 import {MatSnackBar, MatSnackBarModule} from "@angular/material";
 import { Router } from '@angular/router';
 import { timeout, delay } from 'q';
+import { url } from 'inspector';
 @Component({
   selector: 'app-edit-community',
   templateUrl: './edit-community.component.html',
@@ -43,6 +44,7 @@ export class EditCommunityComponent implements OnInit {
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router) {
     this.commId = parseInt(this.router.url.substr(11, this.router.url.length - 15));
     console.log(this.commId);
+   
   }
   /**
    * ngOnInit assigns data to my variables
@@ -53,7 +55,8 @@ export class EditCommunityComponent implements OnInit {
       this.rules = data.community_rules;
       this.bio = data.community_description;
       this.banner = data.community_banner;
-      this.avatar = data.community_logo;
+      this.avatar = data.community_logo;   
+    
     }
     )
   }
@@ -66,6 +69,38 @@ export class EditCommunityComponent implements OnInit {
    */
   theresponse: boolean;
 
+  bannerUrl="https://theme.zdassets.com/theme_assets/2219439/89cbe072bbb76fc29a82367bd19b511df487d018.png";  
+  avatarUrl="https://theme.zdassets.com/theme_assets/2219439/89cbe072bbb76fc29a82367bd19b511df487d018.png";
+  uploadedAvatar=null;
+  uploadedBanner=null;
+  reader:FileReader=new FileReader();
+
+
+  processAvatar(event){
+    this.uploadedAvatar=event.target.files[0];
+    
+   this.reader.addEventListener('load',(event:any)=>{
+    this.avatarUrl=event.target.result;
+    console.log('process avatar');
+   });
+   this.reader.readAsDataURL(this.uploadedAvatar);
+   
+ 
+   
+  }
+
+  processBanner(event){
+    this.uploadedBanner=event.target.files[0];
+    this.reader.addEventListener('load',(event:any)=>{
+      this.bannerUrl=event.target.result;
+      console.log('process banner');
+     });
+     this.reader.readAsDataURL(this.uploadedBanner);
+    
+ 
+  }
+ 
+ 
   OnRemovingCommunity() {
     this.http.RemoveCommunity(this.commId).subscribe(
       response => {
