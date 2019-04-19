@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
+  myFlagForButtonToggle;
   /**
    * Variable to put in it which message to show
    */
@@ -48,6 +49,8 @@ export class CommunityComponent implements OnInit {
     route.params.subscribe(val => {
       this.commId = parseInt(this.router.url.substr(11));
       this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
+      this.myFlagForButtonToggle=false;
+      
     });
   }
   /**
@@ -55,9 +58,12 @@ export class CommunityComponent implements OnInit {
    */
   toggleButton(SUBSCRIBED: boolean) {
     if (SUBSCRIBED == false) {
-      this.buttonName = 'SUBSCRIBE';
+      
+     
       this.http.UnSubscribeCommunity(this.commId).subscribe(
         response => {
+          this.myFlagForButtonToggle=true;
+          this.buttonName = 'SUBSCRIBE';
           this.message = 'UnSubscribed Successfully';
           this.snackBar.open(this.message, undefined, {
             duration: 4000,
@@ -69,8 +75,11 @@ export class CommunityComponent implements OnInit {
           this.theresponse = true;
         },
         err => {
+          this.myFlagForButtonToggle=false;
+          console.log(this.myFlagForButtonToggle);
           if (err.error === 'UnAuthorized') {
             this.message = 'UnSubscribed Failed because you are not authorized';
+            
           }
           else {
             this.message = 'UnSubscribed Failed';
@@ -91,9 +100,10 @@ export class CommunityComponent implements OnInit {
     }
     else {
 
-      this.buttonName = 'SUBSCRIBED';
+      
       this.http.SubscribeCommunity(this.commId).subscribe(
         response => {
+          this.buttonName = 'SUBSCRIBED';
           this.message = 'subscribed Successfully';
           this.snackBar.open(this.message, undefined, {
             duration: 4000,
