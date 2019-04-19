@@ -9,6 +9,7 @@ import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
 import {MatSnackBarModule} from '@angular/material';
 
+
 import {MatDialogModule} from '@angular/material';
 import { ProfileComponent } from './Profile_Components/profile/profile.component';
 import { PostLayoutComponent } from './post-layout/post-layout.component';
@@ -45,6 +46,7 @@ import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.com
 import { CommentsLayoutComponent } from './comments-layout/comments-layout.component';
 import { from } from 'rxjs';
 import { NextPageComponent } from './next-page/next-page.component';
+import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -73,6 +75,7 @@ import { NextPageComponent } from './next-page/next-page.component';
     DownvotedComponent,
     CommentsLayoutComponent,
     NextPageComponent,
+    ConfirmationDialogComponent,
     /* ModalModule */
   ],
   imports: [
@@ -97,12 +100,14 @@ import { NextPageComponent } from './next-page/next-page.component';
     RouterModule,
     MatSnackBarModule,
     MatDialogModule,
-
-    
+   
     // Http,
     // Headers,
     // RequestOptions
     // HttpHeaders,
+  ],
+  entryComponents: [
+    ConfirmationDialogComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
