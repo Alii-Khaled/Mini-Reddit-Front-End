@@ -64,7 +64,7 @@
     color: rgb(28, 28, 28);
     box-sizing: border-box;
     height: 48px;
-    margin-bottom: 65px;
+    margin-bottom: 32px;
     width: 100%;
     border-width: 1px;
     border-style: solid;
@@ -89,7 +89,7 @@
    
  
     text-align: start;
-}
+}/* 
 .images{
     display: flex;
     height: 90px;
@@ -97,15 +97,15 @@
     margin-left: 10px;
     flex-direction: column;
     align-items: flex-start;
-}
+} */
 .avatarbox{
-    height: 90px;
+    
     padding: 5px;
     -webkit-box-align: center;
     align-items: center;
-    box-sizing: border-box;
+   
     cursor: pointer;
-    display: inline-block;
+  
     flex-direction: column;
     
     -webkit-box-pack: center;
@@ -133,14 +133,14 @@
 }
 .bannerbox{
    
-    height: 90px;
+   
     
     margin: 0px;
-    box-sizing: border-box;
+    
     padding: 5px;
     -webkit-box-align: center;
    
-    box-sizing: border-box;
+  
     cursor: pointer;
    
     
@@ -155,7 +155,7 @@
     border-color: rgb(237, 239, 241);
     border-image: initial;
 }
-#user-card {
+#comm-card {
     width: 312px;
     height: 267px;
     border-radius: 5px;
@@ -178,7 +178,7 @@
     border-width: 2px;
     border-color: white;
 }
-#new-post {
+#remove-comm {
     background-color: #0079d3;
     -webkit-text-fill-color: white;
     width: 288px;
@@ -187,20 +187,20 @@
     border-top: 1px solid rgb(237, 239, 241);
     margin-top: 10px;
 }
-#new-post:hover {
+#remove-comm:hover {
     background-color: red;
 }
 
-#new-postt {
+#edit-comm {
     background-color: #0079d3;
     -webkit-text-fill-color: white;
     width: 288px;
     height: auto;
     text-align: center;
     border-top: 1px solid rgb(237, 239, 241);
-    margin-top: 60px;
+    margin-top: 32px;
 }
-#new-postt:hover {
+#edit-comm:hover {
     background-color: #3c99e0;
 }
 .bioooo{
@@ -231,19 +231,16 @@
 .mat-simple-snackbar-action {
     color: #0079d3;
 }
-input{
+
+#bannerUp{
     display: none;
 }
-.avataraa{
-    cursor: pointer;
+#avatarUp{
+    display: none;
 }
-.img-preview-container{
-    background-color: #f7f7f7;
-    position: relative;
-}
-.img-preview{
-    background: center center no-repeat;
-    background-size: contain;
-    height: 16px;
-    width: 16px;
-}
+
+@media screen and (max-width: 1080px) {
+    #comm-card {
+        display:none;
+    }
+  }

@@ -5,8 +5,7 @@ import { catchError } from 'rxjs/operators';
 import {communityHttpService} from '../community/community.http.service';
 import {MatSnackBar, MatSnackBarModule} from "@angular/material";
 import { Router } from '@angular/router';
-import { timeout, delay } from 'q';
-import { url } from 'inspector';
+
 @Component({
   selector: 'app-edit-community',
   templateUrl: './edit-community.component.html',
@@ -79,10 +78,10 @@ export class EditCommunityComponent implements OnInit {
   processAvatar(event){
     this.uploadedAvatar=event.target.files[0];
     
-   this.reader.addEventListener('load',(event:any)=>{
+   this.reader.onload=(event:any)=>{
     this.avatarUrl=event.target.result;
     console.log('process avatar');
-   });
+   };
    this.reader.readAsDataURL(this.uploadedAvatar);
    
  
@@ -91,10 +90,10 @@ export class EditCommunityComponent implements OnInit {
 
   processBanner(event){
     this.uploadedBanner=event.target.files[0];
-    this.reader.addEventListener('load',(event:any)=>{
+    this.reader.onload=(event:any)=>{
       this.bannerUrl=event.target.result;
       console.log('process banner');
-     });
+     };
      this.reader.readAsDataURL(this.uploadedBanner);
     
  

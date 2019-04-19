@@ -1,6 +1,6 @@
 <div class="container-fluid Communityset">Community settings
   <body>
-  <form id="user-card">
+  <form id="comm-card">
     <img id="banner" width="100%" height="94px" [src]="bannerUrl" >
     <img id="pp" width="80px" height="80px"  [src]="avatarUrl" >
     <p  style="margin-left:10px;">r/{{commname}}</p>
@@ -8,10 +8,7 @@
    
     <br>
     <br>
-    <i class="fa fa-cog" style="color:rgb(51, 168, 255);margin-left: 10px;float: left;" aria-hidden="true"></i>
-    <p style="-webkit-text-fill-color: gray;float: left;margin-top: -3px;margin-left: 5px;">2</p>
-    <i class="fa fa-birthday-cake" style="color:rgb(51, 168, 255);margin-inline-start: 129px;" aria-hidden="true"></i>
-    <p style="-webkit-text-fill-color: gray;margin-top: -18px;margin-inline-start: 150px;float: left;">April 9,2019</p>
+ 
     <br>
     <br>
    
@@ -65,25 +62,17 @@ Community Information
            <div class="uploadbannertext uploadavtartext">Drag and Drop or Upload Banner Image</div>
            
           </label>
-        <!--   <div *ngIf="uploadedBanner" class="img-preview-container">
-            <div class="img-preview"  [ngStyle]="{'background-image': 'url('+ uploadedBanner.src +')'}">
-           
-            </div>
-          </div> -->
+   
           </div>
           </div>
        
        </div>
       </div>
- <!--      <div *ngIf="uploadedAvatar" class="img-preview-container">
-          <div class="img-preview" [ngStyle]="{'background-image': 'url(' + uploadedAvatar.src + ')'}" >
-          
-          </div>
-        </div>    -->
-       <button type="button" class="btn btn-outline-primary" id="new-postt" (click)="onEditCommunity()"><b>Edit</b></button>
+
+       <button type="button" class="btn btn-outline-primary" id="edit-comm" (click)="onEditCommunity()"><b>Edit</b></button>
       
          
-       <button  type="button" class="btn btn-outline-primary" id="new-post" (click)="OnRemovingCommunity()"><b>Remove Community</b></button>
+       <button  type="button" class="btn btn-outline-primary" id="remove-comm" (click)="OnRemovingCommunity()"><b>Remove Community</b></button>
      
      
       </div>
