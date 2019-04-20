@@ -50,12 +50,7 @@ width: 100%;
     z-index: 40;
 }
 
-/* .CommLogoNamei{
- 
-  
-    
-    
-} */
+
 .Namei{
     color: black;
 margin-top: 10px;
@@ -157,7 +152,7 @@ display: inline-block;
 }
 .CommunityDetailsAll
 {
-right: -46px;
+
 
     background-color: #DAE0E6;
     color: rgb(26, 26, 27);
@@ -181,11 +176,19 @@ margin-top: 20px;
     fill: rgb(255, 255, 255);
     padding: 12px 0;
 }
-
+.viewMod{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: rgb(0, 121, 211);
+    margin-left: 125px;
+}
 .CommInfoAll{
 
     padding: 12px;
-    margin-bottom: 20px;
+   
 }
 .UnderUnderBannerBar{
 background-color:rgb(255, 255, 255);
@@ -259,6 +262,15 @@ height: 40px;
     
   } 
 
+  .text-of-moderator{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    display: flex;
+    margin-bottom: 16px;
+    width: 100%;
+
+  }
  
 @media screen and (max-width: 1235px) {
     .All {

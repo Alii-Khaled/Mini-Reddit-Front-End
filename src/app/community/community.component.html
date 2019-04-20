@@ -18,58 +18,76 @@
     <div class="container-fluid UnderUnderBannerBar  ">
 
     </div>
+
     <div class="col-md-7"></div>
-    <div class="CommunityDetailsAll panel-default  col-md-4">
-      <div class="CommDetails panel-heading">
-        COMMUNITY DETAILS
-      </div>
-      <div class="CommInfoAll panel-body panel-footer">
-        <div class="CommLogoNamei">
-          <img class="logo" src="{{Community?.community_logo}}" alt="logo" viewBox="0 0 20 20">
-          <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
-          <span class="Namei">r/ {{Community?.community_name }} </span>
-          <div class="SubOnline">
-            <div style="flex: 1 1 0%;">
-              <div style="    font-size: 16px;
+    <div class="row">
+      <div class="CommunityDetailsAll panel-default  col-md-4">
+        <div class="CommDetails panel-heading">
+          COMMUNITY DETAILS
+        </div>
+        <div class="CommInfoAll panel-body panel-footer">
+          <div class="CommLogoNamei">
+            <img class="logo" src="{{Community?.community_logo}}" alt="logo" viewBox="0 0 20 20">
+            <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
+            <span class="Namei">r/ {{Community?.community_name }} </span>
+            <div class="SubOnline">
+              <div style="flex: 1 1 0%;">
+                <div style="    font-size: 16px;
                       font-weight: 500;
                       line-height: 20px;" class="subscribersCnt">
-                {{Community?.community_subscribers}}k
+                  {{Community?.community_subscribers}}k
+                </div>
+                <div
+                  style=" font-size: 12px;font-weight: 500;line-height: 16px;display: inline-block;word-break: break-word; ">
+                  Subscribers</div>
               </div>
-              <div
-                style=" font-size: 12px;font-weight: 500;line-height: 16px;display: inline-block;word-break: break-word; ">
-                Subscribers</div>
-            </div>
 
-            <div style="    padding-left: 12px;
+              <div style="    padding-left: 12px;
                     border-left: 1px solid rgba(26, 26, 27, 0.07);  flex: 1 1 0%;" class="Online">
-              <div style="font-size: 16px;
+                <div style="font-size: 16px;
                     font-weight: 500;
                     line-height: 20px;
                     " class="OnlineCnt">500</div>
-              <div style="    font-size: 12px;
+                <div style="    font-size: 12px;
                     font-weight: 500;
                     line-height: 16px;
                     display: inline-block;
                     word-break: break-word;">Online</div>
+              </div>
+
             </div>
+            <div class="Bio">
+              {{Community?.community_description}}
+            </div>
+            <!-- <button type="button" class="btn btn-primary btn-lg Subscribe">SUBSCRIBE</button> -->
+            <mat-button-toggle
+              [ngClass]="{'mat-button-toggle-sub': !myFlagForButtonToggle, 'mat-button-toggle-unsub': myFlagForButtonToggle}"
+              (change)="toggleButton(myFlagForButtonToggle)" [checked]="myFlagForButtonToggle" #toggleBtn>
+              {{buttonName}}
+            </mat-button-toggle>
 
+            <button type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
+            <button routerLink="/community/{{Community?.id}}/Edit_community" type="button"
+              class="btn btn-primary btn-lg CreatePost">EDIT COMMUNITY</button>
           </div>
-          <div class="Bio">
-            {{Community?.community_description}}
-          </div>
-          <!-- <button type="button" class="btn btn-primary btn-lg Subscribe">SUBSCRIBE</button> -->
-          <mat-button-toggle
-            [ngClass]="{'mat-button-toggle-sub': !myFlagForButtonToggle, 'mat-button-toggle-unsub': myFlagForButtonToggle}"
-            (change)="toggleButton(myFlagForButtonToggle)" [checked]="myFlagForButtonToggle" #toggleBtn> {{buttonName}}
-          </mat-button-toggle>
 
-          <button type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
-          <button routerLink="/community/{{Community?.id}}/Edit_community" type="button"
-            class="btn btn-primary btn-lg CreatePost">EDIT COMMUNITY</button>
         </div>
 
       </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7"></div>
+      <div class="CommunityDetailsAll panel-default  col-md-4">
+        <div class="CommDetails panel-heading">
+          moderators
+        </div>
+        <div class="CommInfoAll panel-body panel-footer">
 
+          <a class="text-of-moderator" href="#">u/Ahmed</a>
+          <a class="text-of-moderator" href="#">u/Ahmed</a>
+          <a class="viewMod" href="#">View all moderators</a>
+        </div>
+      </div>
     </div>
 
   </div>

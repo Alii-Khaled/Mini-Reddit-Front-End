@@ -47,6 +47,7 @@ import { CommentsLayoutComponent } from './comments-layout/comments-layout.compo
 import { from } from 'rxjs';
 import { NextPageComponent } from './next-page/next-page.component';
 import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
+import { CommunityModeratorsComponent } from './community-moderators/community-moderators.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -76,6 +77,7 @@ import { ConfirmationDialogComponent } from './components/shared/confirmation-di
     CommentsLayoutComponent,
     NextPageComponent,
     ConfirmationDialogComponent,
+    CommunityModeratorsComponent,
     /* ModalModule */
   ],
   imports: [
