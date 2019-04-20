@@ -224,7 +224,7 @@ height: 40px;
     overflow-wrap: break-word
 }
 
-.mat-button-toggle{
+.mat-button-toggle-sub{
     background-color: #0179D3;
     width: 287PX;
     flex: 1 1 100%;
@@ -239,14 +239,26 @@ height: 40px;
     height:33px;
     
 }
-/* .mat-button-toggle-checked:hover {
+.mat-button-toggle-unsub{
+    background-color: #0179D3;
+    width: 287PX;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    text-align: center;
+    line-height: 32px;
+    font-weight:450;
+    color: rgb(255, 255, 255);
+    height:33px;
+    
+}
+ .mat-button-toggle-unsub:hover {
     background-color: red;
     
-  } */
-  .mat-button-toggle[myFlagForButtonToggle=true]:hover{
-    background-color: red;
-  }
-  
+  } 
+
  
 @media screen and (max-width: 1235px) {
     .All {

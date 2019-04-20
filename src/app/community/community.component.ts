@@ -42,6 +42,9 @@ export class CommunityComponent implements OnInit {
    * @param route for Dynamic routing
    */
 
+
+
+
   /**
    * Constructor assign community id and handles dynamic routing and get community information
    */
@@ -49,8 +52,8 @@ export class CommunityComponent implements OnInit {
     route.params.subscribe(val => {
       this.commId = parseInt(this.router.url.substr(11));
       this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
-      this.myFlagForButtonToggle=false;
-      
+      this.myFlagForButtonToggle = false;
+
     });
   }
   /**
@@ -60,7 +63,7 @@ export class CommunityComponent implements OnInit {
     if (SUBSCRIBED == true) {
       this.http.UnSubscribeCommunity(this.commId).subscribe(
         response => {
-          this.myFlagForButtonToggle=false;
+          this.myFlagForButtonToggle = false;
           this.buttonName = 'SUBSCRIBE';
           this.message = 'UnSubscribed Successfully';
           this.snackBar.open(this.message, undefined, {
@@ -73,7 +76,7 @@ export class CommunityComponent implements OnInit {
           this.theresponse = true;
         },
         err => {
-          this.myFlagForButtonToggle=true;
+          this.myFlagForButtonToggle = true;
           console.log(this.myFlagForButtonToggle);
           if (err.error === 'UnAuthorized') {
             this.message = 'UnSubscribed Failed because you are not authorized';
@@ -97,10 +100,10 @@ export class CommunityComponent implements OnInit {
     }
     else {
 
-      
+
       this.http.SubscribeCommunity(this.commId).subscribe(
         response => {
-          this.myFlagForButtonToggle=true;
+          this.myFlagForButtonToggle = true;
           this.buttonName = 'SUBSCRIBED';
           this.message = 'subscribed Successfully';
           this.snackBar.open(this.message, undefined, {
@@ -112,7 +115,7 @@ export class CommunityComponent implements OnInit {
           this.theresponse = true;
         },
         err => {
-          this.myFlagForButtonToggle=false;
+          this.myFlagForButtonToggle = false;
           if (err.error === 'UnAuthorized') {
             this.message = 'subscribed Failed because you are not authorized';
           }
@@ -134,9 +137,9 @@ export class CommunityComponent implements OnInit {
       );
     }
   }
- /**
-  * on initializing the page send a request to get current community information and display all information about it
-  */
+  /**
+   * on initializing the page send a request to get current community information and display all information about it
+   */
   ngOnInit() {
     this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
   }

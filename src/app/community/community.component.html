@@ -58,7 +58,10 @@
             {{Community?.community_description}}
           </div>
           <!-- <button type="button" class="btn btn-primary btn-lg Subscribe">SUBSCRIBE</button> -->
-          <mat-button-toggle (change)="toggleButton(myFlagForButtonToggle)" [checked]="myFlagForButtonToggle" #toggleBtn> {{buttonName}} </mat-button-toggle>
+          <mat-button-toggle
+            [ngClass]="{'mat-button-toggle-sub': !myFlagForButtonToggle, 'mat-button-toggle-unsub': myFlagForButtonToggle}"
+            (change)="toggleButton(myFlagForButtonToggle)" [checked]="myFlagForButtonToggle" #toggleBtn> {{buttonName}}
+          </mat-button-toggle>
 
           <button type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
           <button routerLink="/community/{{Community?.id}}/Edit_community" type="button"
