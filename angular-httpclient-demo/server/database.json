@@ -329,6 +329,25 @@
                 "saved": "true",
                 "hidden": "false"
             }
+        ],
+        "single-post":[
+            {
+                "post_id": 1,
+                "body": "post1",
+                "image": "storage\/app\/avater.jpg",
+                "title": "title1",
+                "username": "ahmed",
+                "community": "none",
+                "photo_path": "storage\/app\/avater.jpg",
+                "downvotes": 17,
+                "upvotes": 30,
+                "date": " 2 days ago ",
+                "comments_num": 0,
+                "saved": "true",
+                "hidden": "false",
+                "upvoted": "false",
+                "downvoted": "true"
+            }
         ]
     
         

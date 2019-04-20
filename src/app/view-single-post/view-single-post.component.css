@@ -1,27 +1,9 @@
-.division{
-    float: left;  
-    background-color: white;
-    display: inline-block;
-}
 
-.left{
-    width: auto;
-    text-align: center;
-    display: inline-block;
-    background-color: white;
-    float: left;
-    height: 100%;
-}
 
-.right{
-    text-align: center;
-    display: inline-block;
-    float: left;
-    /* margin-top: 15px; */
-}
-
+/* take this away ==> */
 .row{
     padding: 50px;
+    width: 1000px;
 }
 
 .row:after {
@@ -34,13 +16,64 @@
 .column {
     float: left;
     /* width: 33.33%; */
-    padding: 10px;
+    padding: 10%;
     height: 300px; /* Should be removed. Only for demonstration */
+    width: 70%;
+}
+/* ==> until this */
+
+.post-container {
+    background-color: rgba(209, 55, 55, 0.911);
+}
+
+.division{
+    float:left; 
+    width: 100%; 
+    /* padding-top: 10%; */
+    background-color: whitesmoke;
+    height: auto;
+}
+
+.left{
+    float:left;
+    /* height: 100px;   */
+    background-color: transparent;
+}
+
+.right{
+    float:left;
+    width: 80%;
+    /* height: 100px; */
+    background-color: transparent; 
 }
 
 .vote{
-    background-color: transparent;
-    display: inline-block;
     width:25px;
     height:15px;
+    background-color: transparent;
+    display: inline-block;
+}
+
+.voteNum{
+    text-align: center;
+}
+
+.thepost{
+    float: left;
+    width: 80%;
+}
+
+.image{
+    float: left;
+    width: 20%;
+}
+
+button{
+    color: gray;
+    font-size: 15px;
+}
+
+mat-icon{
+    color: gray;
+    font-size: 18px;
 }
