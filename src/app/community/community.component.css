@@ -239,9 +239,12 @@ height: 40px;
     height:33px;
     
 }
-.mat-button-toggle-checked:hover {
+/* .mat-button-toggle-checked:hover {
     background-color: red;
     
+  } */
+  .mat-button-toggle[myFlagForButtonToggle=true]:hover{
+    background-color: red;
   }
   
  

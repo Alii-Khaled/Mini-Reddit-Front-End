@@ -168,7 +168,7 @@ export class EditCommunityComponent implements OnInit {
         console.log('Yes clicked');
         this.http.editCommunity(this.commId, this.rules, this.bio, this.banner, this.avatar).subscribe(response => {
           this.message = 'Community has been edited';
-          this.snackBar.open(this.message, undefined, {
+          this.snackBar.open(this.message, 'dismiss', {
             duration: 4000,
             verticalPosition: 'bottom',
             horizontalPosition: 'center',
@@ -184,7 +184,7 @@ export class EditCommunityComponent implements OnInit {
             else {
               this.message = 'Community has not been edited';
             }
-            this.snackBar.open(this.message, undefined, {
+            this.snackBar.open(this.message, 'dismiss', {
               duration: 4000,
               verticalPosition: 'bottom',
               horizontalPosition: 'center',

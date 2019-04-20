@@ -57,12 +57,10 @@ export class CommunityComponent implements OnInit {
    * function toggleButton Toggles the subscribe to unsubscribe and vice verse
    */
   toggleButton(SUBSCRIBED: boolean) {
-    if (SUBSCRIBED == false) {
-      
-     
+    if (SUBSCRIBED == true) {
       this.http.UnSubscribeCommunity(this.commId).subscribe(
         response => {
-          this.myFlagForButtonToggle=true;
+          this.myFlagForButtonToggle=false;
           this.buttonName = 'SUBSCRIBE';
           this.message = 'UnSubscribed Successfully';
           this.snackBar.open(this.message, undefined, {
@@ -75,11 +73,10 @@ export class CommunityComponent implements OnInit {
           this.theresponse = true;
         },
         err => {
-          this.myFlagForButtonToggle=false;
+          this.myFlagForButtonToggle=true;
           console.log(this.myFlagForButtonToggle);
           if (err.error === 'UnAuthorized') {
             this.message = 'UnSubscribed Failed because you are not authorized';
-            
           }
           else {
             this.message = 'UnSubscribed Failed';
@@ -103,6 +100,7 @@ export class CommunityComponent implements OnInit {
       
       this.http.SubscribeCommunity(this.commId).subscribe(
         response => {
+          this.myFlagForButtonToggle=true;
           this.buttonName = 'SUBSCRIBED';
           this.message = 'subscribed Successfully';
           this.snackBar.open(this.message, undefined, {
@@ -114,6 +112,7 @@ export class CommunityComponent implements OnInit {
           this.theresponse = true;
         },
         err => {
+          this.myFlagForButtonToggle=false;
           if (err.error === 'UnAuthorized') {
             this.message = 'subscribed Failed because you are not authorized';
           }
