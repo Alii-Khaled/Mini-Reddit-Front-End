@@ -3,10 +3,6 @@ import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import {HttpService} from '../http.service';
 import {FormBuilder, FormControlName , FormGroup , Validator, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgIf } from '@angular/common';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { AppComponent } from '../app.component';
-// import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-login',
@@ -59,6 +55,10 @@ export class LoginComponent implements OnInit {
      */
     openModal(template: TemplateRef<any>) {
       this.modalRef = this.modalService.show(template, this.config);
+    }
+    userName(template: TemplateRef<any>) {
+      this.openModal(template);
+
     }
 
 

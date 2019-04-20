@@ -46,6 +46,7 @@ import { CommentsLayoutComponent } from './comments-layout/comments-layout.compo
 import { from } from 'rxjs';
 import { NextPageComponent } from './next-page/next-page.component';
 import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -75,6 +76,7 @@ import { ViewSinglePostComponent } from './view-single-post/view-single-post.com
     CommentsLayoutComponent,
     NextPageComponent,
     ViewSinglePostComponent,
+    ForgotPasswordComponent,
     /* ModalModule */
   ],
   imports: [

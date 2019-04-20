@@ -1,14 +1,14 @@
-import { Component, OnInit , TemplateRef } from '@angular/core';
+import { Component, OnInit , TemplateRef} from '@angular/core';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import {HttpService} from '../http.service';
 import {FormBuilder, FormControlName , FormGroup , Validator, Validators, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-forgot-username',
-  templateUrl: './forgot-username.component.html',
-  styleUrls: ['./forgot-username.component.css']
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.css']
 })
-export class ForgotUsernameComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit {
   form: FormGroup;
   modalRef: BsModalRef;
   disabld: boolean;
