@@ -529,6 +529,44 @@
     </table>
 </section>
 
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> httpOptions</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>httpOptions:     <code>{ headers: HttpHeaders; }</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> ss</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>ss:     <code>string</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Default value: </i><code>www.server.com/api</code>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+            </section>
     </div>
 
 
@@ -548,6 +586,7 @@ import { comments } from &#x27;./classes/comments&#x27;;
     providedIn: &#x27;root&#x27;
 })
 export class HttpService {
+
     constructor(private http: HttpClient) {}
 
     /**
@@ -555,6 +594,10 @@ export class HttpService {
      */
     GetCommunityInfo(id: number): Observable &lt;Communities&gt; {
         return this.http.get&lt;Communities&gt;(&#x27;http://localhost:3000/Community/&#x27; + id);
+
+    GetComments(): Observable&lt;comments[]&gt; {
+        return this.http.get&lt;comments[]&gt;(&#x27;http://localhost:3000/comments&#x27;);
+    }
 
 
         }
@@ -575,7 +618,7 @@ export class HttpService {
             &#x27;username&#x27;: username,
             &#x27;password&#x27;: password
         };
-        return this.http.post(&#x27;http://localhost:8000/api/unauth/signIn&#x27;, body, { headers });
+        return this.http.post(&#x27;https:/930d0c7c.ngrok.io/api/unauth/signIn&#x27;, body, { headers });
     }
 
 
@@ -592,7 +635,7 @@ export class HttpService {
             &#x27;password_confirmation&#x27; : password_confirmation
         };
 
-        return this.http.post(&#x27;http://localhost:8000/api/unauth/signIn&#x27;, body, { headers });
+        return this.http.post(&#x27;https:/930d0c7c.ngrok.io/api/unauth/signIn&#x27;, body, { headers });
     }
     /**
      * to send a request contains the email
@@ -604,7 +647,47 @@ export class HttpService {
 
 }
 
-</code></pre>
+    /**
+     * Send request of save post
+     * @param post_id
+     */
+    SavePost(post_id: number): Observable&lt;any&gt; {
+        // const saving &#x3D; new HttpParams().set(&#x27;post_id&#x27;, &#x27;1&#x27;);
+        return this.http.post(&#x27;http://localhost:3000/posts&#x27;, {post_id});
+    }
+
+    /**
+     * HttpClient API put() method &#x3D;&gt; save post
+     */
+    savePost(id, post): Observable&lt;PostsObjects&gt; {
+        return this.http.put&lt;PostsObjects&gt;(&#x27;http://localhost:3000/posts&#x27; + id, JSON.stringify(post), this.httpOptions)
+        .pipe(
+        retry(1),
+        catchError(this.handleError)
+        );
+     }
+
+    /**
+     * Error handling
+     */
+    handleError(error) {
+    let errorMessage &#x3D; &#x27;&#x27;;
+    if (error.error instanceof ErrorEvent) {
+      /**
+       * Get client-side error
+       */
+      errorMessage &#x3D; error.error.message;
+    } else {
+      /**
+       * Get server-side error
+       */
+      errorMessage &#x3D; &#x60;Error Code: ${error.status}\nMessage: ${error.message}&#x60;;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+ }
+
+}</code></pre>
     </div>
 
 </div>

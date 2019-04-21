@@ -27,6 +27,7 @@ button{
 
 .lower{
     height: 90px;
+    /* overflow: hidden; */
 }
 
 #more:hover{

@@ -48,6 +48,8 @@ import { from } from 'rxjs';
 import { NextPageComponent } from './next-page/next-page.component';
 import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
 import { CommunityModeratorsComponent } from './community-moderators/community-moderators.component';
+import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -78,6 +80,8 @@ import { CommunityModeratorsComponent } from './community-moderators/community-m
     NextPageComponent,
     ConfirmationDialogComponent,
     CommunityModeratorsComponent,
+    ViewSinglePostComponent,
+    ForgotPasswordComponent,
     /* ModalModule */
   ],
   imports: [

@@ -66,7 +66,7 @@ form: FormGroup;
     const val = this.form.value;
     this.service.SignUp(val.username , val.password, val.email, val.password_confirmation).subscribe((data: any) => {
       localStorage.setItem('token', data.token );
-      var test = localStorage.getItem('token');
+      const test = localStorage.getItem('token');
 
       this.router.navigateByUrl('profile/' + test);
     },

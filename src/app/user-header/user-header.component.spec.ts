@@ -82,7 +82,7 @@ describe('UserHeaderComponent', () => {
 
   it('should create', () => {
     component.PublicInfo = {
-      username: '7moda',
+      'username': '7moda',
       'name': '7moda basta',
       'karma': 500,
       'cake_day': 'March 8, 2019',

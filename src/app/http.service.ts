@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable} from 'rxjs';
-import { catchError, tap} from 'rxjs/operators' ;
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable, throwError} from 'rxjs';
+import { catchError, tap, retry} from 'rxjs/operators' ;
 import { UserCommunities } from './Profile_classes/user-communities';
 import { UserPublicInfo } from './Profile_classes/user-public-info';
 import {Communities} from './classes/community-info';
@@ -13,6 +13,7 @@ import { comments } from './classes/comments';
     providedIn: 'root'
 })
 export class HttpService {
+
     constructor(private http: HttpClient) {}
 
     /**
@@ -34,13 +35,14 @@ export class HttpService {
 
         const headers = new HttpHeaders ({
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
+            Accept: 'application/json',
         });
         const body = {
-            'username': username,
-            'password': password
+            username,
+            password
         };
-        return this.http.post('http://localhost:8000/api/unauth/signIn', body, { headers });
+        // return this.http.post('https://930d0c7c.ngrok.io/api/unauth/signIn', body, { headers });
+        return this.http.post('http://35.204.169.121/api/unauth/signIn', body, { headers });
     }
 
 
@@ -48,16 +50,16 @@ export class HttpService {
 
         const headers = new HttpHeaders ({
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
+            Accept: 'application/json',
         });
         const body = {
-            'username': username,
-            'email': email,
-            'password': password,
-            'password_confirmation' : password_confirmation
+            username,
+            email,
+            password,
+            password_confirmation
         };
 
-        return this.http.post('http://localhost:8000/api/unauth/signIn', body, { headers });
+        return this.http.post('https://930d0c7c.ngrok.io/api/unauth/signIn', body, { headers });
     }
     /**
      * to send a request contains the email
@@ -68,4 +70,3 @@ export class HttpService {
     }
 
 }
-

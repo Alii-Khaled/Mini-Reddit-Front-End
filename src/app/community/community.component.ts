@@ -3,7 +3,7 @@ import { Communities } from 'src/app/classes/community-info';
 import { HttpService } from '../http.service';
 import { CheckboxControlValueAccessor } from '@angular/forms';
 import { communityHttpService } from '../community/community.http.service';
-import { MatSnackBar, MatSnackBarModule } from "@angular/material";
+import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import {communityModerators} from 'src/app/classes/community-moderators';
@@ -66,7 +66,12 @@ export class CommunityComponent implements OnInit {
    * function toggleButton Toggles the subscribe to unsubscribe and vice verse
    */
   toggleButton(SUBSCRIBED: boolean) {
+<<<<<<< HEAD
     if (SUBSCRIBED == true) {
+=======
+    if (SUBSCRIBED === false) {
+      this.buttonName = 'SUBSCRIBE';
+>>>>>>> 79030d56bc801ca885a50398052760cf0b53de3d
       this.http.UnSubscribeCommunity(this.commId).subscribe(
         response => {
           this.myFlagForButtonToggle = false;
