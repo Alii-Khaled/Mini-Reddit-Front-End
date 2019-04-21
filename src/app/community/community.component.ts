@@ -6,12 +6,18 @@ import { communityHttpService } from '../community/community.http.service';
 import { MatSnackBar, MatSnackBarModule } from "@angular/material";
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import {communityModerators} from 'src/app/classes/community-moderators';
+
 @Component({
   selector: 'app-community',
   templateUrl: './community.component.html',
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
+  moderators: communityModerators[];
+   /**
+   * Variable to put in it value of button
+   */
   myFlagForButtonToggle;
   /**
    * Variable to put in it which message to show
@@ -142,6 +148,8 @@ export class CommunityComponent implements OnInit {
    */
   ngOnInit() {
     this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
+    this.http.GetMyModerators().subscribe((data: communityModerators[] ) => this.moderators = data);
+    
   }
 
 }

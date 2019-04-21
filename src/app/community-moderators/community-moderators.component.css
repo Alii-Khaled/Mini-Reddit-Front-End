@@ -16,10 +16,10 @@
     box-sizing: border-box;
     margin-bottom: 36px;
     border-width: 1px;
-    border-style: solid;
+    
     border-color: rgb(237, 239, 241);
     border-image: initial;
-    border-radius: 0px 0px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
     overflow: hidden;
 }
 .moderator{
@@ -43,8 +43,8 @@
     font-weight: 500;
     line-height: 18px;
     color: rgb(28, 28, 28);
-    min-width: 220px;
-    flex: 0 0 220px;
+    min-width: 180px;
+    flex: 0 0 180px;
 }
 .image{
     margin-left: 15px;
@@ -75,12 +75,52 @@
     text-transform: uppercase;
     padding: 0px 16px;
     display: block;
-  
+  float: right;
 }
 .deletMod:hover{
     background-color: red;
 }
 .addMod{
-
+    align-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 29px;
+    text-transform: uppercase;
+    padding: 0px 16px;
+    display: block;
+  float: right;
     
+}
+.inputname{
+    background-color: rgb(255, 255, 255);
+    color: rgb(28, 28, 28);
+    box-sizing: border-box;
+    height: 100%;
+ 
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(237, 239, 241);
+    border-image: initial;
+    border-radius: 4px;  
+  
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+::ng-deep snack-bar-container.snack-remove-button{
+    background-color: #323232;
+    color: #FFFFFF; 
+    font-size: 14px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    height: 0;
+    -moz-transition: -moz-transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0s linear 0.2s, padding 0s linear 0.2s, height 0s linear 0.2s;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0s linear 0.2s, padding 0s linear 0.2s, height 0s linear 0.2s;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0s linear 0.2s, padding 0s linear 0.2s, height 0s linear 0.2s;
+    -moz-transform: translateY(200%);
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);
 }

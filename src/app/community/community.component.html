@@ -81,10 +81,10 @@
         <div class="CommDetails panel-heading">
           moderators
         </div>
-        <div class="CommInfoAll panel-body panel-footer">
+        <div class="CommInfoAll panel-body panel-footer" >
 
-          <a class="text-of-moderator" href="#">u/Ahmed</a>
-          <a class="text-of-moderator" href="#">u/Ahmed</a>
+          <a class="text-of-moderator" *ngFor="let moderator of moderators" href="#">u/{{moderator?.moderator_name}}</a>
+          
           <a class="viewMod" routerLink="/community/{{Community?.id}}/Moderators">View all moderators</a>
         </div>
       </div>

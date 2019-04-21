@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Communities } from '../classes/community-info';
+import { communityModerators } from 'src/app/classes/community-moderators';
 
 @Injectable({
     providedIn: 'root'
@@ -10,6 +11,82 @@ import { Communities } from '../classes/community-info';
 export class communityHttpService {
     constructor(private http: HttpClient) { }
 
+    
+    RemoveModerator(id: number,user:string): Observable<any> {
+        var token = localStorage.getItem('token');
+        const headers = new HttpHeaders({
+            "Accept": "application/json",
+            "Authorization": "Bearer " + token,
+            "Content-Type": "application/json",
+        });
+
+        const body = {
+            
+            "moderator_name": user 
+        };
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+            return this.http.delete<Communities>('http://localhost:3000/Community/' + body);
+
+        }
+        else {
+            return this.http.post<any>('https://921b64a9.ngrok.io/api/auth/removeCommunity', body, { headers });
+
+        }
+    }
+
+
+
+    AddModerator(id: number,user: string): Observable<any[]> {
+        var token = localStorage.getItem('token');
+        const headers = new HttpHeaders({
+            "Accept": "application/json",
+            "Authorization": "Bearer " + token,
+            "Content-Type": "application/json",
+        });
+
+        const body = {
+            
+            "moderator_name": user
+        };
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/'+id);
+        }
+        else {
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/'+id);
+
+        }
+    }
+
+    GetMyModerators(): Observable<any[]> {
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+            return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
+        }
+        else {
+            return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
+
+        }
+    }
     /**
      * Variable to know from which server we get data (mock or API)
      */
