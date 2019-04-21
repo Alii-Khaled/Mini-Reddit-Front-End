@@ -66,12 +66,7 @@ export class CommunityComponent implements OnInit {
    * function toggleButton Toggles the subscribe to unsubscribe and vice verse
    */
   toggleButton(SUBSCRIBED: boolean) {
-<<<<<<< HEAD
     if (SUBSCRIBED == true) {
-=======
-    if (SUBSCRIBED === false) {
-      this.buttonName = 'SUBSCRIBE';
->>>>>>> 79030d56bc801ca885a50398052760cf0b53de3d
       this.http.UnSubscribeCommunity(this.commId).subscribe(
         response => {
           this.myFlagForButtonToggle = false;
