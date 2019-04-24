@@ -26,6 +26,10 @@ body
   text-transform: uppercase;
 }
 
+#Uname #pass:hover{
+  cursor: pointer;
+}
+
 form {
    
     align-content: center;
