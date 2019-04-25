@@ -8,7 +8,7 @@
     border-bottom-color: grey;
     display: inline-block;
     margin-bottom: -6px;
-    width: 1300px;
+    width: 100%;
     /* overflow-x: hidden;
     overflow-y: hidden; */
     margin-right: 50px;
@@ -83,6 +83,7 @@
     float: left;
     overflow-block: break-word;
     width: 100%;
+    overflow: hidden;
 }
 
 .third{

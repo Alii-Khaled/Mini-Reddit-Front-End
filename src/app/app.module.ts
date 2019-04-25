@@ -47,6 +47,9 @@ import { from } from 'rxjs';
 import { NextPageComponent } from './next-page/next-page.component';
 import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -77,6 +80,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     NextPageComponent,
     ViewSinglePostComponent,
     ForgotPasswordComponent,
+    CreatePostComponent,
     /* ModalModule */
   ],
   imports: [
@@ -101,7 +105,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     RouterModule,
     MatSnackBarModule,
     MatDialogModule,
-
+    MatCheckboxModule
     
     // Http,
     // Headers,

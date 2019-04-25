@@ -1,4 +1,4 @@
-<form class="comment-container" id="commenting{{comments.comment_id}}">
+<form class="comment-container" id="commenting{{comments.comment_id}}" [ngStyle]="{'width':innerWidth+'px'}">
   <div class="upper" style="cursor: pointer;">
     <p style="color:grey;"><mat-icon>mode_comment</mat-icon><span class="underlining" style="color:blue">user</span>
        commented on  . <span class="underlining" style="font-weight: bold;color:black;">u/</span>
@@ -8,8 +8,8 @@
   <mat-divider></mat-divider>
   <!-- second part -->
   <div class="lower">
-    <p style="color:grey;"><span class="underlining" style="color:blue; font-weight: bold;">user</span>
-      <mat-icon style="color:blue;">nature</mat-icon> n point . <span class="underlining">time</span>
+    <p style="color:grey;"><span class="underlining" style="color:blue; font-weight: bold;">{{comments.username}}</span>
+       n point . <span class="underlining">{{comments.date}}</span>
     </p>
     <p>my comment </p>
     <!-- buttons -->
@@ -33,9 +33,5 @@
         </ul>
       </button>
     </div>
-    <button mat-button *ngIf="innerWidth >= 494;"><mat-icon></mat-icon></button>
-    <button mat-button id="remove{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 268;"><mat-icon>delete</mat-icon> Remove</button>
-    <button mat-button id="spam{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 332;"><mat-icon>horizontal_split</mat-icon> Spam</button>
-    <button mat-button id="verify{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 397;"><mat-icon>verified_user</mat-icon></button>
   </div>
 </form>

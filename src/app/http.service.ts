@@ -13,6 +13,14 @@ import { comments } from './classes/comments';
     providedIn: 'root'
 })
 export class HttpService {
+    /**
+     * Variable to know from which server we get data (mock or API)
+     */
+    IsApi = false;
+    /**
+     * Back-end link
+     */
+    BackEnd = 'http://35.204.169.121';
 
     constructor(private http: HttpClient) {}
 
@@ -68,5 +76,4 @@ export class HttpService {
         return this.http.post( 'request', {email});
 
     }
-
 }

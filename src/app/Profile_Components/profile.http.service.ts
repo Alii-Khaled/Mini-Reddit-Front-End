@@ -235,6 +235,7 @@ export class ProfileHttpService {
         }
     }
 
+
     /**
      * Getting user's hidden posts
      */
