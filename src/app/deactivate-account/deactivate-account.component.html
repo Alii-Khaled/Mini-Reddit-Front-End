@@ -5,7 +5,7 @@
   </head>
   <body>
     <div class ="container">
-         <p id="tit">Deactivate your account</p> 
+         <p id="hed">Deactivate your account</p> 
          <br>
 
          <div id="txt">
@@ -28,6 +28,22 @@
             </li>
           </ul>
         </div>
+        <p id = "tit" >WHY ARE YOU DEACTIVATING THIS ACCOUNT? (OPTIONAL)</p>
+        <form action="action_page.php"  [formGroup]="form" >
+            <input type="text" id="fback" placeholder="(OPTIONAL) FEEDBACK" formControlName="about">
+        </form>
+        <br>
+        <p id = "tit" >ACCOUNT CREDENTIALS FOR SECURITY PURPOSES</p>
+        <input type="text" id ="ip"placeholder="USERNAME" formControlName="username" required >
+          <br>
+          <br>
+        <input type="password" id ="ip" placeholder="PASSWORD" formControlName="password" required>
+        <br>
+        <form action="/action_page.php">
+          <input type="checkbox" value="accept"> I understand that deactivated accounts are not recoverable<br>
+          <button id ="chng">CANCEL</button>
+          <p id="deactivate" >DEACTIVATE</p>
+        </form>
       
     </div>
   </body>
