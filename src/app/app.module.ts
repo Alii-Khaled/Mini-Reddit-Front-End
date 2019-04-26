@@ -9,6 +9,7 @@ import { UserHeaderComponent } from './user-header/user-header.component';
 import { CommunityComponent } from './community/community.component';
 import {MatSnackBarModule} from '@angular/material';
 
+
 import {MatDialogModule} from '@angular/material';
 import { ProfileComponent } from './Profile_Components/profile/profile.component';
 import { PostLayoutComponent } from './post-layout/post-layout.component';
@@ -45,11 +46,14 @@ import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.com
 import { CommentsLayoutComponent } from './comments-layout/comments-layout.component';
 import { from } from 'rxjs';
 import { NextPageComponent } from './next-page/next-page.component';
+import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
+import { CommunityModeratorsComponent } from './community-moderators/community-moderators.component';
 import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -78,9 +82,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     DownvotedComponent,
     CommentsLayoutComponent,
     NextPageComponent,
+    ConfirmationDialogComponent,
+    CommunityModeratorsComponent,
     ViewSinglePostComponent,
     ForgotPasswordComponent,
     CreatePostComponent,
+    DeactivateAccountComponent,
     /* ModalModule */
   ],
   imports: [
@@ -106,11 +113,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSnackBarModule,
     MatDialogModule,
     MatCheckboxModule
-    
     // Http,
     // Headers,
     // RequestOptions
     // HttpHeaders,
+  ],
+  entryComponents: [
+    ConfirmationDialogComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

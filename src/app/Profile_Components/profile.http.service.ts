@@ -46,8 +46,7 @@ export class ProfileHttpService {
                 "Authorization": "Bearer: {"+ token +"}",
             });
             console.log('Here is a token: ' + token);
-            // return this.http.get<any[]>('http://localhost:3000/communities');
-            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewUserCommunities', { headers });
+            return this.http.get<any[]>('http://localhost:3000/communities' );
         }
     }
 

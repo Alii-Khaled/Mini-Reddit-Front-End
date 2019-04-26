@@ -1,4 +1,26 @@
 {
+  "get_my_moderators": [
+    {
+      "id": 1,
+      "moderator_name": "Ali"
+    },
+    {
+      "id": 2,
+      "moderator_name": "Amr"
+    },
+    {
+      "id": 2,
+      "moderator_name": "7moda pasta"
+    },
+    {
+      "moderator_name": "mahmood",
+      "id": 3
+    },
+    {
+      "moderator_name": "Ahmed",
+      "id": 4
+    }
+  ],
   "Community": [
     {
       "id": 1,

@@ -1,0 +1,38 @@
+<div class="container-fluid" style="margin-top:48px; background-color: #dae0e6; width: 100%;
+height: 100%;">
+  <div class="All">
+    <div class="moderators-text">
+      Moderators of Community
+    </div>
+    <div class="table-of-moderators">
+      <div class="row moderator" *ngFor="let moderator of moderators; let i = index">
+        <a href="#" class="col-sm-9">
+          <div class="modbtn ">
+            <div class="moderator-name">
+              <img class="image" src="https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png">
+              u/{{moderator?.moderator_name}}
+
+            </div>
+          </div>
+
+        </a>
+        <div class="col-sm-3">
+          <button type="button" class="btn btn-primary btn-lg deletMod" (click)='ondeletingmoderator(i)'>Delete moderator</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="moderators-text">
+      Add Moderator
+    </div>
+    
+      <div class="row moderator">
+        <input type="text" placeholder="Moderator name" maxlength="30" class="inputname col-sm-6" id='addmodd' >
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+            <button type="button" (click)="onAddingmoderator()"  class="btn btn-primary btn-lg addMod">Add Moderator</button>
+        </div>
+      </div>
+   
+  </div>
+</div>
