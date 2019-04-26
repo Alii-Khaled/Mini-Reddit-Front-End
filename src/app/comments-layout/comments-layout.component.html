@@ -1,17 +1,17 @@
 <form class="comment-container" id="commenting{{comments.comment_id}}" [ngStyle]="{'width':innerWidth+'px'}">
   <div class="upper" style="cursor: pointer;">
-    <p style="color:grey;"><mat-icon>mode_comment</mat-icon><span class="underlining" style="color:blue">user</span>
-       commented on  . <span class="underlining" style="font-weight: bold;color:black;">u/</span>
-        . Posted by <span class="underlining">u/</span>
+    <p style="color:grey;"><mat-icon style="font-size:13px;">mode_comment</mat-icon><span class="underlining" style="color:blue">{{comments.username}}</span>
+       commented on  . {{comments.upvotes}} <span class="underlining" style="font-weight: bold;color:black;">u/{{comments.username}}</span>
+        . Posted by <span class="underlining">u/{{comments.username}}</span>
     </p>
   </div>
   <mat-divider></mat-divider>
   <!-- second part -->
   <div class="lower">
     <p style="color:grey;"><span class="underlining" style="color:blue; font-weight: bold;">{{comments.username}}</span>
-       n point . <span class="underlining">{{comments.date}}</span>
+      {{comments.upvotes}} point . <span class="underlining">{{comments.date}}</span>
     </p>
-    <p>my comment </p>
+    <p style="font-size:15px; margin-top: 0; margin-bottom: 0;">{{comments.body}}</p>
     <!-- buttons -->
     <button mat-button id="reply" class="underlining">Reply</button>
     <button mat-button id="share" class="underlining dropdown-toggle" data-toggle="dropdown">Share
@@ -33,5 +33,9 @@
         </ul>
       </button>
     </div>
+    <!-- <button mat-button *ngIf="innerWidth >= 494;"><mat-icon></mat-icon>.</button> -->
+    <button mat-button id="remove{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 268;"><mat-icon>delete</mat-icon> Remove</button>
+    <button mat-button id="spam{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 332;"><mat-icon>horizontal_split</mat-icon> Spam</button>
+    <button mat-button id="verify{{comments.commente_id}}" class="others" *ngIf="innerWidth >= 397;"><mat-icon>verified_user</mat-icon></button>
   </div>
 </form>
