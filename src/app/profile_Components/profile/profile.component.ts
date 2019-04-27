@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserPublicInfo } from 'src/app/Profile_classes/user-public-info';
+import { UserPublicInfo } from 'src/app/profile_classes/user-public-info';
 import { ProfileHttpService } from '../profile.http.service';
 import { Router } from '@angular/router';
 
@@ -18,7 +18,6 @@ export class ProfileComponent implements OnInit {
    */
   PublicInfo: UserPublicInfo;
   /**
-   * 
    * @param http For requests
    * @param router To rout to another url if there was an error
    */

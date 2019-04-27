@@ -1,8 +1,8 @@
 import { Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { UserCommunities } from '../Profile_classes/user-communities';
-import { UserPublicInfo } from '../Profile_classes/user-public-info';
+import { UserCommunities } from '../profile_classes/user-communities';
+import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
 import { comments } from '../classes/comments';
 

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   nav:string = 'false' ;
   constructor() {
-    if (localStorage.getItem('navbar')!=null) {
+    if (localStorage.getItem('navbar') != null) {
       this.nav = localStorage.getItem('navbar');
     }
   }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserCommunities } from 'src/app/Profile_classes/user-communities';
+import { UserCommunities } from 'src/app/profile_classes/user-communities';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material';
-import { UserPublicInfo } from 'src/app/Profile_classes/user-public-info';
-import { ProfileHttpService } from '../Profile_Components/profile.http.service';
+import { UserPublicInfo } from 'src/app/profile_classes/user-public-info';
+import { ProfileHttpService } from '../profile_Components/profile.http.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -95,7 +95,8 @@ export class UserHeaderComponent implements OnInit {
      * Getting usernames of people that the user follows
      */
     this.http.GetMyFollowing(this.username).subscribe((data: any) => {
-      this.usernames = JSON.parse(data.follwingList);
+      this.usernames = data.followingList;
+      console.log('GetMyFollowing: ',this.usernames)
     },
     (error: any) => {
       /**
