@@ -11,8 +11,8 @@ import { communityModerators } from 'src/app/classes/community-moderators';
 export class communityHttpService {
     constructor(private http: HttpClient) { }
 
-    
-    RemoveModerator(id: number,user:string): Observable<any> {
+
+    RemoveModerator(id: number, user: string): Observable<any> {
         var token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             "Accept": "application/json",
@@ -21,8 +21,8 @@ export class communityHttpService {
         });
 
         const body = {
-            
-            "moderator_name": user 
+
+            "moderator_name": user
         };
         /**
          * Choose from where i'll get my data
@@ -43,7 +43,7 @@ export class communityHttpService {
 
 
 
-    AddModerator(id: number,user: string): Observable<any[]> {
+    AddModerator(id: number, user: string): Observable<any[]> {
         var token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             "Accept": "application/json",
@@ -52,7 +52,7 @@ export class communityHttpService {
         });
 
         const body = {
-            
+
             "moderator_name": user
         };
         /**
@@ -63,10 +63,10 @@ export class communityHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/'+id);
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + id);
         }
         else {
-            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/'+id);
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + id);
 
         }
     }
@@ -110,7 +110,7 @@ export class communityHttpService {
         }
         else {
             /*get community info not now in backend*/
-            return this.http.get<Communities>('http://35.204.169.121/Community/' + id);
+            return this.http.get<Communities>('http://localhost:3000/Community/' + id);
         }
     }
 
@@ -142,10 +142,9 @@ export class communityHttpService {
             return this.http.delete<Communities>('http://localhost:3000/Community/' + id);
 
         }
-else
-        {
-        // return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/removeCommunity',body ,{ headers });
-        return this.http.post<any>('http://35.204.169.121/api/auth/removeCommunity',body ,{ headers });
+        else {
+            // return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/removeCommunity',body ,{ headers });
+            return this.http.post<any>('http://35.204.169.121/api/auth/removeCommunity', body, { headers });
 
         }
     }
@@ -204,9 +203,9 @@ else
              */
             return this.http.post<any>('http://localhost/api/auth/unSubscribeCommunity', body, { headers });
         }
-        else{
+        else {
             // return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/unSubscribeCommunity',body ,{ headers });
-            return this.http.post<any>('http://35.204.169.121/api/auth/unSubscribeCommunity',body ,{ headers });
+            return this.http.post<any>('http://35.204.169.121/api/auth/unSubscribeCommunity', body, { headers });
         }
 
     }
