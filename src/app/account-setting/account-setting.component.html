@@ -4,17 +4,80 @@
 
   </head>
   <body>
-    <div>
+    <div class="container">
       <div id="box">
         <p id = "aset" >Account settings</p>
         <p id ="tit"> ACCOUNT PREFERENCES</p>
-        <p id="hed">Email Address</p> 
-        <button id ="chng">CHANGE</button>
+        <p id="hed"  style ="margin-right:1.5%" >Email Address </p>
+        <button id ="chng" (click)="openModal(EmailChange)">CHANGE</button>
+        <ng-template #EmailChange>
+          <div class="modal-header">
+            <h4 class="modal-title" style="vertical-align: centre">Update your email</h4>
+            <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+             <p id="updt">Update your email below. There will be a new verification email sent 
+             <br>
+             that you will need to use to verify this new email.</p>
+             <input type="password" placeholder="PASSWORD" formControlName="password" required >
+             <br>
+             <br>
+             <input type="Email" placeholder="NEW EMAIL" formControlName="email" required>
+             <br>
+             <br>
+             <button id ="chng" style = "margin-left:68%">CANCEL</button>
+             <button id ="sve">SAVE</button>
+
+            </div>
+            
+          </ng-template>
+        <p id="tit" >{{Email}}</p> 
+        
       </div>
       <br>
       <p id="hed">Change password</p> 
+      <button id ="chng" (click)="openModal(PassChange)">CHANGE</button>
+      <ng-template #PassChange>
+          <div class="modal-header">
+            <h4 class="modal-title" style="vertical-align: centre">Update your password</h4>
+            <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+             
+             <input type="password" placeholder="OLD PASSWORD" formControlName="password" required >
+             <br>
+             <br>
+             <input type="password" placeholder="NEW PASSWORD" formControlName="new-password" required >
+             <br>
+             <br>
+             <input type="password" placeholder="CONFIRM NEW PASSWORD" formControlName="new-password" required >
+             <br>
+             <br>
+             
+             <button id ="chng" style = "margin-left:68%">CANCEL</button>
+             <button id ="sve">SAVE</button>
+
+            </div>
+            
+          </ng-template>
       <p id="tit" >Password must be at least 6 characters long</p> 
-      <button id ="chng">CHANGE</button>
+
+
+
+      <p id="deactivate" (click)="openModal(template)" >DEACTIVATE ACCOUNT</p>
+      <ng-template #template>
+          <div class="modal-header">
+            <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+       <app-deactivate-account></app-deactivate-account>
+        </ng-template>
+      
     </div>
   </body>
 </html>

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Communities } from '../classes/community-info';
+import { communityModerators } from 'src/app/classes/community-moderators';
 
 @Injectable({
     providedIn: 'root'
@@ -10,6 +11,82 @@ import { Communities } from '../classes/community-info';
 export class communityHttpService {
     constructor(private http: HttpClient) { }
 
+    
+    RemoveModerator(id: number,user:string): Observable<any> {
+        var token = localStorage.getItem('token');
+        const headers = new HttpHeaders({
+            "Accept": "application/json",
+            "Authorization": "Bearer " + token,
+            "Content-Type": "application/json",
+        });
+
+        const body = {
+            
+            "moderator_name": user 
+        };
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+            return this.http.delete<Communities>('http://localhost:3000/Community/' + body);
+
+        }
+        else {
+            return this.http.post<any>('https://921b64a9.ngrok.io/api/auth/removeCommunity', body, { headers });
+
+        }
+    }
+
+
+
+    AddModerator(id: number,user: string): Observable<any[]> {
+        var token = localStorage.getItem('token');
+        const headers = new HttpHeaders({
+            "Accept": "application/json",
+            "Authorization": "Bearer " + token,
+            "Content-Type": "application/json",
+        });
+
+        const body = {
+            
+            "moderator_name": user
+        };
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/'+id);
+        }
+        else {
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/'+id);
+
+        }
+    }
+
+    GetMyModerators(): Observable<any[]> {
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+            return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
+        }
+        else {
+            return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
+
+        }
+    }
     /**
      * Variable to know from which server we get data (mock or API)
      */
@@ -54,19 +131,20 @@ export class communityHttpService {
         const body = {
             "community_id": id
         };
-       /**
-        * Choose from where i'll get my data
-        */
+        /**
+         * Choose from where i'll get my data
+         */
         if (this.IsApi === false) {
-          /**
-           * From the mock server if "IsApi" is false
-           * And from Api if it is true
-           */
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
             return this.http.delete<Communities>('http://localhost:3000/Community/' + id);
 
         }
 else
         {
+        // return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/removeCommunity',body ,{ headers });
         return this.http.post<any>('http://35.204.169.121/api/auth/removeCommunity',body ,{ headers });
 
         }
@@ -86,24 +164,25 @@ else
         let body = {
             "community_id": id
         }
-   /**
-    * Choose from where i'll get my data
-    */
+        /**
+         * Choose from where i'll get my data
+         */
         if (this.IsApi === false) {
-      /**
-       * From the mock server if "IsApi" is false
-       * And from Api if it is true
-       */
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
             return this.http.post<any>('http://localhost/api/auth/subscribeCommunity', body, { headers });
         }
         else {
+            // return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/subscribeCommunity', body, { headers });
             return this.http.post<any>('http://35.204.169.121/api/auth/subscribeCommunity', body, { headers });
         }
     }
-  /**
-   *Unsubscribe Community 
-   *@param id now we use id to unsubscribe to Specific Community
-   */
+    /**
+     *Unsubscribe Community 
+     *@param id now we use id to unsubscribe to Specific Community
+     */
     UnSubscribeCommunity(id: number): Observable<any> {
         var token = localStorage.getItem('token');
         let headers = {
@@ -115,29 +194,30 @@ else
         let body = {
             "community_id": id
         }
-  /**
-   * Choose from where i'll get my data
-   */
+        /**
+         * Choose from where i'll get my data
+         */
         if (this.IsApi === false) {
-      /**
-       * From the mock server if "IsApi" is false
-       * And from Api if it is true
-       */
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
             return this.http.post<any>('http://localhost/api/auth/unSubscribeCommunity', body, { headers });
         }
         else{
+            // return this.http.post<any>('https://930d0c7c.ngrok.io/api/auth/unSubscribeCommunity',body ,{ headers });
             return this.http.post<any>('http://35.204.169.121/api/auth/unSubscribeCommunity',body ,{ headers });
         }
 
     }
-   /**
-    *Edit Community 
-    *@param id now we use id to edit to Specific Community
-    *@param rules now we use id to edit to Specific Community's Rules
-    *@param bio now we use id to edit to Specific Community's bio
-    *@param banner now we use id to edit to Specific Community's banner
-    *@param logo now we use id to edit to Specific Community's avatar
-    */
+    /**
+     *Edit Community 
+     *@param id now we use id to edit to Specific Community
+     *@param rules now we use id to edit to Specific Community's Rules
+     *@param bio now we use id to edit to Specific Community's bio
+     *@param banner now we use id to edit to Specific Community's banner
+     *@param logo now we use id to edit to Specific Community's avatar
+     */
     editCommunity(id: number, rules: string, bio: string, banner: string, logo: string) {
         var token = localStorage.getItem('token');
         let headers = {
@@ -153,13 +233,14 @@ else
             "banner": banner,
             "logo": logo
         }
-       /**
-        * Choose from where i'll get my data
-        */
+        /**
+         * Choose from where i'll get my data
+         */
         if (this.IsApi === false) {
             return this.http.post("http://localhost/api/auth/editCommunity", body, { headers })
         }
         else {
+            // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
             return this.http.post("http://35.204.169.121/api/auth/editCommunity", body, { headers })
         }
     }

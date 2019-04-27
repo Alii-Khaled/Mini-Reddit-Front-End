@@ -1,14 +1,24 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterModule, Routes } from '@angular/router';
 import { CommunityComponent } from './community.component';
-
+import { MatButtonModule,MatButtonToggleModule } from '@angular/material';
+import {FormsModule} from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 describe('CommunityComponent', () => {
   let component: CommunityComponent;
   let fixture: ComponentFixture<CommunityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommunityComponent ]
+      declarations: [ CommunityComponent ],
+      imports: [
+        FormsModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        RouterModule,
+        ActivatedRoute
+
+     ],
     })
     .compileComponents();
   }));

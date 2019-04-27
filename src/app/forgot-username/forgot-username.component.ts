@@ -27,5 +27,7 @@ export class ForgotUsernameComponent implements OnInit {
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }
+  emailme() {
+  }
 
 }

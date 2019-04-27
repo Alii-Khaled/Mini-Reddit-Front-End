@@ -19,7 +19,7 @@ export class PostLayoutComponent implements OnInit {
    * object to receivearray of objects of posts information
    */
   @Input()posts: PostsObjects;
-  innerWidth = 1268;
+  innerWidth = window.innerWidth;
   public type: string;
 
   public size = '';

@@ -26,11 +26,11 @@ body
 #trb
 {
   font-family: Noto Sans,sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    margin-top: 8px;
-    margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
 input[type=text]
 {
@@ -46,7 +46,7 @@ input[type=text]
 
 }
   
-  button {
+  button[type="submit"] {
     background-color:#0079D3;
     color: white;
     text-emphasis: bold;
