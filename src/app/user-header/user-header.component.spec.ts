@@ -15,11 +15,25 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
-import { ProfileComponent } from '../Profile_Components/profile/profile.component';
+import { ProfileComponent } from '../profile_Components/profile/profile.component';
 import { CommunityComponent } from '../community/community.component';
 import { PostLayoutComponent } from '../post-layout/post-layout.component';
-
-
+import {AppModule } from '../app.module'
+import { AccountSettingComponent } from '../account-setting/account-setting.component';
+import {ProfileSettingComponent} from '../profile-setting/profile-setting.component';
+import {ForgotUsernameComponent} from '../forgot-username/forgot-username.component';
+import {OverviewComponent} from '../profile_Components/overview/overview.component'
+import { PostsComponent } from '../profile_Components/posts/posts.component';
+import { CommentsComponent } from '../profile_Components/comments/comments.component';
+import { SavedComponent } from '../profile_Components/saved/saved.component';
+import { HiddenComponent } from '../profile_Components/hidden/hidden.component';
+import { UpvotedComponent } from '../profile_Components/upvoted/upvoted.component';
+import { DownvotedComponent } from '../profile_Components/downvoted/downvoted.component';
+import { EditCommunityComponent } from '../edit-community/edit-community.component';
+import { UserSettingsComponent } from '../user-settings/user-settings.component';
+import {NextPageComponent} from '../next-page/next-page.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 
 describe('UserHeaderComponent', () => {
   let component: UserHeaderComponent;
@@ -52,25 +66,42 @@ describe('UserHeaderComponent', () => {
         BrowserAnimationsModule,
         ReactiveFormsModule,
         FormsModule,
+        MatSnackBarModule,
+        MatButtonToggleModule
+        // AppModule
     ],
 
       declarations: [
+        EditCommunityComponent,
+        PostsComponent,
+        CommentsComponent,
+        SavedComponent,
+        HiddenComponent,
+        UpvotedComponent,
+        DownvotedComponent,
+        UserSettingsComponent,
           UserHeaderComponent,
           LoginComponent,
           SignupComponent,
           ProfileComponent,
           CommunityComponent,
-          PostLayoutComponent],
+          AccountSettingComponent,
+          ProfileSettingComponent,
+          ForgotUsernameComponent,
+          OverviewComponent,
+          NextPageComponent,
+          PostLayoutComponent
+        ],
 
-      schemas: [NO_ERRORS_SCHEMA , CUSTOM_ELEMENTS_SCHEMA]
+      // schemas: [NO_ERRORS_SCHEMA , CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    TestBed.resetTestEnvironment();
-    TestBed.initTestEnvironment(BrowserDynamicTestingModule,
-    platformBrowserDynamicTesting());
+    // TestBed.resetTestEnvironment();
+    // TestBed.initTestEnvironment(BrowserDynamicTestingModule,
+    // platformBrowserDynamicTesting());
     fixture = TestBed.createComponent(UserHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
