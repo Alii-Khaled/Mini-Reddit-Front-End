@@ -12,6 +12,7 @@ export class communityModerators {
      */
     constructor(name: string) {
         this.moderators_name = name;
+        
 
     }
 }

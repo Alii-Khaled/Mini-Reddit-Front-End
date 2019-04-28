@@ -36,7 +36,13 @@ export class CommunityModeratorsComponent implements OnInit {
           panelClass: 'snack-remove-button',
 
         });
-        this.router.navigateByUrl(this.router.url);
+        console.log(username);
+        let moderator= new communityModerators(username) ;
+        var moderator1 :  communityModerators;
+        moderator1=moderator;
+        this.moderators.push(moderator1);
+        console.log(this.moderators);
+        console.log(moderator.moderators_name);
       },
       err => {
         this.message = 'Added failed';
@@ -72,11 +78,7 @@ export class CommunityModeratorsComponent implements OnInit {
               panelClass: 'snack-remove-button',
 
             });
-          
-              this.moderators.splice(i, 1);
-         
-            console.log(this.moderators);
-            
+            this.moderators.splice(i, 1);
           },
           err => {
             this.message = 'removed failed';
