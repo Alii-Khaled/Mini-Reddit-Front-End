@@ -19,8 +19,13 @@ export class CommentsLayoutComponent implements OnInit {
   @Input()comments: comments; post: post;
 
   ngOnInit() {
-    this.innerWidth = window.innerWidth;
-    this.innerWidth = this.innerWidth - 100;
+    if (window.innerWidth > 960) {
+      this.innerWidth2 = window.innerWidth - 350;
+    } else {
+      this.innerWidth2 = window.innerWidth;
+    }
+    this.innerWidth2 = this.innerWidth2 - 100;
+    this.innerWidth = this.innerWidth2 - 150;
   }
 
   /**
@@ -29,9 +34,13 @@ export class CommentsLayoutComponent implements OnInit {
  */
 @HostListener('window:resize', ['$event'])
 onResize(event) {
-  this.innerWidth = window.innerWidth;
-  this.innerWidth = this.innerWidth - 100;
-  this.size = this.innerWidth.toString();
+  if (window.innerWidth > 960) {
+    this.innerWidth2 = window.innerWidth - 350;
+  } else {
+    this.innerWidth2 = window.innerWidth;
+  }
+  this.innerWidth2 = this.innerWidth2 - 100;
+  this.size = this.innerWidth2.toString();
   this.size = this.size + 'px';
   this.id = 'commenting';
   //  + this.comments.comment_id.toString();
