@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class ="container">
+         <p id="hed">Deactivate your account</p> 
+         <br>
+
+         <div id="txt">
+         Sorry to see you go!
+         <br><br>
+          <ul>
+            <li>
+                If you are having a problem on Reddit, please consider contacting 
+                <br>
+                us about it before deactivating your account.
+                <br>
+            </li>
+            <br>
+            <li>
+                Deactivating your account will not delete the content of posts and 
+                <br>
+                comments you've made on Reddit. To do so please delete them 
+                <br>
+                individually.
+            </li>
+          </ul>
+        </div>
+        <p id = "tit" >WHY ARE YOU DEACTIVATING THIS ACCOUNT? (OPTIONAL)</p>
+        <form action="action_page.php"  [formGroup]="form" >
+            <input type="text" id="fback" placeholder="(OPTIONAL) FEEDBACK" formControlName="about">
+        </form>
+        <br>
+        <p id = "tit" >ACCOUNT CREDENTIALS FOR SECURITY PURPOSES</p>
+        <input type="text" id ="ip"placeholder="USERNAME" formControlName="username" required >
+          <br>
+          <br>
+        <input type="password" id ="ip" placeholder="PASSWORD" formControlName="password" required>
+        <br>
+        <form action="/action_page.php">
+          <input type="checkbox" value="accept"> I understand that deactivated accounts are not recoverable<br>
+          <button id ="chng">CANCEL</button>
+          <p id="deactivate" >DEACTIVATE</p>
+        </form>
+      
+    </div>
+  </body>
+</html>

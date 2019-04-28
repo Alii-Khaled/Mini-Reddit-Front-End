@@ -50,6 +50,7 @@ import { ConfirmationDialogComponent } from './components/shared/confirmation-di
 import { CommunityModeratorsComponent } from './community-moderators/community-moderators.component';
 import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -82,6 +83,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     CommunityModeratorsComponent,
     ViewSinglePostComponent,
     ForgotPasswordComponent,
+    DeactivateAccountComponent,
     /* ModalModule */
   ],
   imports: [
