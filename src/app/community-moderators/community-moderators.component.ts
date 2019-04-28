@@ -72,7 +72,11 @@ export class CommunityModeratorsComponent implements OnInit {
               panelClass: 'snack-remove-button',
 
             });
-            this.router.navigateByUrl(this.router.url);
+          
+              this.moderators.splice(i, 1);
+         
+            console.log(this.moderators);
+            
           },
           err => {
             this.message = 'removed failed';
