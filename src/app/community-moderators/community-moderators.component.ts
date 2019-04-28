@@ -11,7 +11,7 @@ import { ConfirmationDialogComponent } from '../components/shared/confirmation-d
   styleUrls: ['./community-moderators.component.css']
 })
 export class CommunityModeratorsComponent implements OnInit {
-  moderators: communityModerators[];
+  moderators: any[];
   message;
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute, public dialog: MatDialog) {
 
@@ -60,34 +60,35 @@ export class CommunityModeratorsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-      var username = this.moderators[i].moderators_name;
-      this.http.AddModerator(i, username).subscribe(
-        response => {
-          this.message = 'removed Successfully';
-          this.snackBar.open(this.message, undefined, {
-            duration: 4000,
-            verticalPosition: 'bottom',
-            horizontalPosition: 'center',
-            panelClass: 'snack-remove-button',
+        var username = this.moderators[i].moderators_name;
+        var id = this.moderators[i].id;
+        this.http.RemoveModerator(id, username).subscribe(
+          response => {
+            this.message = 'removed Successfully';
+            this.snackBar.open(this.message, undefined, {
+              duration: 4000,
+              verticalPosition: 'bottom',
+              horizontalPosition: 'center',
+              panelClass: 'snack-remove-button',
 
-          });
-          this.router.navigateByUrl(this.router.url);
-        },
-        err => {
-          this.message = 'removed failed';
-          this.snackBar.open(this.message, undefined, {
-            duration: 4000,
-            verticalPosition: 'bottom',
-            horizontalPosition: 'center',
-            panelClass: 'snack-remove-button',
+            });
+            this.router.navigateByUrl(this.router.url);
+          },
+          err => {
+            this.message = 'removed failed';
+            this.snackBar.open(this.message, undefined, {
+              duration: 4000,
+              verticalPosition: 'bottom',
+              horizontalPosition: 'center',
+              panelClass: 'snack-remove-button',
 
+            });
           });
-        });
       }
-      else{
+      else {
         return;
       }
     });
 
-}
+  }
 }
