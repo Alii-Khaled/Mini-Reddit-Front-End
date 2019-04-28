@@ -4,7 +4,7 @@ import { Observable} from 'rxjs';
 import { UserCommunities } from '../Profile_classes/user-communities';
 import { UserPublicInfo } from '../Profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
-import { comments } from '../classes/comments';
+import { comments, post } from '../classes/comments';
 
 @Injectable({
     providedIn: 'root'
@@ -46,7 +46,8 @@ export class ProfileHttpService {
                 "Authorization": "Bearer: {"+ token +"}",
             });
             console.log('Here is a token: ' + token);
-            return this.http.get<any[]>('http://localhost:3000/communities' );
+            // return this.http.get<any[]>('http://localhost:3000/communities');
+            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewUserCommunities', { headers });
         }
     }
 
@@ -266,6 +267,19 @@ export class ProfileHttpService {
         }
     }
 
+    GetCommentsPost(username: string): Observable<post> {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        return this.http.get<post>('http://localhost:3000/comments');
+        } else {
+            // return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
+            return this.http.get<post>(this.BackEnd + '/api/unauth/viewComments' + username);
+        }
+    }
+
     GetMyFollowing(username): Observable<any> {
         /**
          * Choose from where i'll get my data
@@ -320,6 +334,15 @@ SignOut(){
         return this.http.post(this.BackEnd + '/api/auth/signOut' , body, {headers});
     }
 }
+
+// getImages() {
+//     return this.http.get(this._url);
+//   }
+ 
+//    getImage(id: number) {
+//      return this.http.get(this._url)
+//                      .pipe(first(item => item.id === id));
+//    }
 
 
 

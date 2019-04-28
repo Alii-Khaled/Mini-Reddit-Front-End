@@ -25,7 +25,11 @@ export class PostLayoutComponent implements OnInit {
   public size = '';
   public id = '';
   ngOnInit() {
-    this.innerWidth2 = window.innerWidth;
+    if (window.innerWidth > 960) {
+      this.innerWidth2 = window.innerWidth - 350;
+    } else {
+      this.innerWidth2 = window.innerWidth;
+    }
     this.innerWidth2 = this.innerWidth2 - 100;
     this.innerWidth = this.innerWidth2 - 150;
    }

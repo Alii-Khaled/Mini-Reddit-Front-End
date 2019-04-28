@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { comments } from 'src/app/classes/comments';
+import { comments, post } from 'src/app/classes/comments';
 import { ProfileHttpService } from '../profile.http.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { ProfileHttpService } from '../profile.http.service';
 export class CommentsComponent implements OnInit {
 
   comments: comments[];
+  post: post;
 
   constructor(private http: ProfileHttpService) { }
 

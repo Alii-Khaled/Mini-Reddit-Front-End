@@ -152,38 +152,6 @@
                 "post_link": "https://avatars1.githubusercontent.com/u/47671499?s=400&v=4"
             }
         ],
-        "comments": [
-            {
-                "comment_id": 1,
-                "body": "comment1",
-                "username": "ahmed",
-                "downvotes": 15,
-                "upvotes": 0,
-                "date": " 2 days ago ",
-                "comments_num": 0,
-                "saved": "true"
-            },
-            {
-                "comment_id": 2,
-                "body": "comment2",
-                "username": "ahmed",
-                "downvotes": 23,
-                "upvotes": 17,
-                "date": " 2 days ago ",
-                "comments_num": 0,
-                "saved": "false"
-            },
-            {
-                "comment_id": 3,
-                "body": "comment3",
-                "username": "ahmed",
-                "downvotes": 31,
-                "upvotes": 78,
-                "date": " 2 days ago ",
-                "comments_num": 0,
-                "saved": "true"
-            }
-        ],
         "upvoted": [
             {
                 "post_id": 1,
@@ -370,7 +338,100 @@
                 "upvoted": "false",
                 "downvoted": "true"
             }
+        ],
+        "c":[
+            {
+                "post": {
+                    "post_id": 1,
+                    "body": "post1",
+                    "title": "post",
+                    "author_username": "ahmed",
+                    "community": " laravel",
+                    "community_id": 1
+                },
+                "comments": [
+                    {
+                        "comment_id": 55,
+                        "body": "comment1 on post1",
+                        "date": "2 days ago",
+                        "upvotes": 12,
+                        "downvotes": 45,
+                        "upvoted": "true",
+                        "downvoted": "false"
+                    },
+                    {
+                        "comment_id": 59,
+                        "body": "comment2 on post1",
+                        "date": "3 days ago",
+                        "upvotes": 12,
+                        "downvotes": 45,
+                        "upvoted": "true",
+                        "downvoted": "false"
+                    }
+                ]
+            },
+            {
+                "post": {
+                    "post_id": 7,
+                    "body": "post2",
+                    "title": "post",
+                    "author_username": "ahmed",
+                    "community": " laravel",
+                    "community_id": 1
+                },
+                "comments": [
+                    {
+                        "comment_id": 40,
+                        "body": "comment1 on post2",
+                        "date": "2 days ago",
+                        "upvotes": 12,
+                        "downvotes": 45,
+                        "upvoted": "true",
+                        "downvoted": "false"
+                    },
+                    {
+                        "comment_id": 89,
+                        "body": "comment2 on post2",
+                        "date": "3 days ago",
+                        "upvotes": 12,
+                        "downvotes": 45,
+                        "upvoted": "true",
+                        "downvoted": "false"
+                    },
+                    {
+                        "comment_id": 79,
+                        "body": "comment3 on post2",
+                        "date": "3 days ago",
+                        "upvotes": 12,
+                        "downvotes": 45,
+                        "upvoted": "true",
+                        "downvoted": "false"
+                    }
+                ]
+            },
+            {
+                "post": {
+                    "body": "post1",
+                    "title": "post",
+                    "author_username": "ahmed",
+                    "community": " laravel",
+                    "community_id": 1
+                },
+                "commments": [
+                    {
+                        "comment_id": 80,
+                        "body": "comment1 on post3",
+                        "date": "2 days ago",
+                        "upvotes": 12,
+                        "downvotes": 45,
+                        "upvoted": "true",
+                        "downvoted": "false"
+                    }
+                ]
+            }
         ]
+
+        
     
         
 

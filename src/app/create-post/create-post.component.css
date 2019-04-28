@@ -100,3 +100,75 @@ body{
     font-size: 20px;
     text-align: center;
 }
+
+.splitRight{
+    right: 0;
+    height: 100%;
+    width: 35%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 10%;
+    padding: 3%;
+}
+
+.splitLeft{
+    left: 0;
+    height: 100%;
+    width: 65%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+
+mat-icon{
+    font-size: 10px;
+}
+
+button{
+    width: auto;
+}
+
+mat-button{
+    width: 30px;
+    height: 30px;
+}
+
+.createButton{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.btn-primary{
+    background-color: #0179D3;
+    width: 287PX;
+    height: 33PX;
+}
+
+.descriptionarea {
+    min-width: 490px;
+    position: relative;
+    display: inline-block;
+}
+ 
+ .descriptionarea textarea{
+     width: 490px;
+     height: 20px;
+ }
+ 
+ .descriptionarea span.namefortxtarea{
+     display: block;
+     text-align: left;
+     font-size:12px;
+ }
+ 
+ .descriptionarea span.buttonfortxtarea{
+     display: block;
+     text-align: right;
+ }

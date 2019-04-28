@@ -21,14 +21,24 @@
         <div class="active-pink-3 active-pink-4 mb-4" id="search">
             <input class="form-control" type="text" placeholder="Title" aria-label="Search">
         </div> 
-        <div class="textAreaSmall">
-          <label for="exampleFormControlTextarea2">Small textarea 
-              <button disableRipple mat-button class="textButtons"><mat-icon>mode_comment</mat-icon></button>
-              <button disableRipple mat-button class="textButtons"><mat-icon>mode_comment</mat-icon></button>
-              <button disableRipple mat-button class="textButtons"><mat-icon>mode_comment</mat-icon></button>
+        <br>
+        <div class="textAreaSmall" style="background-color:gray;">
+          <label for="exampleFormControlTextarea2">
+              <button mat-button class="createButton">i</button>
+              <button type="button" class="btn btn-lg createButton"><mat-icon>mode_comment</mat-icon></button>
+              <button type="button" class="btn btn-lg createButton"><mat-icon>mode_comment</mat-icon></button>
+              <button type="button" class="btn btn-lg createButton">CREATE POST</button>
           </label>
           <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Text (optional)"></textarea>
         </div> 
+        /////////////////////////////////
+        <ejs-richtexteditor id='defaultRTE' [(value)]='value' [toolbarSettings]='tools' [quickToolbarSettings]='quickTools'></ejs-richtexteditor>
+        ////////////////////////////////
+        <!-- <div class="descriptionarea">
+          <span class="namefortxtarea">Description</span>
+          <textarea ></textarea>
+          <span class="buttonfortxtarea"><button class= "btn btn-mini description_edit">Edit</button><button class= "btn btn-mini description_submit">Submit</button></span>
+        </div> -->
     </mat-tab>
 
     <mat-tab label="Second"> Content 2 
@@ -78,7 +88,7 @@
 
   <mat-card class="postingRules">
     <p id="postingRulesTitle">
-      <img id="postingRulesImg" src="http://www.iconhot.com/icon/png/social-network-1/512/reddit-34.png">
+      <img id="postingRulesImg" style="width:35px;" src="http://www.iconhot.com/icon/png/social-network-1/512/reddit-34.png">
       Posting to Reddit
     </p>
     <mat-divider></mat-divider>

@@ -43,12 +43,21 @@
           <br>
           <p style="font-size:12px; color:gray;">Comment as my <span class="underlining">username</span></p>
       </div>
-      <div class="image">
+      <!-- <div class="image">
           <img width="80px" height="60px" src="{{posts?.image}}" id="imgPost{{posts?.post_id}}">
-      </div>
+      </div> -->
       <!-- for comment -->
       <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="What are your thoughts?"></textarea>
 
     </div>
+  </div>
+
+  <div class="comments">
+    <p>SORTED BY </p>
+    <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu">
+        <mat-icon>
+          <!-- {{menuTrigger.menuOpen ? 'expand_less' : 'expand_more'}} -->
+        </mat-icon>
+      </div>
   </div>
 </form>
