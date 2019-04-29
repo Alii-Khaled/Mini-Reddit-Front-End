@@ -4,6 +4,7 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material';
 import { UserPublicInfo } from 'src/app/profile_classes/user-public-info';
 import { ProfileHttpService } from '../profile_Components/profile.http.service';
 import { Router } from '@angular/router';
+import { subscribeOn, retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-header',
@@ -24,13 +25,17 @@ export class UserHeaderComponent implements OnInit {
    */
   success: boolean;
   /**
+   * Community to hold community info
+   */
+  comm: UserCommunities;
+  /**
    * List of communities that the user subscribed
    */
-  MyCommunities: UserCommunities[];
+  myCommunities: UserCommunities[];
   /**
    * Current user public info
    */
-  PublicInfo: UserPublicInfo;
+  publicInfo: UserPublicInfo;
   /**
    * Username of people that the user follows
    */
@@ -38,7 +43,11 @@ export class UserHeaderComponent implements OnInit {
   /**
    * Info of people that user follows
    */
-  MyFollowing: UserPublicInfo[];
+  myFollowing: UserPublicInfo[];
+  /**
+   * Subscribed communities id's
+   */
+  commIds: any;
   /**
    * @param http For requests
    * @param router To navigate to another page if token is sended false
@@ -52,30 +61,30 @@ export class UserHeaderComponent implements OnInit {
       /**
        * Getting user name
        */
-      this.http.GetUserName().subscribe((data: any) =>  {
+      this.http.getUserName().subscribe((data: any) =>  {
         this.username = data.username;
         this.success = data.success;
       },
       (error: any) => {
         /**
-         * If error status = 401 that's mean that user is unauthorized 
+         * If error status = 401 that's mean that user is unauthorized
          * So we remove the token and redirect it to the homepage
          */
         if (error.status === 401) {
-          this.router.navigateByUrl('#');
-          localStorage.removeItem('token');
+          this.router.navigateByUrl('');
+          localStorage.clear();
         }
       },
-      () => this.http.GetUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
-        this.PublicInfo = data;
-        localStorage.setItem('username', this.PublicInfo.username);
+      () => this.http.getUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
+        this.publicInfo = data;
+        localStorage.setItem('username', this.publicInfo.username);
       },
         (error: any) => {
           /**
            * Redirect the user to the home page if the user name which tring to goto his profile isn't exist
            */
           if (error.status === 403) {
-            this.router.navigateByUrl('#');
+            this.router.navigateByUrl('');
             console.log('There is no user');
           }
         }
@@ -86,68 +95,83 @@ export class UserHeaderComponent implements OnInit {
     * On clicking the left dropdown send a request to get this user's subscribed communities
     * And display it in this dropdown menu
     */
-   OnclickLeftDropdown() {
+   onclickLeftDropdown() {
+     /**
+      * Initialize my communities as empty array
+      */
+    this.myCommunities = [];
+    /**
+     * Initializing array to be empty every time i click on the dropdown menu
+     */
+    this.myFollowing = [];
      /**
       * Getting communities that the user subscribes
       */
-    this.http.GetMyCommunities().subscribe((data: UserCommunities[]) => this.MyCommunities = data);
-    /**
-     * Getting usernames of people that the user follows
-     */
-    this.http.GetMyFollowing(this.username).subscribe((data: any) => {
-      this.usernames = data.followingList;
-      console.log('GetMyFollowing: ',this.usernames)
-    },
-    (error: any) => {
+    this.http.getMyCommunities(this.username).subscribe((data: any) => {
+      this.commIds = data.communities;
+    }, err => {
       /**
-       * If the username isn't correct print in the screen
+       * My communities is empty
        */
-      if (error.status === 403) {
-        this.message = 'Username does not exist';
-        this.snackBar.open(this.message, undefined, {
-        duration: 4000,
-        verticalPosition: 'bottom',
-        horizontalPosition: 'center',
-        panelClass: 'snack-remove-button',
-    });
-          /**
-           * If error number 401 then user is not authorized
-           */
-    } else if (error.status === 401) {
-      this.message = 'UnAuthorized';
-      this.snackBar.open(this.message, undefined, {
-      duration: 4000,
-      verticalPosition: 'bottom',
-      horizontalPosition: 'center',
-      panelClass: 'snack-remove-button',
-    });
+      this.myCommunities = [];
+    }, () => {
+// tslint:disable-next-line: no-var-keyword prefer-for-of
+          for (var i = 0; i < this.commIds.length; i++) {
+            this.comm =  new UserCommunities( null , null, null);
+            this.comm.id = this.commIds[i].community_id;
+            console.log(this.comm);
+            this.http.getCommunityInfo(this.commIds[i].community_id).subscribe((data: UserCommunities) => {
+            /* this.comm.logo = data.logo;
+            this.comm.name = name; */
+            this.myCommunities.push(this.comm);
+          }, err => {
+           /**
+            * If any error do nothing
+            */
+          }
+          );
       }
     }
     );
-    for (var i = 0; i < this.usernames.length; i++) {
-      this.http.GetUserPublicInfo(this.usernames[i]).subscribe((data: UserPublicInfo) => {
-        this.MyFollowing.push(data);
-        console.log(this.MyFollowing); },
-        (error: any) => {
-          /**
-           * If error number 403 then print this messege
-           */
-          if (error.status === 403) {
-            this.message = 'There is no follower like that';
-            this.snackBar.open(this.message, undefined, {
-            duration: 4000,
-            verticalPosition: 'bottom',
-            horizontalPosition: 'center',
-            panelClass: 'snack-remove-button',
-    });
-    }
-        }
-        );
-    }
+    /**
+     * Getting usernames of people that the user follows
+     */
+    this.http.getMyFollowing(this.username).subscribe((data: any) => {
+      this.usernames = data.followingList;
+    },
+    (error: any) => {
+      /**
+       * If any error then my folloing is empty
+       */
+      this.myFollowing = [];
+    }, () => {
+      // tslint:disable-next-line: no-var-keyword disable-next-line: prefer-for-of
+           for (var i = 0; i < this.usernames.length; i++) {
+        this.http.getUserPublicInfo(this.usernames[i]).subscribe((data: UserPublicInfo) => {
+          this.myFollowing.push(data);
+          },
+          (error: any) => {
+            /**
+             * If any error do nothing
+             */
+      });
+      }
+          }
+          );
   }
+
   logout() {
-    this.http.SignOut().subscribe(
-      response => {},
+    this.http.signOut().subscribe(
+      response => {
+        /**
+         * Deleting anything depends on this user
+         */
+        localStorage.clear();
+        /**
+         * Redirect to home page
+         */
+        window.location.href = '';
+      },
       err => {
           this.message = 'Failed to logout';
           this.snackBar.open(this.message, undefined, {
@@ -156,13 +180,41 @@ export class UserHeaderComponent implements OnInit {
           horizontalPosition: 'center',
           panelClass: 'snack-remove-button',
         });
-          return ;
       },
     );
-    this.router.navigateByUrl('/');
-    localStorage.removeItem('navbar');
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
-    window.location.reload();
   }
+
+  /**
+   * Filter function
+   */
+  filterFunction() {
+    // tslint:disable-next-line: one-variable-per-declaration
+        let input, filter, a, i;
+        /**
+         * Getting the input area
+         */
+        input = document.getElementById('myInput');
+        /**
+         * Change all input letters to uppercase
+         */
+        filter = input.value.toUpperCase();
+    // tslint:disable-next-line: prefer-const
+        let div = document.getElementById('dropdown-menu-left');
+        /**
+         * Filter with a tags (names in tags)
+         */
+        a = div.getElementsByTagName('a');
+        /**
+         * Searching on all items in the dropdown
+         */
+        for (i = 0; i < a.length; i++) {
+    // tslint:disable-next-line: prefer-const
+          let txtValue = a[i].textContent || a[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = '';
+          } else {
+            a[i].style.display = 'none';
+          }
+        }
+      }
 }

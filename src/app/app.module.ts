@@ -51,6 +51,7 @@ import { CommunityModeratorsComponent } from './community-moderators/community-m
 import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -84,6 +85,7 @@ import { DeactivateAccountComponent } from './deactivate-account/deactivate-acco
     ViewSinglePostComponent,
     ForgotPasswordComponent,
     DeactivateAccountComponent,
+    HomepageComponent,
     /* ModalModule */
   ],
   imports: [

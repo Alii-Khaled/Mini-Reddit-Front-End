@@ -19,7 +19,7 @@ export class UpvotedComponent implements OnInit {
     /**
      * Send request to get Upvoted psosts
      */
-    this.http.GetUpVoted().subscribe((data: any) => this.UpVoted = data.posts);
+    this.http.getUpVoted().subscribe((data: any) => this.UpVoted = data.posts);
   }
 
 }

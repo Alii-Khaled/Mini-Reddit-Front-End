@@ -3,23 +3,23 @@
          */
 export class UserCommunities {
         /**
-         * To display community number
+         * Id for community
          */
-        public community_id: number;
+        public id;
         /**
          * To display community name
          */
-    public community_name: string;
+    public name: string;
         /**
          * To display community logo
          */
-    public community_logo: string;
+    public logo: string;
     /**
      * Constructor takes every value of the class and assign it to this community
      */
-    constructor(id:number,name: string, logo: string) {
-        this.community_id   = id;
-        this.community_logo = logo;
-        this.community_name = name;
+    constructor(id: number, name: string, logo: string) {
+        this.logo = logo;
+        this.name = name;
+        this.id = id;
     }
 }
