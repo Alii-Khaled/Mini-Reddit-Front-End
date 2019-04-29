@@ -14,7 +14,9 @@ export class CommentsLayoutComponent implements OnInit {
   id: string;
   innerWidth2: number;
 
-  constructor() {}
+  constructor(private apiService: HttpService, public router: Router) { }
+
+  @Input()comments: comments; post: post;
 
   ngOnInit() {
     if (window.innerWidth > 960) {
@@ -33,12 +35,12 @@ export class CommentsLayoutComponent implements OnInit {
 @HostListener('window:resize', ['$event'])
 onResize(event) {
   if (window.innerWidth > 960) {
-    this.innerWidth = window.innerWidth - 350;
+    this.innerWidth2 = window.innerWidth - 350;
   } else {
-    this.innerWidth = window.innerWidth;
+    this.innerWidth2 = window.innerWidth;
   }
-  this.innerWidth = this.innerWidth - 100;
-  this.size = this.innerWidth.toString();
+  this.innerWidth2 = this.innerWidth2 - 100;
+  this.size = this.innerWidth2.toString();
   this.size = this.size + 'px';
   this.id = 'commenting';
   //  + this.comments.comment_id.toString();

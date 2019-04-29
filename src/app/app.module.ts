@@ -55,6 +55,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
 import { HomepageComponent } from './homepage/homepage.component';
+//import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -115,6 +116,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatSnackBarModule,
     MatDialogModule,
     MatCheckboxModule,
+    //RichTextEditorAllModule
     // Http,
     // Headers,
     // RequestOptions
