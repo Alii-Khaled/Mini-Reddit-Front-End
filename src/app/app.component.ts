@@ -12,5 +12,4 @@ export class AppComponent {
       this.nav = localStorage.getItem('navbar');
     }
   }
-  title = 'Reddit';
 }
