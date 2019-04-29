@@ -54,7 +54,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
-import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { HomepageComponent } from './homepage/homepage.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -89,6 +89,7 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
     ForgotPasswordComponent,
     CreatePostComponent,
     DeactivateAccountComponent,
+    HomepageComponent,
     /* ModalModule */
   ],
   imports: [
@@ -114,7 +115,6 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
     MatSnackBarModule,
     MatDialogModule,
     MatCheckboxModule,
-    RichTextEditorAllModule
     // Http,
     // Headers,
     // RequestOptions

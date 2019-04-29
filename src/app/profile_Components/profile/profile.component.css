@@ -92,7 +92,7 @@ body {
     border-width: 2px;
     border-color: white;
 }
-#new-post {
+#card-button {
     background-color: #0079d3;
     -webkit-text-fill-color: white;
     width: 288px;
@@ -100,13 +100,32 @@ body {
     text-align: center;
     margin-left: 12px;
 }
-#new-post:hover {
+#card-button:hover {
     background-color: #0889ec;
 }
 .panel {
     margin-inline-end: 36px;
 }
 
+#myBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 10px;
+    right: 80px;
+    z-index: 99; 
+    border: none; 
+    outline: none;
+    background-color: rgb(0, 121, 211); 
+    color: white; 
+    padding: 5px; 
+    padding-right: 20px;
+    padding-left: 20px; 
+    border-radius: 5px; 
+  }
+  
+  #myBtn:hover {
+    background-color: #0889ec;
+  }
 
 @media only screen and (max-width:960px) and (min-width:770px) {
     #user-card {display: none;}

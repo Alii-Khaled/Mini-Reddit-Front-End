@@ -9,48 +9,31 @@ import { Router } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
   /**
-   * Messege to detect errors
+   * To hold the url
    */
-  messege: string;
+  a: string[];
   /**
    * To get the posts
    */
   posts: PostsObjects[];
   /**
-   * @param http For requests
-   * @param router To rout to a new link
-   */
-  constructor(private http: ProfileHttpService , private router: Router) { }
-
-  /**
    * Username of the logged in user
    */
   username: string;
   /**
-   * If getting user name succeed
+   * @param http For requests
+   * @param router To rout to a new link
    */
-  success: boolean;
+  constructor(private http: ProfileHttpService , private router: Router) { }
   ngOnInit() {
     /**
-     * Send request to get psosts
+     * Getting profile owner username
      */
-    this.http.GetUserName().subscribe((data: any) =>  {
-      /**
-       * Assign username to the coming username from json
-       */
-      this.username = data.username;
-      /**
-       * Same as above but for success
-       */
-      this.success = data.success;
-    },
-    (error: any) => {
-        /**
-         * Rout to home page if any error founded
-         */
-        this.router.navigateByUrl('#');
-    },
-    () => this.http.GetMyPosts(this.username).subscribe((data: any) => this.posts = data.posts)
-    );
+    this.a = this.router.url.split('/');
+    this.username = this.a[this.a.length - 2];
+    /**
+     * Request to get posts
+     */
+    this.http.getMyPosts(this.username).subscribe((data: any) => this.posts = data.posts);
   }
 }

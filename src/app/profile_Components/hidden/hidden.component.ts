@@ -19,7 +19,7 @@ export class HiddenComponent implements OnInit {
     /**
      * Send request to get hidden psosts
      */
-    this.http.GetHidden().subscribe((data: PostsObjects[]) => this.hidden = data);
+    this.http.getHidden().subscribe((data: PostsObjects[]) => this.hidden = data);
   }
 
 }
