@@ -1,0 +1,101 @@
+<nav class="navbar-default navbar-fixed-top">
+  <div class="cont container-fluid">
+    <div class="navbar-header" id="logo"> 
+      <!-- to go to home when click on icon -->
+      <a class="log" href=""> 
+        <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png" width="106.65px" height="40px">
+       </a>
+    </div>
+    <div class="dropdown" id="left-dropdown">
+        <button data-toggle="dropdown"  class="dropdown-button" type="button" id="left-dropdown-button" role="button" (click)="onclickLeftDropdown()">
+          <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px;float: left;">
+          <b id="dropdown-left-name" style="float:left">Popular</b>
+        <span style="float: right;margin-top: 10px" class="caret" ></span>
+        </button>
+        <ul class="dropdown-menu" id="dropdown-menu-left">
+          <li><input type="text" class="searchTerm" placeholder="Filter" id="myInput" (keyup)="filterFunction()"></li>
+          <li class="dropdown-header">Reddit Feeds</li>
+          <li><a role="button"><img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="25" height="25" style="margin-right:15px">
+          Popular</a></li>
+          <li><a role="button"><img src="https://image.flaticon.com/icons/svg/25/25694.svg" width="25" height="25" style="margin-right:15px">
+          Home</a></li>
+          <li><a role="button"><img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="25" height="25" style="margin-right:15px">
+          All</a></li>
+          <li><a role="button"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">
+          Original content</a></li>
+          <li class="dropdown-header" *ngIf="myFollowing?.length>0">Profiles</li>
+          <li *ngFor="let following of myFollowing"><a routerLink="/user/{{following?.username}}" role="button"><img src="{{following?.photo_path}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+            u/{{following?.name}}</a></li>
+          <li class="dropdown-header">Subscriptions</li>
+          <li *ngFor="let com of myCommunities"><a routerLink="/community/{{com?.id}}" role="button"><img src="{{com?.logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+            r/{{com?.name}}</a></li>
+          <li class="dropdown-header">Other</li>
+          <li><a role="button"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
+          User Settings</a></li>
+          <li><a role="button"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
+          Messages</a></li>
+          <li><a role="button"><img src="https://cdn1.iconfinder.com/data/icons/action-states-vol-4-1/48/Sed-04-512.png" width="25" height="25" style="margin-right:15px">
+          Creat Post</a></li>
+          <li><a role="button"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">
+          Coins</a></li>
+          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">
+          Premium</a></li>
+        </ul>
+    </div>
+    <input class="searchTerm" id="search-bar" type="search" placeholder="Search Reddit">
+    <div class="small-icons" role="button" title="popular">
+    <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20px" height="20px" style="margin-top:6px">
+    </div>
+    <div class="small-icons" role="button" title="all">
+    <img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="20px" height="20px" style="margin-top:6px">
+    </div>
+    <div class="small-icons" role="button" title="original content">
+    <img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="20px" height="20px" style="margin-top:6px">
+    </div>
+    <div class="small-icons" role="button" title="Chat">
+    <img src="https://cdn3.iconfinder.com/data/icons/cloud-dialogue-1/512/Solid_Cloud_Dialogue_Circle_left_dot-512.png" width="20px" height="20px" style="margin-top:6px">
+    </div>
+    <div class="small-icons" role="button" title="Messages">
+    <img src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Mail_black-512.png" width="20px" height="20px" style="margin-top:6px">
+    </div>
+    <div class="small-icons" role="button" title="Creat post">
+    <img src="https://cdn1.iconfinder.com/data/icons/action-states-vol-4-1/48/Sed-04-512.png" width="20px" height="20px" style="margin-top:6px">
+    </div>
+    <div class="dropdown" id="right-dropdown">
+    <button data-toggle="dropdown" class="dropdown-button" type="button" role="button" >
+      <img src={{publicInfo?.photo_path}} width="25px"height="25px" style="float:left ;margin-left:10px;margin-top: 5px;border-radius: 5px;">
+      <div id="user-name-karma" style="float:left; margin-left: 5px">
+        <b id="UserName" style="float:left">{{publicInfo?.username}}</b>
+        <br>
+        <i class="fa fa-cog" style="color:coral; float: left;" aria-hidden="true"></i>
+        <body style="float:left; margin-top: -3px; color:darkgray">{{publicInfo?.karma}} karma</body>
+      </div> 
+      <i class="fa fa-caret-down" aria-hidden="true" style="float:right;margin-top:13px;margin-right: 10px;"></i> 
+    </button>      
+        <ul class="dropdown-menu dropdown-menu-right" id="dropdown-menu-right">
+          <li class="dropdown-header">My stuff</li>
+          <li><a routerLink="user/{{publicInfo?.username}}" role="button"><img src="https://cdn1.iconfinder.com/data/icons/avatar-1-2/512/User2-512.png" width="25" height="25" style="margin-right:15px">
+          My profile</a></li>
+          <li><a routerLink="settings" role="button"><img src="https://cdn3.iconfinder.com/data/icons/vector-icons-for-mobile-apps-2/512/Settings_black-512.png" width="25" height="25" style="margin-right:15px">
+          User settings</a></li>
+          <li class="dropdown-header">View opition</li>
+          <li><a role="button"><img src="https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png" width="25" height="25" style="margin-right:15px">
+          Night mode
+          <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+          </label>
+          </a></li>
+          <li class="dropdown-header">More Stuff</li>
+          <li><a role="button"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">
+          Reddit Coins</a></li>
+          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">
+          Reddit Premium</a></li>
+          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png" width="25" height="25" style="margin-right:15px">
+          Help center</a></li>
+          <li (click)="logout()" role="button"><a><img src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-512.png" width="25" height="25" style="margin-right:15px">
+          Log Out</a></li>
+        </ul>
+    </div>
+  </div>
+</nav>

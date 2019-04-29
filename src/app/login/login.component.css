@@ -1,0 +1,112 @@
+html
+{ height: 100%;}
+
+body
+{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #1a1a1b;
+    font-family: IBMPlexSans,sans-serif;
+    padding: 765* 1236 ;
+    display:block
+}
+.modal-header
+{
+  padding: 10px;
+}
+.Uname .pass
+{
+  cursor: pointer;
+  font-family: IBMPlexSans,sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+#Uname:hover{
+  cursor: pointer;
+}
+#pass:hover{
+  cursor: pointer;
+}
+
+form {
+   
+    align-content: center;
+   
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password]
+   {
+    
+    padding: 22px 12px 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 4px;
+    text-align: center;
+    background-color: #fcfcfb;
+    width:400px;
+    height: 48px;
+    display: inline-block;
+    box-sizing: border-box
+  }
+  
+  /* Set a style for all buttons */
+  button[type="submit"]{
+    font-family: IBMPlexSans,sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    line-height: 32px;
+    color: #fff;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    background: #0079d3;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: 0;
+    line-height: unset;
+    height: 35px;
+    width: 155px;
+    min-width: 155px;
+    overflow: inherit;
+    position: relative;
+    outline: none;
+  }
+  
+ 
+  #forgot
+  {
+      font-size:11px
+  }
+  .content
+  {
+    padding-left: 170px;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #1a1a1b;
+    font-family: IBMPlexSans,sans-serif;
+   width: 397;
+   height: 392;
+  }
+  #ssinn{
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 14px;
+    color: #1a1a1b;
+    font-family: IBMPlexSans,sans-serif;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  

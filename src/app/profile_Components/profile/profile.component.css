@@ -1,0 +1,144 @@
+body {
+    background-color: rgb(202, 208, 214);
+    margin-top: -50px;
+}
+#content {
+    float: left;
+    margin-left: 20px;
+    margin-inline-end: 20px;
+    
+}
+#toolbar {
+    height:40px;
+    background-color: white;
+}
+#navbar {
+    height: 100%;
+    border-width: 0px;
+    margin-top: 4px;
+}
+.navbar-item {
+    height:100%;
+    -webkit-text-fill-color: black;
+    border-width: 0px;
+    font-size: medium;
+}
+.navbar-item:hover {
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    background-color: transparent;
+}
+
+.navbar-item:focus {
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-bottom-color: rgb(0, 121, 211);
+    background-color: transparent;
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    height: 45px;
+}
+.navbar-item:active {
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-bottom-color: rgb(0, 121, 211);
+    background-color: transparent;
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    height: 45px;
+}
+.fa-circle {
+    font-size: 5px;
+    margin-right: 1px;
+    color:black;
+}
+.dropdown-toggle:hover {
+    background-color: transparent;
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    border-color: transparent;
+}
+
+.dropdown-toggle:focus {
+    background-color: transparent;
+    -webkit-text-fill-color: black;
+    border-color: transparent;
+}
+
+.dropdown-hidden-items {
+    display: none;
+}
+.dropdown-hidden-items2 {
+    display: none;
+}
+
+#user-card {
+    width: 312px;
+    height: 267px;
+    border-radius: 5px;
+    background-color: white;
+    float: right;
+    margin-right: 25px;
+    margin-top: 50px;
+}
+
+#banner {
+    background-color:rgb(51, 168, 255);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+
+#pp {
+    margin-top:-60px;
+    margin-left:10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+}
+#card-button {
+    background-color: #0079d3;
+    -webkit-text-fill-color: white;
+    width: 288px;
+    height: auto;
+    text-align: center;
+    margin-left: 12px;
+}
+#card-button:hover {
+    background-color: #0889ec;
+}
+.panel {
+    margin-inline-end: 36px;
+}
+
+#myBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 10px;
+    right: 80px;
+    z-index: 99; 
+    border: none; 
+    outline: none;
+    background-color: rgb(0, 121, 211); 
+    color: white; 
+    padding: 5px; 
+    padding-right: 20px;
+    padding-left: 20px; 
+    border-radius: 5px; 
+  }
+  
+  #myBtn:hover {
+    background-color: #0889ec;
+  }
+
+@media only screen and (max-width:960px) and (min-width:770px) {
+    #user-card {display: none;}
+}
+@media only screen and (max-width:770px) and (min-width:500px) {
+    .dropdown-hidden-items {display: inline;}
+    .asd {display: none;}
+    #user-card {display: none;}
+}
+@media only screen and (max-width:500px) {
+    .dropdown-hidden-items {display: inline;}
+    .asd {display: none;}
+    .dropdown-hidden-items2 {display: inline;}
+    .asd2 {display: none;}
+    #user-card {display: none;}
+}

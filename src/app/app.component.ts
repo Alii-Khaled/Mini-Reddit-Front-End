@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  nav:string = 'false' ;
+  constructor() {
+    if (localStorage.getItem('navbar') != null) {
+      this.nav = localStorage.getItem('navbar');
+    }
+  }
   title = 'Reddit';
 }

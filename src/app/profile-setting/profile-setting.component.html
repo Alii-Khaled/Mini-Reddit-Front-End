@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="container">
+      <div id="box">
+        <p id = "aset" >Customize Profile</p>
+        <p id ="tit"> PROFILE INFORMATION</p>
+        <p id="hed">Display name (optional)</p>
+        <p id="tit" >Set a display name. This does not change your username.</p> 
+        <form action="action_page.php"  [formGroup]="form" >
+          <input type="text" placeholder="Display name (optional)" formControlName="displayname">
+        </form>
+        <p id ="nchars">30 Characters</p>
+      </div>
+      <br>
+      <p id="hed">About (optional)</p> 
+      <p id="tit" >A brief description of yourself shown on your profile.</p>
+      <form action="action_page.php"  [formGroup]="form" >
+          <input type="text" placeholder="About (optional)" formControlName="about">
+      </form>
+      <p id ="nchars">200 Characters</p>
+      <br>
+      <p id ="tit">IMAGES</p>
+      <p id="hed">Avatar and banner image</p> 
+      <p id="tit" >Images must be .png or .jpg format</p>
+
+      <form id="up1" action="upload.php" method="post" enctype="multipart/form-data">
+        <img src="https://cdn3.iconfinder.com/data/icons/wireless/512/3-512.png" style ="width:30px; height:30px">
+        <p id ="cap">Drag and Drop or Upload Avatar Image</p>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+    </form>
+
+    <form id="up2" action="upload.php" method="post" enctype="multipart/form-data">
+      <img src="https://cdn3.iconfinder.com/data/icons/wireless/512/3-512.png" style ="width:30px; height:30px">
+      <p id ="cap">Drag and Drop or Upload Banner Image</p>
+      <input type="file" name="fileToUpload" id="fileToUpload">
+  </form>
+    
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,144 @@
+
+.post-container {
+    background-color: white;
+    height: 100px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: grey;
+    display: inline-block;
+    margin-bottom: -6px;
+    width: 100%;
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
+    margin-right: 50px;
+    border-bottom-width: 2px;
+}
+
+.division{
+    float: left;  
+    background-color: white;
+    display: inline-block;
+}
+
+.buttonUpVote{
+    background-color: transparent;
+    display: inline-block;
+    width:25px;
+    height:15px;
+}
+
+.buttonDownVote{
+    display: inline-block;
+    background-color: transparent;
+    width:25px;
+    height:15px;
+    margin-bottom: 22px;
+}
+
+
+.buttonUpVote:hover{
+    color: red;
+}
+
+.buttonDownVote:hover{
+    color: blue;
+}
+
+#first{
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    background-color: whitesmoke;
+    float: left;
+    height: 100%;
+}
+
+#second{
+    width: 49px;
+    height: 49px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    margin-top: 15px;
+}
+
+#imgPost{
+    width: 80px;
+    height: 60px;
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#arrow:hover{
+    src: url("https://exclusivepropertiesus.com/wp-content/uploads/2015/06/red-arrow-up.jpg");
+}
+
+#title{
+    font-weight: bold;
+    font-size: 17px;
+    color: black;
+    display: inline-block;
+    float: left;
+    overflow-block: break-word;
+    width: 100%;
+    overflow: hidden;
+}
+
+.third{
+    float: left;
+    margin-left: 60px;
+    /* width: auto;
+    display: inline-block;
+    height: 92%;
+    overflow: hidden; */
+}
+
+#userInfo{
+    font-size: 13px;
+    color: gray;
+}
+
+#postType{
+    font-weight: bold;
+    cursor:pointer;
+    color: black;
+}
+
+.hoving:hover{
+    text-decoration: underline;
+}
+
+#postLink{
+    font-weight: normal;
+    cursor:pointer;
+    color: royalblue;
+    font-size: 13px;
+}
+
+.buttons{
+    height: 30px;
+    font-size: 11px;
+    color: gray;
+    padding: initial;
+    background-color: white;
+}
+
+.buttons:hover{
+    background-color: #EAEAEA;
+}
+
+.buttonsIcon{
+    font-size: 20px;
+    text-align: center;
+}
+
+mat-icon{
+    font-size: 20px;
+}
+
+@media only screen and (min-width : 705){
+    .post-container { width: 1100px;}
+}

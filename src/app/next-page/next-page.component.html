@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+  <HEAD>
+      
+  </HEAD>
+  <body>
+    <div class="content">
+      <div id="intro">
+        <b id= "fff">
+        Choose your username
+        <br>
+        </b>
+        Your username is how other community members will see you. 
+        This name will be used to credit you for 
+        things you share on Reddit. 
+        What should we call you?
+        <br>
+      </div>
+      <br>
+    <form action="action_page.php"  [formGroup]="form" >
+      <div class="container">
+        <input type="text" placeholder="CHOOSE A USERNAME" formControlName="username" required >
+          <br>
+          <br>
+          <input type="password" placeholder="Password" formControlName="password" required>
+          <br><br><br><br>
+          <a  id ="back" (click)="openModal(template1)">back</a>
+          <ng-template #template1>
+            <div class="modal-header">
+              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <app-signup></app-signup>
+          </ng-template>
+          <a id= "next" (click)="openModal(template2)">next</a>
+          <ng-template #template2>
+            <div class="modal-header">
+              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </ng-template>
+
+      </div>
+    </form>
+  </div>
+</body>
+</HTML>

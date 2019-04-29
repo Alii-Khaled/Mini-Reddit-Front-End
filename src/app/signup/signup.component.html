@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+  <HEAD>
+      
+  </HEAD>
+  <body >
+    <img alt="side" src="https://i.kinja-img.com/gawker-media/image/upload/s--iTBPsYfM--/c_scale,f_auto,fl_progressive,q_80,w_800/szxf1726pgnaoivgdpcl.jpg"  width="156px" height="280px" style="position: absolute">
+    <div class="content">
+    <div id="intro">
+
+      <h4>
+       <b id ="ff">Join the worldwide conversation.</b> 
+      </h4>
+      By having a Reddit account, you can subscribe, vote, and
+      <br>
+       comment on all your favorite Reddit content.
+       <br>
+        Sign up in just seconds.
+    </div>
+   
+    <br>
+  
+      <form action="action_page.php" [formGroup]="form">
+  
+        
+          <div class="container">
+            
+            <input type="text" placeholder="Email" name="email"  formControlName="email" required >
+            <br><br>
+            
+            <button type="submit" (click)="next(template1)"><strong>Next</strong></button>
+            <ng-template #template1>
+                <div class="modal-header">
+                  <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <app-next-page></app-next-page>
+              </ng-template>
+            <br>
+            <p>
+            Already a Redditor?
+            .
+            <a href="#" (click)="openModal(template2)"><b>LOG IN</b></a>
+            <ng-template #template2>
+              <div class="modal-header">
+                <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <app-login></app-login>
+            </ng-template>
+            </p>
+          <P>
+            By signing up, you agree to our <a href=#>Terms</a> and that you have read our
+            <br>
+             <a href=#>Privacy Policy</a> and <a href=#>Content Policy</a>.
+          </P>
+          </div>
+        
+      </form>
+    </div>
+  </body>
+</HTML>

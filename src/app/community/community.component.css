@@ -1,0 +1,321 @@
+/* 
+@font-face{
+    src: url(C:\Windows\Fonts\IBMPlexSans-Medium.ttf);
+    font-family: IBMPlexSans;
+
+} */
+.MenBar{
+
+width: 100%;
+ top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #DAE0E6;
+    flex: 0 0 auto;
+    padding: 0px;   
+}
+
+.BannerBar {
+   
+    height: 79px;
+
+    background: center top #33a8ff;
+
+    background-position: center top;
+    
+    margin: 0px auto;
+
+}
+
+.UnderBannerBar {
+
+    display: block;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-width: 260px;
+    height: 40px;
+    background: #dbf0ff;
+    margin: 0px auto;
+    flex-direction: column
+}
+.CommLogoName{
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-47%);
+    z-index: 40;
+}
+
+
+.Namei{
+    color: black;
+margin-top: 10px;
+font-size: 16px;
+font-weight: 500;
+line-height: 20px;
+display: inline-block;
+}
+.Bio{
+
+    margin-top: 20px;
+}
+.Subscribe{
+    
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 32px;
+    text-transform: uppercase;
+    padding: 0px 16px;
+    display: block;
+    width: 100%;
+  margin-top: 5px;
+  
+    
+}
+.CreatePost{
+    margin-top: 5PX;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 32px;
+    text-transform: uppercase;
+    padding: 0px 16px;
+    display: block;
+    width: 100%;
+}
+.btn-primary{
+    background-color: #0179D3;
+    width: 287PX;
+    height: 33PX;
+}
+.logo{
+
+
+    float: left;
+    margin-right: 8px;
+    box-sizing: border-box;
+    height: 36px;
+    width: 36px;
+    fill: rgb(255, 255, 255);
+    background: rgb(0, 121, 211);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    border-radius: 24px;
+    padding: 6px;
+    margin-left: 0
+}
+.Name
+{
+    font-family: IBMPlexSans, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(252, 252, 251);
+    display: block;
+    float: left;
+    line-height: 38px;
+    flex: 1 1 100%;
+    font-style: normal;
+
+}
+
+
+.All{
+
+    
+        height: 100%;
+        position: relative;
+        margin: auto;
+   
+}
+.SemiButton{
+    position: absolute;
+   
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 32px;
+    color: rgb(0, 121, 211);
+    display: inline-block;
+    padding-bottom: 1px;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 3px solid rgb(0, 121, 211);
+    margin: 0px 5px;
+}
+.CommunityDetailsAll
+{
+
+
+    background-color: #DAE0E6;
+    color: rgb(26, 26, 27);
+    fill: rgb(26, 26, 27);
+    border-radius: 5px 5px 4px 4px;
+    overflow: visible;
+
+}
+.CommDetails{
+    
+width: 312px;
+height: 36px;
+margin-top: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+    text-transform: uppercase;
+    background-color: rgb(0, 121, 211);
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+    padding: 12px 0;
+}
+.viewMod{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: rgb(0, 121, 211);
+    margin-left: 125px;
+}
+.CommInfoAll{
+
+    padding: 12px;
+   
+}
+.UnderUnderBannerBar{
+background-color:rgb(255, 255, 255);
+height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+  
+    margin: 0px auto;
+}
+.SubOnline{
+
+  margin-top: 10px;
+ 
+  display: flex;
+    
+}
+
+.CommDetails{
+
+    padding-left: 12px;
+}
+
+.CommInfoAll{
+    width: 312px;
+    height: auto;
+    padding: 12px;
+    background-color: rgb(255, 255, 255);
+    font-family: "Noto Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+   
+    overflow-wrap: break-word
+}
+
+.mat-button-toggle-sub{
+    background-color: #0179D3;
+    width: 287PX;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    text-align: center;
+    line-height: 32px;
+    font-weight:450;
+    color: rgb(255, 255, 255);
+    height:33px;
+    
+}
+.mat-button-toggle-unsub{
+    background-color: #0179D3;
+    width: 287PX;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    text-align: center;
+    line-height: 32px;
+    font-weight:450;
+    color: rgb(255, 255, 255);
+    height:33px;
+    
+}
+ .mat-button-toggle-unsub:hover {
+    background-color: red;
+    
+  } 
+
+  .text-of-moderator{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    display: flex;
+    margin-bottom: 16px;
+    width: 100%;
+
+  }
+ 
+@media screen and (max-width: 1235px) {
+    .All {
+        margin-left: 30px;
+    }
+  }
+  @media screen and (min-width: 1235px) {
+    .All {
+        
+
+       margin-left: 160px;
+    
+    }
+  }
+@media screen and (max-width: 635px) {
+    .All {
+        margin-left: 0px;
+    }
+  }
+  
+
+  @media screen and (max-width: 1235px) {
+    .SemiButton {
+        left: 25px;
+    }
+  }
+  @media screen and (min-width: 1235px) {
+    .SemiButton {
+        
+        
+        left: 155px;
+    
+    }
+  }
+@media screen and (max-width: 635px) {
+    .SemiButton {
+       left: -5px;
+    }
+  }
+
+  @media (max-width: 995px) {
+    .CommunityDetailsAll {
+       display:none;
+    }
+}
+
+
+

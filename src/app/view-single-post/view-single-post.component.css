@@ -1,0 +1,95 @@
+
+
+/* take this away ==> */
+.row{
+    padding: 50px;
+    width: 1000px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    margin-left: 25px;
+}
+
+.column {
+    float: left;
+    /* width: 33.33%; */
+    padding: 10%;
+    height: 300px; /* Should be removed. Only for demonstration */
+    width: 70%;
+}
+/* ==> until this */
+
+.post-container {
+    background-color: rgba(209, 55, 55, 0.911);
+}
+
+.division{
+    float:left; 
+    width: 100%; 
+    /* padding-top: 10%; */
+    background-color: whitesmoke;
+    height: auto;
+}
+
+.left{
+    float:left;
+    /* height: 100px;   */
+    background-color: transparent;
+    padding: 10px;
+}
+
+.right{
+    float:left;
+    width: 80%;
+    /* height: 100px; */
+    background-color: transparent; 
+}
+
+.vote{
+    font-size: 12px;
+    width: auto;
+    height: initial;
+    padding: 0;
+    background-color: transparent;
+    display: inline-block;
+}
+
+.voteNum{
+    text-align: center;
+}
+
+.buttonUpVote{
+    color: red;
+}
+
+.thepost{
+    float: left;
+    width: 92%;
+}
+
+.image{
+    float: left;
+    right: 0;
+    width: auto;
+}
+
+.buttons{
+    color: gray;
+    font-size: 12px;
+    width: auto;
+    height: initial;
+    padding: 0;
+}
+
+mat-icon{
+    color: gray;
+    font-size: 18px;
+}
+
+.underlining:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
