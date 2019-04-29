@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { comments, post } from 'src/app/classes/comments';
 import { ProfileHttpService } from '../profile.http.service';
-=======
-import { ProfileHttpService } from '../profile.http.service';
 import { Router } from '@angular/router';
-import { comments } from 'src/app/classes/comments';
->>>>>>> profile
 
 @Component({
   selector: 'app-comments',
@@ -15,16 +10,6 @@ import { comments } from 'src/app/classes/comments';
 })
 export class CommentsComponent implements OnInit {
 
-<<<<<<< HEAD
-  comments: comments[];
-  post: post;
-
-  constructor(private http: ProfileHttpService) { }
-
-  ngOnInit() {
-
-    this.http.GetComments('ahmed').subscribe((data: comments[]) => this.comments = data);
-=======
   /**
    * To hold the url
    */
@@ -52,6 +37,5 @@ export class CommentsComponent implements OnInit {
      * Request to get posts
      */
     this.http.getMyPosts(this.username).subscribe((data: any) => this.comments = data.posts);
->>>>>>> profile
   }
 }

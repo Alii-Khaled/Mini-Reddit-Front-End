@@ -46,13 +46,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-<<<<<<< HEAD
-            console.log('Here is a token: ' + token);
-            // return this.http.get<any[]>('http://localhost:3000/communities');
-            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewUserCommunities', { headers });
-=======
             return this.http.get<number[]>( this.BackEnd + '/api/unauth/viewUserCommunities?username=' + username , {headers} );
->>>>>>> profile
         }
     }
 
@@ -268,24 +262,7 @@ export class ProfileHttpService {
         }
     }
 
-<<<<<<< HEAD
-    GetCommentsPost(username: string): Observable<post> {
-        if (this.IsApi === false) {
-            /**
-             * From the mock server if "IsApi" is false
-             * And from Api if it is true
-             */
-        return this.http.get<post>('http://localhost:3000/comments');
-        } else {
-            // return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
-            return this.http.get<post>(this.BackEnd + '/api/unauth/viewComments' + username);
-        }
-    }
-
-    GetMyFollowing(username): Observable<any> {
-=======
     getMyFollowing(username): Observable<any> {
->>>>>>> profile
         /**
          * Choose from where i'll get my data
          */
@@ -340,23 +317,11 @@ signOut() {
     }
 }
 
-<<<<<<< HEAD
-// getImages() {
-//     return this.http.get(this._url);
-//   }
- 
-//    getImage(id: number) {
-//      return this.http.get(this._url)
-//                      .pipe(first(item => item.id === id));
-//    }
-
-=======
     /**
      * To get all communities info
      *   @param id now we use id to get Specific Community 
      */
     getCommunityInfo(id: number): Observable<UserCommunities> {
->>>>>>> profile
 
         /**
          * Choose from where i'll get my data
