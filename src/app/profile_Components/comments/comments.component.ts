@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { comments, post } from 'src/app/classes/comments';
+import { ProfileHttpService } from '../profile.http.service';
 
 @Component({
   selector: 'app-comments',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  constructor() { }
+  comments: comments[];
+  post: post;
+
+  constructor(private http: ProfileHttpService) { }
 
   ngOnInit() {
+
+    this.http.GetComments('ahmed').subscribe((data: comments[]) => this.comments = data);
   }
 
 }
