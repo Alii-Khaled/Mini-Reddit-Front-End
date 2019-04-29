@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-view-single-post',
@@ -8,22 +9,25 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class ViewSinglePostComponent implements OnInit {
   innerWidth = window.innerWidth;
 
-  posts={
+  posts = {
     post_id: 1,
-    upvoted: true,
-    downvoted: false,
+    upvoted: false,
+    downvoted: true,
     upvotes: 10,
     downvotes: 4,
     community: 'comm',
     body: 'body',
     saved: true,
     hidden: false,
-    image: 'ssdf'
+    image: 'ssdf',
+    username: 'usern',
+    date: '10 hours ago'
   };
 
-  constructor() { }
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
+    // this.http.GetSinglePost().subscribe((data: PostsObjects[]) => this.posts = data);
   }
 
   @HostListener('window:resize', ['$event'])

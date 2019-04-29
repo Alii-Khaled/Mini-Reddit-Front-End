@@ -3,9 +3,13 @@
     float: left;
     width: 1100px;
     height: auto;
-    font-size: 15px;
+    font-size: 12px;
     padding: 5px;
     background-color: white;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: grey;
 }
 
 .underlining:hover{
@@ -20,7 +24,7 @@ mat-icon{
 
 button{
     background-color: transparent;
-    font-size: 13px;
+    font-size: 12px;
     color: grey;
     width: auto;
     float: left;
@@ -31,6 +35,8 @@ button{
 .lower{
     height: 90px;
     /* overflow: hidden; */
+    margin-left: 15px;
+    margin-top: 10px;
 }
 
 #more:hover{
