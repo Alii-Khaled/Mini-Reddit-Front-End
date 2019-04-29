@@ -16,7 +16,8 @@ export class CommentsLayoutComponent implements OnInit {
 
   constructor(private apiService: HttpService, public router: Router) { }
 
-  @Input()comments: comments; post: post;
+  @Input()comments: comments;
+  post: post;
 
   ngOnInit() {
     if (window.innerWidth > 960) {
