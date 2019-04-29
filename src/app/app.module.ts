@@ -50,8 +50,12 @@ import { ConfirmationDialogComponent } from './components/shared/confirmation-di
 import { CommunityModeratorsComponent } from './community-moderators/community-moderators.component';
 import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -84,6 +88,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     CommunityModeratorsComponent,
     ViewSinglePostComponent,
     ForgotPasswordComponent,
+    CreatePostComponent,
     DeactivateAccountComponent,
     HomepageComponent,
     /* ModalModule */
@@ -110,8 +115,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     RouterModule,
     MatSnackBarModule,
     MatDialogModule,
-  
-   
+    MatCheckboxModule,
+    RichTextEditorAllModule
     // Http,
     // Headers,
     // RequestOptions

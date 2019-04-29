@@ -4,7 +4,7 @@ import { Observable} from 'rxjs';
 import { UserCommunities } from '../profile_classes/user-communities';
 import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
-import { comments } from '../classes/comments';
+import { comments, post } from '../classes/comments';
 
 @Injectable({
     providedIn: 'root'
@@ -229,6 +229,7 @@ export class ProfileHttpService {
             return this.http.get<any>(this.BackEnd + '/api/unauth/ViewPosts?username=' + username ,  {headers} );
         }
     }
+
 
     /**
      * Getting user's hidden posts

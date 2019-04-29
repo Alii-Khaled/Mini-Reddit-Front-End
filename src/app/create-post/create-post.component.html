@@ -1,0 +1,137 @@
+<!-- create a post ==> drafts, number(db) -->
+<p>
+  Create a post
+</p>
+
+<!-- divider -->
+
+<!-- dropdown list/ expantion panel -->
+
+<!-- stepper/ taps -->
+<!-- taps -->
+<div class="splitLeft">
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
+  <mat-tab-group class="createPost" disableRipple>
+    <mat-tab label="First"> Content 1
+        <div class="active-pink-3 active-pink-4 mb-4" id="search">
+            <input class="form-control" type="text" placeholder="Title" aria-label="Search">
+        </div> 
+        <br>
+        <div class="textAreaSmall" style="background-color:gray;">
+          <label for="exampleFormControlTextarea2">
+              <button mat-button class="createButton">i</button>
+              <button type="button" class="btn btn-lg createButton"><mat-icon>mode_comment</mat-icon></button>
+              <button type="button" class="btn btn-lg createButton"><mat-icon>mode_comment</mat-icon></button>
+              <button type="button" class="btn btn-lg createButton">CREATE POST</button>
+          </label>
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Text (optional)"></textarea>
+        </div> 
+        /////////////////////////////////
+        <ejs-richtexteditor id='defaultRTE' [(value)]='value' [toolbarSettings]='tools' [quickToolbarSettings]='quickTools'></ejs-richtexteditor>
+        ////////////////////////////////
+        <!-- <div class="descriptionarea">
+          <span class="namefortxtarea">Description</span>
+          <textarea ></textarea>
+          <span class="buttonfortxtarea"><button class= "btn btn-mini description_edit">Edit</button><button class= "btn btn-mini description_submit">Submit</button></span>
+        </div> -->
+    </mat-tab>
+
+    <mat-tab label="Second"> Content 2 
+      <!-- file upload -->
+      <!-- <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+      </div> -->
+
+      <!-- file upload angular .. stackoverflow -->
+      <div class="form-group">
+          <label for="file">Choose File</label>
+          <input type="file"
+                 id="file"
+                 (change)="handleFileInput($event.target.files)">
+      </div>
+      
+      <!-- try this! -->
+      <!-- <input ng2FileSelect type="file" accept=".xml" [uploader]="uploader"/> -->
+    </mat-tab>
+
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+
+  <mat-checkbox disableRipple color="primary" ng-init="checked=true" id="checkNotify">Send me post reply notifications</mat-checkbox>
+
+  <p id="lastP">Connect accounts to share your post    </p>
+
+  <mat-divider></mat-divider>
+  <br><br>
+  <!-- ngIf -->
+  <div *ngIf="trigger !== true">Content to render when condition is true.</div>
+  <button mat-button (click)="toggle()">click me</button>
+  <!-- if else -->
+  <div *ngIf="false; else elseBlock">Content to render when condition is true.</div>
+  <ng-template #elseBlock>Content to render when condition is false.</ng-template>
+</div>
+
+<!-- right part -->
+<div class="splitRight">
+  <br>
+
+  <mat-card class="postingRules">
+    <p id="postingRulesTitle">
+      <img id="postingRulesImg" style="width:35px;" src="http://www.iconhot.com/icon/png/social-network-1/512/reddit-34.png">
+      Posting to Reddit
+    </p>
+    <mat-divider></mat-divider>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Remember the human</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Behave like you would in real life</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Look for the original source of content</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Search for duplicates before posting</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Read the community’s rules</mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+
+    </mat-card>
+
+    <br>
+    <p style="font-size: 13px;">
+        Please be mindful of reddit's <span style="color: blue;">content policy</span> <br>
+          and practice good <span style="color: blue;">reddiquette</span>.
+    </p>
+    <br>
+
+    <mat-card class="postingRules">
+      <div id="upper">
+        <div id="first">About
+            <br>Careers
+            <br>Press</div>
+        <div id="second">Advertise
+            <br>Blog
+            <br> Help</div>
+        <div id="third">The Reddit App
+            <br>Reddit Coins
+            <br> Reddit Premium
+            <br>Reddit Gifts</div>
+      </div>
+      <div id="lower"></div>
+    </mat-card>
+</div>
+
+
+
+
+

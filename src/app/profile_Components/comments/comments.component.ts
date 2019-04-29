@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { comments, post } from 'src/app/classes/comments';
 import { ProfileHttpService } from '../profile.http.service';
 import { Router } from '@angular/router';
-import { comments } from 'src/app/classes/comments';
 
 @Component({
   selector: 'app-comments',
