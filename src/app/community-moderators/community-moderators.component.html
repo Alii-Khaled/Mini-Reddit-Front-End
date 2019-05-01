@@ -15,9 +15,10 @@ height: 100%;">
           </div>
 
         </a>
-        <div class="col-sm-3">
-          <button type="button" class="btn btn-primary btn-lg deletMod" (click)='ondeletingmoderator(i)'>Delete moderator</button>
-        </div>
+      
+          <button id="buttondeletels" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 " (click)='ondeletingmoderator(i)'>Delete moderator</button>
+          <button  id="buttondeletess" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 " (click)='ondeletingmoderator(i)'>Delete</button>
+          <button  id="buttondeletexs" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 " (click)='ondeletingmoderator(i)'>X</button>
       </div>
 
     </div>
@@ -25,12 +26,14 @@ height: 100%;">
       Add Moderator
     </div>
     
-      <div class="row moderator">
+      <div id="rowadd" class="row moderator">
         <input type="text" placeholder="Moderator name" maxlength="30" class="inputname col-sm-6" id='addmodd' >
         <div class="col-sm-3"></div>
-        <div class="col-sm-3">
-            <button type="button" (click)="onAddingmoderator()"  class="btn btn-primary btn-lg addMod">Add Moderator</button>
-        </div>
+       
+            <button id="buttonaddls" type="button" (click)="onAddingmoderator()"  class="btn btn-primary btn-lg addMod col-sm-3">Add Moderator</button>
+            <button id="buttonaddss" type="button" (click)="onAddingmoderator()"  class="btn btn-primary btn-lg addMod col-sm-3">Add</button>
+            <button id="buttonaddxs" type="button" (click)="onAddingmoderator()"  class="btn btn-primary btn-lg addMod col-sm-3">+</button>
+       
       </div>
    
   </div>
