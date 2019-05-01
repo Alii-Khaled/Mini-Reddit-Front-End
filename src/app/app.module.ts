@@ -11,7 +11,7 @@ import {MatSnackBarModule} from '@angular/material';
 
 
 import {MatDialogModule} from '@angular/material';
-import { ProfileComponent } from './Profile_Components/profile/profile.component';
+import { ProfileComponent } from './profile_Components/profile/profile.component';
 import { PostLayoutComponent } from './post-layout/post-layout.component';
 import { MatButtonModule,MatButtonToggleModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
@@ -36,13 +36,13 @@ import { ForgotUsernameComponent } from './forgot-username/forgot-username.compo
 
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
-import { OverviewComponent } from './Profile_Components/overview/overview.component';
-import { PostsComponent } from './Profile_Components/posts/posts.component';
-import { CommentsComponent } from './Profile_Components/comments/comments.component';
-import { SavedComponent } from './Profile_Components/saved/saved.component';
-import { HiddenComponent } from './Profile_Components/hidden/hidden.component';
-import { UpvotedComponent } from './Profile_Components/upvoted/upvoted.component';
-import { DownvotedComponent } from './Profile_Components/downvoted/downvoted.component';
+import { OverviewComponent } from './profile_Components/overview/overview.component';
+import { PostsComponent } from './profile_Components/posts/posts.component';
+import { CommentsComponent } from './profile_Components/comments/comments.component';
+import { SavedComponent } from './profile_Components/saved/saved.component';
+import { HiddenComponent } from './profile_Components/hidden/hidden.component';
+import { UpvotedComponent } from './profile_Components/upvoted/upvoted.component';
+import { DownvotedComponent } from './profile_Components/downvoted/downvoted.component';
 import { CommentsLayoutComponent } from './comments-layout/comments-layout.component';
 import { from } from 'rxjs';
 import { NextPageComponent } from './next-page/next-page.component';
@@ -54,7 +54,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
-// import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { HomepageComponent } from './homepage/homepage.component';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -89,6 +90,7 @@ import { DeactivateAccountComponent } from './deactivate-account/deactivate-acco
     ForgotPasswordComponent,
     CreatePostComponent,
     DeactivateAccountComponent,
+    HomepageComponent,
     /* ModalModule */
   ],
   imports: [
@@ -124,6 +126,7 @@ import { DeactivateAccountComponent } from './deactivate-account/deactivate-acco
     ConfirmationDialogComponent,
   ],
   providers: [],
+  // exports
   bootstrap: [AppComponent]
 })
 export class AppModule { }

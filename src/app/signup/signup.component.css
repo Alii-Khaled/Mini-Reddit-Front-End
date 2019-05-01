@@ -61,4 +61,5 @@ input[type=text]
   {
     padding-left: 170px;
     position: relative;
+    margin-left: 1px;
   }

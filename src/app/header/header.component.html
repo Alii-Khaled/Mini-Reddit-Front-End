@@ -2,7 +2,7 @@
   <div class="cont container-fluid">
     <div class="navbar-header" id="logo"> 
       <!-- to go to home when click on icon -->
-      <a class="log" href="/"> 
+      <a class="log" href=""> 
         <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png" width="106.65px" height="40px">
        </a>
     </div>
@@ -13,18 +13,18 @@
       <span style="float: right;margin-top: 10px" class="caret" ></span>
       </button>
         <ul class="dropdown-menu" id="dropdown-menu-left">
-          <li><input type="text" class="searchTerm" placeholder="Filter"></li>
+          <li><input type="text" class="searchTerm" placeholder="Filter" id="myInput" (keyup)="filterFunction()"></li>
           <li class="dropdown-header">Reddit Feeds</li>
-          <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="25" height="25" style="margin-right:15px">
           Popular</a></li>
-          <li><a href="#"><img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="25" height="25" style="margin-right:15px">
           All</a></li>
-          <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">
           Original content</a></li>
           <li class="dropdown-header">Other</li>
-          <li><a href="#"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">
           Coins</a></li>
-          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">
           Premium</a></li>
         </ul>
     </div>
@@ -63,7 +63,7 @@
           </button>      
         <ul class="dropdown-menu dropdown-menu-right" id="dropdown-menu-right">
           <li class="dropdown-header">View opition</li>
-          <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png" width="25" height="25" style="margin-right:15px">
           Night mode
           <label class="switch">
               <input type="checkbox">
@@ -71,14 +71,22 @@
           </label>
           </a></li>
           <li class="dropdown-header">More Stuff</li>
-          <li><a href="#"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">
           Reddit Coins</a></li>
-          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">
           Reddit Premium</a></li>
-          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png" width="25" height="25" style="margin-right:15px">
           Help center</a></li>
-          <li><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/navigation-20/32/447-01-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a (click)="openModal(template)" role="button"><img src="https://cdn4.iconfinder.com/data/icons/navigation-20/32/447-01-512.png" width="25" height="25" style="margin-right:15px">
           Log in / Sign up</a></li>
+          <ng-template #template>
+            <div class="modal-header">
+              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <app-login></app-login>
+          </ng-template>
         </ul>
     </div>
   </div>
