@@ -27,7 +27,7 @@
           <br>
           <button onclick="parent.location='localhost:4200'" mat-button id="comment{{posts?.post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts?.comments_num}} Comments</button>
           <button mat-button id="giveAward{{posts?.post_id}}" class="buttons" *ngIf="innerWidth >= 241;"><mat-icon>stars</mat-icon> Give Award</button>
-          <button mat-button id="share{{posts?.post_id}}" class="buttons dropdown-toggle" data-toggle="dropdown" *ngIf="innerWidth >= 300;"><mat-icon>reply</mat-icon> Share
+          <button mat-button id="share{{posts?.post_id}}" class="buttons dropdown-toggling" data-toggling="dropdown" *ngIf="innerWidth >= 300;"><mat-icon>reply</mat-icon> Share
             <ul class="dropdown-menu dropdown-menu-right">
               <li><a href="#" id="copyLink{{posts?.post_id}}"><mat-icon>link</mat-icon> Copy link</a></li>
               <li><a href="#" id="crosspost{{posts?.post_id}}"><mat-icon>share</mat-icon> Crosspost</a></li>
@@ -52,8 +52,19 @@
     </div>
   </div>
 
-  <div class="comments">
-    <p>SORTED BY </p>
+  <div class="comments" style="margin-left: 25px; margin-right: 25px;">
+    <p>SORTED BY    .
+        <select>
+          <option>Best</option>
+          <option>Top</option>
+          <option>New</option>
+          <option>Controversial</option>
+          <option>Old</option>
+          <option>Q&A</option>
+        </select>
+    </p>
+    <mat-divider></mat-divider>
+    // comments
     <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu">
         <mat-icon>
           <!-- {{menuTrigger.menuOpen ? 'expand_less' : 'expand_more'}} -->

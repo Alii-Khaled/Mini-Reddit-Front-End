@@ -5,6 +5,7 @@ import { UserCommunities } from '../Profile_classes/user-communities';
 import { UserPublicInfo } from '../Profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
 import { comments, post } from '../classes/comments';
+import { c } from '../classes/c';
 
 @Injectable({
     providedIn: 'root'
@@ -264,6 +265,19 @@ export class ProfileHttpService {
         } else {
             // return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
             return this.http.get<comments[]>(this.BackEnd + '/api/unauth/viewComments' + username);
+        }
+    }
+
+    GetC(username: string): Observable<c[]> {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        return this.http.get<c[]>('http://localhost:3000/c');
+        } else {
+            // return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
+            return this.http.get<c[]>(this.BackEnd + '/api/unauth/viewComments' + username);
         }
     }
 
