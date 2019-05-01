@@ -82,6 +82,31 @@ form {
     position: relative;
     outline: none;
   }
+  button[type="submit"] :disabled
+  {
+    font-family: IBMPlexSans,sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    line-height: 32px;
+    color: #fff;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: center;
+    background: #afcee6;
+    text-transform: uppercase;
+    cursor:not-allowed;
+    outline: 0;
+    line-height: unset;
+    height: 35px;
+    width: 10%;
+    min-width: 155px;
+    overflow: inherit;
+    position: relative;
+    outline: none;
+  }
   
  
   #forgot
