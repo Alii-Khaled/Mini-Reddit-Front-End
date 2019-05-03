@@ -16,7 +16,7 @@ export class CommunityModeratorsComponent implements OnInit {
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute, public dialog: MatDialog) {
 
     route.params.subscribe(val => {
-      this.http.GetMyModerators().subscribe((data: communityModerators[]) => this.moderators = data);
+      this.http.GetMyModerators().subscribe((data: communityModerators[]) => this.moderators = data as communityModerators[]);
 
     });
   }
@@ -42,7 +42,7 @@ export class CommunityModeratorsComponent implements OnInit {
         moderator1=moderator;
         this.moderators.push(moderator1);
         console.log(this.moderators);
-        console.log(moderator.moderators_name);
+        console.log(moderator.moderator_name);
       },
       err => {
         this.message = 'Added failed';
