@@ -1,42 +1,45 @@
-#uset
-{
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 22px;
-    color: rgb(28, 28, 28);
-    fill: white;
-    max-width: 1200px;
-    padding: 16px 20px 20px;
-    margin: 0px auto;
-    vertical-align: center;
+#toolbar {
+    height:40px;
+    background-color: transparent;
+    border-width: 0px;
 }
-#menubar
-{ width: 898px;
-  height: 20px;
-  padding: 0;
-  } 
+#navbar {
+    height: 100%;
+    border-width: 0px;
+    margin-top: 4px;
+    
+}
+.navbar-item {
+    height:100%;
+    -webkit-text-fill-color: black;
+    border-width: 0px;
+    font-size: medium;
+}
+.navbar-item:hover {
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    background-color: transparent;
+}
 
-ul#menu, ul#menu li
-{ float: left;
-  margin: 0; 
-  padding: 0;}
-
-  ul#menu li
-  { list-style: none;}
-
-ul#menu li a
-{    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    color: rgb(28, 28, 28);
-    display: inline-block;
-    line-height: unset;
-    margin-right: 8px;
-  
-    padding: 15px 12px 12px;
-} 
-
-ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
-{   border-bottom: 3px solid rgb(0, 121, 211);
-    text-decoration-line: none
+.navbar-item:focus {
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-bottom-color: rgb(0, 121, 211);
+    background-color: transparent;
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    height: 42px;
+}
+.navbar-item:active {
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-bottom-color: rgb(0, 121, 211);
+    background-color: transparent;
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    height: 42px;
+}
+h4 {
+    margin-top: 64px;
+}
+#user-settings {
+    margin-bottom: 15px;
+    padding-left: 32px;
 }

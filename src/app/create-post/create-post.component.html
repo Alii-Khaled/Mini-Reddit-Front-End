@@ -1,8 +1,8 @@
-<body style="background-color: rgb(230, 226, 253);">
 <!-- create a post ==> drafts, number(db) -->
 <p>
   Create a post
 </p>
+
 <!-- divider -->
 
 <!-- dropdown list/ expantion panel -->
@@ -10,91 +10,76 @@
 <!-- stepper/ taps -->
 <!-- taps -->
 <div class="splitLeft">
-  <select>
-    <option>
-      ssdhki
-    </option>
-    <option>husa</option>
-  </select>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
 
-  <div class="postContainer">
-    <mat-tab-group class="createPost" disableRipple>
-      <mat-tab label="Post">
-          <div class="active-pink-3 active-pink-4 mb-4" id="search">
-              <input class="form-control" type="text" placeholder="Title" aria-label="Search">
-          </div> 
-          <br>
-          <div class="textAreaSmall" style="background-color:gray;">
-            <label for="exampleFormControlTextarea2">
-                <button mat-button class="createButton">i</button>
-                <button type="button" class="btn btn-lg createButton"><mat-icon>mode_comment</mat-icon></button>
-                <button type="button" class="btn btn-lg createButton"><mat-icon>mode_comment</mat-icon></button>
-                <button type="button" class="btn btn-lg createButton">CREATE POST</button>
-            </label>
-            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Text (optional)"></textarea>
-          </div> 
-          <br>
-          <div class="underButtons">
-            <div class="leftButtons">
-              <button mat-stroked-button class="leftButton"><mat-icon class="leftButton" style="margin-left: -5px;">add</mat-icon>OC</button>
-              <button mat-stroked-button class="leftButton"><mat-icon class="leftButton" style="margin-left: -5px;">add</mat-icon>SPOILER</button>
-              <button mat-stroked-button class="leftButton"><mat-icon class="leftButton" style="margin-left: -5px;">add</mat-icon>NSFW</button>
-            </div>
-            <div class="rightButtons">
-                <button mat-stroked-button style="color:blue;">SAVE DRAFT</button>
-                <button mat-flat-button style="margin-left: 2px; color:white; background-color: blue;">POST</button>
-            </div>
-          </div>
-          <!-- /////////////////////////////////
-          <ejs-richtexteditor id='defaultRTE' [(value)]='value' [toolbarSettings]='tools' [quickToolbarSettings]='quickTools'></ejs-richtexteditor>
-          //////////////////////////////// -->
-          <!-- <div class="descriptionarea">
-            <span class="namefortxtarea">Description</span>
-            <textarea ></textarea>
-            <span class="buttonfortxtarea"><button class= "btn btn-mini description_edit">Edit</button><button class= "btn btn-mini description_submit">Submit</button></span>
-          </div> -->
-      </mat-tab>
-
-      <mat-tab label="Image & Video"> Image & Video <mat-icon>photo</mat-icon> 
-        <!-- file upload -->
-        <!-- <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-          </div>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-          </div>
+  <mat-tab-group class="createPost" disableRipple>
+    <mat-tab label="First"> Content 1
+        <div class="active-pink-3 active-pink-4 mb-4" id="search">
+            <input class="form-control" type="text" placeholder="Title" aria-label="Search">
+        </div> 
+        <br>
+        <div class="textAreaSmall" style="background-color:gray;">
+          <label for="exampleFormControlTextarea2">
+              <button mat-button class="createButton">i</button>
+              <button type="button" class="btn btn-lg createButton"><mat-icon>mode_comment</mat-icon></button>
+              <button type="button" class="btn btn-lg createButton"><mat-icon>mode_comment</mat-icon></button>
+              <button type="button" class="btn btn-lg createButton">CREATE POST</button>
+          </label>
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Text (optional)"></textarea>
+        </div> 
+        /////////////////////////////////
+        <ejs-richtexteditor id='defaultRTE' [(value)]='value' [toolbarSettings]='tools' [quickToolbarSettings]='quickTools'></ejs-richtexteditor>
+        ////////////////////////////////
+        <!-- <div class="descriptionarea">
+          <span class="namefortxtarea">Description</span>
+          <textarea ></textarea>
+          <span class="buttonfortxtarea"><button class= "btn btn-mini description_edit">Edit</button><button class= "btn btn-mini description_submit">Submit</button></span>
         </div> -->
+    </mat-tab>
 
-        <!-- file upload angular .. stackoverflow -->
-        <div class="form-group">
-            <label for="file">Choose File</label>
-            <input type="file"
-                  id="file"
-                  (change)="handleFileInput($event.target.files)">
+    <mat-tab label="Second"> Content 2 
+      <!-- file upload -->
+      <!-- <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
         </div>
-        
-        <!-- try this! -->
-        <!-- <input ng2FileSelect type="file" accept=".xml" [uploader]="uploader"/> -->
-      </mat-tab>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+      </div> -->
 
-      <mat-tab label="Link"> Link </mat-tab>
-    </mat-tab-group>
+      <!-- file upload angular .. stackoverflow -->
+      <div class="form-group">
+          <label for="file">Choose File</label>
+          <input type="file"
+                 id="file"
+                 (change)="handleFileInput($event.target.files)">
+      </div>
+      
+      <!-- try this! -->
+      <!-- <input ng2FileSelect type="file" accept=".xml" [uploader]="uploader"/> -->
+    </mat-tab>
 
-    <mat-checkbox disableRipple color="primary" ng-init="checked=true" id="checkNotify">Send me post reply notifications</mat-checkbox>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
 
-    <p id="lastP">Connect accounts to share your post    </p>
+  <mat-checkbox disableRipple color="primary" ng-init="checked=true" id="checkNotify">Send me post reply notifications</mat-checkbox>
 
-    <mat-divider></mat-divider>
-    <br><br>
-    <!-- ngIf -->
-    <div *ngIf="trigger !== true">Content to render when condition is true.</div>
-    <button mat-button (click)="toggle()">click me</button>
-    <!-- if else -->
-    <div *ngIf="false; else elseBlock">Content to render when condition is true.</div>
-    <ng-template #elseBlock>Content to render when condition is false.</ng-template>
-  </div>
+  <p id="lastP">Connect accounts to share your post    </p>
+
+  <mat-divider></mat-divider>
+  <br><br>
+  <!-- ngIf -->
+  <div *ngIf="trigger !== true">Content to render when condition is true.</div>
+  <button mat-button (click)="toggle()">click me</button>
+  <!-- if else -->
+  <div *ngIf="false; else elseBlock">Content to render when condition is true.</div>
+  <ng-template #elseBlock>Content to render when condition is false.</ng-template>
 </div>
 
 <!-- right part -->
@@ -150,4 +135,3 @@
 
 
 
-</body>

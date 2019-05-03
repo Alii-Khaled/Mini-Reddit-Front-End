@@ -23,7 +23,7 @@
 /* ==> until this */
 
 .post-container {
-    /* background-color: rgba(209, 55, 55, 0.911); */
+    background-color: rgba(209, 55, 55, 0.911);
 }
 
 .division{
@@ -92,8 +92,4 @@ mat-icon{
 .underlining:hover{
     text-decoration: underline;
     cursor: pointer;
-}
-
-.menuSort{
-    height: auto;
 }

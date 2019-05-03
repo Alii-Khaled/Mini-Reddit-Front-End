@@ -1,7 +1,7 @@
 import { Component, OnInit , TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import {HttpService} from '../http.service';
-import {FormBuilder, FormControlName , FormGroup , Validator, Validators, EmailValidator } from '@angular/forms';
+import {FormBuilder, FormControlName , FormGroup , Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -27,6 +27,7 @@ form: FormGroup;
     });
    } */
 
+
   form: FormGroup;
   modalRef: BsModalRef;
   config = {
@@ -38,7 +39,7 @@ form: FormGroup;
   };
   constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
     this.form = this.fb.group({
-    email: ['', Validators.required , EmailValidator]
+    email: ['', Validators.required]
     });
   }
 

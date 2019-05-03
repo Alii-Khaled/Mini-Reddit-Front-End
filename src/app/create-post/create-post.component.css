@@ -4,13 +4,6 @@ body{
     background-attachment: scroll;
 }
 
-.postContainer{
-    background-color: white;
-    padding: 5px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
 #posts{
     margin-left: 25px;
     margin-right: 25px;
@@ -146,35 +139,6 @@ mat-button{
     height: 30px;
 }
 
-.hovering:hover{
-    background-color: #0179D3;
-}
-
-.underButtons{
-    display: inline-block;
-}
-
-.leftButtons{
-    left: 0;
-    display: inline-block;
-    float: left;
-    width: 70%;
-}
-
-.leftButton{
-    font-size: 14px;
-    width: auto;
-    height: auto;
-    margin: 1px;
-}
-
-.rightButtons{
-    right: 0;
-    /* display: inline-block; */
-    float: right;
-    width: 30%;
-}
-
 .createButton{
     width: 30px;
     height: 30px;
@@ -207,9 +171,4 @@ mat-button{
  .descriptionarea span.buttonfortxtarea{
      display: block;
      text-align: right;
- }
- 
- /* editor github */
- #defaultRTE{
-     
  }
