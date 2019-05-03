@@ -3,13 +3,13 @@ import { PostsObjects } from 'src/app/classes/posts-objects';
 import { ProfileHttpService } from '../profile.http.service';
 
 @Component({
-  selector: 'app-upvoted',
-  templateUrl: './upvoted.component.html',
-  styleUrls: ['./upvoted.component.css']
+  selector: 'app-hidden',
+  templateUrl: './hidden.component.html',
+  styleUrls: ['./hidden.component.css']
 })
-export class UpvotedComponent implements OnInit {
+export class HiddenComponent implements OnInit {
 
-  UpVoted: PostsObjects[];
+  hidden: PostsObjects[];
   /**
    * @param http For requests
    */
@@ -17,9 +17,9 @@ export class UpvotedComponent implements OnInit {
 
   ngOnInit() {
     /**
-     * Send request to get Upvoted psosts
+     * Send request to get hidden psosts
      */
-    this.http.GetUpVoted().subscribe((data: any) => this.UpVoted = data.posts);
+    this.http.getHidden().subscribe((data: PostsObjects[]) => this.hidden = data);
   }
 
 }

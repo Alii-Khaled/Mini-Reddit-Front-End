@@ -1,0 +1,180 @@
+<body style="background-color: rgb(230, 226, 253);">
+<!-- create a post ==> drafts, number(db) -->
+
+
+<!-- dropdown list/ expantion panel -->
+
+<!-- stepper/ taps -->
+<!-- taps -->
+<div class="splitLeft">
+    <p style="font-size:20px;">
+      Create a post 
+      <mat-divider style="color:rgb(244, 245, 255);"></mat-divider>
+    </p>
+    
+    
+  <select class="communitiess">
+    <option *ngFor="let community of communities">{{community}}</option>
+  </select>
+
+  <div class="postContainer">
+    <mat-tab-group class="createPost" disableRipple>
+      <mat-tab label="Post">
+        <div  style="padding:15px;">
+          <div class="active-pink-3 active-pink-4 mb-4" id="search" style="font-size:16px;">
+              <input class="form-control" id="title" type="text" placeholder="Title" aria-label="Search" [(ngModel)]="model.name" name="name"
+              #name="ngModel">
+          </div> 
+          <br>
+          <div class="textAreaSmall">
+            <!-- the markdown of angular -->
+            <!-- <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent" row="5"></app-ngx-editor> -->
+            <app-ngx-editor id="body" [config]="editorConfig" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+            <!-- the text area -->
+            <!-- <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5" placeholder="Text (optional)"></textarea> -->
+          </div> 
+          <br>
+          <div class="underButtons">
+            <div class="leftButtons">
+              <button mat-stroked-button class="leftButton"><mat-icon class="leftButton" style="margin-left: -5px;">add</mat-icon>OC</button>
+              <button mat-stroked-button class="leftButton"><mat-icon class="leftButton" style="margin-left: -5px;">add</mat-icon>SPOILER</button>
+              <button mat-stroked-button class="leftButton"><mat-icon class="leftButton" style="margin-left: -5px;">add</mat-icon>NSFW</button>
+            </div>
+            <div class="rightButtons">
+              <button mat-stroked-button class="draftButton rightButton" style="color:blue; background-color: white;">SAVE DRAFT</button>
+              <button type="submit" id="postButton" class="postButton rightButton btn btn-success" 
+              [disabled]="!name.value" (click)="createPost()">POST</button>
+            </div>
+          </div>
+        </div> 
+        <!-- end <div  style="padding:15px;"> -->
+      </mat-tab>
+
+      <!-- image upload ////////////////////////////////////////////////////// -->
+      <mat-tab label="Image & Video"><mat-icon>photo</mat-icon> 
+        <div  style="padding:15px;">
+
+        <!-- file upload angular .. stackoverflow -->
+        <div class="form-group">
+            <label for="file">Choose File</label>
+            <input type="file"
+                  id="file"
+                  (change)="handleFileInput($event.target.files)">
+        </div>
+        <!-- ////////////
+        <app-ngx-editor imageEndPoint="http://myApiEndPoint"></app-ngx-editor> -->
+        </div>
+        <!-- end <div  style="padding:15px;"> -->
+      </mat-tab>
+
+      <mat-tab label="Link"> Link </mat-tab>
+    </mat-tab-group>
+<!-- under tabs //////////////////////////////////////////////////////////////// -->
+    <mat-divider></mat-divider>
+    <div  style="padding:15px; background-color: rgba(246, 246, 252, 0.938); padding-bottom: 5px;">
+      <mat-checkbox disableRipple color="primary" ng-init="checked=true" id="checkNotify">Send me post reply notifications</mat-checkbox>
+
+      <p id="lastP" style="color:rgb(102, 102, 247);">Connect accounts to share your post    
+        <mat-icon style="color:gray; font-size:16px;">error_outline</mat-icon></p>
+    </div>
+    <!-- end of left partition //////////////////////////////////////////////// -->
+    <!-- <input type="text" class="form-control" id="name"
+       required
+       laceholder="Title"
+       [(ngModel)]="model.name" name="name"
+       #name="ngModel">
+
+       <button type="button" class="btn btn-default" (click)="toog()">New Hero</button>
+       <button type="submit" class="btn btn-success" [disabled]="!name.value">Submit</button> -->
+       <!-- {{name.value}} -->
+       <!-- {{name.length}} -->
+       <!-- <button *ngIf="name.value.length>0">not empty</button> -->
+    <!-- end <div  style="padding:15px;"> -->
+  </div>
+
+  <!-- <div class="tabs">
+      <nav mat-tab-nav-bar mat-align-tabs="left">
+          <a mat-tab-link
+             *ngFor="let link of navLinks"
+             [routerLink]="link.path"
+             routerLinkActive #rla="routerLinkActive"
+             [active]="rla.isActive">
+            <mat-icon class="example-tab-icon">{{link.icon}}</mat-icon>
+            {{link.label}}
+          </a>
+        </nav>
+      </div> -->
+      
+
+</div>
+
+<!-- right part ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="splitRight">
+  <br>
+
+  <mat-card class="postingRules rightBlocks" style="font-size: 13px;">
+    <p id="postingRulesTitle">
+      <img id="postingRulesImg" style="width:35px;" src="http://www.iconhot.com/icon/png/social-network-1/512/reddit-34.png">
+      Posting to Reddit
+    </p>
+    <mat-divider style="margin-left:15px; width: 90%;"></mat-divider>
+    <mat-list role="list">
+      <mat-list-item role="listitem" style="font-size: 13px;height: 35px;">Remember the human</mat-list-item>
+      <mat-divider style="margin-left: 15px;width: 90%;"></mat-divider>
+      <mat-list-item role="listitem" style="font-size: 13px;padding: 0;margin: 0;height: 35px;">Behave like you would in real life</mat-list-item>
+      <mat-divider style="margin-left: 15px;width: 90%;"></mat-divider>
+      <mat-list-item role="listitem" style="font-size: 13px;height: 35px;">Look for the original source of content</mat-list-item>
+      <mat-divider style="margin-left: 15px;width: 90%;"></mat-divider>
+      <mat-list-item role="listitem" style="font-size: 13px;height: 35px;">Search for duplicates before posting</mat-list-item>
+      <mat-divider style="margin-left: 15px;width: 90%;"></mat-divider>
+      <mat-list-item role="listitem" style="font-size: 13px;height: 35px;">Read the community’s rules</mat-list-item>
+      <!-- <div style="margin:20px;">
+        <p style="padding-top:5px;">Remember the human</p>
+        <mat-divider style="margin-left:15px; width: 90%;"></mat-divider>
+        <p style="padding-top:5px;">Behave like you would in real life</p>
+        <mat-divider style="margin-left:15px; width: 90%;"></mat-divider>
+        <p style="padding-top:5px;">Look for the original source of content</p>
+        <mat-divider style="margin-left:15px; width: 90%;"></mat-divider>
+        <p style="padding-top:5px;">Search for duplicates before posting</p>
+        <mat-divider style="margin-left:15px; width: 90%;"></mat-divider>
+        <p style="padding-top:5px;">Read the community’s rules</p>
+      </div> -->
+    </mat-list>
+
+    </mat-card>
+
+    <br>
+    <p class="rightBlocks" style="font-size: 13px;">
+        Please be mindful of reddit's <span style="color: blue;">content policy</span> <br>
+          and practice good <span style="color: blue;">reddiquette</span>.
+    </p>
+    <br>
+
+    <!-- <form class="postingRules" style="background-color:white;"> -->
+      <div class="rightBlocks" style="background-color: white; display: inline-block; border-radius: 5px;">
+        <div class="up">
+          <div id="column1" class="column">About
+              <br>Careers
+              <br>Press</div>
+          <div id="column1" class="column">Advertise
+              <br>Blog
+              <br> Help</div>
+          <div id="column3" class="column">The Reddit App
+              <br>Reddit Coins
+              <br> Reddit Premium
+              <br>Reddit Gifts</div>
+        </div>
+        <div class="low">
+          sdjku
+        </div>
+      </div>
+    <!-- </form> -->
+</div>
+
+
+
+
+
+
+
+</body>

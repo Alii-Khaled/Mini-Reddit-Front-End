@@ -1,9 +1,15 @@
 .comment-container{
+    display: inline-block;
+    float: left;
     width: 1100px;
     height: auto;
-    font-size: 15px;
+    font-size: 12px;
     padding: 5px;
     background-color: white;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: grey;
 }
 
 .underlining:hover{
@@ -12,12 +18,14 @@
 }
 
 mat-icon{
+    background-color: white;
     font-size: 17px;
+    height: auto;
 }
 
 button{
     background-color: transparent;
-    font-size: 13px;
+    font-size: 12px;
     color: grey;
     width: auto;
     float: left;
@@ -25,9 +33,31 @@ button{
     padding: initial;
 }
 
+.upper{
+    cursor: pointer;
+    padding: 5px;
+    padding-bottom: 0px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: rgb(238, 238, 238);
+}
+
 .lower{
     height: 90px;
     /* overflow: hidden; */
+    margin-left: 15px;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+.lower:hover{
+    border-style: solid;
+    border-width: 1px;
+    /* border-bottom-color: rgb(189, 189, 189); */
 }
 
 #more:hover{

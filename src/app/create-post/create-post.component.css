@@ -1,0 +1,183 @@
+body{
+    background-color: #E4E8EC;
+    /* overflow: scroll; */
+    background-attachment: scroll;
+}
+
+.communitiess{
+    padding: 5px;
+    border-radius: 5px;
+    padding-right: 200px;
+}
+
+.postContainer{
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.splitRight{
+    right: 0;
+    height: 100%;
+    width: 35%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 6%;
+    padding: 3%;
+}
+
+.splitLeft{
+    left: 0;
+    height: 100%;
+    width: 65%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 6%;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+
+mat-icon{
+    font-size: 10px;
+    height: auto;
+}
+
+button{
+    width: auto;
+}
+
+mat-button{
+    width: 30px;
+    height: 30px;
+}
+
+.hovering:hover{
+    background-color: #0179D3;
+}
+
+.underButtons{
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+}
+
+.leftButtons{
+    left: 0;
+    display: inline-block;
+    float: left;
+    width: auto;
+}
+
+.leftButton{
+    font-size: 13px;
+    width: auto;
+    height: auto;
+    margin: 1px;
+}
+
+.rightButtons{
+    right: 0;
+    /* display: inline-block; */
+    float: right;
+    width: auto;
+}
+
+.rightButton{
+    font-size: 13px;
+    width: auto;
+    height: auto;
+    margin: 1px;
+}
+
+.draftButton:hover{
+    background-color: white;
+}
+
+.postButton{
+    margin-left: 3px; 
+    color:white; 
+    background-color: blue;
+}
+
+.postButton:hover{
+    background-color: #0179D3;
+}
+
+.postButton:hover:disabled{
+    background-color: blue;
+}
+
+.postButtonDisable{
+
+}
+
+.postButtonDisable:hover{
+    cursor: no-drop;
+}
+
+.createButton{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.up{
+    /* float: left; */
+    /* display: inline-block; */
+}
+
+.column{
+    float:left; 
+    margin:0;
+    width:33%;
+    /* background-color: white; */
+    padding: 5px;
+    padding-left: 20px;
+    font-size: 12px;
+}
+
+.rightBlocks{
+    width: 70%; 
+}
+
+.btn-primary{
+    background-color: #0179D3;
+    width: 287PX;
+    height: 33PX;
+}
+
+.descriptionarea {
+    min-width: 490px;
+    position: relative;
+    display: inline-block;
+}
+ 
+ .descriptionarea textarea{
+     width: 490px;
+     height: 20px;
+ }
+ 
+ .descriptionarea span.namefortxtarea{
+     display: block;
+     text-align: left;
+     font-size:12px;
+ }
+ 
+ .descriptionarea span.buttonfortxtarea{
+     display: block;
+     text-align: right;
+ }
+ 
+ /* editor github */
+ #defaultRTE{
+     
+ }
+
+ .example-tab-icon {
+    margin-right: 8px;
+  }

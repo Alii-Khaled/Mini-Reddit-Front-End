@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./post-layout.component.css']
 })
 export class PostLayoutComponent implements OnInit {
-  innerWidth2: number;
 
   constructor(private apiService: HttpService, public router: Router) {}
   /**
@@ -21,10 +20,18 @@ export class PostLayoutComponent implements OnInit {
   @Input()posts: PostsObjects;
   innerWidth = window.innerWidth;
   public type: string;
+  innerWidth2: number;
 
   public size = '';
   public id = '';
   ngOnInit() {
+    if (window.innerWidth > 960) {
+      this.innerWidth2 = window.innerWidth - 350;
+    } else {
+      this.innerWidth2 = window.innerWidth;
+    }
+    this.innerWidth2 = this.innerWidth2 - 100;
+    this.innerWidth = this.innerWidth2 - 150;
    }
 
   /**
@@ -72,17 +79,17 @@ unhide() {
 @HostListener('window:resize', ['$event'])
 onResize(event) {
   if (window.innerWidth > 960) {
-    this.innerWidth = window.innerWidth - 350;
+    this.innerWidth2 = window.innerWidth - 350;
   } else {
-    this.innerWidth = window.innerWidth;
+    this.innerWidth2 = window.innerWidth;
   }
-  this.innerWidth = this.innerWidth - 100;
-  this.size = this.innerWidth.toString();
+  this.innerWidth2 = this.innerWidth2 - 100;
+  this.size = this.innerWidth2.toString();
   this.size = this.size + 'px';
   this.id = 'posting' + this.posts.post_id;
   document.getElementById(this.id).style.width = this.size;
   // for third part in the form of the post
-  this.innerWidth = this.innerWidth - 150;
+  this.innerWidth = this.innerWidth2 - 150;
   this.size = this.innerWidth.toString();
   this.size = this.size + 'px';
   this.id = 'third' + this.posts.post_id;

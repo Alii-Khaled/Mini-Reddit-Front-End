@@ -1,10 +1,11 @@
 import { Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { UserCommunities } from '../Profile_classes/user-communities';
-import { UserPublicInfo } from '../Profile_classes/user-public-info';
+import { UserCommunities } from '../profile_classes/user-communities';
+import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
-import { comments } from '../classes/comments';
+import { comments, post } from '../classes/comments';
+import { c } from '../classes/c';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,7 @@ export class ProfileHttpService {
     /**
      * Variable to know from which server we get data (mock or API)
      */
-    IsApi = false;
+    IsApi = true;
     /**
      * Back-end link
      */
@@ -23,7 +24,7 @@ export class ProfileHttpService {
     /**
      * To get all communities subscribed by this user
      */
-    GetMyCommunities(): Observable<any[]> {
+    getMyCommunities(username): Observable<number[]> {
         /**
          * Choose from where i'll get my data
          */
@@ -32,7 +33,7 @@ export class ProfileHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
+        return this.http.get<number[]>('http://localhost:3000/communities');
         } else {
              /**
               * Getting token
@@ -42,18 +43,18 @@ export class ProfileHttpService {
              * Set headers
              */
             const headers = new HttpHeaders ({
-                "Accept": "application/json",
-                "Authorization": "Bearer: {"+ token +"}",
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
             });
-            console.log('Here is a token: ' + token);
-            return this.http.get<any[]>('http://localhost:3000/communities' );
+            return this.http.get<number[]>( this.BackEnd + '/api/unauth/viewUserCommunities?username=' + username , {headers} );
         }
     }
 
      /**
       * Getting username for the logged in user
       */
-    GetUserName(): Observable<any> {
+    getUserName(): Observable<any> {
         /**
          * Choose from where i'll get my data
          */
@@ -89,7 +90,7 @@ export class ProfileHttpService {
      * Get user public info like (karma,name,username,...)
      * @param id now we use id to get specific user but when connect to back-end we will use username
      */
-    GetUserPublicInfo(id): Observable<UserPublicInfo> {
+    getUserPublicInfo(id): Observable<UserPublicInfo> {
         /**
          * Choose from where i'll get my data
          */
@@ -119,13 +120,13 @@ export class ProfileHttpService {
     /**
      * Get user's posts
      */
-    GetOverView(username: string): Observable<PostsObjects[]> {
+    getOverView(username: string): Observable<any> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<PostsObjects[]>('http://localhost:3000/overview');
+        return this.http.get<any>('http://localhost:3000/overview');
         } else {
             /**
              * Getting token from cookies
@@ -139,11 +140,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            const body = {
-                'username': username
-            };
-            // return this.http.get<PostsObjects[]>('https://930d0c7c.ngrok.io/api/auth/viewOverview"' + body + { headers });
-            return this.http.get<PostsObjects[]>(this.BackEnd + '/api/auth/viewOverview"' + body + { headers });
+            return this.http.get<any>(this.BackEnd + '/api/auth/viewOverview?username=' + username , { headers });
         }
     }
 
@@ -151,7 +148,7 @@ export class ProfileHttpService {
      * Getting user's downvoted posts
      * @param type type for upvoted or down voted
      */
-    GetDownVoted(): Observable<any> {
+    getDownVoted(): Observable<any> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
@@ -180,7 +177,7 @@ export class ProfileHttpService {
      * Getting user's upvoted posts
      * @param username username for user profile owner
      */
-    GetUpVoted(): Observable<any> {
+    getUpVoted(): Observable<any> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
@@ -209,7 +206,7 @@ export class ProfileHttpService {
      * Getting user's posts
      * @param username username for user profile owner
      */
-    GetMyPosts(username: string): Observable<any> {
+    getMyPosts(username: string): Observable<any> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
@@ -234,10 +231,11 @@ export class ProfileHttpService {
         }
     }
 
+
     /**
      * Getting user's hidden posts
      */
-    GetHidden(): Observable<PostsObjects[]> {
+    getHidden(): Observable<PostsObjects[]> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
@@ -252,7 +250,7 @@ export class ProfileHttpService {
      * Comments of the user
      * @param username username for user profile owner
      */
-    GetComments(username: string): Observable<comments[]> {
+    getComments(username: string): Observable<comments[]> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
@@ -265,7 +263,7 @@ export class ProfileHttpService {
         }
     }
 
-    GetMyFollowing(username): Observable<any> {
+    getMyFollowing(username): Observable<any> {
         /**
          * Choose from where i'll get my data
          */
@@ -296,7 +294,7 @@ export class ProfileHttpService {
 /**
  * SignOut
  */
-SignOut(){
+signOut() {
     if (this.IsApi === false) {
         /**
          * From the mock server if "IsApi" is false
@@ -320,7 +318,61 @@ SignOut(){
     }
 }
 
+    /**
+     * To get all communities info
+     *   @param id now we use id to get Specific Community 
+     */
+    getCommunityInfo(id: number): Observable<UserCommunities> {
 
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+            return this.http.get<UserCommunities>('http://localhost:3000/Community/' + id);
+
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+               /**
+                * Get community info not now in backend
+                */
+            return this.http.get<UserCommunities>(this.BackEnd + '/api/unauth/communityInformation?id=' + id , { headers } );
+        }
+    }
+
+    // /** POST: add a new hero to the database */
+    // addHero (hero: PostsObjects): Observable<PostsObjects> {
+    //     return this.http.post<PostsObjects>('http://localhost:3000/Community/', hero, httpOptions)
+    //     .pipe(
+    //         catchError(this.handleError('addHero', hero))
+    //     );
+    // }
+
+    // createPost (postData) {
+    //     return this.http.post<comments>('http://localhost:3000/comments/', postData);
+    // }
+
+    // hidePost(post_id: number){
+    //     return this.http.put(''+post_id,)
+    // }
+
+    // updateCustomer(customer: Customer){
+    //     return this.httpClient.put(`${this.apiURL}/customers/${customer.id}`,customer);
+    // }
 
 }
 

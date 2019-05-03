@@ -5,18 +5,18 @@
   </HEAD>
   <body >
     
-      <img alt="side" src="https://i.kinja-img.com/gawker-media/image/upload/s--iTBPsYfM--/c_scale,f_auto,fl_progressive,q_80,w_800/szxf1726pgnaoivgdpcl.jpg"  width="156px" height="430px" style="position: absolute">
+      <img id ="eml1" alt="side" src="https://i.kinja-img.com/gawker-media/image/upload/s--iTBPsYfM--/c_scale,f_auto,fl_progressive,q_80,w_800/szxf1726pgnaoivgdpcl.jpg"  width="22%" height="90%" style="position: absolute; background-origin: initial">
     <div class="content">
         <br><br>
         <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Reddit_logo_orange.svg/128px-Reddit_logo_orange.svg.png" class="logo" width="40" height="40">
     
         
+     
+    <form action="action_page.php"  [formGroup]="form" >
+  
         <br><br>
         <h4 id="ssinn">Sign in</h4>
         <br><br>
-    <form action="action_page.php"  [formGroup]="form" >
-  
-        
         <div class="container">
           
           <input type="text" placeholder="USERNAME" formControlName="username" required >
@@ -25,10 +25,13 @@
           <input type="password" placeholder="PASSWORD" formControlName="password" required>
           <br>
           <br>
-          <button type="submit" id ="signin" (click)="login()">SIGN IN</button>
+          
+          <div *ngIf="disabld == 'true' ; else elseBlock"><button disabled type="submit" id ="signin" (click)="login()">SIGN IN</button></div>
+          <ng-template #elseBlock><button type="submit"  id ="signin" (click)="login()">SIGN IN</button></ng-template>
+          <br>
           <br>
           <p id =forgot>
-          <a id="Uname" (click)="userName(template1,login)"><strong>Forgot username</strong></a>
+          <a (click)="openModal(template1)"><strong>Forgot username</strong></a>
           <ng-template #template1>
             <div class="modal-header">
               <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
@@ -37,16 +40,8 @@
             </div>
             <app-forgot-username></app-forgot-username>
           </ng-template>
-          <ng-template #login>
-              <div class="modal-header">
-                <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <app-login></app-login>
-            </ng-template>
           .
-          <a id="pass" (click)="openModal(template2)"><strong>Forgot password</strong></a>
+          <a (click)="openModal(template2)"><strong>Forgot password</strong></a>
           <ng-template #template2>
             <div class="modal-header">
               <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
@@ -66,6 +61,7 @@
               </div>
               <app-signup></app-signup>
             </ng-template>
+            <br><br><br><br>
         </div>
     </form>
     
@@ -75,4 +71,3 @@
       
   </body>
 </HTML>
-

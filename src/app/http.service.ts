@@ -2,17 +2,26 @@ import { Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
 import { catchError, tap, retry} from 'rxjs/operators' ;
-import { UserCommunities } from './Profile_classes/user-communities';
-import { UserPublicInfo } from './Profile_classes/user-public-info';
+import { UserCommunities } from './profile_classes/user-communities';
+import { UserPublicInfo } from './profile_classes/user-public-info';
 import {Communities} from './classes/community-info';
 import { PostsObjects } from './classes/posts-objects';
 import { comments } from './classes/comments';
+import { singlePost } from './classes/single-post';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class HttpService {
+    /**
+     * Variable to know from which server we get data (mock or API)
+     */
+    IsApi = true;
+    /**
+     * Back-end link
+     */
+    BackEnd = 'http://35.204.169.121';
 
     constructor(private http: HttpClient) {}
 
@@ -69,4 +78,16 @@ export class HttpService {
 
     }
 
+    getSinglePost(): Observable<singlePost> {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        return this.http.get<singlePost>('http://localhost:3000/single-post');
+        } else {
+            // return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
+            // return this.http.get<PostsObjects>(this.BackEnd + '/api/unauth/viewComments' + username);
+        }
+    }
 }

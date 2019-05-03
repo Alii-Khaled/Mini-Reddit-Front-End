@@ -15,6 +15,7 @@
         things you share on Reddit. 
         What should we call you?
         <br>
+        <hr>
       </div>
       <br>
     <form action="action_page.php"  [formGroup]="form" >
@@ -24,6 +25,13 @@
           <br>
           <input type="password" placeholder="Password" formControlName="password" required>
           <br><br><br><br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <a  id ="back" (click)="openModal(template1)">back</a>
           <ng-template #template1>
             <div class="modal-header">
@@ -33,7 +41,7 @@
             </div>
             <app-signup></app-signup>
           </ng-template>
-          <a id= "next" (click)="openModal(template2)">next</a>
+          <a id= "next" (click)="signup(template2)">next</a>
           <ng-template #template2>
             <div class="modal-header">
               <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
@@ -44,6 +52,8 @@
 
       </div>
     </form>
+    <br>
+   
   </div>
 </body>
 </HTML>
