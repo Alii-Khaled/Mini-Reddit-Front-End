@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserPublicInfo } from 'src/app/profile_classes/user-public-info';
 import { ProfileHttpService } from '../profile.http.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DropdownService } from 'src/app/dropdown.service';
+import { retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
@@ -41,8 +43,10 @@ export class ProfileComponent implements OnInit {
    * @param http For requests
    * @param router To rout to another url if there was an error
    * @param route To reload username of the profile owner when starting the component
+   * @param UserHeaderComponent To change the dropdown menu icon and title to the username and user logo
    */
-  constructor(private http: ProfileHttpService, private router: Router , route: ActivatedRoute) {
+  constructor(private http: ProfileHttpService, private router: Router , private route: ActivatedRoute ,
+              private dropdown: DropdownService) {
     /**
      * Getting usernames of people that the user follows only for the first time
      */
@@ -56,6 +60,7 @@ export class ProfileComponent implements OnInit {
       this.myFollowing = [];
     }, () => {
       route.params.subscribe(val => {
+
         /**
          * Getting profile owner username
          */
@@ -75,18 +80,18 @@ export class ProfileComponent implements OnInit {
           // tslint:disable-next-line: prefer-const
           let btn = document.getElementById('card-button');
           if (this.myProfile) {
-            this.cardButton = 'New Post';
+            this.cardButton = 'NEW POST';
             btn.style.backgroundColor = '#0079d3';
 // tslint:disable-next-line: deprecation
             btn.style.webkitTextFillColor = 'white';
           } else  if (this.isFromMyFollowers()) {
-            this.cardButton = 'UnFollow';
+            this.cardButton = 'UNFOLLOW';
             btn.style.backgroundColor = 'white';
 // tslint:disable-next-line: deprecation
             btn.style.webkitTextFillColor = '#0079d3';
             btn.style.borderColor = '#0079d3';
           } else {
-            this.cardButton = 'Follow';
+            this.cardButton = 'FOLLOW';
             btn.style.backgroundColor = '#0079d3';
 // tslint:disable-next-line: deprecation
             btn.style.webkitTextFillColor = 'white';
@@ -100,12 +105,23 @@ export class ProfileComponent implements OnInit {
              * To split cake day from day and hour to day only
              */
             this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
+        }, err => {
+          /**
+           * Retry request 3 times if error is occured
+           */
+          retry(3);
+        }, () => {
+        /**
+         * Changing the dropdown logo and title
+         */
+        this.dropdown.changeData('u/' + this.PublicInfo.name, this.PublicInfo.photo_path);
         });
         });
     }
     );
   }
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   /**
    * When mouse is on the button
@@ -178,9 +194,12 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById('myBtn').style.display = 'block';
+    if (document.getElementById('myBtn')) {
+      document.getElementById('myBtn').style.display = 'block';
+    }
   } else {
-    document.getElementById('myBtn').style.display = 'none';
+    if (document.getElementById('myBtn')) {
+      document.getElementById('myBtn').style.display = 'none';
   }
 }
-
+}
