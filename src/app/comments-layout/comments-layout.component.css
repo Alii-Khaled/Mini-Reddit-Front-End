@@ -20,6 +20,7 @@
 mat-icon{
     background-color: white;
     font-size: 17px;
+    height: auto;
 }
 
 button{
@@ -32,6 +33,16 @@ button{
     padding: initial;
 }
 
+.upper{
+    cursor: pointer;
+    padding: 5px;
+    padding-bottom: 0px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: rgb(238, 238, 238);
+}
+
 .lower{
     height: 90px;
     /* overflow: hidden; */
@@ -39,8 +50,14 @@ button{
     margin-top: 10px;
     border-style: solid;
     border-width: 0px;
-    border-bottom-width: 1px;
-    border-bottom-color: rgb(189, 189, 189);
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+.lower:hover{
+    border-style: solid;
+    border-width: 1px;
+    /* border-bottom-color: rgb(189, 189, 189); */
 }
 
 #more:hover{

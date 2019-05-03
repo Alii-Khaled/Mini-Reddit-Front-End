@@ -7,6 +7,7 @@ import { UserPublicInfo } from './profile_classes/user-public-info';
 import {Communities} from './classes/community-info';
 import { PostsObjects } from './classes/posts-objects';
 import { comments } from './classes/comments';
+import { singlePost } from './classes/single-post';
 
 
 @Injectable({
@@ -75,5 +76,18 @@ export class HttpService {
     next(email: string): Observable<any> {
         return this.http.post( 'request', {email});
 
+    }
+
+    getSinglePost(): Observable<singlePost> {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        return this.http.get<singlePost>('http://localhost:3000/single-post');
+        } else {
+            // return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
+            // return this.http.get<PostsObjects>(this.BackEnd + '/api/unauth/viewComments' + username);
+        }
     }
 }

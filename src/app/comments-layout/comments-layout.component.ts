@@ -15,39 +15,40 @@ export class CommentsLayoutComponent implements OnInit {
   id: string;
   innerWidth2: number;
 
-  // c = {
-  //   post : {
-  //     body : 'body',
-  //     title : 'title',
-  //     author_username: 'username',
-  //     community: 'community',
-  //     community_id: 1
-  //   },
-  //   comments: [
-  //     {
-  //       comment_id: 1,
-  //       body: 'body comment 1',
-  //       downvotes: 2,
-  //       upvotes: 4,
-  //       date: '4 days ago',
-  //       upvoted: false,    // what is this???
-  //       downvoted: false
-  //     },
-  //     {
-  //       comment_id: 2,
-  //       body: 'body comment 2',
-  //       downvotes: 3,
-  //       upvotes: 6,
-  //       date: '4 days ago',
-  //       upvoted: false,    // what is this???
-  //       downvoted: false
-  //     }
-  //   ]
-  // };
+  c = {
+    post : {
+      body : 'body',
+      title : 'title',
+      author_username: 'username',
+      community: 'community',
+      community_id: 1
+    },
+    comments: [
+      {
+        comment_id: 1,
+        body: 'body comment 1',
+        downvotes: 2,
+        upvotes: 4,
+        date: '4 days ago',
+        upvoted: false,    // what is this???
+        downvoted: false
+      },
+      {
+        comment_id: 2,
+        body: 'body comment 2',
+        downvotes: 3,
+        upvotes: 6,
+        date: '4 days ago',
+        upvoted: false,    // what is this???
+        downvoted: false
+      }
+    ]
+  };
 
   constructor(private apiService: HttpService, public router: Router) { }
 
-  @Input() c: c[];
+  @Input()
+  //  c: c[];
 
   ngOnInit() {
     if (window.innerWidth > 960) {

@@ -16,6 +16,7 @@ import { DownvotedComponent } from './profile_Components/downvoted/downvoted.com
 import { EditCommunityComponent } from './edit-community/edit-community.component';
 import { CommunityModeratorsComponent } from './community-moderators/community-moderators.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 const routes: Routes = [
 
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'community/:CommunityName/Moderators', component: CommunityModeratorsComponent },
   { path: 'settings', component: UserSettingsComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: 'create-post', component: CreatePostComponent}
 ];
 
 

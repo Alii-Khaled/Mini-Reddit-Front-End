@@ -16,7 +16,7 @@ export class ProfileHttpService {
     /**
      * Variable to know from which server we get data (mock or API)
      */
-    IsApi = true;
+    IsApi = false;
     /**
      * Back-end link
      */
@@ -353,6 +353,27 @@ signOut() {
             return this.http.get<UserCommunities>(this.BackEnd + '/api/unauth/communityInformation?id=' + id , { headers } );
         }
     }
+
+    // /** POST: add a new hero to the database */
+    // addHero (hero: PostsObjects): Observable<PostsObjects> {
+    //     return this.http.post<PostsObjects>('http://localhost:3000/Community/', hero, httpOptions)
+    //     .pipe(
+    //         catchError(this.handleError('addHero', hero))
+    //     );
+    // }
+
+    // createPost (postData) {
+    //     return this.http.post<comments>('http://localhost:3000/comments/', postData);
+    // }
+
+    // hidePost(post_id: number){
+    //     return this.http.put(''+post_id,)
+    // }
+
+    // updateCustomer(customer: Customer){
+    //     return this.httpClient.put(`${this.apiURL}/customers/${customer.id}`,customer);
+    // }
+
 }
 
 

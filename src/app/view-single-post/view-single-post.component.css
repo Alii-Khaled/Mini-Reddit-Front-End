@@ -1,4 +1,33 @@
+body{
+    background-color: #E4E8EC;
+    /* overflow: scroll; */
+    /* background-attachment: scroll; */
+}
 
+.splitRight{
+    right: 0;
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 6%;
+    padding: 3%;
+}
+
+.splitLeft{
+    left: 0;
+    height: 100%;
+    width: 75%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 6%;
+    padding-left: 10%;
+    padding-right: 5%;
+}
 
 /* take this away ==> */
 .row{
@@ -23,14 +52,15 @@
 /* ==> until this */
 
 .post-container {
-    /* background-color: rgba(209, 55, 55, 0.911); */
+    background-color: rgba(255, 255, 255, 0.911);
+    height: 100%;;
 }
 
 .division{
     float:left; 
     width: 100%; 
     /* padding-top: 10%; */
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     height: auto;
 }
 
@@ -61,13 +91,17 @@
     text-align: center;
 }
 
-.buttonUpVote{
+.buttonUpVote:hover{
     color: red;
+}
+
+.buttonDownVote:hover{
+    color: blue;
 }
 
 .thepost{
     float: left;
-    width: 92%;
+    /* width: 92%; */
 }
 
 .image{
@@ -76,17 +110,35 @@
     width: auto;
 }
 
+.commentButton{
+    margin-left: 3px; 
+    color:white; 
+    background-color: rgb(56, 56, 90);
+    font-size: 12px;
+    height: auto;
+    float: right;
+}
+
+.commentButton:hover{
+    background-color: rgb(77, 97, 112);
+}
+
+.commentButton:hover:disabled{
+    background-color: blue;
+}
+
 .buttons{
     color: gray;
     font-size: 12px;
     width: auto;
-    height: initial;
+    height: auto;
     padding: 0;
 }
 
 mat-icon{
     color: gray;
     font-size: 18px;
+    height: auto;
 }
 
 .underlining:hover{
@@ -96,4 +148,48 @@ mat-icon{
 
 .menuSort{
     height: auto;
+}
+
+/* for comment but need to log in */
+.commentLogin{
+    width: 100%;
+    display: inline-block;
+    float: left;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(238, 238, 238);
+    padding: 20px;
+}
+
+.commentLoginLeft{
+    float: left;
+}
+
+.commentLoginRight{
+    float: right;
+}
+
+.login{
+    background-color: white;
+    color: blue;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 5px;
+}
+
+.login:hover{
+    background-color: white;
+}
+
+.signup{
+    color:white; 
+    background-color: #0179D3;
+    margin-left: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.signup:hover{
+    background-color: rgb(6, 138, 240);
 }

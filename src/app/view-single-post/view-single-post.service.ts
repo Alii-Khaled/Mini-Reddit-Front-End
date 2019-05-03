@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { singlePost } from '../classes/single-post';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,13 @@ export class ViewSinglePostService {
 
   constructor(private http: HttpClient) { }
 
-  GetSinglePost(post_id: number): Observable<any> {
+  getSinglePost(post_id: number): Observable<singlePost> {
     if (this.IsApi === false) {
         /**
          * From the mock server if "IsApi" is false
          * And from Api if it is true
          */
-    return this.http.get<any>('http://localhost:3000/posts');
+        return this.http.get<singlePost>('http://localhost:3000/single-post');
     } else {
         /**
          * Getting token from cookies
@@ -41,6 +42,33 @@ export class ViewSinglePostService {
 //     .pipe(
 //       catchError(this.handleError('addBook', book))
 //     );
+// }
+
+// getMyCommunities(username): Observable<number[]> {
+//   /**
+//    * Choose from where i'll get my data
+//    */
+//   if (this.IsApi === false) {
+//       /**
+//        * From the mock server if "IsApi" is false
+//        * And from Api if it is true
+//        */
+//   return this.http.get<number[]>('http://localhost:3000/communities');
+//   } else {
+//        /**
+//         * Getting token
+//         */
+//       var token = localStorage.getItem('token');
+//       /**
+//        * Set headers
+//        */
+//       const headers = new HttpHeaders ({
+//           'Content-Type': 'application/json',
+//           'Accept': 'application/json',
+//           'Authorization': 'Bearer ' + token
+//       });
+//       return this.http.get<number[]>( this.BackEnd + '/api/unauth/viewUserCommunities?username=' + username , {headers} );
+//   }
 // }
 
 }
