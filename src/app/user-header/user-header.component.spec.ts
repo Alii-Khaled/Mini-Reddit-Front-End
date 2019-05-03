@@ -18,11 +18,11 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ProfileComponent } from '../profile_Components/profile/profile.component';
 import { CommunityComponent } from '../community/community.component';
 import { PostLayoutComponent } from '../post-layout/post-layout.component';
-import {AppModule } from '../app.module'
+import {AppModule } from '../app.module';
 import { AccountSettingComponent } from '../account-setting/account-setting.component';
 import {ProfileSettingComponent} from '../profile-setting/profile-setting.component';
 import {ForgotUsernameComponent} from '../forgot-username/forgot-username.component';
-import {OverviewComponent} from '../profile_Components/overview/overview.component'
+import {OverviewComponent} from '../profile_Components/overview/overview.component';
 import { PostsComponent } from '../profile_Components/posts/posts.component';
 import { CommentsComponent } from '../profile_Components/comments/comments.component';
 import { SavedComponent } from '../profile_Components/saved/saved.component';
@@ -34,6 +34,9 @@ import { UserSettingsComponent } from '../user-settings/user-settings.component'
 import {NextPageComponent} from '../next-page/next-page.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material';
+import { HomepageComponent } from '../homepage/homepage.component';
+import { PrivacyComponent } from '../privacy/privacy.component';
+import { CommunityModeratorsComponent } from '../community-moderators/community-moderators.component';
 
 describe('UserHeaderComponent', () => {
   let component: UserHeaderComponent;
@@ -67,8 +70,8 @@ describe('UserHeaderComponent', () => {
         ReactiveFormsModule,
         FormsModule,
         MatSnackBarModule,
-        MatButtonToggleModule
-        // AppModule
+        MatButtonToggleModule,
+         //AppModule
     ],
 
       declarations: [
@@ -80,18 +83,21 @@ describe('UserHeaderComponent', () => {
         UpvotedComponent,
         DownvotedComponent,
         UserSettingsComponent,
-          UserHeaderComponent,
-          LoginComponent,
-          SignupComponent,
-          ProfileComponent,
-          CommunityComponent,
-          AccountSettingComponent,
-          ProfileSettingComponent,
-          ForgotUsernameComponent,
-          OverviewComponent,
-          NextPageComponent,
-          PostLayoutComponent
-        ],
+        UserHeaderComponent,
+        LoginComponent,
+        SignupComponent,
+        ProfileComponent,
+        CommunityComponent,
+        AccountSettingComponent,
+        ProfileSettingComponent,
+        ForgotUsernameComponent,
+        OverviewComponent,
+        NextPageComponent,
+        PostLayoutComponent,
+        HomepageComponent,
+        PrivacyComponent,
+        CommunityModeratorsComponent,
+     ],
 
       // schemas: [NO_ERRORS_SCHEMA , CUSTOM_ELEMENTS_SCHEMA]
     })
@@ -112,7 +118,7 @@ describe('UserHeaderComponent', () => {
   });
 
   it('should create', () => {
-    component.PublicInfo = {
+    component.publicInfo = {
       'username': '7moda',
       'name': '7moda basta',
       'karma': 500,

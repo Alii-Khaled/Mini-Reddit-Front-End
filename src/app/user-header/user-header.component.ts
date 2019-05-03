@@ -1,17 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { UserCommunities } from 'src/app/profile_classes/user-communities';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material';
 import { UserPublicInfo } from 'src/app/profile_classes/user-public-info';
 import { ProfileHttpService } from '../profile_Components/profile.http.service';
 import { Router } from '@angular/router';
 import { subscribeOn, retry } from 'rxjs/operators';
+import { DropdownService } from '../dropdown.service';
 
 @Component({
   selector: 'app-user-header',
   templateUrl: './user-header.component.html',
   styleUrls: ['./user-header.component.css']
 })
+@Injectable()
 export class UserHeaderComponent implements OnInit {
+  /**
+   * Left dropdown icon
+   */
+  leftIcon: string;
+  /**
+   * Left dorpdown title
+   */
+  leftTitle: string;
   /**
    * Message will be printed when erro is happend
    */
@@ -52,12 +62,21 @@ export class UserHeaderComponent implements OnInit {
    * @param http For requests
    * @param router To navigate to another page if token is sended false
    */
-  constructor(private http: ProfileHttpService, private router: Router , private snackBar: MatSnackBar) { }
+  constructor(private http: ProfileHttpService, private router: Router , private snackBar: MatSnackBar ,
+              private dropdown: DropdownService) { }
   /**
    * On initializing the page send a request to get current user public info and display his/her name and karma
    * In the right dropdown
    */
   ngOnInit() {
+      /**
+       * Changing the title of the left dropdown when navigate anywhere
+       */
+      this.dropdown.leftTitle.subscribe(data => this.leftTitle = data);
+      /**
+       * Changing the title of the left dropdown when navigate anywhere
+       */
+      this.dropdown.leftLogo.subscribe(data => this.leftIcon = data);
       /**
        * Getting user name
        */
@@ -85,7 +104,6 @@ export class UserHeaderComponent implements OnInit {
            */
           if (error.status === 403) {
             this.router.navigateByUrl('');
-            console.log('There is no user');
           }
         }
         )
@@ -95,7 +113,7 @@ export class UserHeaderComponent implements OnInit {
     * On clicking the left dropdown send a request to get this user's subscribed communities
     * And display it in this dropdown menu
     */
-   onclickLeftDropdown() {
+  onclickLeftDropdown() {
      /**
       * Initialize my communities as empty array
       */
@@ -119,7 +137,6 @@ export class UserHeaderComponent implements OnInit {
           for (var i = 0; i < this.commIds.length; i++) {
             this.comm =  new UserCommunities( null , null, null);
             this.comm.id = this.commIds[i].community_id;
-            console.log(this.comm);
             this.http.getCommunityInfo(this.commIds[i].community_id).subscribe((data: UserCommunities) => {
             /* this.comm.logo = data.logo;
             this.comm.name = name; */
@@ -134,7 +151,7 @@ export class UserHeaderComponent implements OnInit {
     }
     );
     /**
-     * Getting usernames of people that the user follows
+     * Getting usernames blocked by this user
      */
     this.http.getMyFollowing(this.username).subscribe((data: any) => {
       this.usernames = data.followingList;
@@ -157,7 +174,7 @@ export class UserHeaderComponent implements OnInit {
       });
       }
           }
-          );
+);
   }
 
   logout() {
