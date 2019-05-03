@@ -5,6 +5,7 @@ import { UserCommunities } from '../profile_classes/user-communities';
 import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
 import { comments, post } from '../classes/comments';
+import { c } from '../classes/c';
 
 @Injectable({
     providedIn: 'root'
@@ -23,7 +24,7 @@ export class ProfileHttpService {
     /**
      * To get all communities subscribed by this user
      */
-    getMyCommunities(username): Observable<number[]> {
+    getMyCommunities(username): Observable<UserCommunities[]> {
         /**
          * Choose from where i'll get my data
          */
@@ -32,7 +33,7 @@ export class ProfileHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<number[]>('http://localhost:3000/communities');
+        return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
         } else {
              /**
               * Getting token
@@ -46,7 +47,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<number[]>( this.BackEnd + '/api/unauth/viewUserCommunities?username=' + username , {headers} );
+            return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
         }
     }
 

@@ -49,6 +49,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { MarkdownModule } from 'ngx-markdown';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { NgxEditorModule } from 'ngx-editor';
 import { PrivacyComponent } from './privacy/privacy.component';
 
 // import {Headers} from '@angular/http';
@@ -111,6 +114,10 @@ import { PrivacyComponent } from './privacy/privacy.component';
     MatSnackBarModule,
     MatDialogModule,
     MatCheckboxModule,
+    // RichTextEditorAllModule,
+    MarkdownModule,
+    CKEditorModule,
+    NgxEditorModule,
     RichTextEditorAllModule,
     // Http,
     // Headers,

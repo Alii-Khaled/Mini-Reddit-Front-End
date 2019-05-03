@@ -4,101 +4,17 @@ body{
     background-attachment: scroll;
 }
 
-#posts{
-    margin-left: 25px;
-    margin-right: 25px;
-    background-color:#E4E8EC;
-    height: 100%;
-    margin-top: 50px;
-}
-.PopularPosts{
-    color: #1a1a1b;
-    font-size: 18px;
-    line-height: 18px;
-    margin-bottom: 10px;
-    margin-top: 10x;
-
-}
-.division{
-    float:left;
-    /* width: 5%; */
-    
+.communitiess{
+    padding: 5px;
+    border-radius: 5px;
+    padding-right: 200px;
 }
 
-.buttonUpVote{
-    width:25px;
-    height:15px;
-}
-
-.buttonDownVote{
-    width:25px;
-    height:15px;
-}
-
-.buttonUpVote:hover{
-    color: blue;
-}
-
-.buttonDownVote:hover{
-    color: red;
-}
-
-#first{
-    width: 2%;
-    text-align: center;
-}
-
-#second{
-    width: 7%;
-    text-align: center;
-}
-
-#imgPost{
-    width: 42px;
-    height: 42px;
-}
-
-#arrow:hover{
-    src: url("https://exclusivepropertiesus.com/wp-content/uploads/2015/06/red-arrow-up.jpg");
-}
-
-#title{
-    font-weight: bold;
-    font-size: 17px;
-    color: black;
-}
-
-#userInfo{
-    font-size: 13px;
-    color: gray;
-}
-
-#postType{
-    font-weight: bold;
-    cursor:pointer;
-    color: black;
-}
-
-.hoving:hover{
-    text-decoration: underline;
-}
-
-#postLink{
-    font-weight: normal;
-    cursor:pointer;
-    color: royalblue;
-    font-size: 13px;
-}
-
-.buttons{
-    height: 30px;
-    font-size: 12px;
-    color: gray;
-}
-
-.buttonsIcon{
-    font-size: 20px;
-    text-align: center;
+.postContainer{
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .splitRight{
@@ -109,7 +25,7 @@ body{
     z-index: 1;
     top: 0;
     overflow-x: hidden;
-    padding-top: 10%;
+    padding-top: 6%;
     padding: 3%;
 }
 
@@ -121,13 +37,14 @@ body{
     z-index: 1;
     top: 0;
     overflow-x: hidden;
-    padding-top: 10%;
+    padding-top: 6%;
     padding-left: 10%;
     padding-right: 5%;
 }
 
 mat-icon{
     font-size: 10px;
+    height: auto;
 }
 
 button{
@@ -139,10 +56,93 @@ mat-button{
     height: 30px;
 }
 
+.hovering:hover{
+    background-color: #0179D3;
+}
+
+.underButtons{
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+}
+
+.leftButtons{
+    left: 0;
+    display: inline-block;
+    float: left;
+    width: auto;
+}
+
+.leftButton{
+    font-size: 13px;
+    width: auto;
+    height: auto;
+    margin: 1px;
+}
+
+.rightButtons{
+    right: 0;
+    /* display: inline-block; */
+    float: right;
+    width: auto;
+}
+
+.rightButton{
+    font-size: 13px;
+    width: auto;
+    height: auto;
+    margin: 1px;
+}
+
+.draftButton:hover{
+    background-color: white;
+}
+
+.postButton{
+    margin-left: 3px; 
+    color:white; 
+    background-color: blue;
+}
+
+.postButton:hover{
+    background-color: #0179D3;
+}
+
+.postButton:hover:disabled{
+    background-color: blue;
+}
+
+.postButtonDisable{
+
+}
+
+.postButtonDisable:hover{
+    cursor: no-drop;
+}
+
 .createButton{
     width: 30px;
     height: 30px;
     text-align: center;
+}
+
+.up{
+    /* float: left; */
+    /* display: inline-block; */
+}
+
+.column{
+    float:left; 
+    margin:0;
+    width:33%;
+    /* background-color: white; */
+    padding: 5px;
+    padding-left: 20px;
+    font-size: 12px;
+}
+
+.rightBlocks{
+    width: 70%; 
 }
 
 .btn-primary{
@@ -172,3 +172,12 @@ mat-button{
      display: block;
      text-align: right;
  }
+ 
+ /* editor github */
+ #defaultRTE{
+     
+ }
+
+ .example-tab-icon {
+    margin-right: 8px;
+  }

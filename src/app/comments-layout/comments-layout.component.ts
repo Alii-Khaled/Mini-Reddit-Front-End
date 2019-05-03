@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { comments, post } from '../classes/comments';
 import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
+import { c } from '../classes/c';
 
 @Component({
   selector: 'app-comments-layout',
@@ -14,10 +15,40 @@ export class CommentsLayoutComponent implements OnInit {
   id: string;
   innerWidth2: number;
 
+  c = {
+    post : {
+      body : 'body',
+      title : 'title',
+      author_username: 'username',
+      community: 'community',
+      community_id: 1
+    },
+    comments: [
+      {
+        comment_id: 1,
+        body: 'body comment 1',
+        downvotes: 2,
+        upvotes: 4,
+        date: '4 days ago',
+        upvoted: false,    // what is this???
+        downvoted: false
+      },
+      {
+        comment_id: 2,
+        body: 'body comment 2',
+        downvotes: 3,
+        upvotes: 6,
+        date: '4 days ago',
+        upvoted: false,    // what is this???
+        downvoted: false
+      }
+    ]
+  };
+
   constructor(private apiService: HttpService, public router: Router) { }
 
-  @Input()comments: comments;
-  post: post;
+  @Input()
+  //  c: c[];
 
   ngOnInit() {
     if (window.innerWidth > 960) {

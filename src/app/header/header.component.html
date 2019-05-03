@@ -77,8 +77,16 @@
           Reddit Premium</a></li>
           <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png" width="25" height="25" style="margin-right:15px">
           Help center</a></li>
-          <li><a role="button"><img src="https://cdn4.iconfinder.com/data/icons/navigation-20/32/447-01-512.png" width="25" height="25" style="margin-right:15px">
+          <li><a (click)="openModal(template)" role="button"><img src="https://cdn4.iconfinder.com/data/icons/navigation-20/32/447-01-512.png" width="25" height="25" style="margin-right:15px">
           Log in / Sign up</a></li>
+          <ng-template #template>
+            <div class="modal-header">
+              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <app-login></app-login>
+          </ng-template>
         </ul>
     </div>
   </div>
