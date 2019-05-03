@@ -7,7 +7,6 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import {communityModerators} from 'src/app/classes/community-moderators';
-import { PostsObjects } from 'src/app/classes/posts-objects';
 
 @Component({
   selector: 'app-community',
@@ -15,13 +14,6 @@ import { PostsObjects } from 'src/app/classes/posts-objects';
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
-    /**
-   * To get the posts
-   */
-  posts: PostsObjects[];
-      /**
-   * To get the moderators
-   */
   moderators: communityModerators[];
    /**
    * Variable to put in it value of button
@@ -157,7 +149,7 @@ export class CommunityComponent implements OnInit {
   ngOnInit() {
     this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
     this.http.GetMyModerators().subscribe((data: communityModerators[] ) => this.moderators = data);
-    this.http.GetCommunityInfo(this.commId).subscribe((data: any) => this.posts = data.posts)
+    
   }
 
 }
