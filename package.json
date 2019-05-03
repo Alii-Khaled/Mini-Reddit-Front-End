@@ -25,7 +25,7 @@
     "@angular/router": "~7.2.0",
     "@ckeditor/ckeditor5-angular": "^1.1.0",
     "@material/snackbar": "^1.1.1",
-    "@syncfusion/ej2-angular-richtexteditor": "^17.1.42",
+    "@syncfusion/ej2-angular-richtexteditor": "^17.1.43",
     "@types/jquery": "^3.3.29",
     "angular-font-awesome": "^3.1.2",
     "assets-webpack-plugin": "^3.9.10",
