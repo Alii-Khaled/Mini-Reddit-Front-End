@@ -16,7 +16,7 @@ export class ProfileHttpService {
     /**
      * Variable to know from which server we get data (mock or API)
      */
-    IsApi = false;
+    IsApi = true;
     /**
      * Back-end link
      */
