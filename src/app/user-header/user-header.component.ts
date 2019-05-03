@@ -126,7 +126,7 @@ export class UserHeaderComponent implements OnInit {
       * Getting communities that the user subscribes
       */
     this.http.getMyCommunities(this.username).subscribe((data: any) => {
-      this.myCommunities = data;
+      this.commIds = data.communities;
     }, err => {
       /**
        * My communities is empty

@@ -1,6 +1,5 @@
 html
-{ height: 100%;
- }
+{ height: 100%;}
 
 body
 {
@@ -9,8 +8,7 @@ body
     line-height: 18px;
     color: #1a1a1b;
     font-family: IBMPlexSans,sans-serif;
-   
-    
+    padding: 765* 1236 ;
     display:block
 }
 .modal-header
@@ -38,23 +36,22 @@ body
 form {
    
     align-content: center;
-
    
   }
   
   /* Full-width inputs */
   input[type=text], input[type=password]
    {
+    
     padding: 22px 12px 10px;
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 4px;
     text-align: center;
     background-color: #fcfcfb;
-    width:38%;
+    width:400px;
     height: 48px;
     display: inline-block;
-    box-sizing: border-box;
-    
+    box-sizing: border-box
   }
   
   /* Set a style for all buttons */
@@ -69,39 +66,13 @@ form {
     border: none;
     border-radius: 4px;
     text-align: center;
-    vertical-align: center;
     background: #0079d3;
     text-transform: uppercase;
     cursor: pointer;
     outline: 0;
     line-height: unset;
     height: 35px;
-    width: 10%;
-    min-width: 155px;
-    overflow: inherit;
-    position: relative;
-    outline: none;
-  }
-  button[type="submit"] :disabled
-  {
-    font-family: IBMPlexSans,sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: .5px;
-    line-height: 32px;
-    color: #fff;
-    display: inline-block;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    vertical-align: center;
-    background: #afcee6;
-    text-transform: uppercase;
-    cursor:not-allowed;
-    outline: 0;
-    line-height: unset;
-    height: 35px;
-    width: 10%;
+    width: 155px;
     min-width: 155px;
     overflow: inherit;
     position: relative;
@@ -115,7 +86,7 @@ form {
   }
   .content
   {
-   
+    padding-left: 170px;
     position: relative;
     font-size: 14px;
     font-weight: 500;
@@ -124,25 +95,18 @@ form {
     font-family: IBMPlexSans,sans-serif;
    width: 397;
    height: 392;
-   margin-left: 22%;
   }
   #ssinn{
-    position: relative;
-    display: inline-block;
-    font-family: IBMPlexSans,sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 22px;
-    margin: 20px 0;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 14px;
     color: #1a1a1b;
     font-family: IBMPlexSans,sans-serif;
-  
-  }
-  #ssinn   #eml1 
-  {
-    text-align: right;
-    position: relative;
-    display:inline-block;
-
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
   }
   

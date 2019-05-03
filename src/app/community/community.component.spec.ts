@@ -6,13 +6,34 @@ import {FormsModule} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 describe('CommunityComponent', () => {
   let component: CommunityComponent;
-
+  let fixture: ComponentFixture<CommunityComponent>;
 
   beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ CommunityComponent ],
+      imports: [
+        FormsModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        RouterModule,
+        ActivatedRoute
 
+     ],
+    })
+    .compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CommunityComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
+  it('should create the app', async( () => {
+    let fixture = TestBed.createComponent(CommunityComponent);
+    let comm = fixture.debugElement.componentInstance;
+    expect(comm).toBeTruthy();
+  }));
 
   describe('toggleButton', () => {
     it('should change buttonname to SUBSCRIBED if input is true',()=>{

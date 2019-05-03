@@ -1,173 +1,63 @@
-<body>
-<div class="splitLeft">
-  <form class="post-container" style="margin-top:100px;">
-    <div class="division">
-      <!-- for voting -->
-      <div class="left" *ngIf="innerWidth > 178;">
-          <button disableRipple mat-icon-button id="upVote{{posts.post_id}}" class="buttonUpVote" [ngStyle]="{'color': posts.upvoted? 'red' : ''}"><mat-icon >arrow_upward</mat-icon></button>
-                    
-          <h6 id="voteNum{{posts?.post_id}}" [ngStyle]="{'color': posts.downvoted? 'blue' : posts.upvoted? 'red' : ''}" style="text-align:center;">{{posts?.upvotes-posts.downvotes}}</h6>
-          
-          <button disableRipple mat-icon-button id="downVote{{posts.post_id}}" class="buttonDownVote" [ngStyle]="{'color': posts.downvoted? 'blue' : ''}"><mat-icon>arrow_downward</mat-icon></button>
-      </div>
-      <!-- for the post -->
-      <div class="right">
-        <div class="thepost">
-            <p style="color:gray; font-size:13px;"><span class="underlining" style="color: black;font-weight: bold;">r/{{posts?.community}}</span> Posted by <span class="underlining">u/{{posts?.username}} </span> <span class="underlining">{{posts.date}}</span></p>
-            <p>{{posts?.body}}</p>
-            <br>
-            <div style="width: 100%;display: inline-block;float: left;">
-              <div style="float:left;">
-                <button disableRipple mat-button id="comment{{posts?.post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts?.comments_num}} Comments</button>
-                <button disableRipple mat-button id="giveAward{{posts?.post_id}}" class="buttons" *ngIf="innerWidth >= 241 && loggedin;"><mat-icon>stars</mat-icon> Give Award</button>
-                <button disableRipple mat-button id="share{{posts?.post_id}}" class="buttons dropdown-toggling" data-toggling="dropdown" *ngIf="innerWidth >= 300;"><mat-icon>reply</mat-icon> Share
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="#" id="copyLink{{posts?.post_id}}"><mat-icon>link</mat-icon> Copy link</a></li>
-                    <li><a href="#" id="crosspost{{posts?.post_id}}"><mat-icon>share</mat-icon> Crosspost</a></li>
-                    <li><a href="#" id="embed{{posts?.post_id}}"><mat-icon>code</mat-icon> Embed</a></li>
-                  </ul>
-                </button>
-                <button disableRipple mat-button (click)="save()" *ngIf="(!loggedin || posts.saved === false) && innerWidth >= 366; else elseBlockSave" id="save{{posts?.post_id}}" class="buttons" ><mat-icon>bookmark_border</mat-icon> Save</button>
-                <ng-template #elseBlockSave><button disableRipple (click)="unsave()" mat-button id="unSave{{posts.post_id}}" class="buttons" *ngIf="innerWidth >= 366;"><mat-icon>bookmark</mat-icon> Unsave</button></ng-template>
-                <button disableRipple mat-button (click)="hide()" *ngIf="loggedin && posts.hidden === false &&  innerWidth >= 428; else elseBlockHide" id="hide{{posts?.post_id}}" class="buttons"><mat-icon>block</mat-icon> Hide</button>
-                <ng-template #elseBlockHide><button disableRipple mat-button (click)="unhide()" id="unHide{{posts.post_id}}" class="buttons" *ngIf="loggedin && innerWidth >= 428;"><mat-icon>block</mat-icon> Unhide</button></ng-template>
-                <button disableRipple mat-button id="report" class="buttons" *ngIf="loggedin && innerWidth >= 494;"><mat-icon>flag</mat-icon> Report</button>
-              </div>
-              <div style="float:right;font-size: 13px;color: rgb(161, 161, 161);">
-                {{(100*(posts.upvotes)/(posts.upvotes+posts.downvotes))}}% Upvoted
-              </div> 
-             </div>
-            <br>
-            <p style="font-size:12px; color:gray;" *ngIf="loggedin">Comment as my <span class="underlining">username</span></p>
-            <div *ngIf="loggedin" style="background-color:white;">
-              <app-ngx-editor id="body" [config]="editorConfig" [spellcheck]="true" 
-              [(ngModel)]="htmlContent"
-                name="name"
-                    #name="ngModel"></app-ngx-editor>
-            </div>
-            <button disableRipple *ngIf="loggedin" type="submit" id="postButton" class="commentButton rightButton btn btn-success" 
-                   (click)="createPost()">COMMENT
-            </button>
+<form>
+  <div class="division">
+    <div class="left" *ngIf="innerWidth > 178;">dasio</div>
+    <div class="right">dasio2nbhcskn jb zsjkabdjszb
+      <br><br> cmbjakjdskj xakdunbjukscadbkjb</div>
+  </div>
+</form>
 
-            <div class="commentLogin" *ngIf="!loggedin">
-              <div class="commentLoginLeft">
-                What are your thoughts? Log in or Sign up
-              </div>
-              <div class="commentLoginRight">
-                <!-- <button disableRipple mat-stroked-button id="log-in" class="buttons login">LOG IN</button>
-                <button disableRipple mat-button id="sign-up" class="buttons signup">SIGN UP</button> -->
+<br>nkjkcsj<br>mclxsnk lkaj<br>
+<p>hysx</p>
 
-                <!-- login -->
-                <button disableRipple mat-stroked-button type="button" class="buttons login btn btn-outline-primary" (click)="openModal(template1)" id="log-in">LOG IN</button>
-                <ng-template #template1>
-                  <div class="modal-header">
-                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <app-login></app-login>
-                </ng-template>
-
-                <!-- signup -->
-                <button disableRipple mat-button type="button" class="buttons signup btn btn-outline-primary" (click)="openModal(template2)" id="sign-up">SIGN UP</button>
-                <ng-template #template2>
-                  <div class="modal-header">
-                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <app-signup></app-signup>
-                </ng-template>
-
-              </div>
-            </div>
-
+<form class="post-container">
+  <div class="division">
+    <!-- for voting -->
+    <div class="left" *ngIf="innerWidth > 178;">
+        <button disableRipple mat-icon-button id="upVote{{posts.post_id}}" class="buttonUpVote" (click)="upVote()" [ngStyle]="{'color': posts.upvoted? 'red' : ''}"><mat-icon >arrow_upward</mat-icon></button>
+                  
+        <h6 id="voteNum{{posts?.post_id}}" [ngStyle]="{'color': posts.downvoted? 'blue' : posts.upvoted? 'red' : ''}" style="text-align:center;">{{posts?.upvotes-posts.downvotes}}</h6>
+        
+        <button disableRipple mat-icon-button id="downVote{{posts.post_id}}" class="buttonDownVote" (click)="downVote()" [ngStyle]="{'color': posts.downvoted? 'blue' : ''}"><mat-icon>arrow_downward</mat-icon></button>
+    </div>
+    <!-- for the post -->
+    <div class="right">
+      <div class="thepost">
+          <p style="color:gray; font-size:13px;"><span class="underlining" style="color: black;font-weight: bold;">r/{{posts?.community}}</span> Posted by <span class="underlining">u/{{posts?.username}} </span> <span class="underlining">{{posts.date}}</span></p>
+          <p>{{posts?.body}}</p>
+          <br>
+          <button onclick="parent.location='localhost:4200'" mat-button id="comment{{posts?.post_id}}" class="buttons" ><mat-icon>mode_comment</mat-icon> {{posts?.comments_num}} Comments</button>
+          <button mat-button id="giveAward{{posts?.post_id}}" class="buttons" *ngIf="innerWidth >= 241;"><mat-icon>stars</mat-icon> Give Award</button>
+          <button mat-button id="share{{posts?.post_id}}" class="buttons dropdown-toggle" data-toggle="dropdown" *ngIf="innerWidth >= 300;"><mat-icon>reply</mat-icon> Share
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a href="#" id="copyLink{{posts?.post_id}}"><mat-icon>link</mat-icon> Copy link</a></li>
+              <li><a href="#" id="crosspost{{posts?.post_id}}"><mat-icon>share</mat-icon> Crosspost</a></li>
+              <li><a href="#" id="embed{{posts?.post_id}}"><mat-icon>code</mat-icon> Embed</a></li>
+            </ul>
+          </button>
+          <button mat-button (click)="save()" *ngIf="posts.saved === false && innerWidth >= 366; else elseBlockSave" id="save{{posts?.post_id}}" class="buttons" ><mat-icon>bookmark_border</mat-icon> Save</button>
+          <ng-template #elseBlockSave><button (click)="unsave()" mat-button id="unSave{{posts.post_id}}" class="buttons" *ngIf="innerWidth >= 366;"><mat-icon>bookmark</mat-icon> Unsave</button></ng-template>
+          <button mat-button (click)="hide()" *ngIf="posts.hidden === false &&  innerWidth >= 428; else elseBlockHide" id="hide{{posts?.post_id}}" class="buttons"><mat-icon>block</mat-icon> Hide</button>
+          <ng-template #elseBlockHide><button mat-button (click)="unhide()" id="unHide{{posts.post_id}}" class="buttons" *ngIf="innerWidth >= 428;"><mat-icon>block</mat-icon> Unhide</button></ng-template>
+          <button mat-button id="report" class="buttons" *ngIf="innerWidth >= 494;"><mat-icon>flag</mat-icon> Report</button>
             
-        </div>
-        <!-- <div class="image">
-            <img width="80px" height="60px" src="{{posts?.image}}" id="imgPost{{posts?.post_id}}">
-        </div> -->
-        <!-- for comment -->
-        <!-- <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="What are your thoughts?"></textarea> -->
-
-       <!-- comments ////////////////////////////////////////////////// -->
+          <br>
+          <p style="font-size:12px; color:gray;">Comment as my <span class="underlining">username</span></p>
       </div>
-    </div>
+      <!-- <div class="image">
+          <img width="80px" height="60px" src="{{posts?.image}}" id="imgPost{{posts?.post_id}}">
+      </div> -->
+      <!-- for comment -->
+      <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="What are your thoughts?"></textarea>
 
-    <div class="comments" style="padding-left: 60px; padding-right: 25px; background-color: transparent;">
-      <p style="font-size:12px; color: rgb(172, 172, 172);">SORT BY    .
-          <select style="color:black;">
-            <option>Best</option>
-            <option>Top</option>
-            <option>New</option>
-            <option>Controversial</option>
-            <option>Old</option>
-            <option>Q&A</option>
-          </select>
-      </p>
-      <mat-divider style="margin-bottom:35px;"></mat-divider>
-      <!-- /// comments -->
-      <!-- comments ///////////////////////////////////////////////////////////////////// -->
-      <div style="width: 100%;display: inline-block;float: left; background-color: transparent;margin-left: -30px;">
-        <div style="float:left; width: 60px;padding: 3px;">
-            <button disableRipple mat-icon-button id="upVote{{comment.comment_id}}" class="buttonUpVote" (click)="upVote()"><mat-icon >arrow_upward</mat-icon></button>
-            <button disableRipple mat-icon-button id="downVote{{comment.comment_id}}" class="buttonDownVote" (click)="downVote()"><mat-icon>arrow_downward</mat-icon></button>
-        </div>
-        <div style="float: left;">
-          comments // ngFor all comments of this post
-          <div>
-            <p>title</p>
-            <p>body</p>
-            <button disableRipple mat-button id="comment{{comment?.comment_id}}" class="buttons" >reply</button>
-            <button disableRipple mat-button id="giveAward{{comment?.comment_id}}" class="buttons" *ngIf="innerWidth >= 241 && loggedin;">Give Award</button>
-            <button disableRipple mat-button id="share{{comment?.comment_id}}" class="buttons dropdown-toggling" data-toggling="dropdown" *ngIf="innerWidth >= 300;">Share
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li><a href="#" id="copyLink{{comment?.comment_id}}"><mat-icon>link</mat-icon> Copy link</a></li>
-                <li><a href="#" id="crosspost{{comment?.comment_id}}"><mat-icon>share</mat-icon> Crosspost</a></li>
-                <li><a href="#" id="embed{{comment?.comment_id}}"><mat-icon>code</mat-icon> Embed</a></li>
-              </ul>
-            </button>
-            <button disableRipple mat-button (click)="save()" *ngIf="(!loggedin || comment.saved === false) && innerWidth >= 366; else elseBlockSave" id="save{{comment?.comment_id}}" class="buttons" >Save</button>
-            <ng-template #elseBlockSave><button disableRipple (click)="unsave()" mat-button id="unSave{{comment.comment_id}}" class="buttons" *ngIf="innerWidth >= 366;">Unsave</button></ng-template>
-            <button disableRipple mat-button id="report" class="buttons" *ngIf="loggedin && innerWidth >= 494;">Report</button>
-          </div>
-        </div>
+    </div>
+  </div>
+
+  <div class="comments">
+    <p>SORTED BY </p>
+    <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu">
+        <mat-icon>
+          <!-- {{menuTrigger.menuOpen ? 'expand_less' : 'expand_more'}} -->
+        </mat-icon>
       </div>
-      <!-- <app-comments-layout></app-comments-layout> -->
-      <!-- <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu">
-          <mat-icon>
-            {{menuTrigger.menuOpen ? 'expand_less' : 'expand_more'}}
-          </mat-icon>
-        </div> -->
-    </div>
-  </form>
-  <!-- //////////////////// -->
-  <!-- <app-post-layout [posts]="post"></app-post-layout> -->
-</div>
-<!-- end left side //////////////////////////////////////////////// -->
-
-<div class="splitRight">
-  right side
-
-  <mat-card class="postingRules rightBlocks" style="font-size: 13px;">
-    <p id="postingRulesTitle">
-      <img id="postingRulesImg" style="width:35px;" src="http://www.iconhot.com/icon/png/social-network-1/512/reddit-34.png">
-      Posting to Reddit
-    </p>
-    <mat-divider style="margin-left:15px; width: 90%;"></mat-divider>
-    <mat-list role="list">
-      <mat-list-item role="listitem" style="font-size: 13px;height: 35px;">Remember the human</mat-list-item>
-      <mat-divider style="margin-left: 15px;width: 90%;"></mat-divider>
-      <mat-list-item role="listitem" style="font-size: 13px;padding: 0;margin: 0;height: 35px;">Behave like you would in real life</mat-list-item>
-      <mat-divider style="margin-left: 15px;width: 90%;"></mat-divider>
-      <mat-list-item role="listitem" style="font-size: 13px;height: 35px;">Look for the original source of content</mat-list-item>
-      <mat-divider style="margin-left: 15px;width: 90%;"></mat-divider>
-      <mat-list-item role="listitem" style="font-size: 13px;height: 35px;">Search for duplicates before posting</mat-list-item>
-      <mat-divider style="margin-left: 15px;width: 90%;"></mat-divider>
-      <mat-list-item role="listitem" style="font-size: 13px;height: 35px;">Read the community’s rules</mat-list-item>
-    </mat-list>
-
-    </mat-card>
-</div>
-<!-- end right side //////////////////////////////////////////////// -->
-</body>
+  </div>
+</form>

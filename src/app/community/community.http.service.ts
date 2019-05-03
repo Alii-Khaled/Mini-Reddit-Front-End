@@ -32,11 +32,11 @@ export class communityHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + id);
+            return this.http.delete<Communities>('http://localhost:3000/Community/' + body);
 
         }
         else {
-            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + id);
+            return this.http.post<any>('https://921b64a9.ngrok.io/api/auth/removeCommunity', body, { headers });
 
         }
     }
@@ -63,11 +63,10 @@ export class communityHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-
-            return this.http.post<communityModerators[]>('http://localhost:3000/get_my_moderators/', body);
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + id);
         }
         else {
-            return this.http.post<communityModerators[]>('http://localhost:3000/get_my_moderators/', body);
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + id);
 
         }
     }
@@ -246,36 +245,5 @@ export class communityHttpService {
     }
 
 
-    /**
-     *get Community posts 
-     *@param community_id now we use id to edit to Specific Community
-  
-     */
-    getCommunityPosts(community_id: number) {
-        var token = localStorage.getItem('token');
-        let headers = {
-            "Accept": "application/json",
-            "Authorization": "Bearer " + token,
-            "Content-Type": "application/json",
-        }
-
-        let body = {
-            "community_id": community_id,
-
-        }
-        /**
-         * Choose from where i'll get my data
-         */
-        if (this.IsApi === false) {
-            return this.http.get<any>("http://localhost:3000/posts")
-        }
-        else {
-          //  return this.http.get<any>("http://35.204.169.121/api/unauth/ViewPosts", body, { headers })
-        }
-    }
-
 }
-
-
-
 
