@@ -55,7 +55,7 @@ export class EditCommunityComponent implements OnInit {
    * ngOnInit assigns data to my variables
    */
   ngOnInit() {
-    this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => {
+    this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
       this.commname = data.community_name;
       this.rules = data.community_rules;
       this.bio = data.community_description;
@@ -114,7 +114,7 @@ export class EditCommunityComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Yes clicked');
-        this.http.RemoveCommunity(this.commId).subscribe(
+        this.http.removeCommunity(this.commId).subscribe(
           response => {
             this.message = 'Community has been deleted';
             this.snackBar.open(this.message, 'dismiss', {

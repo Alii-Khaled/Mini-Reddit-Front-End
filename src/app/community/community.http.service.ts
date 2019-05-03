@@ -12,7 +12,7 @@ export class communityHttpService {
     constructor(private http: HttpClient) { }
 
 
-    RemoveModerator(id: number, user: string): Observable<any> {
+    removeModerator(id: number, user: string): Observable<any> {
         var token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             "Accept": "application/json",
@@ -43,7 +43,7 @@ export class communityHttpService {
 
 
 
-    AddModerator(id: number, user: string): Observable<any[]> {
+    addModerator(id: number, user: string): Observable<any[]> {
         var token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             "Accept": "application/json",
@@ -72,7 +72,7 @@ export class communityHttpService {
         }
     }
 
-    GetMyModerators(id: number): Observable<any[]> {
+    getMyModerators(id: number): Observable<any[]> {
         /**
          * Choose from where i'll get my data
          */
@@ -96,7 +96,7 @@ export class communityHttpService {
      * To get all communities info
      *   @param id now we use id to get Specific Community 
      */
-    GetCommunityInfo(id: number): Observable<Communities> {
+    getCommunityInfo(id: number): Observable<Communities> {
 
         /**
          * Choose from where i'll get my data
@@ -121,7 +121,7 @@ export class communityHttpService {
      */
 
 
-    RemoveCommunity(id: number): Observable<any> {
+    removeCommunity(id: number): Observable<any> {
         var token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             "Accept": "application/json",
@@ -153,7 +153,7 @@ export class communityHttpService {
      *Subscribe Community 
      *@param id now we use id to subscribe to Specific Community
      */
-    SubscribeCommunity(id: number): Observable<any> {
+    subscribeCommunity(id: number): Observable<any> {
         var token = localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",
@@ -183,7 +183,7 @@ export class communityHttpService {
      *Unsubscribe Community 
      *@param id now we use id to unsubscribe to Specific Community
      */
-    UnSubscribeCommunity(id: number): Observable<any> {
+    unSubscribeCommunity(id: number): Observable<any> {
         var token = localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",

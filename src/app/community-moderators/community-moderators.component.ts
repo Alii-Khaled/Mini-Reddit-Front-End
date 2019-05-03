@@ -13,32 +13,32 @@ import { ConfirmationDialogComponent } from '../components/shared/confirmation-d
 export class CommunityModeratorsComponent implements OnInit {
   moderators: any[];
   message;
-        /**
-   * To get the url
-   */
+  /**
+* To get the url
+*/
   arr: string[];
-    /**
-   * Variable to put in it buttonname of subscribtion
-   */
+  /**
+ * Variable to put in it buttonname of subscribtion
+ */
   commId;
 
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute, public dialog: MatDialog) {
 
     route.params.subscribe(val => {
-      this.http.GetMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data as communityModerators[]);
+      this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data as communityModerators[]);
 
     });
   }
 
   ngOnInit() {
-    this.arr=this.router.url.split('/');
-    this.commId = parseInt(this.arr[this.arr.length-2]);
-    this.http.GetMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
+    this.arr = this.router.url.split('/');
+    this.commId = parseInt(this.arr[this.arr.length - 2]);
+    this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
     console.log(this.commId);
   }
-  onAddingmoderator() {
+  onAddingModerator() {
     var username = (<HTMLInputElement>document.getElementById("addmodd")).value;
-    this.http.AddModerator(1, username).subscribe(
+    this.http.addModerator(1, username).subscribe(
       response => {
         this.message = 'Added Successfully';
         this.snackBar.open(this.message, undefined, {
@@ -49,11 +49,11 @@ export class CommunityModeratorsComponent implements OnInit {
 
         });
         console.log(username);
-        let moderator= new communityModerators(username) ;
-        var moderator1 :  communityModerators;
-        moderator1=moderator;
+        let moderator = new communityModerators(username);
+        var moderator1: communityModerators;
+        moderator1 = moderator;
         this.moderators.push(moderator1);
-    
+
       },
       err => {
         this.message = 'Added failed';
@@ -70,7 +70,7 @@ export class CommunityModeratorsComponent implements OnInit {
       }
     )
   }
-  ondeletingmoderator(i) {
+  onDeletingModerator(i) {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '350px',
       data: "Do you confirm the deletion of this moderator?"
@@ -79,7 +79,7 @@ export class CommunityModeratorsComponent implements OnInit {
       if (result) {
         var username = this.moderators[i].moderators_name;
         var id = this.moderators[i].id;
-        this.http.RemoveModerator(id, username).subscribe(
+        this.http.removeModerator(id, username).subscribe(
           response => {
             this.message = 'removed Successfully';
             this.snackBar.open(this.message, undefined, {

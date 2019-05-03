@@ -70,7 +70,7 @@ export class CommunityComponent implements OnInit {
     route.params.subscribe(val => {
       this.arr=this.router.url.split('/');
       this.commId = parseInt(this.arr[this.arr.length-1]);
-      this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
+      this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
       this.myFlagForButtonToggle = false;
 
     });
@@ -80,7 +80,7 @@ export class CommunityComponent implements OnInit {
    */
   toggleButton(SUBSCRIBED: boolean) {
     if (SUBSCRIBED == true) {
-      this.http.UnSubscribeCommunity(this.commId).subscribe(
+      this.http.unSubscribeCommunity(this.commId).subscribe(
         response => {
           this.myFlagForButtonToggle = false;
           this.buttonName = 'SUBSCRIBE';
@@ -120,7 +120,7 @@ export class CommunityComponent implements OnInit {
     else {
 
 
-      this.http.SubscribeCommunity(this.commId).subscribe(
+      this.http.subscribeCommunity(this.commId).subscribe(
         response => {
           this.myFlagForButtonToggle = true;
           this.buttonName = 'SUBSCRIBED';
@@ -160,9 +160,9 @@ export class CommunityComponent implements OnInit {
    * on initializing the page send a request to get current community information and display all information about it
    */
   ngOnInit() {
-    this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
-    this.http.GetMyModerators(this.commId).subscribe((data: communityModerators[] ) => this.moderators = data);
-    this.http.GetCommunityInfo(this.commId).subscribe((data: any) => this.posts = data.posts)
+    this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
+    this.http.getMyModerators(this.commId).subscribe((data: communityModerators[] ) => this.moderators = data);
+    this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
   }
 
 }
