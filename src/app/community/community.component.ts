@@ -15,6 +15,10 @@ import { PostsObjects } from 'src/app/classes/posts-objects';
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
+     /**
+   * To get the url
+   */
+  arr: string[];
     /**
    * To get the posts
    */
@@ -64,7 +68,8 @@ export class CommunityComponent implements OnInit {
    */
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute) {
     route.params.subscribe(val => {
-      this.commId = parseInt(this.router.url.substr(11));
+      this.arr=this.router.url.split('/');
+      this.commId = parseInt(this.arr[this.arr.length-1]);
       this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
       this.myFlagForButtonToggle = false;
 

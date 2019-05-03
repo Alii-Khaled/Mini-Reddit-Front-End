@@ -13,6 +13,10 @@ import { ConfirmationDialogComponent } from '../components/shared/confirmation-d
   styleUrls: ['./edit-community.component.css']
 })
 export class EditCommunityComponent implements OnInit {
+      /**
+   * To get the url
+   */
+  arr: string[];
   /**
    * Variable to assign response of community information
    */
@@ -42,7 +46,8 @@ export class EditCommunityComponent implements OnInit {
    */
   avatar;
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, public dialog: MatDialog) {
-    this.commId = parseInt(this.router.url.substr(11, this.router.url.length - 15));
+    this.arr=this.router.url.split('/');
+    this.commId = parseInt(this.arr[this.arr.length-2]);
     console.log(this.commId);
 
   }

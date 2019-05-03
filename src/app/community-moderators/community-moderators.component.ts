@@ -13,6 +13,15 @@ import { ConfirmationDialogComponent } from '../components/shared/confirmation-d
 export class CommunityModeratorsComponent implements OnInit {
   moderators: any[];
   message;
+        /**
+   * To get the url
+   */
+  arr: string[];
+    /**
+   * Variable to put in it buttonname of subscribtion
+   */
+  commId;
+
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute, public dialog: MatDialog) {
 
     route.params.subscribe(val => {
@@ -22,6 +31,8 @@ export class CommunityModeratorsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.arr=this.router.url.split('/');
+    this.commId = parseInt(this.arr[this.arr.length-2]);
     this.http.GetMyModerators().subscribe((data: communityModerators[]) => this.moderators = data);
   }
   onAddingmoderator() {
