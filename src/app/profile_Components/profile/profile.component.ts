@@ -4,6 +4,7 @@ import { ProfileHttpService } from '../profile.http.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DropdownService } from 'src/app/dropdown.service';
 import { retry } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +12,10 @@ import { retry } from 'rxjs/operators';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  /**
+   * To hold snackbar msg
+   */
+  message: string;
   /**
    * My following
    */
@@ -46,7 +51,7 @@ export class ProfileComponent implements OnInit {
    * @param UserHeaderComponent To change the dropdown menu icon and title to the username and user logo
    */
   constructor(private http: ProfileHttpService, private router: Router , private route: ActivatedRoute ,
-              private dropdown: DropdownService) {
+              private dropdown: DropdownService , private snackBar: MatSnackBar) {
     /**
      * Getting usernames of people that the user follows only for the first time
      */
@@ -132,7 +137,7 @@ export class ProfileComponent implements OnInit {
      */
     // tslint:disable-next-line: prefer-const
     let btn = document.getElementById('card-button');
-    if (this.isFromMyFollowers()) {
+    if (this.cardButton === 'UNFOLLOW') {
       btn.style.borderColor = '#0889ec';
       btn.style.webkitTextFillColor = '#0889ec';
     } else {
@@ -148,7 +153,7 @@ export class ProfileComponent implements OnInit {
      */
     // tslint:disable-next-line: prefer-const
     let btn = document.getElementById('card-button');
-    if (this.isFromMyFollowers()) {
+    if (this.cardButton === 'UNFOLLOW') {
       btn.style.borderColor = '#0079d3';
       btn.style.webkitTextFillColor = '#0079d3';
     } else {
@@ -169,6 +174,9 @@ export class ProfileComponent implements OnInit {
    */
   document.documentElement.scrollTop = 0;
 }
+/**
+ * Check if this user from my following
+ */
 isFromMyFollowers():boolean {
   if (localStorage.getItem('username') === null) {
     return false;
@@ -182,10 +190,95 @@ isFromMyFollowers():boolean {
   return false;
 }
 
-}
 /**
- * Function to check is that user is followed by me
+ * What to do on clicking on card button
  */
+cardButtonClick() {
+  /**
+   * If i'm on my profile then it creates a new post
+   */
+  if (this.cardButton === 'NEW POST') {
+    // TODO: put routing link here to create new post
+  } else if (this.cardButton === 'FOLLOW') {
+    /**
+     * Follow user request
+     */
+    this.http.follow(this.username).subscribe((data: any) => {
+      /**
+       * Changing cardButton to be UNFOLLOW
+       */
+      this.cardButton = 'UNFOLLOW';
+      /**
+       * For button
+       */
+      let btn = document.getElementById('card-button');
+      btn.style.backgroundColor = 'white';
+// tslint:disable-next-line: deprecation
+      btn.style.webkitTextFillColor = '#0079d3';
+      btn.style.borderColor = '#0079d3';
+      /**
+       * Printing msg in the snackbar
+       */
+      this.message = 'User has been followed successfully !';
+      this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition: 'center',
+      panelClass: 'snack-remove-button',
+    });
+    /**
+     * Changing button to be unfollow style
+     */
+    } , (error: any) => {
+      this.message = error.error.error;
+      this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition: 'center',
+      panelClass: 'snack-remove-button',
+    });
+    });
+  } else if (this.cardButton === 'UNFOLLOW') {
+    /**
+     * Follow user request
+     */
+    this.http.unfollow(this.username).subscribe((data: any) => {
+      /**
+       * Changing cardButton to be UNFOLLOW
+       */
+      this.cardButton = 'FOLLOW';
+      /**
+       * For button
+       */
+      let btn = document.getElementById('card-button');
+      btn.style.backgroundColor = '#0079d3';
+// tslint:disable-next-line: deprecation
+      btn.style.webkitTextFillColor = 'white';
+      /**
+       * Printing msg in the snackbar
+       */
+      this.message = 'User has been unfollowed successfully !';
+      this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition: 'center',
+      panelClass: 'snack-remove-button',
+    });
+    /**
+     * Changing button to be unfollow style
+     */
+    } , (error: any) => {
+      this.message = error.error.error;
+      this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: 'bottom',
+      horizontalPosition: 'center',
+      panelClass: 'snack-remove-button',
+    });
+    });
+  }
+}
+}
 /**
  * When scrolling more than 20 px then the button will appear
  */

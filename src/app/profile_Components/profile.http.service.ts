@@ -5,7 +5,6 @@ import { UserCommunities } from '../profile_classes/user-communities';
 import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
 import { comments, post } from '../classes/comments';
-
 @Injectable({
     providedIn: 'root'
 })
@@ -41,7 +40,7 @@ export class ProfileHttpService {
             /**
              * Set headers
              */
-            const headers = new HttpHeaders ({
+            const headers = new HttpHeaders ({ 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
@@ -447,6 +446,62 @@ signOut() {
                 "username": username
             };
             return this.http.post(this.BackEnd + '/api/auth/unblockUser' , body, {headers});
+        }
+    }
+    /**
+     * Follow a user
+     */
+    follow(username) {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            let body = {
+                "username": username
+            };
+            return this.http.post(this.BackEnd + '/api/auth/follow' , body, {headers});
+        }
+    }
+    /**
+     * Unfollow user
+     */
+    unfollow(username) {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            let body = {
+                "username": username
+            };
+            return this.http.post(this.BackEnd + '/api/auth/unfollow' , body, {headers});
         }
     }
 }
