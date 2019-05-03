@@ -25,7 +25,7 @@ export class CommunityModeratorsComponent implements OnInit {
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute, public dialog: MatDialog) {
 
     route.params.subscribe(val => {
-      this.http.GetMyModerators().subscribe((data: communityModerators[]) => this.moderators = data as communityModerators[]);
+      this.http.GetMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data as communityModerators[]);
 
     });
   }
@@ -33,7 +33,8 @@ export class CommunityModeratorsComponent implements OnInit {
   ngOnInit() {
     this.arr=this.router.url.split('/');
     this.commId = parseInt(this.arr[this.arr.length-2]);
-    this.http.GetMyModerators().subscribe((data: communityModerators[]) => this.moderators = data);
+    this.http.GetMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
+    console.log(this.commId);
   }
   onAddingmoderator() {
     var username = (<HTMLInputElement>document.getElementById("addmodd")).value;
@@ -52,8 +53,7 @@ export class CommunityModeratorsComponent implements OnInit {
         var moderator1 :  communityModerators;
         moderator1=moderator;
         this.moderators.push(moderator1);
-        console.log(this.moderators);
-        console.log(moderator.moderator_name);
+    
       },
       err => {
         this.message = 'Added failed';

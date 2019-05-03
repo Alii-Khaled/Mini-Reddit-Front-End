@@ -72,7 +72,7 @@ export class communityHttpService {
         }
     }
 
-    GetMyModerators(): Observable<any[]> {
+    GetMyModerators(id: number): Observable<any[]> {
         /**
          * Choose from where i'll get my data
          */
