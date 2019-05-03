@@ -6,35 +6,43 @@ height: 100%;">
     </div>
     <div id="table-of-moderators" class="table-of-moderators">
       <div id="moderator" class="row moderator" *ngFor="let moderator of moderators; let i = index">
-        <a href="#" class="col-sm-9">
+        <a href="/user/{{moderator?.moderator_username}}" class="col-sm-9">
           <div id="modbtn" class="modbtn ">
             <div id="moderator-name" class="moderator-name">
-              <img id="image" class="image" src="https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png">
-              u/{{moderator?.moderator_name}}
+              <img id="image" class="image" src={{moderator?.moderator_photo}}>
+              u/{{moderator?.moderator_username}}
             </div>
           </div>
-
         </a>
-      
-          <button id="buttondeletels" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 " (click)='onDeletingModerator(i)'>Delete moderator</button>
-          <button  id="buttondeletess" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 " (click)='onDeletingModerator(i)'>Delete</button>
-          <button  id="buttondeletexs" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 " (click)='onDeletingModerator(i)'>X</button>
+        <div id="qwjnbwqijd">
+          <button *ngIf="isModerator" id="buttondeletels" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 "
+            (click)='onDeletingModerator(i)'>Delete moderator</button>
+          <button *ngIf="isModerator" id="buttondeletess" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 "
+            (click)='onDeletingModerator(i)'>Delete</button>
+          <button *ngIf="isModerator" id="buttondeletexs" type="button" class="btn btn-primary btn-lg deletMod col-sm-3 "
+            (click)='onDeletingModerator(i)'>X</button>
+        </div>
       </div>
 
     </div>
-    <div id="moderators-text" class="moderators-text">
-      Add Moderator
-    </div>
-    
-      <div id="rowadd" class="row moderator">
-        <input id="inputname" type="text" placeholder="Moderator name" maxlength="30" class="inputname col-sm-6" id='addmodd' >
-        <div class="col-sm-3"></div>
-       
-            <button id="buttonaddls" type="button" (click)="onAddingModerator()"  class="btn btn-primary btn-lg addMod col-sm-3">Add Moderator</button>
-            <button id="buttonaddss" type="button" (click)="onAddingModerator()"  class="btn btn-primary btn-lg addMod col-sm-3">Add</button>
-            <button id="buttonaddxs" type="button" (click)="onAddingModerator()"  class="btn btn-primary btn-lg addMod col-sm-3">+</button>
-       
+    <div id="addModerator" *ngIf="isModerator">
+      <div id="moderators-text" class="moderators-text">
+        Add Moderator
       </div>
-   
+
+      <div id="rowadd" class="row moderator">
+        <input id="inputname" type="text" placeholder="Moderator name" maxlength="30" class="inputname col-sm-6"
+          id='addmodd'>
+        <div class="col-sm-3"></div>
+
+        <button id="buttonaddls" type="button" (click)="onAddingModerator()"
+          class="btn btn-primary btn-lg addMod col-sm-3">Add Moderator</button>
+        <button id="buttonaddss" type="button" (click)="onAddingModerator()"
+          class="btn btn-primary btn-lg addMod col-sm-3">Add</button>
+        <button id="buttonaddxs" type="button" (click)="onAddingModerator()"
+          class="btn btn-primary btn-lg addMod col-sm-3">+</button>
+
+      </div>
+    </div>
   </div>
 </div>

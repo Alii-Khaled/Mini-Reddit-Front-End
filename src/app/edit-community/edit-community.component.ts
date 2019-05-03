@@ -46,6 +46,7 @@ export class EditCommunityComponent implements OnInit {
    */
   avatar;
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, public dialog: MatDialog) {
+    window.scroll(0,0);
     this.arr=this.router.url.split('/');
     this.commId = parseInt(this.arr[this.arr.length-2]);
     console.log(this.commId);
@@ -55,12 +56,13 @@ export class EditCommunityComponent implements OnInit {
    * ngOnInit assigns data to my variables
    */
   ngOnInit() {
+    window.scroll(0,0);
     this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
-      this.commname = data.community_name;
-      this.rules = data.community_rules;
-      this.bio = data.community_description;
-      this.banner = data.community_banner;
-      this.avatar = data.community_logo;
+      this.commname = data.name;
+      this.rules = data.rules;
+      this.bio = data.desription;
+      this.banner = data.banner;
+      this.avatar = data.logo;
 
     }
     )

@@ -1,44 +1,38 @@
 {
   "get_my_moderators": [
     {
-      "moderator_name": "mahmood",
-      "id": 5
+      "moderator_username": "ibrahim",
+      "moderator_photo": "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png",
+      "id": 1
     },
     {
-      "moderator_name": "muhanad",
-      "id": 6
-    },
-    {
-      "moderator_name": "ahmed",
-      "id": 7
-    },
-    {
-      "moderator_name": "ibrahim",
-      "id": 9
-    },
-    {
-      "moderator_name": "Ali ramzy basha",
-      "id": 11
+      "moderator_username": "ahmed",
+      "moderator_photo": "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png",
+      "id": 2
     }
   ],
   "Community": [
     {
       "id": 1,
-      "community_name": "Ali",
-      "community_subscribers": "227",
-      "community_logo": "http://i.imgur.com/sdO8tAw.png",
-      "community_description": "This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.",
-      "community_banner": "http://i.imgur.com/sdO8tAw.png",
-      "community_rules": "rules"
+      "name": "Ali",
+      "num_subscribers": "227",
+      "logo": "http://i.imgur.com/sdO8tAw.png",
+      "description": "This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.",
+      "banner": "http://i.imgur.com/sdO8tAw.png",
+      "rules": "rules",
+      "subscribed": false,
+      "moderator": false
     },
     {
       "id": 2,
-      "community_name": "Ahmed",
-      "community_subscribers": "227",
-      "community_logo": "http://i.imgur.com/sdO8tAw.png",
-      "community_description": "This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.",
-      "community_banner": "http://i.imgur.com/sdO8tAw.png",
-      "community_rules": "rulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrules"
+      "name": "Ahmed",
+      "num_subscribers": "227",
+      "logo": "http://i.imgur.com/sdO8tAw.png",
+      "description": "This is a subreddit about art. We do not support the reddit redesign. It is horrible and the admins have ignored our feedback. Please do not use it. Go to your preferences and enable old reddit as your default experience.",
+      "banner": "http://i.imgur.com/sdO8tAw.png",
+      "rules": "rulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrulesrules",
+      "subscribed": true,
+      "moderator": true
     }
   ],
   "get_my_user_name": {

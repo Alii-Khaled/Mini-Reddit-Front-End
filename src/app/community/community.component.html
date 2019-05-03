@@ -4,9 +4,9 @@
 
     <div id="All" class=" row All">
       <div id="CommLogoName" class="CommLogoName">
-        <img id="logo" class="logo" src="{{Community?.community_logo}}" alt="logo" viewBox="0 0 20 20">
+        <img id="logo" class="logo" src="{{Community?.logo}}" alt="logo" viewBox="0 0 20 20">
         <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
-        <span id="Name" class="Name">r/{{Community?.community_name}}</span>
+        <span id="Name" class="Name">r/{{Community?.name}}</span>
       </div>
 
 
@@ -29,15 +29,15 @@
         </div>
         <div id="CommInfoAll" class="CommInfoAll panel-body panel-footer">
           <div id="CommLogoNamei" class="CommLogoNamei">
-            <img class="logo" src="{{Community?.community_logo}}" alt="logo" viewBox="0 0 20 20">
+            <img class="logo" src="{{Community?.logo}}" alt="logo" viewBox="0 0 20 20">
             <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
-            <span id="Namei" class="Namei">r/ {{Community?.community_name }} </span>
+            <span id="Namei" class="Namei">r/ {{Community?.name }} </span>
             <div id="SubOnline" class="SubOnline">
               <div style="flex: 1 1 0%;">
                 <div style="    font-size: 16px;
                       font-weight: 500;
                       line-height: 20px;" class="subscribersCnt">
-                  {{Community?.community_subscribers}}k
+                  {{Community?.num_subscribers}}k
                 </div>
                 <div
                   style=" font-size: 12px;font-weight: 500;line-height: 16px;display: inline-block;word-break: break-word; ">
@@ -59,7 +59,7 @@
 
             </div>
             <div id="Bio" class="Bio">
-              {{Community?.community_description}}
+              {{Community?.description}}
             </div>
             <!-- <button type="button" class="btn btn-primary btn-lg Subscribe">SUBSCRIBE</button> -->
             <mat-button-toggle
@@ -69,7 +69,7 @@
             </mat-button-toggle>
 
             <button id="CreatePost" type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
-            <button  routerLink="/community/{{Community?.id}}/Edit_community" type="button"
+            <button *ngIf="isModerator" id="editCommunityBtn"  routerLink="/community/{{Community?.id}}/Edit_community" type="button"
               class="btn btn-primary btn-lg CreatePost">EDIT COMMUNITY</button>
           </div>
 
@@ -84,7 +84,7 @@
           Rules
         </div>
         <div class="CommInfoAll panel-body panel-footer" >
-          {{Community?.community_rules }}
+          {{Community?.rules }}
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@
         </div>
         <div class="CommInfoAll panel-body panel-footer" >
 
-          <a class="text-of-moderator" *ngFor="let moderator of moderators" href="#">u/{{moderator?.moderator_name}}</a>
+          <a class="text-of-moderator" *ngFor="let moderator of moderators" href="#">u/{{moderator?.moderator_username}}</a>
           
           <a class="viewMod" routerLink="/community/{{Community?.id}}/Moderators">View all moderators</a>
         </div>

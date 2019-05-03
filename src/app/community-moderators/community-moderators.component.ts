@@ -5,6 +5,9 @@ import { MatSnackBar, MatSnackBarModule, MatDialogModule, MatDialogRef, MatDialo
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ConfirmationDialogComponent } from '../components/shared/confirmation-dialog/confirmation-dialog.component';
+import { UserPublicInfo } from 'src/app/profile_classes/user-public-info';
+import { Communities } from 'src/app/classes/community-info';
+  import { from } from 'rxjs';
 @Component({
   selector: 'app-community-moderators',
   templateUrl: './community-moderators.component.html',
@@ -12,6 +15,7 @@ import { ConfirmationDialogComponent } from '../components/shared/confirmation-d
 })
 export class CommunityModeratorsComponent implements OnInit {
   moderators: any[];
+  isModerator:boolean;
   message;
   /**
 * To get the url
@@ -20,25 +24,51 @@ export class CommunityModeratorsComponent implements OnInit {
   /**
  * Variable to put in it buttonname of subscribtion
  */
+  /**
+   * Current user public info
+   */
+  PublicInfo: UserPublicInfo;
   commId;
 
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute, public dialog: MatDialog) {
-
+    window.scroll(0,0);
     route.params.subscribe(val => {
+      window.scroll(0,0);
       this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data as communityModerators[]);
 
     });
   }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.arr = this.router.url.split('/');
     this.commId = parseInt(this.arr[this.arr.length - 2]);
     this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
     console.log(this.commId);
+    this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
+      this.isModerator = data.moderator;
+    },response=>{},
+    ()=>
+    {
+     /*  if (this.isModerator) {
+
+        document.getElementById('qwjnbwqijd').style.display = 'block';
+        document.getElementById('addModerator').style.display = 'block';
+      } else {
+        document.getElementById('qwjnbwqijd').style.display = 'none';
+        document.getElementById('addModerator').style.display = 'none';
+      } 
+ */
+    }
+    );
   }
   onAddingModerator() {
     var username = (<HTMLInputElement>document.getElementById("addmodd")).value;
-    this.http.addModerator(1, username).subscribe(
+   /*  this.http.getUserPublicInfo(username).subscribe((data: UserPublicInfo) => {
+      this.PublicInfo = data;
+    });
+ */
+    this.http.addModerator(1, username, "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png").subscribe(
       response => {
         this.message = 'Added Successfully';
         this.snackBar.open(this.message, undefined, {
@@ -49,7 +79,7 @@ export class CommunityModeratorsComponent implements OnInit {
 
         });
         console.log(username);
-        let moderator = new communityModerators(username);
+        let moderator = new communityModerators(username, "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png");
         var moderator1: communityModerators;
         moderator1 = moderator;
         this.moderators.push(moderator1);

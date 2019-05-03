@@ -6,7 +6,7 @@ import { communityHttpService } from '../community/community.http.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import {communityModerators} from 'src/app/classes/community-moderators';
+import { communityModerators } from 'src/app/classes/community-moderators';
 import { PostsObjects } from 'src/app/classes/posts-objects';
 
 @Component({
@@ -15,22 +15,22 @@ import { PostsObjects } from 'src/app/classes/posts-objects';
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
-     /**
-   * To get the url
-   */
+  /**
+* To get the url
+*/
   arr: string[];
-    /**
-   * To get the posts
-   */
+  /**
+ * To get the posts
+ */
   posts: PostsObjects[];
-      /**
-   * To get the moderators
-   */
+  /**
+* To get the moderators
+*/
   moderators: communityModerators[];
-   /**
-   * Variable to put in it value of button
-   */
-  myFlagForButtonToggle;
+  /**
+  * Variable to put in it value of button
+  */
+  myFlagForButtonToggle:boolean;
   /**
    * Variable to put in it which message to show
    */
@@ -50,6 +50,7 @@ export class CommunityComponent implements OnInit {
   /**
    * Variable to put in it buttonname of subscribtion
    */
+  isModerator;
   buttonName = 'SUBSCRIBE';
 
   /**
@@ -68,11 +69,35 @@ export class CommunityComponent implements OnInit {
    */
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute) {
     route.params.subscribe(val => {
-      this.arr=this.router.url.split('/');
-      this.commId = parseInt(this.arr[this.arr.length-1]);
-      this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
-      this.myFlagForButtonToggle = false;
+      this.arr = [];
+      this.arr = this.router.url.split('/');
+      this.commId = parseInt(this.arr[this.arr.length - 1]);
+      /*  this.commId=parseInt(this.router.url.substr(11)); */
+      console.log(this.commId);
+      this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
+        this.Community = data;
+        this.myFlagForButtonToggle = data.subscribed;
+        this.isModerator = data.moderator;
+       
+       
+      },response=>{},
+     
+      ()=>
+      {
+        if (this.myFlagForButtonToggle) {
+          this.buttonName = 'SUBSCRIBED';
+        }
+        else {
+          this.buttonName = 'SUBSCRIBE';
+        }
+       
 
+
+      }
+      );
+
+
+      
     });
   }
   /**
@@ -161,7 +186,7 @@ export class CommunityComponent implements OnInit {
    */
   ngOnInit() {
     this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
-    this.http.getMyModerators(this.commId).subscribe((data: communityModerators[] ) => this.moderators = data);
+    this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
     this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
   }
 

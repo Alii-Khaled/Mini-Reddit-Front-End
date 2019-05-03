@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Communities } from '../classes/community-info';
 import { communityModerators } from 'src/app/classes/community-moderators';
+import { UserPublicInfo } from '../profile_classes/user-public-info';
+
 
 @Injectable({
     providedIn: 'root'
@@ -43,7 +45,7 @@ export class communityHttpService {
 
 
 
-    addModerator(id: number, user: string): Observable<any[]> {
+    addModerator(id: number, user: string, pic:string): Observable<any[]> {
         var token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             "Accept": "application/json",
@@ -51,9 +53,15 @@ export class communityHttpService {
             "Content-Type": "application/json",
         });
 
+        const bodyy = {
+
+            "moderator_username": user,
+            "moderator_photo": pic
+        };
         const body = {
 
-            "moderator_name": user
+            "moderator_username": user,
+           
         };
         /**
          * Choose from where i'll get my data
@@ -64,10 +72,10 @@ export class communityHttpService {
              * And from Api if it is true
              */
 
-            return this.http.post<communityModerators[]>('http://localhost:3000/get_my_moderators/', body);
+            return this.http.post<communityModerators[]>('http://localhost:3000/get_my_moderators/', bodyy);
         }
         else {
-            return this.http.post<communityModerators[]>('http://localhost:3000/get_my_moderators/', body);
+            return this.http.post<communityModerators[]>('http://localhost:3000/get_my_moderators/', bodyy);
 
         }
     }
@@ -271,6 +279,34 @@ export class communityHttpService {
         }
         else {
           //  return this.http.get<any>("http://35.204.169.121/api/unauth/ViewPosts", body, { headers })
+        }
+    }
+
+    getUserPublicInfo(id): Observable<UserPublicInfo> {
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + 1);
+        } else {
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            });
+
+            /**
+             * Here id represent username of the profile owner user
+             */
+            // return this.http.get<UserPublicInfo>('https://930d0c7c.ngrok.io/api/unauth/viewPublicUserInfo?username=' + id , {headers});
+            //return this.http.get<UserPublicInfo>('http://35.204.169.121/api/unauth/viewPublicUserInfo?username=' + id , {headers});
+            return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + 1);
         }
     }
 
