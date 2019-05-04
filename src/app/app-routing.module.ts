@@ -18,6 +18,8 @@ import { CommunityModeratorsComponent } from './community-moderators/community-m
 import { HomepageComponent } from './homepage/homepage.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ErrorComponent } from './error/error.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
 
 const routes: Routes = [
 
@@ -46,7 +48,9 @@ const routes: Routes = [
   { path: 'community/:CommunityName/Edit_community', component: EditCommunityComponent },
   { path: 'community/:CommunityName/Moderators', component: CommunityModeratorsComponent },
   { path: 'settings', component: UserSettingsComponent },
-  { path: '**', redirectTo: 'error', pathMatch: 'full' },
+  { path: 'submit', component: CreatePostComponent },
+  { path: 'viewPost/:title', component: ViewSinglePostComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 
