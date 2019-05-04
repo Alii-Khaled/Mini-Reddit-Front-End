@@ -26,7 +26,7 @@ export class PostLayoutComponent implements OnInit {
   public id = '';
   ngOnInit() {
     if (window.innerWidth > 960) {
-      this.innerWidth2 = window.innerWidth - 700;
+      this.innerWidth2 = window.innerWidth - 350;
     } else {
       this.innerWidth2 = window.innerWidth;
     }
@@ -88,7 +88,7 @@ unhide() {
 @HostListener('window:resize', ['$event'])
 onResize(event) {
   if (window.innerWidth > 960) {
-    this.innerWidth2 = window.innerWidth - 700;
+    this.innerWidth2 = window.innerWidth - 350;
   } else {
     this.innerWidth2 = window.innerWidth;
   }
