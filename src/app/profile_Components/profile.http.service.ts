@@ -232,13 +232,13 @@ export class ProfileHttpService {
     /**
      * Getting user's hidden posts
      */
-    getHidden(): Observable<PostsObjects[]> {
+    getHidden(): Observable<any> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<PostsObjects[]>('http://localhost:3000/hidden');
+        return this.http.get<any>('http://localhost:3000/hidden');
         } else {
             /**
              * Getting token from cookies
@@ -252,7 +252,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<PostsObjects[]>(this.BackEnd + '/api/auth/viewHiddenPosts' ,  {headers} );
+            return this.http.get<any>(this.BackEnd + '/api/auth/viewHiddenPosts' ,  {headers} );
         }
     }
     /**
