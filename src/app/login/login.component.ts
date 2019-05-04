@@ -38,8 +38,13 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.OneSignal = window['OneSignal'] || [];
-
+   /*  this.OneSignal = window['OneSignal'] || [];
+    this.OneSignal.push(function () {
+      this.OneSignal.init({
+        appId: "52bcd1f1-af26-4d91-966d-a7a05ae69f8b",
+      });
+    });
+ */
 
   }
   /**
@@ -51,9 +56,21 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data.token);
       localStorage.setItem('navbar', 'true');
       this.router.navigateByUrl('');
-      window.location.reload();
+        window.location.reload();
 
-      this.OneSignal.push(function () {
+    
+
+    },
+      err => {
+        if (err.status === 422) {
+          this.router.navigateByUrl('#');
+          console.log('error');
+        }
+
+      }, 
+      ()=>{
+        
+    /*   this.OneSignal.push(function () {
 
         var isPushSupported = this.OneSignal.isPushNotificationsSupported();
         if (isPushSupported) {
@@ -86,15 +103,13 @@ export class LoginComponent implements OnInit {
           // Push notifications are not supported
           console.log(' Push notifications are not supported');
         }
-      });
+     
+      }); */
+      }
+      
+      );
 
-    },
-      err => {
-        if (err.status === 422) {
-          this.router.navigateByUrl('#');
-          console.log('error');
-        }
-      });
+
   }
   /**
    * supposed to open sign up page as pop up
