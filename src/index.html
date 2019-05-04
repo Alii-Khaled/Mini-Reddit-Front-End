@@ -10,6 +10,9 @@
     OneSignal.push(function () {
       OneSignal.init({
         appId: "a66a1189-5829-4f7a-abae-858f260a15bb",
+        notifyButton: {
+        enable: false
+      }
       });
     });
   </script>
@@ -73,6 +76,12 @@
       // Push notifications are not supported
       console.log(' Push notifications are not supported');
     }
+  
   });
+}
+else
+{
+  OneSignal.push(["setSubscription", false]);
+
 }
 </script>
