@@ -43,6 +43,7 @@ export class CommunityModeratorsComponent implements OnInit {
     window.scroll(0, 0);
     this.arr = this.router.url.split('/');
     this.commId = parseInt(this.arr[this.arr.length - 2]);
+    console.log(this.commId);
     this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
     console.log(this.commId);
     this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {

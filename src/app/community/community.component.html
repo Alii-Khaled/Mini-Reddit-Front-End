@@ -69,7 +69,7 @@
             </mat-button-toggle>
 
             <button id="CreatePost" type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
-            <button *ngIf="isModerator" id="editCommunityBtn"  routerLink="/community/{{Community?.id}}/Edit_community" type="button"
+            <button *ngIf="isModerator" id="editCommunityBtn"  routerLink="/community/{{commId}}/Edit_community" type="button"
               class="btn btn-primary btn-lg CreatePost">EDIT COMMUNITY</button>
           </div>
 
@@ -98,7 +98,7 @@
 
           <a class="text-of-moderator" *ngFor="let moderator of moderators" href="/user/{{moderator?.moderator_username}}">u/{{moderator?.moderator_username}}</a>
           
-          <a class="viewMod" routerLink="/community/{{Community?.id}}/Moderators">View all moderators</a>
+          <a class="viewMod" routerLink="/community/{{commId}}/Moderators">View all moderators</a>
         </div>
       </div>
     </div>

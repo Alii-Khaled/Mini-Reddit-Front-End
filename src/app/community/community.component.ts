@@ -72,6 +72,7 @@ export class CommunityComponent implements OnInit {
       this.arr = [];
       this.arr = this.router.url.split('/');
       this.commId = parseInt(this.arr[this.arr.length - 1]);
+      
       /*  this.commId=parseInt(this.router.url.substr(11)); */
       console.log(this.commId);
       this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
