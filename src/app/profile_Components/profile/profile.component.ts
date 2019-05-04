@@ -110,11 +110,19 @@ export class ProfileComponent implements OnInit {
              * To split cake day from day and hour to day only
              */
             this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
+            if (!this.PublicInfo.photo_path) {
+// tslint:disable-next-line: max-line-length
+              this.PublicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
+            }
+            if (!this.PublicInfo.cover_path) {
+              // tslint:disable-next-line: max-line-length
+              this.PublicInfo.cover_path = 'https://www.beautycolorcode.com/2c96da.png';
+            }
         }, err => {
           /**
-           * Retry request 3 times if error is occured
+           * Navigate to error page
            */
-          retry(3);
+          this.router.navigateByUrl('/error');
         }, () => {
         /**
          * Changing the dropdown logo and title

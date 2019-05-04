@@ -24,8 +24,8 @@
 </nav>
 <body>
 <form id="user-card">
-  <img id="banner" width="100%" height="94px" src="PublicInfo?.cover_path">
-  <img id="pp" width="80px" height="80px" src="PublicInfo?.photo_path">
+  <img id="banner" width="100%" height="94px" src="{{PublicInfo?.cover_path}}" (error)="banner.src = 'https://www.beautycolorcode.com/2c96da.png'" #banner>
+  <img id="pp" width="80px" height="80px" src="{{PublicInfo?.photo_path}}" (error)="pp.src = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png'" #pp>
   <p style="margin-left:10px;" id="name">u/{{PublicInfo?.name}}</p>
   <h5 style="margin-left:10px;float: left;">Karma</h5>
   <h5 style="margin-left:100px;float: right;margin-right: 90px;">Cake day</h5>

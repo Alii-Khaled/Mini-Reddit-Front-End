@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'community/:CommunityName/Edit_community', component: EditCommunityComponent },
   { path: 'community/:CommunityName/Moderators', component: CommunityModeratorsComponent },
   { path: 'settings', component: UserSettingsComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'error', pathMatch: 'full' },
 ];
 
 
