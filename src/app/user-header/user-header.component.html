@@ -27,8 +27,8 @@
           <li *ngFor="let following of myFollowing"><a routerLink="/user/{{following?.username}}" role="button"><img src="{{following?.photo_path}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
             u/{{following?.name}}</a></li>
           <li class="dropdown-header">Subscriptions</li>
-          <li *ngFor="let com of myCommunities"><a routerLink="/community/{{com?.id}}" role="button"><img src="{{com?.logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
-            r/{{com?.name}}</a></li>
+          <li *ngFor="let com of myCommunities"><a routerLink="/community/{{com?.community_id}}" role="button"><img src="{{com?.community_logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+            r/{{com?.community_name}}</a></li>
           <li class="dropdown-header">Other</li>
           <li><a role="button" routerLink="settings"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
           User Settings</a></li>

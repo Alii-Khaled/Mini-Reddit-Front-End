@@ -17,10 +17,12 @@ import { EditCommunityComponent } from './edit-community/edit-community.componen
 import { CommunityModeratorsComponent } from './community-moderators/community-moderators.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
 
   { path: '', component: HomepageComponent},
+  { path: 'error', component: ErrorComponent},
   { path: 'settings', component: UserSettingsComponent,
     children: [
       { path: 'profile', component: ProfileSettingComponent },

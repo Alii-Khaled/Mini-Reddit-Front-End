@@ -1,0 +1,18 @@
+#img {
+    padding-top: 80px;
+    display:block;
+    margin:auto;
+}
+h1 {
+    text-align: center;
+}
+#go-home {
+    display:block;
+    margin:auto;
+    background-color: #0079d3;
+    -webkit-text-fill-color: white;
+    width: 120px;
+}
+#go-home:hover {
+    background-color: #0889ec;
+}

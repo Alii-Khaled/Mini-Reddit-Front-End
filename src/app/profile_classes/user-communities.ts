@@ -5,21 +5,21 @@ export class UserCommunities {
         /**
          * Id for community
          */
-        public id;
+        public community_id;
         /**
          * To display community name
          */
-    public name: string;
+        public community_name: string;
         /**
          * To display community logo
          */
-    public logo: string;
+        public community_logo: string;
     /**
      * Constructor takes every value of the class and assign it to this community
      */
     constructor(id: number, name: string, logo: string) {
-        this.logo = logo;
-        this.name = name;
-        this.id = id;
+        this.community_logo = logo;
+        this.community_name = name;
+        this.community_id = id;
     }
 }
