@@ -11,10 +11,14 @@ import { UserPublicInfo } from '../profile_classes/user-public-info';
     providedIn: 'root'
 })
 export class communityHttpService {
-    constructor(private http: HttpClient) { }
+    /**
+ * Variable to know from which server we get data (mock or API)
+ */
+    IsApi = true;
+    constructor(private http: HttpClient) {
+    }
 
-
-    removeModerator(id: number, user: string): Observable<any> {
+    removeModerator(commid: number, user: string, mockid: number): Observable<any> {
         var token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             "Accept": "application/json",
@@ -23,8 +27,8 @@ export class communityHttpService {
         });
 
         const body = {
-
-            "moderator_name": user
+            "community_id": commid,
+            "moderator_username": user
         };
         /**
          * Choose from where i'll get my data
@@ -34,18 +38,18 @@ export class communityHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + id);
+            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + mockid);
 
         }
         else {
-            return this.http.delete<communityModerators[]>('http://localhost:3000/get_my_moderators/' + id);
+            return this.http.post<communityModerators[]>('http://35.204.169.121//api/auth/removeModerator', body, { headers });
 
         }
     }
 
 
 
-    addModerator(id: number, user: string, pic:string): Observable<any[]> {
+    addModerator(id: number, user: string, pic: string): Observable<any[]> {
         var token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             "Accept": "application/json",
@@ -61,7 +65,7 @@ export class communityHttpService {
         const body = {
 
             "moderator_username": user,
-           
+            "community_id": id
         };
         /**
          * Choose from where i'll get my data
@@ -75,12 +79,16 @@ export class communityHttpService {
             return this.http.post<communityModerators[]>('http://localhost:3000/get_my_moderators/', bodyy);
         }
         else {
-            return this.http.post<communityModerators[]>('http://localhost:3000/get_my_moderators/', bodyy);
+            return this.http.post<communityModerators[]>('http://35.204.169.121//api/auth/addModerator', body, { headers });
 
         }
     }
 
     getMyModerators(id: number): Observable<any[]> {
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        });
         /**
          * Choose from where i'll get my data
          */
@@ -92,20 +100,21 @@ export class communityHttpService {
             return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
         }
         else {
-            return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
+            return this.http.get<communityModerators[]>('http://35.204.169.121/api/auth/viewModerators?community_id='+id,{headers});
 
         }
     }
-    /**
-     * Variable to know from which server we get data (mock or API)
-     */
-    IsApi = true;
+
     /**
      * To get all communities info
      *   @param id now we use id to get Specific Community 
      */
     getCommunityInfo(id: number): Observable<Communities> {
 
+        let headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }
         /**
          * Choose from where i'll get my data
          */
@@ -119,7 +128,7 @@ export class communityHttpService {
         }
         else {
             /*get community info not now in backend*/
-            return this.http.get<Communities>('http://localhost:3000/Community/' + id);
+            return this.http.get<Communities>('http://35.204.169.121/api/unauth/communityInformation?community_id=' + id,{headers});
         }
     }
 
@@ -257,7 +266,6 @@ export class communityHttpService {
     /**
      *get Community posts 
      *@param community_id now we use id to edit to Specific Community
-  
      */
     getCommunityPosts(community_id: number) {
         var token = localStorage.getItem('token');
@@ -278,7 +286,7 @@ export class communityHttpService {
             return this.http.get<any>("http://localhost:3000/posts")
         }
         else {
-          //  return this.http.get<any>("http://35.204.169.121/api/unauth/ViewPosts", body, { headers })
+              return this.http.get<any>("http://35.204.169.121/api/unauth/ViewPosts?community_id="+community_id, { headers })
         }
     }
 
@@ -291,12 +299,12 @@ export class communityHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + 1);
+            return this.http.get<UserPublicInfo>('http://localhost:3000/user_public_info/' + 1);
         } else {
             /**
              * Setting headers
              */
-            const headers = new HttpHeaders ({
+            const headers = new HttpHeaders({
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             });

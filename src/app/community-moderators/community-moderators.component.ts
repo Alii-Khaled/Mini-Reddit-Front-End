@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ConfirmationDialogComponent } from '../components/shared/confirmation-dialog/confirmation-dialog.component';
 import { UserPublicInfo } from 'src/app/profile_classes/user-public-info';
 import { Communities } from 'src/app/classes/community-info';
-  import { from } from 'rxjs';
+import { from } from 'rxjs';
 @Component({
   selector: 'app-community-moderators',
   templateUrl: './community-moderators.component.html',
@@ -15,7 +15,7 @@ import { Communities } from 'src/app/classes/community-info';
 })
 export class CommunityModeratorsComponent implements OnInit {
   moderators: any[];
-  isModerator:boolean;
+  isModerator: boolean;
   message;
   /**
 * To get the url
@@ -31,44 +31,43 @@ export class CommunityModeratorsComponent implements OnInit {
   commId;
 
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute, public dialog: MatDialog) {
-    window.scroll(0,0);
+    window.scroll(0, 0);
     route.params.subscribe(val => {
-      window.scroll(0,0);
+      window.scroll(0, 0);
       this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data as communityModerators[]);
 
     });
   }
 
   ngOnInit() {
-    window.scroll(0,0);
+    window.scroll(0, 0);
     this.arr = this.router.url.split('/');
     this.commId = parseInt(this.arr[this.arr.length - 2]);
     this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
     console.log(this.commId);
     this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
       this.isModerator = data.moderator;
-    },response=>{},
-    ()=>
-    {
-     /*  if (this.isModerator) {
-
-        document.getElementById('qwjnbwqijd').style.display = 'block';
-        document.getElementById('addModerator').style.display = 'block';
-      } else {
-        document.getElementById('qwjnbwqijd').style.display = 'none';
-        document.getElementById('addModerator').style.display = 'none';
-      } 
- */
-    }
+    }, response => { },
+      () => {
+        /*  if (this.isModerator) {
+   
+           document.getElementById('qwjnbwqijd').style.display = 'block';
+           document.getElementById('addModerator').style.display = 'block';
+         } else {
+           document.getElementById('qwjnbwqijd').style.display = 'none';
+           document.getElementById('addModerator').style.display = 'none';
+         } 
+    */
+      }
     );
   }
   onAddingModerator() {
     var username = (<HTMLInputElement>document.getElementById("addmodd")).value;
-   /*  this.http.getUserPublicInfo(username).subscribe((data: UserPublicInfo) => {
-      this.PublicInfo = data;
-    });
- */
-    this.http.addModerator(1, username, "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png").subscribe(
+    /*  this.http.getUserPublicInfo(username).subscribe((data: UserPublicInfo) => {
+       this.PublicInfo = data;
+     });
+  */
+    this.http.addModerator(this.commId, username, "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png").subscribe(
       response => {
         this.message = 'Added Successfully';
         this.snackBar.open(this.message, undefined, {
@@ -109,7 +108,8 @@ export class CommunityModeratorsComponent implements OnInit {
       if (result) {
         var username = this.moderators[i].moderators_name;
         var id = this.moderators[i].id;
-        this.http.removeModerator(id, username).subscribe(
+        /* w bab3at id dah parameter awlany 3ashan al8y mn mock */
+        this.http.removeModerator(this.commId, username, id).subscribe(
           response => {
             this.message = 'removed Successfully';
             this.snackBar.open(this.message, undefined, {

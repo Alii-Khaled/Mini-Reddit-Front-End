@@ -96,7 +96,7 @@
         </div>
         <div class="CommInfoAll panel-body panel-footer" >
 
-          <a class="text-of-moderator" *ngFor="let moderator of moderators" href="#">u/{{moderator?.moderator_username}}</a>
+          <a class="text-of-moderator" *ngFor="let moderator of moderators" href="/user/{{moderator?.moderator_username}}">u/{{moderator?.moderator_username}}</a>
           
           <a class="viewMod" routerLink="/community/{{Community?.id}}/Moderators">View all moderators</a>
         </div>
