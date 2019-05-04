@@ -237,7 +237,7 @@ export class communityHttpService {
      *@param banner now we use id to edit to Specific Community's banner
      *@param logo now we use id to edit to Specific Community's avatar
      */
-    editCommunity(id: number, rules: string, bio: string, banner: string, logo: string) {
+    editCommunity(id: number, rules: string, bio: string, banner: File, logo: File) {
         var token = localStorage.getItem('token');
         let headers = {
             "Accept": "application/json",

@@ -173,7 +173,7 @@ export class EditCommunityComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Yes clicked');
-        this.http.editCommunity(this.commId, this.rules, this.bio, this.banner, this.avatar).subscribe(response => {
+        this.http.editCommunity(this.commId, this.rules, this.bio, this.uploadedBanner, this.uploadedAvatar).subscribe(response => {
           this.message = 'Community has been edited';
           this.snackBar.open(this.message, 'dismiss', {
             duration: 4000,
