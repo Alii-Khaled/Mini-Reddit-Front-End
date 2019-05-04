@@ -52,6 +52,10 @@ export class ProfileComponent implements OnInit {
    */
   constructor(private http: ProfileHttpService, private router: Router , private route: ActivatedRoute ,
               private dropdown: DropdownService , private snackBar: MatSnackBar) {
+  /**
+   * If there is logged in user
+   */
+  if (localStorage.getItem('username')) {
     /**
      * Getting usernames of people that the user follows only for the first time
      */
@@ -110,11 +114,19 @@ export class ProfileComponent implements OnInit {
              * To split cake day from day and hour to day only
              */
             this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
+            if (!this.PublicInfo.photo_path) {
+// tslint:disable-next-line: max-line-length
+              this.PublicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
+            }
+            if (!this.PublicInfo.cover_path) {
+              // tslint:disable-next-line: max-line-length
+              this.PublicInfo.cover_path = 'https://www.beautycolorcode.com/2c96da.png';
+            }
         }, err => {
           /**
-           * Retry request 3 times if error is occured
+           * Navigate to error page
            */
-          retry(3);
+          this.router.navigateByUrl('/error');
         }, () => {
         /**
          * Changing the dropdown logo and title
@@ -124,6 +136,51 @@ export class ProfileComponent implements OnInit {
         });
     }
     );
+    } else {
+    /**
+     * Getting usernames of people that the user follows only for the first time
+     */
+      route.params.subscribe(val => {
+        this.cardButton = 'FOLLOW';
+        /**
+         * Getting profile owner username
+         */
+        this.a = this.router.url.split('/');
+        if (this.a.length === 3) {
+            this.username = this.a[this.a.length - 1];
+          } else {
+            this.username = this.a[this.a.length - 2];
+          }
+          /**
+           * Request to get user's public info
+           */
+        this.http.getUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
+            this.PublicInfo = data;
+            /**
+             * To split cake day from day and hour to day only
+             */
+            this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
+            if (!this.PublicInfo.photo_path) {
+// tslint:disable-next-line: max-line-length
+              this.PublicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
+            }
+            if (!this.PublicInfo.cover_path) {
+              // tslint:disable-next-line: max-line-length
+              this.PublicInfo.cover_path = 'https://www.beautycolorcode.com/2c96da.png';
+            }
+        }, err => {
+          /**
+           * Navigate to error page
+           */
+          this.router.navigateByUrl('/error');
+        }, () => {
+        /**
+         * Changing the dropdown logo and title
+         */
+        this.dropdown.changeData('u/' + this.PublicInfo.name, this.PublicInfo.photo_path);
+        });
+        });
+    }
   }
   ngOnInit() {
   }
@@ -230,7 +287,11 @@ cardButtonClick() {
      * Changing button to be unfollow style
      */
     } , (error: any) => {
-      this.message = error.error.error;
+      if (error.status === 401) {
+        this.message = 'You should log in first to be able to follow this user';
+      } else {
+        this.message = error.error.error;
+      }
       this.snackBar.open(this.message, undefined, {
       duration: 4000,
       verticalPosition: 'bottom',

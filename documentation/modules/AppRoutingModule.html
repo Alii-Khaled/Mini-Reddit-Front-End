@@ -70,30 +70,40 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule, Component } from &#x27;@angular/core&#x27;;
 import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
-import { ProfileComponent } from &#x27;./Profile_Components/profile/profile.component&#x27;;
+import { ProfileComponent } from &#x27;./profile_Components/profile/profile.component&#x27;;
 import { CommunityComponent } from &#x27;./community/community.component&#x27;;
 import { AccountSettingComponent } from &#x27;./account-setting/account-setting.component&#x27;;
 import { ProfileSettingComponent } from &#x27;./profile-setting/profile-setting.component&#x27;;
-import {ForgotUsernameComponent } from &#x27;./forgot-username/forgot-username.component&#x27;;
+import { ForgotUsernameComponent } from &#x27;./forgot-username/forgot-username.component&#x27;;
 import { UserSettingsComponent } from &#x27;./user-settings/user-settings.component&#x27;;
-import { OverviewComponent } from &#x27;./Profile_Components/overview/overview.component&#x27;;
-import { PostsComponent } from &#x27;./Profile_Components/posts/posts.component&#x27;;
-import { CommentsComponent } from &#x27;./Profile_Components/comments/comments.component&#x27;;
-import { SavedComponent } from &#x27;./Profile_Components/saved/saved.component&#x27;;
-import { HiddenComponent } from &#x27;./Profile_Components/hidden/hidden.component&#x27;;
-import { UpvotedComponent } from &#x27;./Profile_Components/upvoted/upvoted.component&#x27;;
-import { DownvotedComponent } from &#x27;./Profile_Components/downvoted/downvoted.component&#x27;;
+import { OverviewComponent } from &#x27;./profile_Components/overview/overview.component&#x27;;
+import { PostsComponent } from &#x27;./profile_Components/posts/posts.component&#x27;;
+import { CommentsComponent } from &#x27;./profile_Components/comments/comments.component&#x27;;
+import { SavedComponent } from &#x27;./profile_Components/saved/saved.component&#x27;;
+import { HiddenComponent } from &#x27;./profile_Components/hidden/hidden.component&#x27;;
+import { UpvotedComponent } from &#x27;./profile_Components/upvoted/upvoted.component&#x27;;
+import { DownvotedComponent } from &#x27;./profile_Components/downvoted/downvoted.component&#x27;;
 import { EditCommunityComponent } from &#x27;./edit-community/edit-community.component&#x27;;
+import { CommunityModeratorsComponent } from &#x27;./community-moderators/community-moderators.component&#x27;;
+import { HomepageComponent } from &#x27;./homepage/homepage.component&#x27;;
+import { PrivacyComponent } from &#x27;./privacy/privacy.component&#x27;;
+import { ErrorComponent } from &#x27;./error/error.component&#x27;;
 
 const routes: Routes &#x3D; [
 
-
-  { path: &#x27;account-setting&#x27;, component: AccountSettingComponent },
-  { path: &#x27;profile-setting&#x27;, component: ProfileSettingComponent },
-  { path: &#x27;forgot-username&#x27;, component: ForgotUsernameComponent},
-  { path: &#x27;user/:username&#x27;, component: ProfileComponent ,
+  { path: &#x27;&#x27;, component: HomepageComponent},
+  { path: &#x27;error&#x27;, component: ErrorComponent},
+  { path: &#x27;settings&#x27;, component: UserSettingsComponent,
+    children: [
+      { path: &#x27;profile&#x27;, component: ProfileSettingComponent },
+      { path: &#x27;account&#x27;, component: AccountSettingComponent},
+      { path: &#x27;privacy&#x27;, component: PrivacyComponent }
+    ]
+   },
+   { path: &#x27;forgot-username&#x27;, component: ForgotUsernameComponent },
+   { path: &#x27;user/:username&#x27;, component: ProfileComponent,
     children: [
       { path: &#x27;&#x27;, component: OverviewComponent },
       { path: &#x27;posts&#x27;, component: PostsComponent },
@@ -106,14 +116,15 @@ const routes: Routes &#x3D; [
   },
   { path: &#x27;community/:CommunityName&#x27;, component: CommunityComponent },
   { path: &#x27;community/:CommunityName/Edit_community&#x27;, component: EditCommunityComponent },
-
-
+  { path: &#x27;community/:CommunityName/Moderators&#x27;, component: CommunityModeratorsComponent },
   { path: &#x27;settings&#x27;, component: UserSettingsComponent },
+  { path: &#x27;**&#x27;, redirectTo: &#x27;error&#x27;, pathMatch: &#x27;full&#x27; },
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    onSameUrlNavigation: &#x27;reload&#x27;})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -151,15 +151,57 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(dropdown: <a href="../injectables/DropdownService.html">DropdownService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/user-settings/user-settings.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/user-settings/user-settings.component.ts:10</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dropdown</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DropdownService.html" target="_self" >DropdownService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -195,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/user-settings/user-settings.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/user-settings/user-settings.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -219,6 +261,8 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { DropdownService } from &#x27;../dropdown.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-user-settings&#x27;,
@@ -227,7 +271,13 @@
 })
 export class UserSettingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dropdown: DropdownService , private router: Router) {
+    if (localStorage.length &#x3D;&#x3D;&#x3D; 0) {
+      this.router.navigateByUrl(&#x27;error&#x27;);
+      return;
+    }
+    this.dropdown.changeData(&#x27;User Settings&#x27;, &#x27;https://i.redd.it/x0iiv7jthx901.png&#x27;);
+  }
 
   ngOnInit() {
   }
@@ -237,28 +287,20 @@ export class UserSettingsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE HTML&gt;
-&lt;HTML lang &#x3D;&quot;en&quot;&gt;
-  &lt;HEAD&gt;
-      
-  &lt;/HEAD&gt;
-  &lt;body &gt;
-    &lt;div&gt;
-      &lt;p id&#x3D;uset&gt;User Settings&lt;/p&gt;
-      &lt;hr&gt;
-    &lt;/div&gt;
-    
-
-    &lt;nav id&#x3D;&quot;menubar&quot;&gt;
-      &lt;ul id&#x3D;&quot;menu&quot;&gt;
-      &lt;!-- put class&#x3D;&quot;selected&quot; in the li tag for the selected page - to highlight which page you&#x27;re on --&gt;
-        &lt;li class&#x3D;&quot;selected&quot;&gt;&lt;a routerLink&#x3D;&quot;/account-setting&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Account&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/profile-setting&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Profile&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+    &lt;h4 id&#x3D;&quot;user-settings&quot;&gt;User settings&lt;/h4&gt;
+    &lt;hr&gt;
+    &lt;nav class&#x3D;&quot;navbar navbar-default&quot; id&#x3D;&quot;toolbar&quot;&gt;
+      &lt;div class&#x3D;&quot;nav nav-tabs&quot; id&#x3D;&quot;navbar&quot;&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/settings/account&quot; id&#x3D;&quot;account&quot; class&#x3D;&quot;navbar-item&quot;&gt;Account&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/settings/profile&quot; id&#x3D;&quot;profile&quot; class&#x3D;&quot;navbar-item&quot;&gt;Profile&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/settings/privacy&quot; id&#x3D;&quot;privacy&quot; class&#x3D;&quot;navbar-item&quot;&gt;Privacy &amp; Security&lt;/a&gt;&lt;/li&gt;
+      &lt;/div&gt;
     &lt;/nav&gt;
-      
-  &lt;/body&gt;
-&lt;/HTML&gt;
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -266,47 +308,50 @@ export class UserSettingsComponent implements OnInit {
                 <p class="comment">
                     <code>./user-settings.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">#uset
-{
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 22px;
-    color: rgb(28, 28, 28);
-    fill: white;
-    max-width: 1200px;
-    padding: 16px 20px 20px;
-    margin: 0px auto;
-    vertical-align: center;
+                <pre class="line-numbers"><code class="language-scss">#toolbar {
+    height:40px;
+    background-color: transparent;
+    border-width: 0px;
 }
-#menubar
-{ width: 898px;
-  height: 20px;
-  padding: 0;
-  } 
+#navbar {
+    height: 100%;
+    border-width: 0px;
+    margin-top: 4px;
+    
+}
+.navbar-item {
+    height:100%;
+    -webkit-text-fill-color: black;
+    border-width: 0px;
+    font-size: medium;
+}
+.navbar-item:hover {
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    background-color: transparent;
+}
 
-ul#menu, ul#menu li
-{ float: left;
-  margin: 0; 
-  padding: 0;}
-
-  ul#menu li
-  { list-style: none;}
-
-ul#menu li a
-{    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    color: rgb(28, 28, 28);
-    display: inline-block;
-    line-height: unset;
-    margin-right: 8px;
-  
-    padding: 15px 12px 12px;
-} 
-
-ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
-{   border-bottom: 3px solid rgb(0, 121, 211);
-    text-decoration-line: none
+.navbar-item:focus {
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-bottom-color: rgb(0, 121, 211);
+    background-color: transparent;
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    height: 42px;
+}
+.navbar-item:active {
+    border-bottom-width: 4px;
+    border-style: solid;
+    border-bottom-color: rgb(0, 121, 211);
+    background-color: transparent;
+    -webkit-text-fill-color: rgb(0, 121, 211);
+    height: 42px;
+}
+h4 {
+    margin-top: 64px;
+}
+#user-settings {
+    margin-bottom: 15px;
+    padding-left: 32px;
 }</code></pre>
     </div>
 
@@ -335,8 +380,8 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!DOCTYPE HTML><HTML lang ="en">  <HEAD>        </HEAD>  <body >    <div>      <p id=uset>User Settings</p>      <hr>    </div>        <nav id="menubar">      <ul id="menu">      <!-- put class="selected" in the li tag for the selected page - to highlight which page you\'re on -->        <li class="selected"><a routerLink="/account-setting" routerLinkActive="active">Account</a></li>        <li><a routerLink="/profile-setting" routerLinkActive="active">Profile</a></li>      </ul>    </nav>        </body></HTML></div>'
-    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="col-md-8">    <h4 id="user-settings">User settings</h4>    <hr>    <nav class="navbar navbar-default" id="toolbar">      <div class="nav nav-tabs" id="navbar">        <li><a routerLink="/settings/account" id="account" class="navbar-item">Account</a></li>        <li><a routerLink="/settings/profile" id="profile" class="navbar-item">Profile</a></li>        <li><a routerLink="/settings/privacy" id="privacy" class="navbar-item">Privacy & Security</a></li>      </div>    </nav>    <router-outlet></router-outlet>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'CommunityModeratorsComponent', 'selector': 'app-community-moderators'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CreateCommunityComponent', 'selector': 'app-create-community'},{'name': 'CreatePostComponent', 'selector': 'app-create-post'},{'name': 'DeactivateAccountComponent', 'selector': 'app-deactivate-account'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'},{'name': 'ViewSinglePostComponent', 'selector': 'app-view-single-post'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserSettingsComponent'};
 </script>
