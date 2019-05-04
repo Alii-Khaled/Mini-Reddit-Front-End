@@ -6,7 +6,8 @@ import { communityHttpService } from '../community/community.http.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import {communityModerators} from 'src/app/classes/community-moderators';
+import { communityModerators } from 'src/app/classes/community-moderators';
+import { PostsObjects } from 'src/app/classes/posts-objects';
 
 @Component({
   selector: 'app-community',
@@ -14,11 +15,22 @@ import {communityModerators} from 'src/app/classes/community-moderators';
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
+  /**
+* To get the url
+*/
+  arr: string[];
+  /**
+ * To get the posts
+ */
+  posts: PostsObjects[];
+  /**
+* To get the moderators
+*/
   moderators: communityModerators[];
-   /**
-   * Variable to put in it value of button
-   */
-  myFlagForButtonToggle;
+  /**
+  * Variable to put in it value of button
+  */
+  myFlagForButtonToggle:boolean;
   /**
    * Variable to put in it which message to show
    */
@@ -38,6 +50,7 @@ export class CommunityComponent implements OnInit {
   /**
    * Variable to put in it buttonname of subscribtion
    */
+  isModerator;
   buttonName = 'SUBSCRIBE';
 
   /**
@@ -56,10 +69,31 @@ export class CommunityComponent implements OnInit {
    */
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute) {
     route.params.subscribe(val => {
-      this.commId = parseInt(this.router.url.substr(11));
-      this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
-      this.myFlagForButtonToggle = false;
+      this.arr = [];
+      this.arr = this.router.url.split('/');
+      this.commId = parseInt(this.arr[this.arr.length - 1]);
 
+      /*  this.commId=parseInt(this.router.url.substr(11)); */
+      console.log(this.commId);
+      this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
+      this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
+        this.Community = data;
+        this.myFlagForButtonToggle = data.subscribed;
+        console.log(this.myFlagForButtonToggle);
+        console.log(data.subscribed);
+        this.isModerator = data.moderator;
+      },response=>{},
+      ()=>
+      {
+        if (this.myFlagForButtonToggle) {
+          this.buttonName = 'SUBSCRIBED';
+        }
+        else {
+          this.buttonName = 'SUBSCRIBE';
+        }
+
+      }
+      ); 
     });
   }
   /**
@@ -67,7 +101,7 @@ export class CommunityComponent implements OnInit {
    */
   toggleButton(SUBSCRIBED: boolean) {
     if (SUBSCRIBED == true) {
-      this.http.UnSubscribeCommunity(this.commId).subscribe(
+      this.http.unSubscribeCommunity(this.commId).subscribe(
         response => {
           this.myFlagForButtonToggle = false;
           this.buttonName = 'SUBSCRIBE';
@@ -107,7 +141,7 @@ export class CommunityComponent implements OnInit {
     else {
 
 
-      this.http.SubscribeCommunity(this.commId).subscribe(
+      this.http.subscribeCommunity(this.commId).subscribe(
         response => {
           this.myFlagForButtonToggle = true;
           this.buttonName = 'SUBSCRIBED';
@@ -147,9 +181,9 @@ export class CommunityComponent implements OnInit {
    * on initializing the page send a request to get current community information and display all information about it
    */
   ngOnInit() {
-    this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
-    this.http.GetMyModerators().subscribe((data: communityModerators[] ) => this.moderators = data);
-    
+    this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
+    this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
+    this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
   }
 
 }

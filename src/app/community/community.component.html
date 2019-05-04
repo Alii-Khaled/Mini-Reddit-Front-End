@@ -1,48 +1,50 @@
-<div class="container-fluid MenBar">
+<div id="containerr" class="container-fluid MenBar">
 
-  <div class=" row BannerBar" style="margin-top:48px;">
+  <div id="BannerBar" class=" row BannerBar" style="margin-top:48px;">
 
-    <div class=" row All">
-      <div class="CommLogoName">
-        <img class="logo" src="{{Community?.community_logo}}" alt="logo" viewBox="0 0 20 20">
+    <div id="All" class=" row All">
+      <div id="CommLogoName" class="CommLogoName">
+        <img id="logo" class="logo" src="{{Community?.logo}}" alt="logo" viewBox="0 0 20 20">
         <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
-        <span class="Name">r/{{Community?.community_name}}</span>
+        <span id="Name" class="Name">r/{{Community?.name}}</span>
       </div>
 
 
     </div>
 
-    <div class="container-fluid UnderBannerBar">
+    <div id="UnderBannerBar" class="container-fluid UnderBannerBar">
       <a href="#" class="SemiButton col"> Posts</a>
     </div>
-    <div class="container-fluid UnderUnderBannerBar  ">
+    <div id="UnderUnderBannerBar" class="container-fluid UnderUnderBannerBar  ">
 
     </div>
 
-    <div class="col-md-7"></div>
+    <div  class="col-md-7">
+      <app-post-layout *ngFor="let post of posts;" [posts]="post"></app-post-layout>
+    </div>
     <div class="row">
-      <div class="CommunityDetailsAll panel-default  col-md-4">
-        <div class="CommDetails panel-heading">
+      <div id="CommunityDetailsAll" class="CommunityDetailsAll panel-default  col-md-4">
+        <div id="CommDetails" class="CommDetails panel-heading">
           COMMUNITY DETAILS
         </div>
-        <div class="CommInfoAll panel-body panel-footer">
-          <div class="CommLogoNamei">
-            <img class="logo" src="{{Community?.community_logo}}" alt="logo" viewBox="0 0 20 20">
+        <div id="CommInfoAll" class="CommInfoAll panel-body panel-footer">
+          <div id="CommLogoNamei" class="CommLogoNamei">
+            <img class="logo" src="{{Community?.logo}}" alt="logo" viewBox="0 0 20 20">
             <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
-            <span class="Namei">r/ {{Community?.community_name }} </span>
-            <div class="SubOnline">
+            <span id="Namei" class="Namei">r/ {{Community?.name }} </span>
+            <div id="SubOnline" class="SubOnline">
               <div style="flex: 1 1 0%;">
                 <div style="    font-size: 16px;
                       font-weight: 500;
                       line-height: 20px;" class="subscribersCnt">
-                  {{Community?.community_subscribers}}k
+                  {{Community?.num_subscribers}}k
                 </div>
                 <div
                   style=" font-size: 12px;font-weight: 500;line-height: 16px;display: inline-block;word-break: break-word; ">
                   Subscribers</div>
               </div>
 
-              <div style="    padding-left: 12px;
+              <div id="Online" style="    padding-left: 12px;
                     border-left: 1px solid rgba(26, 26, 27, 0.07);  flex: 1 1 0%;" class="Online">
                 <div style="font-size: 16px;
                     font-weight: 500;
@@ -56,8 +58,8 @@
               </div>
 
             </div>
-            <div class="Bio">
-              {{Community?.community_description}}
+            <div id="Bio" class="Bio">
+              {{Community?.description}}
             </div>
             <!-- <button type="button" class="btn btn-primary btn-lg Subscribe">SUBSCRIBE</button> -->
             <mat-button-toggle
@@ -66,8 +68,8 @@
               {{buttonName}}
             </mat-button-toggle>
 
-            <button type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
-            <button routerLink="/community/{{Community?.id}}/Edit_community" type="button"
+            <button id="CreatePost" type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
+            <button *ngIf="isModerator" id="editCommunityBtn"  routerLink="/community/{{commId}}/Edit_community" type="button"
               class="btn btn-primary btn-lg CreatePost">EDIT COMMUNITY</button>
           </div>
 
@@ -79,13 +81,24 @@
       <div class="col-md-7"></div>
       <div class="CommunityDetailsAll panel-default  col-md-4">
         <div class="CommDetails panel-heading">
+          Rules
+        </div>
+        <div class="CommInfoAll panel-body panel-footer" >
+          {{Community?.rules }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7"></div>
+      <div class="CommunityDetailsAll panel-default  col-md-4">
+        <div class="CommDetails panel-heading">
           moderators
         </div>
         <div class="CommInfoAll panel-body panel-footer" >
 
-          <a class="text-of-moderator" *ngFor="let moderator of moderators" href="#">u/{{moderator?.moderator_name}}</a>
+          <a class="text-of-moderator" *ngFor="let moderator of moderators" href="/user/{{moderator?.moderator_username}}">u/{{moderator?.moderator_username}}</a>
           
-          <a class="viewMod" routerLink="/community/{{Community?.id}}/Moderators">View all moderators</a>
+          <a class="viewMod" routerLink="/community/{{commId}}/Moderators">View all moderators</a>
         </div>
       </div>
     </div>

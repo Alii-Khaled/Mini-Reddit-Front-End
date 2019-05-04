@@ -15,23 +15,23 @@
 
     </form>
   </body>
-  <div class="all">
-    <div class="row allcustomization">
+  <div id="all" class="all">
+    <div id="allcustomization" class="row allcustomization">
 
-      <div class=" customcomm">Customize Community</div>
+      <div id="customcomm" class=" customcomm">Customize Community</div>
 
-      <div class="comminfo">
+      <div id="comminfo" class="comminfo">
         Community Information
       </div>
-      <div class="editname">
-        <div class="displayname">
+      <div id="editname" class="editname">
+        <div id="displayname" class="displayname">
           Community name
         </div>
         <input type="text" placeholder="Community name" maxlength="30" class="inputname" [(ngModel)]="commname">
         <div class="displayname">
           About
         </div>
-        <textarea class="inputabout" type="text" maxlength="300" placeholder="About" rows="4"
+        <textarea id="inputabout" class="inputabout" type="text" maxlength="300" placeholder="About" rows="4"
           [(ngModel)]="bio"></textarea>
         <div class="displayname">
           Rules
@@ -43,7 +43,7 @@
         </div>
         <div class="displayname">Avatar and banner image</div>
 
-        <div class="images">
+        <div id="images" class="images">
           <div class="row">
             <div class="col-md-6">
               <div class="avatarbox">

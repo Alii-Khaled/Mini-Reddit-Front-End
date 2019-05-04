@@ -5,36 +5,46 @@ export class Communities {
     /**
      * name of this community
      */
-    public community_name: string;
+    public name: string;
     /**
      * logo of this community
      */
-    public community_logo: string;
+    public logo: string;
     /**
      * banner of this community
      */
-    public community_banner: string;
+    public banner: string;
     /**
      * description of this community
      */
-    public community_description: string;
+    public desription: string;
     /**
      * rules of this community
      */
-    public community_rules: string;
+    public rules: string;
     /**
      * number of subscribers of this community
      */
-    public community_subscribers: number;
+    public num_subscribes: number;
+    /**
+   * boolean to know whether this user is subscribed or not
+   */
+    public subscribed: boolean;
+    /**
+* boolean to know whether this user is moderator or not
+*/
+    public moderator: boolean;
     /**
      * constructor takes every value of the class and assign it to this community
      */
-    constructor(name: string, logo: string, banner: string, description: string, rules: string, subscribers: number) {
-        this.community_logo = logo;
-        this.community_name = name;
-        this.community_banner = banner;
-        this.community_description = description;
-        this.community_rules = rules;
-        this.community_subscribers = subscribers;
+    constructor(name: string, logo: string, banner: string, description: string, rules: string, subscribers: number, sub: boolean, mod: boolean) {
+        this.logo = logo;
+        this.name = name;
+        this.banner = banner;
+        this.desription = description;
+        this.rules = rules;
+        this.num_subscribes = subscribers;
+        this.subscribed = sub;
+        this.moderator = mod;
     }
 }
