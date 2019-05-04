@@ -31,7 +31,7 @@ const routes: Routes = [
     ]
    },
    { path: 'forgot-username', component: ForgotUsernameComponent },
-   { path: 'Reddit/user/:username', component: ProfileComponent,
+   { path: 'user/:username', component: ProfileComponent,
     children: [
       { path: '', component: OverviewComponent },
       { path: 'posts', component: PostsComponent },
