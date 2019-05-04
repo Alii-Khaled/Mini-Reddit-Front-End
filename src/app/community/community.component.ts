@@ -82,6 +82,14 @@ export class CommunityComponent implements OnInit {
         console.log(this.myFlagForButtonToggle);
         console.log(data.subscribed);
         this.isModerator = data.moderator;
+        if (data.logo===null)
+        {
+          this.Community.logo="http://i.imgur.com/sdO8tAw.png"
+        }
+        if(data.banner===null)
+        {
+          this.Community.banner= "https://styles.redditmedia.com/t5_6/styles/bannerBackgroundImage_yddlxq1m39r21.jpg?format=pjpg&s=5b0d6c78cbbf5e40d6882202257bc3f70b307549"
+        }
       },response=>{},
       ()=>
       {
