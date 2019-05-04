@@ -11,9 +11,9 @@
             <button disableRipple mat-icon-button id="downVote{{posts?.post_id}}" class="buttonDownVote" (click)="downVote()" [ngStyle]="{'color': posts?.downvoted == true? 'blue' : ''}"><mat-icon>arrow_downward</mat-icon></button>
           </div>
         </div>
-       <div class="division" id="second"><img width="80px" height="60px" src="{{posts?.image}}" id="imgPost{{posts?.post_id}}"></div>
-        <div class="division third" id="third{{posts?.post_id}}" [ngStyle]="{'width':innerWidth+'px'}">
-        <div id="title">{{posts?.title | slice : 0 : 90 }}<a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
+       <div class="division" id="second" *ngIf="posts.image !=-1"><img width="80px" height="60px" src="{{posts?.image}}" id="imgPost{{posts?.post_id}}"></div>
+        <div class="division third" id="third{{posts.post_id}}" [ngStyle]="{'width':innerWidth+'px'}">
+        <div id="title">{{posts.title | slice : 0 : 90 }}<a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
           <div id="userInfo">
             <p>
               <span class="hoving" id="postCommunity" onclick="parent.location='https:'+'//www.reddit.com/'">                        

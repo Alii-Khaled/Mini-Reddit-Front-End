@@ -55,12 +55,12 @@
           OneSignal.sendTags({username: usernamee});
           OneSignal.on('notificationDisplay', function (event) {
             console.warn('OneSignal notification displayed:', event);
-            this.snackBar.open(event.content, event.heading, {
+         /*    this.snackBar.open(event.content, event.heading, {
               duration: 4000,
               verticalPosition: 'bottom',
               horizontalPosition: 'center',
 
-            });
+            }); */
        
           });
         }

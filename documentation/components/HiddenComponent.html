@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/Profile_Components/hidden/hidden.component.ts</code>
+    <code>src/app/profile_Components/hidden/hidden.component.ts</code>
 </p>
 
 
@@ -165,12 +165,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="../injectables/ProfileHttpService.html">ProfileHttpService</a>)</code>
+<code>constructor(http: <a href="../injectables/ProfileHttpService.html">ProfileHttpService</a>, route: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/Profile_Components/hidden/hidden.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/profile_Components/hidden/hidden.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -202,6 +202,20 @@
                                                         <td>
                                                                 <code><p>For requests</p>
 </code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -244,8 +258,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/Profile_Components/hidden/hidden.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/profile_Components/hidden/hidden.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -287,7 +301,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/Profile_Components/hidden/hidden.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/profile_Components/hidden/hidden.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -303,6 +317,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { PostsObjects } from &#x27;src/app/classes/posts-objects&#x27;;
 import { ProfileHttpService } from &#x27;../profile.http.service&#x27;;
+import { retry } from &#x27;rxjs/operators&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-hidden&#x27;,
@@ -315,13 +331,27 @@ export class HiddenComponent implements OnInit {
   /**
    * @param http For requests
    */
-  constructor(private http: ProfileHttpService) { }
+  constructor(private http: ProfileHttpService , private route: Router) { }
 
   ngOnInit() {
     /**
      * Send request to get hidden psosts
      */
-    this.http.GetHidden().subscribe((data: PostsObjects[]) &#x3D;&gt; this.hidden &#x3D; data);
+    this.http.getHidden().subscribe((data: PostsObjects[]) &#x3D;&gt; {
+      this.hidden &#x3D; data;
+    }, (error: any) &#x3D;&gt; {
+      /**
+       * If something wrong retry the request
+       */
+      if (error.satus &#x3D;&#x3D;&#x3D; 401) {
+        retry(3);
+      } else {
+        /**
+         * Else then the user shouldn&#x27;t be here so navegate to the homepage
+         */
+        this.route.navigateByUrl(&#x27;&#x27;);
+      }
+    });
   }
 
 }
@@ -369,7 +399,7 @@ export class HiddenComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="cont"></div><app-post-layout *ngFor="let post of hidden;" [posts]="post"></app-post-layout></div>'
-    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'}];
+    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'CommunityModeratorsComponent', 'selector': 'app-community-moderators'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CreateCommunityComponent', 'selector': 'app-create-community'},{'name': 'CreatePostComponent', 'selector': 'app-create-post'},{'name': 'DeactivateAccountComponent', 'selector': 'app-deactivate-account'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'},{'name': 'ViewSinglePostComponent', 'selector': 'app-view-single-post'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HiddenComponent'};
 </script>

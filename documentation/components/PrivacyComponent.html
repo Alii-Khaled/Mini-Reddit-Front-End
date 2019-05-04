@@ -1,0 +1,926 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>reddit documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">reddit documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PrivacyComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/privacy/privacy.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-privacy</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./privacy.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./privacy.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#blockedPeople">blockedPeople</a>
+                            </li>
+                            <li>
+                                <a href="#message">message</a>
+                            </li>
+                            <li>
+                                <a href="#username">username</a>
+                            </li>
+                            <li>
+                                <a href="#usernames">usernames</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#add">add</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#remove">remove</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../injectables/ProfileHttpService.html">ProfileHttpService</a>, snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/privacy/privacy.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Here we initialize the page and get the blocked users list</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProfileHttpService.html" target="_self" >ProfileHttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>For requests</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="add"></a>
+                    <span class="name">
+                        <b>
+                            add
+                        </b>
+                        <a href="#add"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>add()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/privacy/privacy.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Add user to be blocked</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/privacy/privacy.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                        <b>
+                            remove
+                        </b>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>remove(name)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/privacy/privacy.component.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Unblock a user</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blockedPeople"></a>
+                        <span class="name">
+                            <b>
+                            blockedPeople</b>
+                            <a href="#blockedPeople"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/UserPublicInfo.html" target="_self" >UserPublicInfo[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/privacy/privacy.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>To hold the blocked list</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <span class="name">
+                            <b>
+                            message</b>
+                            <a href="#message"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/privacy/privacy.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Message to be printed in the snackbar</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="username"></a>
+                        <span class="name">
+                            <b>
+                            username</b>
+                            <a href="#username"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/privacy/privacy.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Hold the username to be blocked</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="usernames"></a>
+                        <span class="name">
+                            <b>
+                            usernames</b>
+                            <a href="#usernames"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/privacy/privacy.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>To hold the blocked list usernames</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { UserPublicInfo } from &#x27;../profile_classes/user-public-info&#x27;;
+import { ProfileHttpService } from &#x27;../profile_Components/profile.http.service&#x27;;
+import { retry } from &#x27;rxjs/operators&#x27;;
+import { MatSnackBar } from &#x27;@angular/material&#x27;;
+
+@Component({
+  selector: &#x27;app-privacy&#x27;,
+  templateUrl: &#x27;./privacy.component.html&#x27;,
+  styleUrls: [&#x27;./privacy.component.css&#x27;]
+})
+export class PrivacyComponent implements OnInit {
+  /**
+   * Message to be printed in the snackbar
+   */
+  message: string;
+  /**
+   * Hold the username to be blocked
+   */
+  username &#x3D; &#x27;&#x27;;
+  /**
+   * To hold the blocked list usernames
+   */
+  usernames: string[];
+  /**
+   * To hold the blocked list
+   */
+  blockedPeople: UserPublicInfo[];
+  /**
+   * Here we initialize the page and get the blocked users list
+   * @param http For requests
+   */
+  constructor(private http: ProfileHttpService , private snackBar: MatSnackBar) {
+    /**
+     * Initializing blocked list
+     */
+    this.blockedPeople &#x3D; [];
+    this.http.getBlockedUsers().subscribe((data: any) &#x3D;&gt; {
+      this.usernames &#x3D; data.blockedList;
+    },
+    (error: any) &#x3D;&gt; {
+      /**
+       * If any error then my folloing is empty
+       */
+      this.blockedPeople &#x3D; [];
+    }, () &#x3D;&gt; {
+      // tslint:disable-next-line: no-var-keyword disable-next-line: prefer-for-of
+           for (var i &#x3D; 0; i &lt; this.usernames.length; i++) {
+                this.http.getUserPublicInfo(this.usernames[i]).subscribe((data: UserPublicInfo) &#x3D;&gt; {
+                  if (!data.photo_path) {
+                    // tslint:disable-next-line: max-line-length
+                      data.photo_path &#x3D; &#x27;https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png&#x27;;
+                    }
+                  this.blockedPeople.push(data);
+          },
+          (error: any) &#x3D;&gt; {
+            /**
+             * If any error do nothing
+             */
+      });
+      }
+          }
+          );
+  }
+
+  ngOnInit() {
+  }
+  /**
+   * Add user to be blocked
+   */
+  add() {
+    /**
+     * If the input was empty
+     */
+    if (this.username &#x3D;&#x3D;&#x3D; &#x27;&#x27;) {
+        this.message &#x3D; &#x27;please enter username first to be blocked&#x27;;
+        this.snackBar.open(this.message, undefined, {
+        duration: 4000,
+        verticalPosition: &#x27;bottom&#x27;,
+        horizontalPosition: &#x27;center&#x27;,
+        panelClass: &#x27;snack-remove-button&#x27;,
+      });
+        return;
+    } else if (this.username &#x3D;&#x3D;&#x3D; localStorage.getItem(&#x27;username&#x27;)) {
+      this.message &#x3D; &#x27;you cannot block yourself :)&#x27; ;
+      this.snackBar.open(this.message, undefined, {
+      duration: 4000,
+      verticalPosition: &#x27;bottom&#x27;,
+      horizontalPosition: &#x27;center&#x27;,
+      panelClass: &#x27;snack-remove-button&#x27;,
+    });
+      return;
+    }
+    this.http.blockUser(this.username).subscribe((data: any) &#x3D;&gt; {
+      this.http.getUserPublicInfo(this.username).subscribe((data: UserPublicInfo) &#x3D;&gt; {
+        /**
+         * Adding data to array to appear as soon as the user add new blocked user
+         */
+        if (!data.photo_path) {
+// tslint:disable-next-line: max-line-length
+          data.photo_path &#x3D; &#x27;https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png&#x27;;
+        }
+        this.blockedPeople.push(data);
+        /**
+         * Showing msg in snackbar
+         */
+        this.message &#x3D; &#x27;User blocked successfully !&#x27;;
+        this.snackBar.open(this.message, undefined, {
+        duration: 4000,
+        verticalPosition: &#x27;bottom&#x27;,
+        horizontalPosition: &#x27;center&#x27;,
+        panelClass: &#x27;snack-remove-button&#x27;,
+      });
+      },
+      (error: any) &#x3D;&gt; {
+      /**
+       * If any error retry the request
+       */
+        retry(3);
+      });
+  }, (error: any) &#x3D;&gt; {
+        this.message &#x3D; error.error.error;
+        this.snackBar.open(this.message, undefined, {
+        duration: 4000,
+        verticalPosition: &#x27;bottom&#x27;,
+        horizontalPosition: &#x27;center&#x27;,
+        panelClass: &#x27;snack-remove-button&#x27;,
+      });
+  }
+  );
+  }
+  /**
+   * Unblock a user
+   */
+  remove(name) {
+    let index &#x3D; -1;
+    this.http.unblockUser(name).subscribe((data: any) &#x3D;&gt; {
+        /**
+         * Showing msg in snackbar
+         */
+        this.message &#x3D; &#x27;User Unblocked successfully !&#x27;;
+        this.snackBar.open(this.message, undefined, {
+        duration: 4000,
+        verticalPosition: &#x27;bottom&#x27;,
+        horizontalPosition: &#x27;center&#x27;,
+        panelClass: &#x27;snack-remove-button&#x27;,
+      });
+      /**
+       * Removing the user from the blocked list
+       */
+// tslint:disable-next-line: prefer-for-of
+        for (let i &#x3D; 0; i &lt; this.blockedPeople.length; i++) {
+        if (this.blockedPeople[i].username &#x3D;&#x3D;&#x3D; name) {
+          index &#x3D; i;
+        }
+      }
+        if (index &gt; - 1) {
+          // tslint:disable-next-line: prefer-for-of
+        for (let i &#x3D; index; i &lt; this.blockedPeople.length - 1; i++) {
+          this.blockedPeople[i] &#x3D; this.blockedPeople[i + 1];
+        }
+        this.blockedPeople.length--;
+      }
+      }, (error: any) &#x3D;&gt; {
+        this.message &#x3D; error.error.error;
+        this.snackBar.open(this.message, undefined, {
+        duration: 4000,
+        verticalPosition: &#x27;bottom&#x27;,
+        horizontalPosition: &#x27;center&#x27;,
+        panelClass: &#x27;snack-remove-button&#x27;,
+      });
+  }
+  );
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot; style&#x3D;&quot;width:100%&quot;&gt;
+  &lt;h3 id&#x3D;&quot;title&quot;&gt;&lt;p&gt;Privacy &amp; Security&lt;/p&gt;&lt;/h3&gt;
+&lt;div class&#x3D;&quot;blocking&quot;&gt;Block&lt;/div&gt;
+&lt;form class&#x3D;&quot;add-block&quot;&gt;
+  &lt;input type&#x3D;&quot;text&quot; maxlength&#x3D;&quot;30&quot; placeholder&#x3D;&quot;ADD USER TO BLOCKED LIST&quot; [(ngModel)]&#x3D;&quot;username&quot; name&#x3D;&quot;name&quot;&gt;
+  &lt;button type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;add()&quot;&gt;&lt;b&gt;ADD&lt;/b&gt;&lt;/button&gt;
+&lt;/form&gt;
+&lt;div class&#x3D;&quot;blocking&quot;&gt;Blocked users&lt;/div&gt;
+&lt;form *ngFor&#x3D;&quot;let block of blockedPeople&quot; id&#x3D;&quot;blocked-bar&quot;&gt;
+  &lt;button id&#x3D;&quot;blocked-button&quot; routerLink&#x3D;&quot;/error&quot; type&#x3D;&quot;button&quot;&gt;
+    &lt;img src&#x3D;&quot;{{block?.photo_path}}&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px;border-radius: 5px;&quot;&gt;
+    &lt;p style&#x3D;&quot;display: inline-block;&quot;&gt;u/{{block?.username}}&lt;/p&gt;
+  &lt;/button&gt;
+  &lt;a role&#x3D;&quot;button&quot; id&#x3D;&quot;remove&quot; (click)&#x3D;&quot;remove(block.username)&quot;&gt;REMOVE&lt;/a&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+&lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./privacy.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#title {
+    color: rgb(28, 28, 28);
+    font-size: 20px;
+    line-height: 24px;
+    padding: 40px 0px;
+    display: block;
+    font-weight: 500;
+    font-family: IBMPlexSans,sans-serif;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-left: 2mm;
+}
+.blocking{
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: rgb(124, 124, 124);
+    margin-bottom: 32px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgb(237, 239, 241);
+}
+.add-block {
+    margin-bottom: 128px;
+}
+form.add-block input[type&#x3D;text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid rgb(237, 239, 241);
+  float: left;
+  width: 80%;
+  background: transparent;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: none;
+}
+form.add-block button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #0079d3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid rgb(237, 239, 241);
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}  
+form.add-block button:hover {
+  background: #0889ec;
+}
+#blocked-button {
+  padding-top:7px;
+  float: left;
+  background-color: transparent;
+  border-width: 0;
+}
+#blocked-button:hover {
+  background-color: rgb(230, 228, 228);
+}
+#remove {
+  font-weight: bold;
+  margin-block-start: 9px;
+  float: right;
+}
+#remove:hover {
+  text-decoration: none;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container" style="width:100%">  <h3 id="title"><p>Privacy & Security</p></h3><div class="blocking">Block</div><form class="add-block">  <input type="text" maxlength="30" placeholder="ADD USER TO BLOCKED LIST" [(ngModel)]="username" name="name">  <button type="submit" (click)="add()"><b>ADD</b></button></form><div class="blocking">Blocked users</div><form *ngFor="let block of blockedPeople" id="blocked-bar">  <button id="blocked-button" routerLink="/error" type="button">    <img src="{{block?.photo_path}}" width="25" height="25" style="margin-right:15px;border-radius: 5px;">    <p style="display: inline-block;">u/{{block?.username}}</p>  </button>  <a role="button" id="remove" (click)="remove(block.username)">REMOVE</a>  <br>  <br></form></div></div>'
+    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'CommunityModeratorsComponent', 'selector': 'app-community-moderators'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CreateCommunityComponent', 'selector': 'app-create-community'},{'name': 'CreatePostComponent', 'selector': 'app-create-post'},{'name': 'DeactivateAccountComponent', 'selector': 'app-deactivate-account'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'},{'name': 'ViewSinglePostComponent', 'selector': 'app-view-single-post'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PrivacyComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PrivacyComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

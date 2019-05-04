@@ -243,16 +243,40 @@ export class ProfileSettingComponent implements OnInit {
 
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
       &lt;div id&#x3D;&quot;box&quot;&gt;
         &lt;p id &#x3D; &quot;aset&quot; &gt;Customize Profile&lt;/p&gt;
         &lt;p id &#x3D;&quot;tit&quot;&gt; PROFILE INFORMATION&lt;/p&gt;
-        &lt;p id&#x3D;&quot;hed&quot;&gt;Display name (optional)&lt;/p&gt; 
-        
+        &lt;p id&#x3D;&quot;hed&quot;&gt;Display name (optional)&lt;/p&gt;
+        &lt;p id&#x3D;&quot;tit&quot; &gt;Set a display name. This does not change your username.&lt;/p&gt; 
+        &lt;form action&#x3D;&quot;action_page.php&quot;  [formGroup]&#x3D;&quot;form&quot; &gt;
+          &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Display name (optional)&quot; formControlName&#x3D;&quot;displayname&quot;&gt;
+        &lt;/form&gt;
+        &lt;p id &#x3D;&quot;nchars&quot;&gt;30 Characters&lt;/p&gt;
       &lt;/div&gt;
       &lt;br&gt;
       &lt;p id&#x3D;&quot;hed&quot;&gt;About (optional)&lt;/p&gt; 
-      &lt;p id&#x3D;&quot;tit&quot; &gt;A brief description of yourself shown on your profile.&lt;/p&gt; 
+      &lt;p id&#x3D;&quot;tit&quot; &gt;A brief description of yourself shown on your profile.&lt;/p&gt;
+      &lt;form action&#x3D;&quot;action_page.php&quot;  [formGroup]&#x3D;&quot;form&quot; &gt;
+          &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;About (optional)&quot; formControlName&#x3D;&quot;about&quot;&gt;
+      &lt;/form&gt;
+      &lt;p id &#x3D;&quot;nchars&quot;&gt;200 Characters&lt;/p&gt;
+      &lt;br&gt;
+      &lt;p id &#x3D;&quot;tit&quot;&gt;IMAGES&lt;/p&gt;
+      &lt;p id&#x3D;&quot;hed&quot;&gt;Avatar and banner image&lt;/p&gt; 
+      &lt;p id&#x3D;&quot;tit&quot; &gt;Images must be .png or .jpg format&lt;/p&gt;
+
+      &lt;form id&#x3D;&quot;up1&quot; action&#x3D;&quot;upload.php&quot; method&#x3D;&quot;post&quot; enctype&#x3D;&quot;multipart/form-data&quot;&gt;
+        &lt;img src&#x3D;&quot;https://cdn3.iconfinder.com/data/icons/wireless/512/3-512.png&quot; style &#x3D;&quot;width:30px; height:30px&quot;&gt;
+        &lt;p id &#x3D;&quot;cap&quot;&gt;Drag and Drop or Upload Avatar Image&lt;/p&gt;
+        &lt;input type&#x3D;&quot;file&quot; name&#x3D;&quot;fileToUpload&quot; id&#x3D;&quot;fileToUpload&quot;&gt;
+    &lt;/form&gt;
+
+    &lt;form id&#x3D;&quot;up2&quot; action&#x3D;&quot;upload.php&quot; method&#x3D;&quot;post&quot; enctype&#x3D;&quot;multipart/form-data&quot;&gt;
+      &lt;img src&#x3D;&quot;https://cdn3.iconfinder.com/data/icons/wireless/512/3-512.png&quot; style &#x3D;&quot;width:30px; height:30px&quot;&gt;
+      &lt;p id &#x3D;&quot;cap&quot;&gt;Drag and Drop or Upload Banner Image&lt;/p&gt;
+      &lt;input type&#x3D;&quot;file&quot; name&#x3D;&quot;fileToUpload&quot; id&#x3D;&quot;fileToUpload&quot;&gt;
+  &lt;/form&gt;
     
     &lt;/div&gt;
   &lt;/body&gt;
@@ -279,15 +303,121 @@ export class ProfileSettingComponent implements OnInit {
 }
 #aset
 {
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 22px;
     color: rgb(28, 28, 28);
-    fill: white;
-    max-width: 1200px;
-    padding: 16px 20px 20px;
-    margin: 0px auto;
-    vertical-align: center;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 40px 0px;
+    display: block;
+    font-weight: 500;
+    font-family: IBMPlexSans,sans-serif;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-left: 2mm;
+}
+input[type&#x3D;&quot;text&quot;]
+{
+    background-color: rgb(255, 255, 255);
+    color: rgb(28, 28, 28);
+    box-sizing: border-box;
+    height: 48px;
+    margin-bottom: 8px;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(237, 239, 241);
+    border-image: initial;
+    border-radius: 4px;
+    padding: 12px 24px 4px 12px;
+}
+input[type&#x3D;&quot;file&quot;]
+{
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(246, 247, 248);
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(237, 239, 241);
+    border-image: initial;
+}
+#up1
+{
+    width:20%;
+    display: inline-block;
+}
+#up2
+{
+    width:50%;
+    margin-left: 3%;
+    display: inline-block;
+}
+#up1 #up2
+{
+    display: inline-block;
+}
+#cap
+{
+    color: rgb(164, 167, 168);
+    font-size: 11px;
+}
+#fileToUpload
+{
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(246, 247, 248);
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(237, 239, 241);
+    border-image: initial;
+}
+form[action&#x3D;&quot;upload.php&quot;]
+{
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(246, 247, 248);
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(237, 239, 241);
+    border-image: initial;
+}
+#nchars
+{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: rgb(135, 138, 140);
 }
 #hed
 {
@@ -336,8 +466,8 @@ body {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html>  <head>  </head>  <body>    <div>      <div id="box">        <p id = "aset" >Customize Profile</p>        <p id ="tit"> PROFILE INFORMATION</p>        <p id="hed">Display name (optional)</p>               </div>      <br>      <p id="hed">About (optional)</p>       <p id="tit" >A brief description of yourself shown on your profile.</p>         </div>  </body></html></div>'
-    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'}];
+        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html>  <head>  </head>  <body>    <div class="container">      <div id="box">        <p id = "aset" >Customize Profile</p>        <p id ="tit"> PROFILE INFORMATION</p>        <p id="hed">Display name (optional)</p>        <p id="tit" >Set a display name. This does not change your username.</p>         <form action="action_page.php"  [formGroup]="form" >          <input type="text" placeholder="Display name (optional)" formControlName="displayname">        </form>        <p id ="nchars">30 Characters</p>      </div>      <br>      <p id="hed">About (optional)</p>       <p id="tit" >A brief description of yourself shown on your profile.</p>      <form action="action_page.php"  [formGroup]="form" >          <input type="text" placeholder="About (optional)" formControlName="about">      </form>      <p id ="nchars">200 Characters</p>      <br>      <p id ="tit">IMAGES</p>      <p id="hed">Avatar and banner image</p>       <p id="tit" >Images must be .png or .jpg format</p>      <form id="up1" action="upload.php" method="post" enctype="multipart/form-data">        <img src="https://cdn3.iconfinder.com/data/icons/wireless/512/3-512.png" style ="width:30px; height:30px">        <p id ="cap">Drag and Drop or Upload Avatar Image</p>        <input type="file" name="fileToUpload" id="fileToUpload">    </form>    <form id="up2" action="upload.php" method="post" enctype="multipart/form-data">      <img src="https://cdn3.iconfinder.com/data/icons/wireless/512/3-512.png" style ="width:30px; height:30px">      <p id ="cap">Drag and Drop or Upload Banner Image</p>      <input type="file" name="fileToUpload" id="fileToUpload">  </form>        </div>  </body></html></div>'
+    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'CommunityModeratorsComponent', 'selector': 'app-community-moderators'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CreateCommunityComponent', 'selector': 'app-create-community'},{'name': 'CreatePostComponent', 'selector': 'app-create-post'},{'name': 'DeactivateAccountComponent', 'selector': 'app-deactivate-account'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'},{'name': 'ViewSinglePostComponent', 'selector': 'app-view-single-post'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProfileSettingComponent'};
 </script>

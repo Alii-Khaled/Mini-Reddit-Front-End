@@ -124,11 +124,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
                                 <a href="#nav">nav</a>
-                            </li>
-                            <li>
-                                <a href="#title">title</a>
                             </li>
                         </ul>
                     </td>
@@ -139,24 +135,28 @@
 
 
 
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#nav">nav</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
         </tbody>
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/app.component.ts:9</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -175,35 +175,8 @@
                         <a name="nav"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Static</span>
                             nav</b>
                             <a href="#nav"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/app.component.ts:9</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="title"></a>
-                        <span class="name">
-                            <b>
-                            title</b>
-                            <a href="#title"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -215,12 +188,12 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;Reddit&#x27;</code>
+                            <i>Default value : </i><code>&#x27;false&#x27;</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/app.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/app.component.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -229,33 +202,6 @@
         </table>
 </section>
 
-    <section>
-    <h3 id="accessors">
-        Accessors
-    </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="nav"></a>
-                        <span class="name"><b>nav</b><a href="#nav"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>nav()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/app.component.ts:11</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
-</section>
 </div>
 
 
@@ -268,10 +214,11 @@
   styleUrls: [&#x27;./app.component.css&#x27;]
 })
 export class AppComponent {
-  static nav &#x3D; false;
-  title &#x3D; &#x27;Reddit&#x27;;
-  get nav() {
-    return AppComponent.nav;
+  nav:string &#x3D; &#x27;false&#x27; ;
+  constructor() {
+    if (localStorage.getItem(&#x27;navbar&#x27;) !&#x3D; null) {
+      this.nav &#x3D; localStorage.getItem(&#x27;navbar&#x27;);
+    }
   }
 }
 </code></pre>
@@ -279,12 +226,10 @@ export class AppComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;!-- &lt;app-post-layout&gt;&lt;/app-post-layout&gt; --&gt;
-&lt;app-header *ngIf&#x3D;&quot;!nav&quot;&gt;&lt;/app-header&gt;  
-&lt;app-user-header *ngIf&#x3D;&quot;nav&quot;&gt;&lt;/app-user-header&gt;
+&lt;app-header *ngIf&#x3D;&quot;nav &#x3D;&#x3D; &#x27;false&#x27;&quot;&gt;&lt;/app-header&gt;  
+&lt;app-user-header *ngIf&#x3D;&quot;nav &#x3D;&#x3D; &#x27;true&#x27;&quot;&gt;&lt;/app-user-header&gt;
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
-
-</code></pre>
+&lt;!-- &lt;app-error&gt;&lt;/app-error&gt; --&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -319,8 +264,8 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><!-- <app-post-layout></app-post-layout> --><app-header *ngIf="!nav"></app-header>  <app-user-header *ngIf="nav"></app-user-header><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'}];
+        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><app-header *ngIf="nav == \'false\'"></app-header>  <app-user-header *ngIf="nav == \'true\'"></app-user-header><router-outlet></router-outlet><!-- <app-error></app-error> --></div>'
+    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'CommunityModeratorsComponent', 'selector': 'app-community-moderators'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CreateCommunityComponent', 'selector': 'app-create-community'},{'name': 'CreatePostComponent', 'selector': 'app-create-post'},{'name': 'DeactivateAccountComponent', 'selector': 'app-deactivate-account'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'},{'name': 'ViewSinglePostComponent', 'selector': 'app-view-single-post'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

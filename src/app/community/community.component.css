@@ -16,8 +16,9 @@ width: 100%;
 }
 
 .BannerBar {
-   
-    height: 79px;
+   min-height: 79px;
+   max-height: 250px;
+    height: auto;
 
     background: center top #33a8ff;
 
@@ -273,12 +274,12 @@ height: 40px;
   }
  
 @media screen and (max-width: 1235px) {
-    .All {
+    .CommLogoName {
         margin-left: 30px;
     }
   }
   @media screen and (min-width: 1235px) {
-    .All {
+    .CommLogoName {
         
 
        margin-left: 160px;
@@ -286,7 +287,7 @@ height: 40px;
     }
   }
 @media screen and (max-width: 635px) {
-    .All {
+    .CommLogoName {
         margin-left: 0px;
     }
   }
@@ -319,3 +320,24 @@ height: 40px;
 
 
 
+#allpage{
+    background-color: #DAE0E6;
+    height: -webkit-fill-available;
+}
+
+#banner{
+    height: min-content;
+    max-height: 250px;
+width: max-content;
+    object-fit: cover;
+
+}
+#postt{
+    margin-top: 20px;
+   
+   
+}
+#lamaNshof{
+    width: 700px;
+    margin-left: 20px;
+}

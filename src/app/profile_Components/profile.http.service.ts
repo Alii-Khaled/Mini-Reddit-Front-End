@@ -115,7 +115,7 @@ export class ProfileHttpService {
     }
 
     /**
-     * Get user's posts
+     * Get user's overview
      */
     getOverView(username: string): Observable<any[]> {
         if (this.IsApi === false) {
@@ -276,7 +276,7 @@ export class ProfileHttpService {
             const headers = new HttpHeaders ({
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + token 
             });
             return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewComments?username=' + username , {headers});
         }
@@ -479,6 +479,34 @@ export class ProfileHttpService {
             return this.http.post(this.BackEnd + '/api/auth/unfollow' , body, {headers});
         }
     }
+
+    /**
+     * Get user's saved links
+     */
+    getSaved(username: string): Observable<any[]> {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        return this.http.get<any[]>('http://localhost:3000/overview');
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewOverview?username=' + username , { headers });
+        }
+    }
+
 }
 
 

@@ -24,10 +24,10 @@
           <li><a role="button"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">
           Original content</a></li>
           <li class="dropdown-header" *ngIf="myFollowing?.length>0">Profiles</li>
-          <li *ngFor="let following of myFollowing"><a routerLink="/user/{{following?.username}}" role="button"><img src="{{following?.photo_path}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+          <li *ngFor="let following of myFollowing"><a routerLink="/user/{{following?.username}}" role="button"><img src="{{following?.photo_path}}" (error)="pp.src = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png'" #pp width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
             u/{{following?.name}}</a></li>
           <li class="dropdown-header">Subscriptions</li>
-          <li *ngFor="let com of myCommunities"><a routerLink="/community/{{com?.community_id}}" role="button"><img src="{{com?.community_logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+          <li *ngFor="let com of myCommunities"><a routerLink="/community/{{com?.community_id}}" role="button"><img src="{{com?.community_logo}}" (error)="img.src = 'http://i.imgur.com/sdO8tAw.png'" #img width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
             r/{{com?.community_name}}</a></li>
           <li class="dropdown-header">Other</li>
           <li><a role="button" routerLink="settings"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">

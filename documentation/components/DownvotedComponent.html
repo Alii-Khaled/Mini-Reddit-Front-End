@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/Profile_Components/downvoted/downvoted.component.ts</code>
+    <code>src/app/profile_Components/downvoted/downvoted.component.ts</code>
 </p>
 
 
@@ -165,12 +165,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="../injectables/ProfileHttpService.html">ProfileHttpService</a>)</code>
+<code>constructor(http: <a href="../injectables/ProfileHttpService.html">ProfileHttpService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/Profile_Components/downvoted/downvoted.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/profile_Components/downvoted/downvoted.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -202,6 +202,20 @@
                                                         <td>
                                                                 <code><p>For requests</p>
 </code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -244,8 +258,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/Profile_Components/downvoted/downvoted.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/profile_Components/downvoted/downvoted.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -287,10 +301,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/Profile_Components/downvoted/downvoted.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/profile_Components/downvoted/downvoted.component.ts:17</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>To hold posts</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -303,6 +323,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { PostsObjects } from &#x27;src/app/classes/posts-objects&#x27;;
 import { ProfileHttpService } from &#x27;../profile.http.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { retry } from &#x27;rxjs/operators&#x27;;
 
 
 @Component({
@@ -311,20 +333,33 @@ import { ProfileHttpService } from &#x27;../profile.http.service&#x27;;
   styleUrls: [&#x27;./downvoted.component.css&#x27;]
 })
 export class DownvotedComponent implements OnInit {
-
+  /**
+   * To hold posts
+   */
   downvoted: PostsObjects[];
   /**
    * @param http For requests
    */
-  constructor(private http: ProfileHttpService) { }
+  constructor(private http: ProfileHttpService, private router: Router) { }
 
   ngOnInit() {
     /**
      * Send request to get downvoted psosts
      */
-    this.http.GetDownVoted().subscribe((data: any) &#x3D;&gt; this.downvoted &#x3D; data.posts);
+    this.http.getDownVoted().subscribe((data: any) &#x3D;&gt; {
+      this.downvoted &#x3D; data.posts;
+    }, err &#x3D;&gt; {
+      /**
+       * Retry if error occured
+       */
+      retry(3);
+    }, () &#x3D;&gt; {
+// tslint:disable-next-line: prefer-for-of
+      for (let i &#x3D; 0; i &lt; this.downvoted.length; i++) {
+        this.downvoted[i].downvoted &#x3D; true;
+      }
+    });
   }
-
 }
 </code></pre>
     </div>
@@ -370,7 +405,7 @@ export class DownvotedComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="cont"></div><app-post-layout *ngFor="let post of downvoted;" [posts]="post"></app-post-layout></div>'
-    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'}];
+    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'CommunityModeratorsComponent', 'selector': 'app-community-moderators'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CreateCommunityComponent', 'selector': 'app-create-community'},{'name': 'CreatePostComponent', 'selector': 'app-create-post'},{'name': 'DeactivateAccountComponent', 'selector': 'app-deactivate-account'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'},{'name': 'ViewSinglePostComponent', 'selector': 'app-view-single-post'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DownvotedComponent'};
 </script>

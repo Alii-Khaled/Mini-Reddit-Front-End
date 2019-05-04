@@ -148,6 +148,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#filterFunction">filterFunction</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
@@ -228,6 +231,47 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFunction"></a>
+                    <span class="name">
+                        <b>
+                            filterFunction
+                        </b>
+                        <a href="#filterFunction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterFunction()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/header/header.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Filter function</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -423,7 +467,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit , TemplateRef } from &#x27;@angular/core&#x27;;
-import { BsModalService, BsModalRef, ModalOptions } from &#x27;ngx-bootstrap/modal&#x27;;
+import { BsModalService, BsModalRef } from &#x27;ngx-bootstrap/modal&#x27;;
 
 @Component({
   selector: &#x27;app-header&#x27;,
@@ -460,6 +504,39 @@ export class HeaderComponent implements OnInit {
     this.modalRef &#x3D; this.modalService.show(template, this.config);
   }
 
+  /**
+   * Filter function
+   */
+  filterFunction() {
+// tslint:disable-next-line: one-variable-per-declaration
+    let input, filter, a, i;
+    /**
+     * Getting the input area
+     */
+    input &#x3D; document.getElementById(&#x27;myInput&#x27;);
+    /**
+     * Change all input letters to uppercase
+     */
+    filter &#x3D; input.value.toUpperCase();
+// tslint:disable-next-line: prefer-const
+    let div &#x3D; document.getElementById(&#x27;dropdown-menu-left&#x27;);
+    /**
+     * Filter with a tags (names in tags)
+     */
+    a &#x3D; div.getElementsByTagName(&#x27;a&#x27;);
+    /**
+     * Searching on all items in the dropdown
+     */
+    for (i &#x3D; 0; i &lt; a.length; i++) {
+// tslint:disable-next-line: prefer-const
+      let txtValue &#x3D; a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) &gt; -1) {
+        a[i].style.display &#x3D; &#x27;&#x27;;
+      } else {
+        a[i].style.display &#x3D; &#x27;none&#x27;;
+      }
+    }
+  }
 }
 </code></pre>
     </div>
@@ -469,7 +546,7 @@ export class HeaderComponent implements OnInit {
   &lt;div class&#x3D;&quot;cont container-fluid&quot;&gt;
     &lt;div class&#x3D;&quot;navbar-header&quot; id&#x3D;&quot;logo&quot;&gt; 
       &lt;!-- to go to home when click on icon --&gt;
-      &lt;a class&#x3D;&quot;log&quot; href&#x3D;&quot;/&quot;&gt; 
+      &lt;a class&#x3D;&quot;log&quot; href&#x3D;&quot;&quot;&gt; 
         &lt;img alt&#x3D;&quot;Reddit logo&quot; src&#x3D;&quot;//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png&quot; width&#x3D;&quot;106.65px&quot; height&#x3D;&quot;40px&quot;&gt;
        &lt;/a&gt;
     &lt;/div&gt;
@@ -480,18 +557,18 @@ export class HeaderComponent implements OnInit {
       &lt;span style&#x3D;&quot;float: right;margin-top: 10px&quot; class&#x3D;&quot;caret&quot; &gt;&lt;/span&gt;
       &lt;/button&gt;
         &lt;ul class&#x3D;&quot;dropdown-menu&quot; id&#x3D;&quot;dropdown-menu-left&quot;&gt;
-          &lt;li&gt;&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;searchTerm&quot; placeholder&#x3D;&quot;Filter&quot;&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;searchTerm&quot; placeholder&#x3D;&quot;Filter&quot; id&#x3D;&quot;myInput&quot; (keyup)&#x3D;&quot;filterFunction()&quot;&gt;&lt;/li&gt;
           &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;Reddit Feeds&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Popular&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://image.flaticon.com/icons/png/512/39/39915.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://image.flaticon.com/icons/png/512/39/39915.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           All&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Original content&lt;/a&gt;&lt;/li&gt;
           &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;Other&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://png.pngtree.com/svg/20170911/d76a0fe79e.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://png.pngtree.com/svg/20170911/d76a0fe79e.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Coins&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Premium&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
@@ -530,7 +607,7 @@ export class HeaderComponent implements OnInit {
           &lt;/button&gt;      
         &lt;ul class&#x3D;&quot;dropdown-menu dropdown-menu-right&quot; id&#x3D;&quot;dropdown-menu-right&quot;&gt;
           &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;View opition&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Night mode
           &lt;label class&#x3D;&quot;switch&quot;&gt;
               &lt;input type&#x3D;&quot;checkbox&quot;&gt;
@@ -538,13 +615,13 @@ export class HeaderComponent implements OnInit {
           &lt;/label&gt;
           &lt;/a&gt;&lt;/li&gt;
           &lt;li class&#x3D;&quot;dropdown-header&quot;&gt;More Stuff&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://png.pngtree.com/svg/20170911/d76a0fe79e.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://png.pngtree.com/svg/20170911/d76a0fe79e.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Reddit Coins&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Reddit Premium&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Help center&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;https://cdn4.iconfinder.com/data/icons/navigation-20/32/447-01-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
+          &lt;li&gt;&lt;a role&#x3D;&quot;button&quot;&gt;&lt;img src&#x3D;&quot;https://cdn4.iconfinder.com/data/icons/navigation-20/32/447-01-512.png&quot; width&#x3D;&quot;25&quot; height&#x3D;&quot;25&quot; style&#x3D;&quot;margin-right:15px&quot;&gt;
           Log in / Sign up&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
@@ -836,8 +913,8 @@ export class HeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav class="navbar-default navbar-fixed-top">  <div class="cont container-fluid">    <div class="navbar-header" id="logo">       <!-- to go to home when click on icon -->      <a class="log" href="/">         <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png" width="106.65px" height="40px">       </a>    </div>    <div class="dropdown" id="left-dropdown">      <button data-toggle="dropdown"  class="dropdown-button" type="button" id="left-dropdown-button" role="button">        <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px;float: left;">        <b id="dropdown-left-name" style="float:left">Popular</b>      <span style="float: right;margin-top: 10px" class="caret" ></span>      </button>        <ul class="dropdown-menu" id="dropdown-menu-left">          <li><input type="text" class="searchTerm" placeholder="Filter"></li>          <li class="dropdown-header">Reddit Feeds</li>          <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="25" height="25" style="margin-right:15px">          Popular</a></li>          <li><a href="#"><img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="25" height="25" style="margin-right:15px">          All</a></li>          <li><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">          Original content</a></li>          <li class="dropdown-header">Other</li>          <li><a href="#"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">          Coins</a></li>          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">          Premium</a></li>        </ul>    </div>    <input class="searchTerm" id="search-bar" type="search" placeholder="Search Reddit">    <div class="small-icons" role="button" title="popular">    <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="all">    <img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="original content">    <img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="20px" height="20px" style="margin-top:6px">    </div>    <button type="button" class="btn btn-outline-primary" (click)="openModal(template1)" id="log-in"><b>Log in</b></button>    <ng-template #template1>      <div class="modal-header">        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">          <span aria-hidden="true">&times;</span>        </button>      </div>      <app-login></app-login>    </ng-template>    <button type="button" class="btn btn-outline-primary" (click)="openModal(template2)" id="sign-up"><b>Sign up</b></button>    <ng-template #template2>      <div class="modal-header">        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">          <span aria-hidden="true">&times;</span>        </button>      </div>      <app-signup></app-signup>    </ng-template>    <div class="dropdown" id="right-dropdown">        <button data-toggle="dropdown" class="dropdown-button" type="button" role="button" >            <i class="fa fa-user" aria-hidden="false" style="margin-right:20px"></i>            <i class="fa fa-caret-down" aria-hidden="true"></i>          </button>              <ul class="dropdown-menu dropdown-menu-right" id="dropdown-menu-right">          <li class="dropdown-header">View opition</li>          <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png" width="25" height="25" style="margin-right:15px">          Night mode          <label class="switch">              <input type="checkbox">              <span class="slider round"></span>          </label>          </a></li>          <li class="dropdown-header">More Stuff</li>          <li><a href="#"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">          Reddit Coins</a></li>          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">          Reddit Premium</a></li>          <li><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png" width="25" height="25" style="margin-right:15px">          Help center</a></li>          <li><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/navigation-20/32/447-01-512.png" width="25" height="25" style="margin-right:15px">          Log in / Sign up</a></li>        </ul>    </div>  </div></nav></div>'
-    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'}];
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar-default navbar-fixed-top">  <div class="cont container-fluid">    <div class="navbar-header" id="logo">       <!-- to go to home when click on icon -->      <a class="log" href="">         <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/250px-Reddit_logo_new.svg.png" width="106.65px" height="40px">       </a>    </div>    <div class="dropdown" id="left-dropdown">      <button data-toggle="dropdown"  class="dropdown-button" type="button" id="left-dropdown-button" role="button">        <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px;float: left;">        <b id="dropdown-left-name" style="float:left">Popular</b>      <span style="float: right;margin-top: 10px" class="caret" ></span>      </button>        <ul class="dropdown-menu" id="dropdown-menu-left">          <li><input type="text" class="searchTerm" placeholder="Filter" id="myInput" (keyup)="filterFunction()"></li>          <li class="dropdown-header">Reddit Feeds</li>          <li><a role="button"><img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="25" height="25" style="margin-right:15px">          Popular</a></li>          <li><a role="button"><img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="25" height="25" style="margin-right:15px">          All</a></li>          <li><a role="button"><img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="25" height="25" style="margin-right:15px">          Original content</a></li>          <li class="dropdown-header">Other</li>          <li><a role="button"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">          Coins</a></li>          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">          Premium</a></li>        </ul>    </div>    <input class="searchTerm" id="search-bar" type="search" placeholder="Search Reddit">    <div class="small-icons" role="button" title="popular">    <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="all">    <img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="20px" height="20px" style="margin-top:6px">    </div>    <div class="small-icons" role="button" title="original content">    <img src="https://cdn0.iconfinder.com/data/icons/wayfinding-5/24/disability-disabled-access-accomodation-oc-512.png" width="20px" height="20px" style="margin-top:6px">    </div>    <button type="button" class="btn btn-outline-primary" (click)="openModal(template1)" id="log-in"><b>Log in</b></button>    <ng-template #template1>      <div class="modal-header">        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">          <span aria-hidden="true">&times;</span>        </button>      </div>      <app-login></app-login>    </ng-template>    <button type="button" class="btn btn-outline-primary" (click)="openModal(template2)" id="sign-up"><b>Sign up</b></button>    <ng-template #template2>      <div class="modal-header">        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">          <span aria-hidden="true">&times;</span>        </button>      </div>      <app-signup></app-signup>    </ng-template>    <div class="dropdown" id="right-dropdown">        <button data-toggle="dropdown" class="dropdown-button" type="button" role="button" >            <i class="fa fa-user" aria-hidden="false" style="margin-right:20px"></i>            <i class="fa fa-caret-down" aria-hidden="true"></i>          </button>              <ul class="dropdown-menu dropdown-menu-right" id="dropdown-menu-right">          <li class="dropdown-header">View opition</li>          <li><a role="button"><img src="https://cdn3.iconfinder.com/data/icons/miniglyphs/500/058-512.png" width="25" height="25" style="margin-right:15px">          Night mode          <label class="switch">              <input type="checkbox">              <span class="slider round"></span>          </label>          </a></li>          <li class="dropdown-header">More Stuff</li>          <li><a role="button"><img src="https://png.pngtree.com/svg/20170911/d76a0fe79e.png" width="25" height="25" style="margin-right:15px">          Reddit Coins</a></li>          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/seo-web-optimization-ultimate-part1/512/award-512.png" width="25" height="25" style="margin-right:15px">          Reddit Premium</a></li>          <li><a role="button"><img src="https://cdn2.iconfinder.com/data/icons/bold-ui/100/questionmark-512.png" width="25" height="25" style="margin-right:15px">          Help center</a></li>          <li><a role="button"><img src="https://cdn4.iconfinder.com/data/icons/navigation-20/32/447-01-512.png" width="25" height="25" style="margin-right:15px">          Log in / Sign up</a></li>        </ul>    </div>  </div></nav></div>'
+    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'CommunityModeratorsComponent', 'selector': 'app-community-moderators'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CreateCommunityComponent', 'selector': 'app-create-community'},{'name': 'CreatePostComponent', 'selector': 'app-create-post'},{'name': 'DeactivateAccountComponent', 'selector': 'app-deactivate-account'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'},{'name': 'ViewSinglePostComponent', 'selector': 'app-view-single-post'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
 </script>

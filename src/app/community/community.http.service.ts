@@ -110,9 +110,11 @@ export class communityHttpService {
      *   @param id now we use id to get Specific Community 
      */
     getCommunityInfo(id: number): Observable<Communities> {
+        var token = localStorage.getItem('token');
 
         let headers = {
             "Content-Type": "application/json",
+            "Authorization": "Bearer " + token,
             "Accept": "application/json",
         }
         /**

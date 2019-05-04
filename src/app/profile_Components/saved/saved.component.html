@@ -1,3 +1,5 @@
-<p>
-  saved works!
-</p>
+<div class="cont"></div>
+<div *ngFor="let save of saved">
+    <app-post-layout id="post" *ngIf="save.type == 'post';" [posts]="over"></app-post-layout>
+    <app-comments-layout id="comment" *ngIf="save.type == 'comment';" [post]="save.post" [comments]="save.comments"></app-comments-layout>
+</div>

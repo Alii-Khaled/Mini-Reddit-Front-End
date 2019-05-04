@@ -141,6 +141,9 @@
                             <li>
                                 <a href="#modalRef">modalRef</a>
                             </li>
+                            <li>
+                                <a href="#OneSignal">OneSignal</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -185,7 +188,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/login/login.component.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/login/login.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -290,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/login/login.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/login/login.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -331,8 +334,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/login/login.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/login/login.component.ts:40</a></div>
                 </td>
             </tr>
 
@@ -370,8 +373,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/login/login.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/login/login.component.ts:118</a></div>
                 </td>
             </tr>
 
@@ -457,7 +460,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/login/login.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/login/login.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -484,7 +487,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/login/login.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/login/login.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -511,7 +514,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/login/login.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/login/login.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -538,7 +541,28 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/login/login.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/login/login.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="OneSignal"></a>
+                        <span class="name">
+                            <b>
+                            OneSignal</b>
+                            <a href="#OneSignal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/login/login.component.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -551,13 +575,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit , TemplateRef , Output , EventEmitter } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, TemplateRef, Output, EventEmitter } from &#x27;@angular/core&#x27;;
 import { BsModalService, BsModalRef, ModalOptions } from &#x27;ngx-bootstrap/modal&#x27;;
-import {HttpService} from &#x27;../http.service&#x27;;
-import {FormBuilder, FormControlName , FormGroup , Validator, Validators, FormControl } from &#x27;@angular/forms&#x27;;
+import { HttpService } from &#x27;../http.service&#x27;;
+import { FormBuilder, FormControlName, FormGroup, Validator, Validators, FormControl } from &#x27;@angular/forms&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { NgIf } from &#x27;@angular/common&#x27;;
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from &#x27;@angular/material&#x27;;
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from &#x27;@angular/material&#x27;;
 import { AppComponent } from &#x27;../app.component&#x27;;
 // import { AppComponent } from &#x27;../app.component&#x27;;
 
@@ -566,11 +590,12 @@ import { AppComponent } from &#x27;../app.component&#x27;;
   templateUrl: &#x27;./login.component.html&#x27;,
   styleUrls: [&#x27;./login.component.css&#x27;]
 })
-        /**
-         * this class is used for getting username and password and set token in local storage
-         */
+/**
+ * this class is used for getting username and password and set token in local storage
+ */
 
 export class LoginComponent implements OnInit {
+  OneSignal;
   form: FormGroup;
   modalRef: BsModalRef;
   disabld: boolean;
@@ -581,43 +606,98 @@ export class LoginComponent implements OnInit {
     ignoreBackdropClick: false,
     class: &#x27;my-modal&#x27;
   };
-  constructor(private modalService: BsModalService , private service: HttpService , private fb: FormBuilder , private router: Router) {
+  constructor(private modalService: BsModalService, private service: HttpService, private fb: FormBuilder, private router: Router) {
     this.form &#x3D; this.fb.group({
-      username: [&#x27;&#x27;, Validators.required , Validators.minLength(3) , Validators.maxLength(20)],
+      username: [&#x27;&#x27;, Validators.required, Validators.minLength(3), Validators.maxLength(20)],
       password: [&#x27;&#x27;, Validators.required]
     });
     this.disabld &#x3D; this.form.valid;
    }
 
   ngOnInit() {
-  }
-    /**
-     * take the user&#x27;s input (username &amp; password) from the input form and set token
-     */
-  login() {
-    console.log(&#x27;welcome&#x27;);
-    const val &#x3D; this.form.value;
-    this.service.login(val.username , val.password).subscribe((data: any) &#x3D;&gt; {
-     localStorage.setItem(&#x27;token&#x27;, data.token );
-     AppComponent.nav &#x3D; true;
-     this.router.navigateByUrl(&#x27;#&#x27;);
-   },
-   err &#x3D;&gt; {if (err.status &#x3D;&#x3D;&#x3D; 422) {
-     this.router.navigateByUrl(&#x27;profile/&#x27; + &#x27;#&#x27;);
-     console.log(&#x27;error&#x27;);
+   /*  this.OneSignal &#x3D; window[&#x27;OneSignal&#x27;] || [];
+    this.OneSignal.push(function () {
+      this.OneSignal.init({
+        appId: &quot;52bcd1f1-af26-4d91-966d-a7a05ae69f8b&quot;,
+      });
+    });
+ */
 
-   }});
   }
-    /**
-     * supposed to open sign up page as pop up
-     */
-    openModal(template: TemplateRef&lt;any&gt;) {
-      this.modalRef &#x3D; this.modalService.show(template, this.config);
-    }
+  /**
+   * take the user&#x27;s input (username &amp; password) from the input form and set token
+   */
+  login() {
+    const val &#x3D; this.form.value;
+    this.service.login(val.username, val.password).subscribe((data: any) &#x3D;&gt; {
+      localStorage.setItem(&#x27;token&#x27;, data.token);
+      localStorage.setItem(&#x27;navbar&#x27;, &#x27;true&#x27;);
+      localStorage.setItem(&#x27;username&#x27;, val.username);
+      this.router.navigateByUrl(&#x27;&#x27;);
+        window.location.reload();
+
+    
+
+    },
+      err &#x3D;&gt; {
+        if (err.status &#x3D;&#x3D;&#x3D; 422) {
+          this.router.navigateByUrl(&#x27;#&#x27;);
+          console.log(&#x27;error&#x27;);
+        }
+
+      }, 
+      ()&#x3D;&gt;{
+        
+    /*   this.OneSignal.push(function () {
+
+        var isPushSupported &#x3D; this.OneSignal.isPushNotificationsSupported();
+        if (isPushSupported) {
+          // Push notifications are supported
+          console.log(&#x27; Push notifications are supported&#x27;);
+          this.OneSignal.isPushNotificationsEnabled(function (isEnabled) {
+            if (isEnabled) {
+              console.log(&quot;Push notifications are enabled!&quot;);
+              this.OneSignal.getUserId(function (userId) {
+                console.log(&quot;OneSignal User ID:&quot;, userId);
+                // (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316    
+              });
+              this.OneSignal.sendTags({ user_name: &#x27;mahmood&#x27; });
+              this.OneSignal.on(&#x27;notificationDisplay&#x27;, function (event) {
+                console.warn(&#x27;OneSignal notification displayed:&#x27;, event);
+
+
+
+              });
+            }
+            else {
+              console.log(&quot;Push notifications are not enabled yet.&quot;);
+              this.OneSignal.push(function () {
+                this.OneSignal.showSlidedownPrompt();
+              });
+            }
+          });
+
+        } else {
+          // Push notifications are not supported
+          console.log(&#x27; Push notifications are not supported&#x27;);
+        }
+     
+      }); */
+      }
+      
+      );
+
+
+  }
+  /**
+   * supposed to open sign up page as pop up
+   */
+  openModal(template: TemplateRef&lt;any&gt;) {
+    this.modalRef &#x3D; this.modalService.show(template, this.config);
+  }
 
 
 }
-
 </code></pre>
     </div>
 
@@ -690,7 +770,6 @@ export class LoginComponent implements OnInit {
       
   &lt;/body&gt;
 &lt;/HTML&gt;
-
 </code></pre>
     </div>
 
@@ -714,6 +793,23 @@ body
 .modal-header
 {
   padding: 10px;
+}
+.Uname .pass
+{
+  cursor: pointer;
+  font-family: IBMPlexSans,sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+#Uname:hover{
+  cursor: pointer;
+}
+#pass:hover{
+  cursor: pointer;
 }
 
 form {
@@ -781,16 +877,16 @@ form {
   }
   #ssinn{
     display: block;
-    font-size: 2em;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 14px;
+    color: #1a1a1b;
+    font-family: IBMPlexSans,sans-serif;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    font-weight: 500;
-    line-height: 18px;
-    color: #1a1a1b;
-    font-family: IBMPlexSans,sans-serif;
   }
   </code></pre>
     </div>
@@ -821,7 +917,7 @@ form {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><!DOCTYPE HTML><HTML lang ="en">  <HEAD>        </HEAD>  <body >          <img alt="side" src="https://i.kinja-img.com/gawker-media/image/upload/s--iTBPsYfM--/c_scale,f_auto,fl_progressive,q_80,w_800/szxf1726pgnaoivgdpcl.jpg"  width="156px" height="430px" style="position: absolute">    <div class="content">        <br><br>        <img alt="Reddit logo" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Reddit_logo_orange.svg/128px-Reddit_logo_orange.svg.png" class="logo" width="40" height="40">                    <br><br>        <h4 id="ssinn">Sign in</h4>        <br><br>    <form action="action_page.php"  [formGroup]="form" >                  <div class="container">                    <input type="text" placeholder="Username" formControlName="username" required >          <br>          <br>          <input type="password" placeholder="Password" formControlName="password" required>          <br>          <button type="submit" id ="signin" (click)="login()">SIGN IN</button>          <br>          <p id =forgot>          <a (click)="openModal(template1)"><strong>Forgot username</strong></a>          <ng-template #template1>            <div class="modal-header">              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>              </button>            </div>            <app-forgot-username></app-forgot-username>          </ng-template>          .          <a (click)="openModal(template2)"><strong>Forgot password</strong></a>          <ng-template #template2>            <div class="modal-header">              <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">                <span aria-hidden="true">&times;</span>              </button>            </div>            <app-forgot-username></app-forgot-username>          </ng-template>          </p>          <br><br>          <p>New to Reddit? <a href=# (click)="openModal(template3)"><strong>SIGN UP</strong></a> </p>          <ng-template #template3>              <div class="modal-header">                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">                  <span aria-hidden="true">&times;</span>                </button>              </div>              <app-signup></app-signup>            </ng-template>        </div>    </form>            </div>           </body></HTML></div>'
-    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'}];
+    var COMPONENTS = [{'name': 'AccountSettingComponent', 'selector': 'app-account-setting'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CommentsLayoutComponent', 'selector': 'app-comments-layout'},{'name': 'CommunityComponent', 'selector': 'app-community'},{'name': 'CommunityModeratorsComponent', 'selector': 'app-community-moderators'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CreateCommunityComponent', 'selector': 'app-create-community'},{'name': 'CreatePostComponent', 'selector': 'app-create-post'},{'name': 'DeactivateAccountComponent', 'selector': 'app-deactivate-account'},{'name': 'DownvotedComponent', 'selector': 'app-downvoted'},{'name': 'EditCommunityComponent', 'selector': 'app-edit-community'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotUsernameComponent', 'selector': 'app-forgot-username'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HiddenComponent', 'selector': 'app-hidden'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NextPageComponent', 'selector': 'app-next-page'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PostLayoutComponent', 'selector': 'app-post-layout'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileSettingComponent', 'selector': 'app-profile-setting'},{'name': 'SavedComponent', 'selector': 'app-saved'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'UpvotedComponent', 'selector': 'app-upvoted'},{'name': 'UserHeaderComponent', 'selector': 'app-user-header'},{'name': 'UserSettingsComponent', 'selector': 'app-user-settings'},{'name': 'ViewSinglePostComponent', 'selector': 'app-view-single-post'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>
