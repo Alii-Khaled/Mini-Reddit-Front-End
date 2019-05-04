@@ -1,7 +1,7 @@
 <form class="comment-container" id="commenting" [ngStyle]="{'width':innerWidth2+'px'}">
   <div class="upper">
     <p style="color:grey;"><mat-icon style="font-size:13px;">mode_comment</mat-icon><span class="underlining" style="color:blue">{{comments[0]?.author_username}}</span>
-       commentd on  . {{post?.title}} <span class="underlining" style="font-weight: bold;color:black;">u/{{post?.community}}</span>
+       commented on  . <span routerLink="/viewPost/{{post?.title}}" (click)="viewPost(post?.post_id)">.{{post?.title}}</span> <span class="underlining" style="font-weight: bold;color:black;">u/{{post?.community}}</span>
         . Posted by <span class="underlining">u/{{post?.author_username}}</span>
     </p>
   </div>
@@ -23,8 +23,8 @@
       <div>
         <button mat-button id="more{{comment?.comment_id}}" class="dropdown-toggle" data-toggle="dropdown"><mat-icon>linear_scale</mat-icon>
           <ul class="dropdown-menu dropdown-menu-right dropdown">
-            <li><a *ngIf="true; else elseBlockSave" href="#" id="save"><mat-icon>bookmark_border</mat-icon> Save</a></li>
-            <ng-template #elseBlockSave><a href="#" id="save" style="color:blue;"><mat-icon>bookmark</mat-icon> Unsave</a></ng-template>
+            <li><a *ngIf="true; else elseBlockSave" href="#" id="save" (click)="saveComment(comment?.comment_id)"><mat-icon>bookmark_border</mat-icon> Save</a></li>
+            <ng-template #elseBlockSave><a href="#" id="save" style="color:blue;" (click)="unsaveComment(comment?.comment_id)"><mat-icon>bookmark</mat-icon> Unsave</a></ng-template>
             <li><a href="#"id="edit{{comment?.comment_id}}"><mat-icon>edit</mat-icon> Edit</a></li>
             <li><a href="#" id="delete{{comment?.comment_id}}"><mat-icon>delete_forever</mat-icon> Delete</a></li>
             <li><a href="#" id="_remove{{comment?.comment_id}}" class="others" *ngIf="innerWidth < 268;"><mat-icon>delete</mat-icon> Remove</a></li>
@@ -40,3 +40,5 @@
     </blockquote>
   </div>
 </form>
+
+<app-view-single-post style="display:none;" [sharedData]="comment"></app-view-single-post>

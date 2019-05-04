@@ -4,7 +4,6 @@ import { Observable} from 'rxjs';
 import { UserCommunities } from '../profile_classes/user-communities';
 import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
-import { comments, post } from '../classes/comments';
 @Injectable({
     providedIn: 'root'
 })
@@ -504,7 +503,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any[]>(this.BackEnd + '/api/auth/viewSavedLinks?username=' + username , { headers });
+            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewOverview?username=' + username , { headers });
         }
     }
 
