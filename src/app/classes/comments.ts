@@ -18,19 +18,21 @@ export class comments {
     public body: string;
     public downvotes: number;
     public upvotes: number;
-    public date: string;
+    public duration: number;
+    public link_date: string;
     public upvoted: boolean;    // what is this???
     public downvoted: boolean;
     // is there any boolean for downvoted or up and down votes???
 
     constructor(_comment_id: number, _body: string, _downvotes: number, _upvotes: number,
-         _date: string, _upvoted: boolean, _downvoted: boolean) {
+        link_date: string, _upvoted: boolean, _downvoted: boolean ,duration: number) {
              this.comment_id = _comment_id;
              this.body = _body;
              this.downvotes = _downvotes;
              this.upvotes = _upvotes;
-             this.date = _date;
+             this.link_date = link_date;
              this.upvoted = _upvoted;
              this.downvoted = _downvoted;
+             this.duration = duration;
          }
 }

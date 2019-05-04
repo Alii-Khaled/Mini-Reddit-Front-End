@@ -49,7 +49,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { CreateCommunityComponent } from './create-community/create-community.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ErrorComponent } from './error/error.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -85,7 +87,9 @@ import { PrivacyComponent } from './privacy/privacy.component';
     CreatePostComponent,
     DeactivateAccountComponent,
     HomepageComponent,
+    CreateCommunityComponent,
     PrivacyComponent,
+    ErrorComponent,
     /* ModalModule */
   ],
   imports: [

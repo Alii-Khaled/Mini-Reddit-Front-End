@@ -5,7 +5,6 @@ import { UserCommunities } from '../profile_classes/user-communities';
 import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
 import { comments, post } from '../classes/comments';
-
 @Injectable({
     providedIn: 'root'
 })
@@ -23,7 +22,7 @@ export class ProfileHttpService {
     /**
      * To get all communities subscribed by this user
      */
-    getMyCommunities(username): Observable<number[]> {
+    getMyCommunities(username): Observable<any> {
         /**
          * Choose from where i'll get my data
          */
@@ -32,7 +31,7 @@ export class ProfileHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<number[]>('http://localhost:3000/communities');
+        return this.http.get<any>('http://localhost:3000/communities');
         } else {
              /**
               * Getting token
@@ -41,12 +40,12 @@ export class ProfileHttpService {
             /**
              * Set headers
              */
-            const headers = new HttpHeaders ({
+            const headers = new HttpHeaders ({ 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<number[]>( this.BackEnd + '/api/unauth/viewUserCommunities?username=' + username , {headers} );
+            return this.http.get<any>( this.BackEnd + '/api/unauth/viewUserCommunities?username=' + username , {headers} );
         }
     }
 
@@ -119,13 +118,13 @@ export class ProfileHttpService {
     /**
      * Get user's posts
      */
-    getOverView(username: string): Observable<any> {
+    getOverView(username: string): Observable<any[]> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<any>('http://localhost:3000/overview');
+        return this.http.get<any[]>('http://localhost:3000/overview');
         } else {
             /**
              * Getting token from cookies
@@ -139,7 +138,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any>(this.BackEnd + '/api/auth/viewOverview?username=' + username , { headers });
+            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewOverview?username=' + username , { headers });
         }
     }
 
@@ -241,20 +240,32 @@ export class ProfileHttpService {
              */
         return this.http.get<PostsObjects[]>('http://localhost:3000/hidden');
         } else {
-            // no hidden posts link yet
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            return this.http.get<PostsObjects[]>(this.BackEnd + '/api/auth/viewHiddenPosts' ,  {headers} );
         }
     }
     /**
      * Comments of the user
      * @param username username for user profile owner
      */
-    getComments(username: string): Observable<comments[]> {
+    getComments(username: string): Observable<any[]> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<comments[]>('http://localhost:3000/comments');
+        return this.http.get<any[]>('http://localhost:3000/comments');
         } else {
             /**
              * Getting token from cookies
@@ -268,7 +279,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<comments[]>(this.BackEnd + '/api/unauth/viewComments' + username , {headers});
+            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewComments?username=' + username , {headers});
         }
     }
 
@@ -300,49 +311,15 @@ export class ProfileHttpService {
         }
     }
 
-/**
- * SignOut
- */
-signOut() {
-    if (this.IsApi === false) {
-        /**
-         * From the mock server if "IsApi" is false
-         * And from Api if it is true
-         */
-    } else {
-        /**
-         * Getting token from cookies
-         */
-        var token = localStorage.getItem('token');
-        /**
-         * Setting headers
-         */
-        const headers = new HttpHeaders ({
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': 'Bearer ' + token
-        });
-        let body = {};
-        return this.http.post(this.BackEnd + '/api/auth/signOut' , body, {headers});
-    }
-}
-
     /**
-     * To get all communities info
-     *   @param id now we use id to get Specific Community
+     * SignOut
      */
-    getCommunityInfo(id: number): Observable<UserCommunities> {
-
-        /**
-         * Choose from where i'll get my data
-         */
+    signOut() {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-            return this.http.get<UserCommunities>('http://localhost:3000/Community/' + id);
-
         } else {
             /**
              * Getting token from cookies
@@ -356,10 +333,8 @@ signOut() {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-               /**
-                * Get community info not now in backend
-                */
-            return this.http.get<UserCommunities>(this.BackEnd + '/api/unauth/communityInformation?id=' + id , { headers } );
+            let body = {};
+            return this.http.post(this.BackEnd + '/api/auth/signOut' , body, {headers});
         }
     }
     /**
@@ -447,6 +422,62 @@ signOut() {
                 "username": username
             };
             return this.http.post(this.BackEnd + '/api/auth/unblockUser' , body, {headers});
+        }
+    }
+    /**
+     * Follow a user
+     */
+    follow(username) {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            let body = {
+                "username": username
+            };
+            return this.http.post(this.BackEnd + '/api/auth/follow' , body, {headers});
+        }
+    }
+    /**
+     * Unfollow user
+     */
+    unfollow(username) {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            let body = {
+                "username": username
+            };
+            return this.http.post(this.BackEnd + '/api/auth/unfollow' , body, {headers});
         }
     }
 }

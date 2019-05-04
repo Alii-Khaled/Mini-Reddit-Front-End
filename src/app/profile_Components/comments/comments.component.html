@@ -1,2 +1,4 @@
 <div class="cont"></div>
-<app-comments-layout *ngFor="let comment of comments;" [comments]="comment"></app-comments-layout>
+<div *ngFor="let comment of comments">
+  <app-comments-layout id="comment" [post]="comment.post" [comments]="comment.comments"></app-comments-layout>
+</div>

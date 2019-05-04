@@ -1,2 +1,5 @@
 <div class="cont"></div>
-<app-post-layout *ngFor="let post of posts;" [posts]="post"></app-post-layout>
+<div *ngFor="let over of overview">
+    <app-post-layout id="post" *ngIf="over.type == 'post';" [posts]="over"></app-post-layout>
+    <app-comments-layout id="comment" *ngIf="over.type == 'comment';" [post]="over.post" [comments]="over.comments"></app-comments-layout>
+</div>

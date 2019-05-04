@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileHttpService } from '../profile.http.service';
 import { PostsObjects } from 'src/app/classes/posts-objects';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { comments } from 'src/app/classes/comments';
 
 @Component({
@@ -15,36 +15,34 @@ export class OverviewComponent implements OnInit {
    */
   a: string[];
   /**
-   * To get posts
+   * To overview
    */
-  posts: PostsObjects[];
-  /**
-   * To get comments
-   */
-  comments: comments[];
+  overview: any[];
   /**
    * User name for the profile owner
    */
   username: string;
   /**
    * @param http For requests
+   * @param router For navigation
    */
-  constructor(private http: ProfileHttpService, private router: Router) {
-  }
-
-  ngOnInit() {
-    /**
-     * Getting profile owner username
-     */
-    this.a = this.router.url.split('/');
-    this.username = this.a[this.a.length - 1];
-    /**
-     * Request for overview bun not completed yet
-     */
-    this.http.getOverView(this.username).subscribe((data: any) => {
-      console.log(data);
-        this.posts = data.posts;
+  constructor(private http: ProfileHttpService, private router: Router , private route: ActivatedRoute) {
+    route.params.subscribe(val => {
+      /**
+       * Getting profile owner username
+       */
+       this.a = this.router.url.split('/');
+       this.username = this.a[this.a.length - 1];
+       this.overview = [];
+      /**
+       * Request for overview bun not completed yet
+       */
+       this.http.getOverView(this.username).subscribe((data: any[]) => {
+       this.overview = data ;
+    });
     });
   }
 
+  ngOnInit() {
+  }
 }

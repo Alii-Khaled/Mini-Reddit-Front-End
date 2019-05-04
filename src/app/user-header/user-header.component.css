@@ -205,10 +205,10 @@
 @media only screen and (max-width:1150px) and (min-width:975px) {
     #search-bar {width: 150px;}
 }
-@media only screen and (max-width:975px) and (min-width:865px) {
+@media only screen and (max-width:975px) and (min-width:880px) {
     #search-bar {width: 110px;}
 }
-@media only screen and (max-width:865px) and (min-width:775px) {
+@media only screen and (max-width:880px) and (min-width:775px) {
     .small-icons {display: none;}
     #left-dropdown {margin-left: 30px;}
     #search-bar {width: 110px;}
@@ -218,18 +218,24 @@
     #search-bar {width: 110px;}
     #left-dropdown {margin-left: 30px;}
 }
-@media only screen and (max-width:650px) and (min-width:530px) {
+@media only screen and (max-width:650px) and (min-width:550px) {
     .small-icons {display: none;}
     #search-bar {width: 55px;}
     #right-dropdown {margin-left: 10px; width: 170px;}
     #left-dropdown {margin-left: 30px;}
 }
-@media only screen and (max-width:530px) {
+@media only screen and (max-width:550px) and (min-width:430px){
+    .small-icons {display: none;}
+    #search-bar {width: 50px; margin-left: 5px;}
+    #user-name-karma {display: none;}
+    #right-dropdown {width: 75px;margin-right: 3px}
+}
+@media only screen and (max-width:430px) {
     .small-icons {display: none;}
     #search-bar {width: 50px; margin-left: 5px;}
     #left-dropdown {margin-left: 10px;min-width: 30px;width: 70px;}
     #user-name-karma {display: none;}
-    #right-dropdown {width: 75px;margin-right: 3px}
+    #right-dropdown {width: 75px;margin-right: -3px}
     #dropdown-left-name{display: none}
 }
 

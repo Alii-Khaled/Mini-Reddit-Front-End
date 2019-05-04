@@ -146,11 +146,13 @@ export class PrivacyComponent implements OnInit {
           index = i;
         }
       }
-      // tslint:disable-next-line: prefer-for-of
+        if (index > - 1) {
+          // tslint:disable-next-line: prefer-for-of
         for (let i = index; i < this.blockedPeople.length - 1; i++) {
           this.blockedPeople[i] = this.blockedPeople[i + 1];
         }
         this.blockedPeople.length--;
+      }
       }, (error: any) => {
         this.message = error.error.error;
         this.snackBar.open(this.message, undefined, {
