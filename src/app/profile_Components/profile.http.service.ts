@@ -504,7 +504,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any[]>(this.BackEnd + '/api/auth/viewSavedLinks?username=' + username , { headers });
+            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewOverview?username=' + username , { headers });
         }
     }
 
