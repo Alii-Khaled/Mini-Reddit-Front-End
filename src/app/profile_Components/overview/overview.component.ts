@@ -35,7 +35,7 @@ export class OverviewComponent implements OnInit {
        this.username = this.a[this.a.length - 1];
        this.overview = [];
       /**
-       * Request for overview bun not completed yet
+       * Request for overview
        */
        this.http.getOverView(this.username).subscribe((data: any[]) => {
        this.overview = data ;

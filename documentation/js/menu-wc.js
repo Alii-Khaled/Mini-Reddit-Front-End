@@ -55,13 +55,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-ac6712de44ad34bc8584b0f8a88c7c54"' : 'data-target="#xs-components-links-module-AppModule-ac6712de44ad34bc8584b0f8a88c7c54"' }>
+                                            'data-target="#components-links-module-AppModule-e256cd7b1a33c1e21f6ab702a0a0736d"' : 'data-target="#xs-components-links-module-AppModule-e256cd7b1a33c1e21f6ab702a0a0736d"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-ac6712de44ad34bc8584b0f8a88c7c54"' :
-                                            'id="xs-components-links-module-AppModule-ac6712de44ad34bc8584b0f8a88c7c54"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-e256cd7b1a33c1e21f6ab702a0a0736d"' :
+                                            'id="xs-components-links-module-AppModule-e256cd7b1a33c1e21f6ab702a0a0736d"' }>
                                             <li class="link">
                                                 <a href="components/AccountSettingComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AccountSettingComponent</a>
@@ -83,12 +83,40 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">CommunityComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/CommunityModeratorsComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">CommunityModeratorsComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ConfirmationDialogComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ConfirmationDialogComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/CreateCommunityComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">CreateCommunityComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/CreatePostComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">CreatePostComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/DeactivateAccountComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">DeactivateAccountComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/DownvotedComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">DownvotedComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/EditCommunityComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">EditCommunityComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ErrorComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ErrorComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ForgotPasswordComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ForgotPasswordComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/ForgotUsernameComponent.html"
@@ -101,6 +129,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/HiddenComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">HiddenComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/HomepageComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">HomepageComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/LoginComponent.html"
@@ -121,6 +153,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/PostsComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">PostsComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/PrivacyComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PrivacyComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/ProfileComponent.html"
@@ -150,6 +186,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="components/UserSettingsComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">UserSettingsComponent</a>
                                             </li>
+                                            <li class="link">
+                                                <a href="components/ViewSinglePostComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ViewSinglePostComponent</a>
+                                            </li>
                                         </ul>
                                     </li>
                             </li>
@@ -176,7 +216,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Communities.html" data-type="entity-link">Communities</a>
                             </li>
                             <li class="link">
+                                <a href="classes/communityModerators.html" data-type="entity-link">communityModerators</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/post.html" data-type="entity-link">post</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/PostsObjects.html" data-type="entity-link">PostsObjects</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/singlePost.html" data-type="entity-link">singlePost</a>
                             </li>
                             <li class="link">
                                 <a href="classes/UserCommunities.html" data-type="entity-link">UserCommunities</a>
@@ -198,6 +247,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/communityHttpService.html" data-type="entity-link">communityHttpService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/DropdownService.html" data-type="entity-link">DropdownService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/HttpService.html" data-type="entity-link">HttpService</a>
                                 </li>
                                 <li class="link">
@@ -205,6 +257,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/ProfileHttpService.html" data-type="entity-link">ProfileHttpService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ViewSinglePostService.html" data-type="entity-link">ViewSinglePostService</a>
                                 </li>
                             </ul>
                         </li>
@@ -216,6 +271,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse" ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
+                            <li class="link">
+                                <a href="miscellaneous/functions.html" data-type="entity-link">Functions</a>
+                            </li>
                             <li class="link">
                                 <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
                             </li>

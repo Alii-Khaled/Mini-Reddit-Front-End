@@ -42,7 +42,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>UserCommunities</li>
+  <li>post</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -60,16 +60,9 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/profile_classes/user-communities.ts</code>
+            <code>src/app/classes/comments.ts</code>
         </p>
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>This class is used for getting names and logos of communities that user subscribe</p>
-
-            </p>
 
 
 
@@ -88,15 +81,23 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#author_username">author_username</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#body">body</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#community">community</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#community_id">community_id</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#community_logo">community_logo</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#community_name">community_name</a>
+                                <a href="#title">title</a>
                             </li>
                         </ul>
                     </td>
@@ -117,19 +118,17 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, logo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>constructor(_body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _author_username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _community: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _community_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/profile_classes/user-communities.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/classes/comments.ts:7</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor takes every value of the class and assign it to this community</p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -142,34 +141,58 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>id</td>
+                                                        <td>_body</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_author_username</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_community</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_community_id</td>
                                                   
                                                         <td>
                                                                         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>name</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>logo</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -195,6 +218,90 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="author_username"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            author_username</b>
+                            <a href="#author_username"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/classes/comments.ts:5</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="body"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            body</b>
+                            <a href="#body"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">src/app/classes/comments.ts:3</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="community"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            community</b>
+                            <a href="#community"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/classes/comments.ts:6</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="community_id"></a>
                         <span class="name">
                             <b>
@@ -204,18 +311,18 @@
                         </span>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/profile_classes/user-communities.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/classes/comments.ts:7</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Id for community</p>
-</div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
@@ -223,12 +330,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="community_logo"></a>
+                        <a name="title"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            community_logo</b>
-                            <a href="#community_logo"><span class="icon ion-ios-link"></span></a>
+                            title</b>
+                            <a href="#title"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -240,50 +347,10 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/profile_classes/user-communities.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/classes/comments.ts:4</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>To display community logo</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="community_name"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            community_name</b>
-                            <a href="#community_name"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/profile_classes/user-communities.ts:12</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>To display community name</p>
-</div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
@@ -299,27 +366,42 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class UserCommunities {
-        /**
-         * Id for community
-         */
-        public community_id;
-        /**
-         * To display community name
-         */
-        public community_name: string;
-        /**
-         * To display community logo
-         */
-        public community_logo: string;
-    /**
-     * Constructor takes every value of the class and assign it to this community
-     */
-    constructor(id: number, name: string, logo: string) {
-        this.community_logo &#x3D; logo;
-        this.community_name &#x3D; name;
-        this.community_id &#x3D; id;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class post {
+    public body: string;
+    public title: string;
+    public author_username: string;
+    public community: string;
+    public community_id: number;
+    constructor(_body: string, _title: string, _author_username: string, _community: string, _community_id: number) {
+        this.body &#x3D; _body;
+        this.title &#x3D; _title;
+        this.author_username &#x3D; _author_username;
+        this.community &#x3D; _community;
+        this.community_id &#x3D; _community_id;
     }
+}
+export class comments {
+    public comment_id: number;
+    public body: string;
+    public downvotes: number;
+    public upvotes: number;
+    public duration: number;
+    public link_date: string;
+    public upvoted: boolean;    // what is this???
+    public downvoted: boolean;
+    // is there any boolean for downvoted or up and down votes???
+
+    constructor(_comment_id: number, _body: string, _downvotes: number, _upvotes: number,
+        link_date: string, _upvoted: boolean, _downvoted: boolean ,duration: number) {
+             this.comment_id &#x3D; _comment_id;
+             this.body &#x3D; _body;
+             this.downvotes &#x3D; _downvotes;
+             this.upvotes &#x3D; _upvotes;
+             this.link_date &#x3D; link_date;
+             this.upvoted &#x3D; _upvoted;
+             this.downvoted &#x3D; _downvoted;
+             this.duration &#x3D; duration;
+         }
 }
 </code></pre>
     </div>
@@ -348,7 +430,7 @@
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserCommunities.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'post.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
