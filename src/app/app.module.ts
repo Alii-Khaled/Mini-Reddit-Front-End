@@ -51,6 +51,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { CreateCommunityComponent } from './create-community/create-community.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ErrorComponent } from './error/error.component';
 
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
@@ -88,6 +89,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
     HomepageComponent,
     CreateCommunityComponent,
     PrivacyComponent,
+    ErrorComponent,
     /* ModalModule */
   ],
   imports: [

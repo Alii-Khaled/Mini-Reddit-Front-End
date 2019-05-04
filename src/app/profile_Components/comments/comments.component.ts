@@ -17,7 +17,7 @@ export class CommentsComponent implements OnInit {
   /**
    * To get the comments
    */
-  comments: comments[];
+  comments: any[];
   /**
    * Username of the logged in user
    */
@@ -36,6 +36,6 @@ export class CommentsComponent implements OnInit {
     /**
      * Request to get posts
      */
-    this.http.getMyPosts(this.username).subscribe((data: any) => this.comments = data.posts);
+    this.http.getComments(this.username).subscribe((data: any[]) => this.comments = data);
   }
 }

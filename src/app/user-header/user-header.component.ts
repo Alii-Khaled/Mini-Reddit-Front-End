@@ -35,10 +35,6 @@ export class UserHeaderComponent implements OnInit {
    */
   success: boolean;
   /**
-   * Community to hold community info
-   */
-  comm: UserCommunities;
-  /**
    * List of communities that the user subscribed
    */
   myCommunities: UserCommunities[];
@@ -122,36 +118,14 @@ export class UserHeaderComponent implements OnInit {
      * Initializing array to be empty every time i click on the dropdown menu
      */
     this.myFollowing = [];
-     /**
-      * Getting communities that the user subscribes
-      */
-    this.http.getMyCommunities(this.username).subscribe((data: any) => {
-      this.commIds = data.communities;
-    }, err => {
-      /**
-       * My communities is empty
-       */
-      this.myCommunities = [];
-    }, () => {
-// tslint:disable-next-line: no-var-keyword prefer-for-of
-          for (var i = 0; i < this.commIds.length; i++) {
-            this.comm =  new UserCommunities( null , null, null);
-            this.comm.id = this.commIds[i].community_id;
-            this.http.getCommunityInfo(this.commIds[i].community_id).subscribe((data: UserCommunities) => {
-            /* this.comm.logo = data.logo;
-            this.comm.name = name; */
-            this.myCommunities.push(this.comm);
-          }, err => {
-           /**
-            * If any error do nothing
-            */
-          }
-          );
-      }
-    }
-    );
     /**
-     * Getting usernames blocked by this user
+     * Getting communities that the user subscribes
+     */
+    this.http.getMyCommunities(this.username).subscribe((data: any) => {
+      this.myCommunities = data.communities;
+    });
+    /**
+     * Getting usernames following by this user
      */
     this.http.getMyFollowing(this.username).subscribe((data: any) => {
       this.usernames = data.followingList;

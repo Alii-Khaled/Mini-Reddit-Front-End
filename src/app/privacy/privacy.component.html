@@ -7,7 +7,7 @@
 </form>
 <div class="blocking">Blocked users</div>
 <form *ngFor="let block of blockedPeople" id="blocked-bar">
-  <button id="blocked-button">
+  <button id="blocked-button" routerLink="/error" type="button">
     <img src="{{block?.photo_path}}" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
     <p style="display: inline-block;">u/{{block?.username}}</p>
   </button>
