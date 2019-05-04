@@ -47,7 +47,11 @@ export class PrivacyComponent implements OnInit {
       // tslint:disable-next-line: no-var-keyword disable-next-line: prefer-for-of
            for (var i = 0; i < this.usernames.length; i++) {
                 this.http.getUserPublicInfo(this.usernames[i]).subscribe((data: UserPublicInfo) => {
-                this.blockedPeople.push(data);
+                  if (!data.photo_path) {
+                    // tslint:disable-next-line: max-line-length
+                      data.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
+                    }
+                  this.blockedPeople.push(data);
           },
           (error: any) => {
             /**
@@ -92,6 +96,10 @@ export class PrivacyComponent implements OnInit {
         /**
          * Adding data to array to appear as soon as the user add new blocked user
          */
+        if (!data.photo_path) {
+// tslint:disable-next-line: max-line-length
+          data.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
+        }
         this.blockedPeople.push(data);
         /**
          * Showing msg in snackbar
