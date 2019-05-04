@@ -53,6 +53,10 @@ import { CreateCommunityComponent } from './create-community/create-community.co
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ErrorComponent } from './error/error.component';
 
+import { MarkdownModule } from 'ngx-markdown';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { NgxEditorModule } from 'ngx-editor';
+
 // import {Headers} from '@angular/http';
 // import {HttpHeaders} from '@angular/common/http';
 
@@ -116,6 +120,9 @@ import { ErrorComponent } from './error/error.component';
     MatDialogModule,
     MatCheckboxModule,
     RichTextEditorAllModule,
+    MarkdownModule,
+    CKEditorModule,
+    NgxEditorModule
     // Http,
     // Headers,
     // RequestOptions
