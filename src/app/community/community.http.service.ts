@@ -100,7 +100,7 @@ export class communityHttpService {
             return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
         }
         else {
-            return this.http.get<communityModerators[]>('http://35.204.169.121/api/auth/viewModerators?community_id='+id,{headers});
+            return this.http.get<communityModerators[]>('http://35.204.169.121/api/auth/viewModerators?community_id=' + id, { headers });
 
         }
     }
@@ -128,7 +128,7 @@ export class communityHttpService {
         }
         else {
             /*get community info not now in backend*/
-            return this.http.get<Communities>('http://35.204.169.121/api/unauth/communityInformation?community_id=' + id,{headers});
+            return this.http.get<Communities>('http://35.204.169.121/api/unauth/communityInformation?community_id=' + id, { headers });
         }
     }
 
@@ -286,7 +286,7 @@ export class communityHttpService {
             return this.http.get<any>("http://localhost:3000/posts")
         }
         else {
-              return this.http.get<any>("http://35.204.169.121/api/unauth/ViewPosts?community_id="+community_id, { headers })
+            return this.http.get<any>("http://35.204.169.121/api/unauth/ViewPosts?community_id=" + community_id, { headers })
         }
     }
 
