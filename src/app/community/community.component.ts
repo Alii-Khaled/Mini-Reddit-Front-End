@@ -72,13 +72,15 @@ export class CommunityComponent implements OnInit {
       this.arr = [];
       this.arr = this.router.url.split('/');
       this.commId = parseInt(this.arr[this.arr.length - 1]);
-      
+
       /*  this.commId=parseInt(this.router.url.substr(11)); */
       console.log(this.commId);
       this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
       this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
         this.Community = data;
         this.myFlagForButtonToggle = data.subscribed;
+        console.log(this.myFlagForButtonToggle);
+        console.log(data.subscribed);
         this.isModerator = data.moderator;
       },response=>{},
       ()=>
