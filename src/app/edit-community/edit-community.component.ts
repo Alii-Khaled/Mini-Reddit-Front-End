@@ -13,6 +13,10 @@ import { ConfirmationDialogComponent } from '../components/shared/confirmation-d
   styleUrls: ['./edit-community.component.css']
 })
 export class EditCommunityComponent implements OnInit {
+      /**
+   * To get the url
+   */
+  arr: string[];
   /**
    * Variable to assign response of community information
    */
@@ -42,7 +46,9 @@ export class EditCommunityComponent implements OnInit {
    */
   avatar;
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, public dialog: MatDialog) {
-    this.commId = parseInt(this.router.url.substr(11, this.router.url.length - 15));
+    window.scroll(0,0);
+    this.arr=this.router.url.split('/');
+    this.commId = parseInt(this.arr[this.arr.length-2]);
     console.log(this.commId);
 
   }
@@ -50,12 +56,13 @@ export class EditCommunityComponent implements OnInit {
    * ngOnInit assigns data to my variables
    */
   ngOnInit() {
-    this.http.GetCommunityInfo(this.commId).subscribe((data: Communities) => {
-      this.commname = data.community_name;
-      this.rules = data.community_rules;
-      this.bio = data.community_description;
-      this.banner = data.community_banner;
-      this.avatar = data.community_logo;
+    window.scroll(0,0);
+    this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
+      this.commname = data.name;
+      this.rules = data.rules;
+      this.bio = data.desription;
+      this.banner = data.banner;
+      this.avatar = data.logo;
 
     }
     )
@@ -109,7 +116,7 @@ export class EditCommunityComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Yes clicked');
-        this.http.RemoveCommunity(this.commId).subscribe(
+        this.http.removeCommunity(this.commId).subscribe(
           response => {
             this.message = 'Community has been deleted';
             this.snackBar.open(this.message, 'dismiss', {
