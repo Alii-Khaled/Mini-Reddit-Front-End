@@ -1,0 +1,18 @@
+<div class="container" style="width:100%">
+  <h3 id="title"><p>Privacy & Security</p></h3>
+<div class="blocking">Block</div>
+<form class="add-block">
+  <input type="text" maxlength="30" placeholder="ADD USER TO BLOCKED LIST" [(ngModel)]="username" name="name">
+  <button type="submit" (click)="add()"><b>ADD</b></button>
+</form>
+<div class="blocking">Blocked users</div>
+<form *ngFor="let block of blockedPeople" id="blocked-bar">
+  <button id="blocked-button" routerLink="/error" type="button">
+    <img src="{{block?.photo_path}}" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
+    <p style="display: inline-block;">u/{{block?.username}}</p>
+  </button>
+  <a role="button" id="remove" (click)="remove(block.username)">REMOVE</a>
+  <br>
+  <br>
+</form>
+</div>

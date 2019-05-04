@@ -16,8 +16,8 @@ export class CommentsLayoutComponent implements OnInit {
 
   constructor(private apiService: HttpService, public router: Router) { }
 
-  @Input()comments: comments;
-  post: post;
+  @Input()comments: comments[];
+  @Input()post: post;
 
   ngOnInit() {
     if (window.innerWidth > 960) {
@@ -29,7 +29,7 @@ export class CommentsLayoutComponent implements OnInit {
     this.innerWidth = this.innerWidth2 - 150;
   }
 
-  /**
+/**
  * 
  * @param event this is a responsive auto update
  */

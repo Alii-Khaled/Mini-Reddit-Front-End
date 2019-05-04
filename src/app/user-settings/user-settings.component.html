@@ -1,22 +1,14 @@
-<!DOCTYPE HTML>
-<HTML lang ="en">
-  <HEAD>
-      
-  </HEAD>
-  <body >
-    <div>
-      <p id=uset>User Settings</p>
-      <hr>
-    </div>
-    
-
-    <nav id="menubar">
-      <ul id="menu">
-      <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-        <li class="selected"><a routerLink="/account-setting" routerLinkActive="active">Account</a></li>
-        <li><a routerLink="/profile-setting" routerLinkActive="active">Profile</a></li>
-      </ul>
+<div class="container">
+  <div class="col-md-8">
+    <h4 id="user-settings">User settings</h4>
+    <hr>
+    <nav class="navbar navbar-default" id="toolbar">
+      <div class="nav nav-tabs" id="navbar">
+        <li><a routerLink="/settings/account" id="account" class="navbar-item">Account</a></li>
+        <li><a routerLink="/settings/profile" id="profile" class="navbar-item">Profile</a></li>
+        <li><a routerLink="/settings/privacy" id="privacy" class="navbar-item">Privacy & Security</a></li>
+      </div>
     </nav>
-      
-  </body>
-</HTML>
+    <router-outlet></router-outlet>
+  </div>
+</div>

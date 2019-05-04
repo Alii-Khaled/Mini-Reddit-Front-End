@@ -8,8 +8,8 @@
     </div>
     <div class="dropdown" id="left-dropdown">
         <button data-toggle="dropdown"  class="dropdown-button" type="button" id="left-dropdown-button" role="button" (click)="onclickLeftDropdown()">
-          <img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="20" height="20" style="margin-right:15px;float: left;">
-          <b id="dropdown-left-name" style="float:left">Popular</b>
+          <img src="{{leftIcon}}" width="25" height="25" style="margin-right:15px;float: left;border-radius: 5px;">
+          <b id="dropdown-left-name" style="float:left">{{leftTitle}}</b>
         <span style="float: right;margin-top: 10px" class="caret" ></span>
         </button>
         <ul class="dropdown-menu" id="dropdown-menu-left">
@@ -27,10 +27,10 @@
           <li *ngFor="let following of myFollowing"><a routerLink="/user/{{following?.username}}" role="button"><img src="{{following?.photo_path}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
             u/{{following?.name}}</a></li>
           <li class="dropdown-header">Subscriptions</li>
-          <li *ngFor="let com of myCommunities"><a routerLink="/community/{{com?.id}}" role="button"><img src="{{com?.logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
-            r/{{com?.name}}</a></li>
+          <li *ngFor="let com of myCommunities"><a routerLink="/community/{{com?.community_id}}" role="button"><img src="{{com?.community_logo}}" width="25" height="25" style="margin-right:15px;border-radius: 12.5px;">
+            r/{{com?.community_name}}</a></li>
           <li class="dropdown-header">Other</li>
-          <li><a role="button"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
+          <li><a role="button" routerLink="settings"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
           User Settings</a></li>
           <li><a role="button"><img src="https://i.redd.it/x0iiv7jthx901.png" width="25" height="25" style="margin-right:15px;border-radius: 5px;">
           Messages</a></li>

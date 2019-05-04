@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+  <HEAD>
+      
+  </HEAD>
+  <body >
+    <img id ="eml1" alt="side" src="https://i.kinja-img.com/gawker-media/image/upload/s--iTBPsYfM--/c_scale,f_auto,fl_progressive,q_80,w_800/szxf1726pgnaoivgdpcl.jpg"  width="190px" height="90%" style="position: absolute; background-origin: initial">
+    <div class="content">
+      <h4 id="tit">Create a community</h4>
+      <form action="action_page.php"  [formGroup]="form" >
+      <br><br>
+      <div class="container">
+       <input type="text" placeholder="COMMUNITY NAME" formControlName="communityName" required >
+      
+       <p id="dis">Community names including capitalization cannot be changed . </p>
+       <input type="text" style = "height:120px; vertical-align: 10mm; text-align: top;" placeholder="COMMUNITY DESCRIPTION" formControlName="communityDescription" required>
+       <p id="dis">This is how new members come to understand your community . </p>
+       <br>
+       <br>
+      
+       <div class ="checks">
+        <p id ="dis">COMMUNITY TYPE</p>
+        <label class="cont">
+          <img id= "icn " style = "width: 12px ; height:12px;"src="https://tse1.mm.bing.net/th?id=OIP.AruilPXVhDpE9woJ9CHIqwHaHa&pid=Api&rs=1&c=1&qlt=95&w=115&h=115">
+          Public
+        <p id ="ddd">Everyone can view community and submit posts</p>
+        <input type="radio" checked="checked" name="radio">
+        <span class="checkmark"></span>
+        </label>
+        <label class="cont">
+            <img id= "icn " style = "width: 12px ; height:12px;"src="https://tse2.mm.bing.net/th?id=OIP.Jnt3n2kNvYCGSlPF-Ea2cgAAAA&pid=Api&P=0&w=300&h=300">
+          Restricted
+        <p id ="ddd">Anyone can view community, but only approved users can submit posts</p>
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+        </label>
+        <label class="cont">
+            <img id= "icn " style = "width: 12px ; height:12px;"src="https://tse3.mm.bing.net/th?id=OIP.-flMfP2RlAfc7rZZiAs8iwHaHa&pid=Api&P=0&w=300&h=300">
+          Private
+        <p id ="ddd">Only approved users can view and submit to community</p>
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+        </label>
+        <p id ="dis">adult content</p>
+        <label class="con">18+ year old community
+        <input type="checkbox" checked="checked">
+        <span class="chkmark"></span>
+        </label>
+      </div>
+      <button type="submit" id= cncl >CANCEL</button>
+      <button type="submit" id= strt >START</button>
+    </div>
+  </form>
+  </div>
+</body>
+</HTML>

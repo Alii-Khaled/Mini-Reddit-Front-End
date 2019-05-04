@@ -24,7 +24,7 @@
     width: 100%;
     text-align: left;
     border: 0;
-    align-content: center;   
+    align-content: center; 
 }
 #left-dropdown { 
     display: inline-block;
@@ -35,7 +35,7 @@
       float: left;
       margin-top: 4px;
       width: 12.9375%;
-      min-width: 110px;
+      min-width: 151px;
       border-radius: 5px;
       height: 40px;
 }
@@ -203,33 +203,39 @@
     #search-bar {width: 300px;}
 }
 @media only screen and (max-width:1150px) and (min-width:975px) {
-    #search-bar {width: 200px;}
+    #search-bar {width: 150px;}
 }
-@media only screen and (max-width:975px) and (min-width:850px) {
-    #search-bar {width: 100px;}
+@media only screen and (max-width:975px) and (min-width:880px) {
+    #search-bar {width: 110px;}
 }
-@media only screen and (max-width:850px) and (min-width:775px) {
+@media only screen and (max-width:880px) and (min-width:775px) {
     .small-icons {display: none;}
     #left-dropdown {margin-left: 30px;}
-    #search-bar {width: 100px;}
+    #search-bar {width: 110px;}
 }
 @media only screen and (max-width:776px) and (min-width:650px) {
     .small-icons {display: none;}
-    #search-bar {width: 100px;margin-left: 30px;}
+    #search-bar {width: 110px;}
     #left-dropdown {margin-left: 30px;}
 }
-@media only screen and (max-width:650px) and (min-width:520px) {
+@media only screen and (max-width:650px) and (min-width:550px) {
     .small-icons {display: none;}
-    #search-bar {width: 50px; margin-left: 30px;}
+    #search-bar {width: 55px;}
     #right-dropdown {margin-left: 10px; width: 170px;}
     #left-dropdown {margin-left: 30px;}
 }
-@media only screen and (max-width:520px) {
+@media only screen and (max-width:550px) and (min-width:430px){
     .small-icons {display: none;}
     #search-bar {width: 50px; margin-left: 5px;}
-    #left-dropdown {margin-left: 10px;width: 30px;min-width: 65px;}
     #user-name-karma {display: none;}
-    #right-dropdown {width: 75px;}
+    #right-dropdown {width: 75px;margin-right: 3px}
+}
+@media only screen and (max-width:430px) {
+    .small-icons {display: none;}
+    #search-bar {width: 50px; margin-left: 5px;}
+    #left-dropdown {margin-left: 10px;min-width: 30px;width: 70px;}
+    #user-name-karma {display: none;}
+    #right-dropdown {width: 75px;margin-right: -3px}
     #dropdown-left-name{display: none}
 }
 

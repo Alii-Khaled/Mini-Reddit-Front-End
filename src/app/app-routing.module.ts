@@ -16,15 +16,22 @@ import { DownvotedComponent } from './profile_Components/downvoted/downvoted.com
 import { EditCommunityComponent } from './edit-community/edit-community.component';
 import { CommunityModeratorsComponent } from './community-moderators/community-moderators.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
 
   { path: '', component: HomepageComponent},
-  { path: 'account-setting', component: AccountSettingComponent },
-  { path: 'profile-setting', component: ProfileSettingComponent },
-  { path: 'forgot-username', component: ForgotUsernameComponent },
-  {
-    path: 'user/:username', component: ProfileComponent,
+  { path: 'error', component: ErrorComponent},
+  { path: 'settings', component: UserSettingsComponent,
+    children: [
+      { path: 'profile', component: ProfileSettingComponent },
+      { path: 'account', component: AccountSettingComponent},
+      { path: 'privacy', component: PrivacyComponent }
+    ]
+   },
+   { path: 'forgot-username', component: ForgotUsernameComponent },
+   { path: 'user/:username', component: ProfileComponent,
     children: [
       { path: '', component: OverviewComponent },
       { path: 'posts', component: PostsComponent },
