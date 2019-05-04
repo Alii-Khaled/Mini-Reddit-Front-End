@@ -79,6 +79,7 @@ export class CommunityComponent implements OnInit {
    */
   constructor(private http: communityHttpService,private dropdown: DropdownService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute) {
     route.params.subscribe(val => {
+      window.scroll(0, 0);
       this.arr = [];
       this.arr = this.router.url.split('/');
       this.commId = parseInt(this.arr[this.arr.length - 1]);
