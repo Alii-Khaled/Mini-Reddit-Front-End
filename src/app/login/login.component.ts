@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
     this.service.login(val.username, val.password).subscribe((data: any) => {
       localStorage.setItem('token', data.token);
       localStorage.setItem('navbar', 'true');
+      localStorage.setItem('username', val.username);
       this.router.navigateByUrl('');
         window.location.reload();
 
