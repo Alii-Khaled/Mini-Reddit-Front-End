@@ -4,7 +4,7 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material';
 import { UserPublicInfo } from 'src/app/profile_classes/user-public-info';
 import { ProfileHttpService } from '../profile_Components/profile.http.service';
 import { Router } from '@angular/router';
-import { subscribeOn, retry } from 'rxjs/operators';
+import { subscribeOn, retry, delay } from 'rxjs/operators';
 import { DropdownService } from '../dropdown.service';
 
 @Component({
@@ -74,25 +74,12 @@ export class UserHeaderComponent implements OnInit {
        */
       this.dropdown.leftLogo.subscribe(data => this.leftIcon = data);
       /**
-       * Getting user name
+       * Getting username
        */
-      this.http.getUserName().subscribe((data: any) =>  {
-        this.username = data.username;
-        this.success = data.success;
-      },
-      (error: any) => {
-        /**
-         * If error status = 401 that's mean that user is unauthorized
-         * So we remove the token and redirect it to the homepage
-         */
-        if (error.status === 401) {
-          this.router.navigateByUrl('');
-          localStorage.clear();
-        }
-      },
-      () => this.http.getUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
+      this.username = localStorage.getItem('username');
+      this.http.getUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
         this.publicInfo = data;
-        localStorage.setItem('username', this.publicInfo.username);
+        this.publicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
       },
         (error: any) => {
           /**
@@ -102,22 +89,25 @@ export class UserHeaderComponent implements OnInit {
             this.router.navigateByUrl('');
           }
         }
-        )
-      );
+        );
     }
    /**
     * On clicking the left dropdown send a request to get this user's subscribed communities
     * And display it in this dropdown menu
     */
   onclickLeftDropdown() {
-     /**
-      * Initialize my communities as empty array
-      */
-    this.myCommunities = [];
     /**
      * Initializing array to be empty every time i click on the dropdown menu
      */
     this.myFollowing = [];
+    /**
+     * Initializing usernames empty array
+     */
+    this.usernames = [];
+     /**
+      * Initialize my communities as empty array
+      */
+    this.myCommunities = [];
     /**
      * Getting communities that the user subscribes
      */
@@ -134,12 +124,11 @@ export class UserHeaderComponent implements OnInit {
       /**
        * If any error then my folloing is empty
        */
-      this.myFollowing = [];
     }, () => {
       // tslint:disable-next-line: no-var-keyword disable-next-line: prefer-for-of
-           for (var i = 0; i < this.usernames.length; i++) {
-        this.http.getUserPublicInfo(this.usernames[i]).subscribe((data: UserPublicInfo) => {
-          this.myFollowing.push(data);
+          for (var i = 0; i < this.usernames.length; i++) {
+            this.http.getUserPublicInfo(this.usernames[i]).subscribe((data: UserPublicInfo) => {
+            this.myFollowing.push(data);
           },
           (error: any) => {
             /**

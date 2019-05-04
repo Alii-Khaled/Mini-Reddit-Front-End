@@ -277,7 +277,7 @@ export class ProfileHttpService {
             const headers = new HttpHeaders ({
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + token 
             });
             return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewComments?username=' + username , {headers});
         }
