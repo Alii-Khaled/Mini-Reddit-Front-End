@@ -4,7 +4,6 @@ import { Observable} from 'rxjs';
 import { UserCommunities } from '../profile_classes/user-communities';
 import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
-import { comments, post } from '../classes/comments';
 @Injectable({
     providedIn: 'root'
 })

@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class PostLayoutComponent implements OnInit {
 
-  constructor(private apiService: HttpService, public router: Router) {}
+  constructor(private http: PostService, public router: Router) {}
   /**
    * object to receivearray of objects of posts information
    */
@@ -59,11 +59,20 @@ downVote() {
     this.posts.downvotes ++;
   }
 }
-unsave() {
-  this.posts.saved = !this.posts.saved;
+// unsave() {
+//   this.posts.saved = !this.posts.saved;
+// }
+// save() {
+//   this.posts.saved = true;
+// }
+save(post_id: number){
+  console.log('save id='+post_id);
+  console.log(this.http.savePost(post_id).subscribe((data: any) => this.posts = data));
 }
-save() {
-  this.posts.saved = true;
+
+unsave(post_id: number){
+  console.log('unsave id='+post_id);
+  console.log(this.http.unsavePost(post_id).subscribe((data: any) => this.posts = data));
 }
 hide() {
   this.posts.hidden = true;

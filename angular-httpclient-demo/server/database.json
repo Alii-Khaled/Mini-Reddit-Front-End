@@ -147,36 +147,45 @@
   ],
   "comments": [
     {
-      "comment_id": 1,
-      "body": "comment1",
-      "username": "ahmed",
-      "downvotes": 15,
-      "upvotes": 0,
-      "date": " 2 days ago ",
-      "comments_num": 0,
-      "saved": "true"
+        "comment_id": 1,
+        "body": "comment1",
+        "username": "ahmed",
+        "author_photo_path": "storage\/app\/avater.jpg",
+        "downvotes": 15,
+        "upvotes": 0,
+        "date": " 2 days ago ",
+        "comments_num": 0,
+        "saved": "true",
+        "upvoted": "true",
+        "downvoted": "false"
     },
     {
-      "comment_id": 2,
-      "body": "comment2",
-      "username": "ahmed",
-      "downvotes": 23,
-      "upvotes": 17,
-      "date": " 2 days ago ",
-      "comments_num": 0,
-      "saved": "false"
+        "comment_id": 2,
+        "body": "comment2",
+        "username": "ahmed",
+        "author_photo_path": "storage\/app\/avater.jpg",
+        "downvotes": 23,
+        "upvotes": 17,
+        "date": " 2 days ago ",
+        "comments_num": 0,
+        "saved": "false",
+        "upvoted": "true",
+        "downvoted": "false"
     },
     {
-      "comment_id": 3,
-      "body": "comment3",
-      "username": "ahmed",
-      "downvotes": 31,
-      "upvotes": 78,
-      "date": " 2 days ago ",
-      "comments_num": 0,
-      "saved": "true"
+        "comment_id": 3,
+        "body": "comment3",
+        "username": "ahmed",
+        "author_photo_path": "storage\/app\/avater.jpg",
+        "downvotes": 31,
+        "upvotes": 78,
+        "date": " 2 days ago ",
+        "comments_num": 0,
+        "saved": "true",
+        "upvoted": "true",
+        "downvoted": "false"
     }
-  ],
+],
   "upvoted": [
     {
       "post_id": 1,
