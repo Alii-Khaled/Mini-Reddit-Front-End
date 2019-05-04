@@ -79,6 +79,7 @@ export class UserHeaderComponent implements OnInit {
       this.username = localStorage.getItem('username');
       this.http.getUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
         this.publicInfo = data;
+// tslint:disable-next-line: max-line-length
         this.publicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
       },
         (error: any) => {
