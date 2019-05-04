@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required, Validators.minLength(3), Validators.maxLength(20)],
       password: ['', Validators.required]
     });
-    this.disabld = false; /* this.form.valid;*/
-  }
+    this.disabld = this.form.valid;
+   }
 
   ngOnInit() {
     this.OneSignal = window['OneSignal'] || [];
@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
     this.service.login(val.username, val.password).subscribe((data: any) => {
       localStorage.setItem('token', data.token);
       localStorage.setItem('navbar', 'true');
+      this.router.navigateByUrl('');
       window.location.reload();
 
       this.OneSignal.push(function () {

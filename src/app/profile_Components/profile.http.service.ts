@@ -5,7 +5,6 @@ import { UserCommunities } from '../profile_classes/user-communities';
 import { UserPublicInfo } from '../profile_classes/user-public-info';
 import { PostsObjects } from '../classes/posts-objects';
 import { comments, post } from '../classes/comments';
-import { c } from '../classes/c';
 
 @Injectable({
     providedIn: 'root'
@@ -24,7 +23,7 @@ export class ProfileHttpService {
     /**
      * To get all communities subscribed by this user
      */
-    getMyCommunities(username): Observable<UserCommunities[]> {
+    getMyCommunities(username): Observable<number[]> {
         /**
          * Choose from where i'll get my data
          */
@@ -33,7 +32,7 @@ export class ProfileHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
+        return this.http.get<number[]>('http://localhost:3000/communities');
         } else {
              /**
               * Getting token
@@ -47,7 +46,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<UserCommunities[]>('http://localhost:3000/communities');
+            return this.http.get<number[]>( this.BackEnd + '/api/unauth/viewUserCommunities?username=' + username , {headers} );
         }
     }
 
@@ -197,7 +196,6 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/viewUpOrDownvotedPosts?type=1' , {headers} );
             return this.http.get<any>(this.BackEnd + '/api/auth/viewUpOrDownvotedPosts?type=1' , {headers} );
         }
     }
@@ -258,8 +256,19 @@ export class ProfileHttpService {
              */
         return this.http.get<comments[]>('http://localhost:3000/comments');
         } else {
-            // return this.http.get<comments[]>('https://930d0c7c.ngrok.io/api/unauth/viewComments' + username);
-            return this.http.get<comments[]>(this.BackEnd + '/api/unauth/viewComments' + username);
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            return this.http.get<comments[]>(this.BackEnd + '/api/unauth/viewComments' + username , {headers});
         }
     }
 
@@ -320,7 +329,7 @@ signOut() {
 
     /**
      * To get all communities info
-     *   @param id now we use id to get Specific Community 
+     *   @param id now we use id to get Specific Community
      */
     getCommunityInfo(id: number): Observable<UserCommunities> {
 
@@ -353,27 +362,93 @@ signOut() {
             return this.http.get<UserCommunities>(this.BackEnd + '/api/unauth/communityInformation?id=' + id , { headers } );
         }
     }
+    /**
+     * To block user
+     * @param username Username of the user to be blocked
+     */
+    blockUser(username) {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            let body = {
+                "username" :username
+            };
+            return this.http.post(this.BackEnd + '/api/auth/blockUser' , body, {headers});
+        }
+    }
+    /**
+     * Getting user's blocked list
+     */
+    getBlockedUsers(): Observable<any> {
+        /**
+         * Choose from where i'll get my data
+         */
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            return this.http.get<any>(this.BackEnd + '/api/auth/blockedUsers', { headers });
+        }
+    }
 
-    // /** POST: add a new hero to the database */
-    // addHero (hero: PostsObjects): Observable<PostsObjects> {
-    //     return this.http.post<PostsObjects>('http://localhost:3000/Community/', hero, httpOptions)
-    //     .pipe(
-    //         catchError(this.handleError('addHero', hero))
-    //     );
-    // }
-
-    // createPost (postData) {
-    //     return this.http.post<comments>('http://localhost:3000/comments/', postData);
-    // }
-
-    // hidePost(post_id: number){
-    //     return this.http.put(''+post_id,)
-    // }
-
-    // updateCustomer(customer: Customer){
-    //     return this.httpClient.put(`${this.apiURL}/customers/${customer.id}`,customer);
-    // }
-
+    /**
+     * To unblock user
+     * @param username Username of the user to be unblocked
+     */
+    unblockUser(username) {
+        if (this.IsApi === false) {
+            /**
+             * From the mock server if "IsApi" is false
+             * And from Api if it is true
+             */
+        } else {
+            /**
+             * Getting token from cookies
+             */
+            var token = localStorage.getItem('token');
+            /**
+             * Setting headers
+             */
+            const headers = new HttpHeaders ({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token
+            });
+            let body = {
+                "username": username
+            };
+            return this.http.post(this.BackEnd + '/api/auth/unblockUser' , body, {headers});
+        }
+    }
 }
 
 

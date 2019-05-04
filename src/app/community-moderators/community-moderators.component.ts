@@ -118,24 +118,24 @@ export class CommunityModeratorsComponent implements OnInit {
               horizontalPosition: 'center',
               panelClass: 'snack-remove-button',
 
-            });
-            this.moderators.splice(i, 1);
-          },
-          err => {
-            this.message = 'removed failed';
-            this.snackBar.open(this.message, undefined, {
-              duration: 4000,
-              verticalPosition: 'bottom',
-              horizontalPosition: 'center',
-              panelClass: 'snack-remove-button',
-
-            });
           });
+          this.router.navigateByUrl(this.router.url);
+        },
+        err => {
+          this.message = 'removed failed';
+          this.snackBar.open(this.message, undefined, {
+            duration: 4000,
+            verticalPosition: 'bottom',
+            horizontalPosition: 'center',
+            panelClass: 'snack-remove-button',
+
+          });
+        });
       }
-      else {
+      else{
         return;
       }
     });
 
-  }
+}
 }

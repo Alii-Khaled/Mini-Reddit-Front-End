@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PostsObjects } from 'src/app/classes/posts-objects';
 describe('CommunityComponent', () => {
   let component: CommunityComponent;
-
+  let fixture: ComponentFixture<CommunityComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -19,6 +19,11 @@ describe('CommunityComponent', () => {
   });
 
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CommunityComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
   it('should change buttonname to SUBSCRIBED if input is true', () => {
     let fixture = TestBed.createComponent(CommunityComponent);
