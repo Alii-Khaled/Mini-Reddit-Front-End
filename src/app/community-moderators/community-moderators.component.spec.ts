@@ -42,6 +42,6 @@ describe('CommunityModeratorsComponent', () => {
     const titleElement: HTMLElement = fixture.debugElement.query( By.css('#usernameeeq')).nativeElement;
     expect(titleElement.innerText).toContain('7moda');
 });
- */
+ 
 });
- */
+*/
