@@ -114,14 +114,16 @@ unsave(post_id: number){
 }
 
 hide() {
-  if (!this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
-    this.posts.hidden = true;
-  }
+  // if (!this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.hidden = true;
+  // }
+  this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data);
 }
 unhide() {
-  if (!this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
-    this.posts.hidden = false;
-  }
+  // if (!this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.hidden = false;
+  // }
+  this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data)
 }
 
 viewPost(post_id: number) {

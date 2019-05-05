@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { communityModerators } from 'src/app/classes/community-moderators';
 import { PostsObjects } from 'src/app/classes/posts-objects';
+import { DropdownService } from 'src/app/dropdown.service';
 
 @Component({
   selector: 'app-community',
@@ -47,11 +48,19 @@ export class CommunityComponent implements OnInit {
    * Variable to know community id
    */
   commId;
+    /**
+   * Variable to know community name
+   */
+  commName;
   /**
    * Variable to put in it buttonname of subscribtion
    */
-  isModerator;
+
   buttonName = 'SUBSCRIBE';
+  /**
+   * Variable to know if moderator
+   */
+  isModerator;
 
   /**
    * 
@@ -59,6 +68,7 @@ export class CommunityComponent implements OnInit {
    * @param snackBar for notification popup
    * @param router for routing
    * @param route for Dynamic routing
+   * @param UserHeaderComponent To change the dropdown menu icon and title to the username and user logo
    */
 
 
@@ -67,21 +77,23 @@ export class CommunityComponent implements OnInit {
   /**
    * Constructor assign community id and handles dynamic routing and get community information
    */
-  constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute) {
+  constructor(private http: communityHttpService,private dropdown: DropdownService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute) {
     route.params.subscribe(val => {
+      window.scroll(0, 0);
       this.arr = [];
       this.arr = this.router.url.split('/');
       this.commId = parseInt(this.arr[this.arr.length - 1]);
 
       /*  this.commId=parseInt(this.router.url.substr(11)); */
       console.log(this.commId);
-      this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
+      this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts);
       this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
         this.Community = data;
         this.myFlagForButtonToggle = data.subscribed;
         console.log(this.myFlagForButtonToggle);
         console.log(data.subscribed);
         this.isModerator = data.moderator;
+       
         if (data.logo===null)
         {
           this.Community.logo="http://i.imgur.com/sdO8tAw.png"
@@ -90,6 +102,7 @@ export class CommunityComponent implements OnInit {
         {
           this.Community.banner= "https://styles.redditmedia.com/t5_6/styles/bannerBackgroundImage_yddlxq1m39r21.jpg?format=pjpg&s=5b0d6c78cbbf5e40d6882202257bc3f70b307549"
         }
+        this.dropdown.changeData('r/' + this.Community.name, this.Community.logo);
       },response=>{},
       ()=>
       {
@@ -102,6 +115,7 @@ export class CommunityComponent implements OnInit {
 
       }
       ); 
+   
     });
   }
   /**

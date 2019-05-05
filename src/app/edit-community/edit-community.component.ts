@@ -6,6 +6,7 @@ import { communityHttpService } from '../community/community.http.service';
 import { MatSnackBar, MatSnackBarModule, MatDialogModule, MatDialogRef, MatDialog } from "@angular/material";
 import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from '../components/shared/confirmation-dialog/confirmation-dialog.component';
+import { DropdownService } from 'src/app/dropdown.service';
 
 @Component({
   selector: 'app-edit-community',
@@ -45,7 +46,8 @@ export class EditCommunityComponent implements OnInit {
    * Variable to assign with community avatar
    */
   avatar;
-  constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, public dialog: MatDialog) {
+  
+  constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, public dialog: MatDialog,public dropdown: DropdownService) {
     window.scroll(0,0);
     this.arr=this.router.url.split('/');
     this.commId = parseInt(this.arr[this.arr.length-2]);
@@ -149,6 +151,7 @@ export class EditCommunityComponent implements OnInit {
           () => {
             if (this.theresponse) {
 
+              this.dropdown.changeData('' + 'Popular', 'https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png');
               setTimeout(() => this.router.navigateByUrl('#'), 5000);
             }
           }
@@ -173,7 +176,7 @@ export class EditCommunityComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Yes clicked');
-        this.http.editCommunity(this.commId, this.rules, this.bio, this.banner, this.avatar).subscribe(response => {
+        this.http.editCommunity(this.commId, this.rules, this.bio, this.uploadedBanner, this.uploadedAvatar).subscribe(response => {
           this.message = 'Community has been edited';
           this.snackBar.open(this.message, 'dismiss', {
             duration: 4000,

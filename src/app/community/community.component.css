@@ -323,21 +323,27 @@ height: 40px;
 #allpage{
     background-color: #DAE0E6;
     height: -webkit-fill-available;
+    width: 100%;
+  
 }
 
 #banner{
     height: min-content;
     max-height: 250px;
-width: max-content;
+    width: 100%;
+    display: flex;
     object-fit: cover;
+    max-width: -webkit-fill-available; 
+   
 
 }
 #postt{
     margin-top: 20px;
-   
+    display: flex;
    
 }
 #lamaNshof{
-    width: 700px;
+    display: flex;
+   
     margin-left: 20px;
 }

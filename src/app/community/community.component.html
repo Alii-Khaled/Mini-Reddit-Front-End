@@ -20,15 +20,15 @@
       <div id="UnderUnderBannerBar" class="container-fluid UnderUnderBannerBar  ">
 
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-6">
+    
+      <div class="col-md-7">
         <div id="postt"></div>
         <div id="lamaNshof">
           <app-post-layout *ngFor="let post of posts;" [posts]="post"></app-post-layout>
         </div>
       </div>
-
-      <div class="col-md-4">
+<div class="col-md-2"></div>
+      <div class="col-md-2">
         <div class="row">
           <div id="CommunityDetailsAll" class="CommunityDetailsAll panel-default  col-md-4">
             <div id="CommDetails" class="CommDetails panel-heading">
@@ -66,7 +66,7 @@
 
                 </div>
                 <div id="Bio" class="Bio">
-                  {{Community?.description}}
+                  {{Community?.desription}}
                 </div>
                 <!-- <button type="button" class="btn btn-primary btn-lg Subscribe">SUBSCRIBE</button> -->
                 <mat-button-toggle
