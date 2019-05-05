@@ -13,7 +13,7 @@
         </div>
        <div class="division" id="second" *ngIf="posts.image !=-1"><img width="80px" height="60px" src="{{posts?.image}}" id="imgPost{{posts?.post_id}}"></div>
         <div class="division third" id="third{{posts.post_id}}" [ngStyle]="{'width':innerWidth+'px'}">
-        <div id="title">{{posts.title | slice : 0 : 90 }}<a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
+        <div id="title" routerLink="/viewPost/{{post?.title}}" (click)="viewPost(post?.post_id)">{{posts.title | slice : 0 : 90 }}<a id="postLink" href="https://i.redd.it/cw7oa54rc3n21.jpg"></a></div>
           <div id="userInfo">
             <p>
               <span class="hoving" id="postCommunity" onclick="parent.location='https:'+'//www.reddit.com/'">                        
@@ -38,6 +38,16 @@
           <button mat-button (click)="hide()" *ngIf="posts?.hidden === false &&  innerWidth >= 428; else elseBlockHide" id="hide{{posts?.post_id}}" class="buttons"><mat-icon>block</mat-icon> Hide</button>
           <ng-template #elseBlockHide><button mat-button (click)="unhide()" id="unHide{{posts?.post_id}}" class="buttons" *ngIf="innerWidth >= 428;"><mat-icon>block</mat-icon> Unhide</button></ng-template>
           <button mat-button id="report" class="buttons" *ngIf="innerWidth >= 494;"><mat-icon>flag</mat-icon> Report</button>
+          <button mat-button id="edit" class="buttons" *ngIf="innerWidth >= 564 && myPost;" (click)="toggleEditing()"><mat-icon>edit</mat-icon> Edit</button>          
+        </div>
+
+        <div id="editPost" style="padding:50px; padding-top:20px; display: inline-block; background-color: white;border-style: solid;
+        border-width: 0px; border-bottom-width: 1px;border-bottom-color: grey;width: 100%;" *ngIf="editing">
+          <app-ngx-editor id="body" [config]="editorConfig" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+          
+          <button disableRipple type="submit" id="editButton" class="commentButton rightButton btn btn-success" 
+            [disabled]="!name.value" (click)="createPost()">COMMENT
+          </button>
         </div>
       </form>
     
