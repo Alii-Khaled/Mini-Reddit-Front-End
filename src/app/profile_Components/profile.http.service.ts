@@ -503,7 +503,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any[]>(this.BackEnd + '/api/v1/unauth/viewOverview?username=' + username , { headers });
+            return this.http.get<any[]>(this.BackEnd + '/api/v1/auth/viewSavedLinks' , { headers });
         }
     }
 
