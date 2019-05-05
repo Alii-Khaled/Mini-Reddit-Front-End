@@ -255,6 +255,7 @@ cardButtonClick() {
    * If i'm on my profile then it creates a new post
    */
   if (this.cardButton === 'NEW POST') {
+    this.router.navigateByUrl('submit');
     // TODO: put routing link here to create new post
   } else if (this.cardButton === 'FOLLOW') {
     /**
