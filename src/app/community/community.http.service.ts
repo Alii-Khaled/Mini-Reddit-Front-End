@@ -85,6 +85,7 @@ export class communityHttpService {
     }
 
     getMyModerators(id: number): Observable<any[]> {
+    
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -97,10 +98,10 @@ export class communityHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-            return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
+            return this.http.get<any>('http://localhost:3000/get_my_moderators');
         }
         else {
-            return this.http.get<communityModerators[]>('http://35.204.169.121/api/v1/auth/viewModerators?community_id=' + id, { headers });
+            return this.http.get<any>('http://35.204.169.121/api/v1/unauth/viewModerators?community_id=' + id, { headers });
 
         }
     }

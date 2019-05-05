@@ -204,7 +204,7 @@ export class CommunityComponent implements OnInit {
    */
   ngOnInit() {
     this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
-    this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
+    this.http.getMyModerators(this.commId).subscribe((data: any) => this.moderators = data.moderators);
     this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
   }
 
