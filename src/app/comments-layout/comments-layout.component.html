@@ -1,7 +1,7 @@
 <form class="comment-container" id="commenting" [ngStyle]="{'width':innerWidth2+'px'}">
   <div class="upper">
     <p style="color:grey;"><mat-icon style="font-size:13px;">mode_comment</mat-icon><span class="underlining" style="color:blue">{{comments[0]?.author_username}}</span>
-       commented on  . <span routerLink="/viewPost/{{post?.title}}" (click)="viewPost(post?.post_id)">.{{post?.title}}</span> <span class="underlining" style="font-weight: bold;color:black;">u/{{post?.community}}</span>
+       commented on  . <span routerLink="/viewPost/{{post?.title}}" (click)="viewPost(post?.post_id)">{{post?.title}}</span> . <span class="underlining" style="font-weight: bold;color:black;">u/{{post?.community}}</span>
         . Posted by <span class="underlining">u/{{post?.author_username}}</span>
     </p>
   </div>

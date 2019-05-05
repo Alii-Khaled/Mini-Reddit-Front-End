@@ -8,7 +8,8 @@ import { comments } from './classes/commentss';
   providedIn: 'root'
 })
 export class PostService {
-  IsApi: boolean;
+  IsApi = true;
+  BackEnd = 'http://35.204.169.121';
 
   constructor(private http: HttpClient) { }
 
@@ -95,26 +96,103 @@ export class PostService {
     }
   }
 
-  unsavePost(link_id: number) {
-    var token = localStorage.getItem('token');
-    let headers = {
-        "Accept": "application/json",
-        "Authorization": "Bearer " + token,
-        "Content-Type": "application/json",
-    }
+  // unsavePost(link_id: number) {
+  //   var token = localStorage.getItem('token');
+  //   let headers = {
+  //       "Accept": "application/json",
+  //       "Authorization": "Bearer " + token,
+  //       "Content-Type": "application/json",
+  //   }
 
-    let body = {
-        "link_id": link_id
-    }
-    /**
-     * Choose from where i'll get my data
-     */
+  //   let body = {
+  //       "link_id": link_id
+  //   }
+  //   /**
+  //    * Choose from where i'll get my data
+  //    */
+  //   if (this.IsApi === false) {
+  //       return this.http.post("http://localhost:3000/posts", body, { headers })
+  //   }
+  //   else {
+  //       // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
+  //       return this.http.post("http://35.204.169.121/api/auth/unsaveLink", body, { headers })
+  //   }
+  // }
+  unsavePost(link_id) {
     if (this.IsApi === false) {
-        return this.http.post("http://localhost:3000/posts", body, { headers })
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "link_id": link_id
+        };
+        return this.http.post(this.BackEnd + '/api/auth/unsaveLink' , body, {headers});
     }
-    else {
-        // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-        return this.http.post("http://35.204.169.121/api/auth/unsaveLink", body, { headers })
+  }
+
+  hidePost(post_id) {
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "post_id": post_id
+        };
+        return this.http.post(this.BackEnd + '/api/auth/hidePost' , body, {headers});
+    }
+  }
+
+  unhidePost(post_id) {
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "post_id": post_id
+        };
+        return this.http.post(this.BackEnd + '/api/auth/unhidePost' , body, {headers});
     }
   }
 

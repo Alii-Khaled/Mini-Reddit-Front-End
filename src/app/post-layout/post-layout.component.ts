@@ -18,9 +18,39 @@ export class PostLayoutComponent implements OnInit {
    * object to receivearray of objects of posts information
    */
   @Input()posts: PostsObjects;
+  @Input() myPost: number;
   innerWidth = window.innerWidth;
   public type: string;
   innerWidth2: number;
+
+  editing = false;
+
+  editorConfig = {
+    editable: true,
+      spellcheck: true,
+      height: '10rem',
+      minHeight: '0',
+      width: 'auto',
+      minWidth: '0',
+      translate: 'yes',
+      enableToolbar: true,
+      showToolbar: true,
+      placeholder: 'Text (optional)',
+      imageEndPoint: '',
+      toolbar: [
+          // ['bold', 'italic', 'underline', 'strikeThrough', 'superscript', 'subscript'],
+          // ['fontName', 'fontSize', 'color'],
+          // ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent'],
+          // ['cut', 'copy', 'delete', 'removeFormat', 'undo', 'redo'],
+          // ['paragraph', 'blockquote', 'removeBlockquote', 'horizontalLine', 'orderedList', 'unorderedList'],
+          // ['link', 'unlink', 'image', 'video']
+          ['bold', 'italic', 'link', 'strikeThrough', 'superscript'],
+          ['fontSize', 'blockquote', 'removeBlockquote', 'orderedList', 'unorderedList'],
+          ['link', 'unlink', 'image', 'video']
+      ]
+  
+  };
+  postid;
 
   public size = '';
   public id = '';
@@ -32,6 +62,9 @@ export class PostLayoutComponent implements OnInit {
     }
     this.innerWidth2 = this.innerWidth2 - 100;
     this.innerWidth = this.innerWidth2 - 150;
+
+    
+    this.postid = this.posts.post_id;
    }
 
   /**
@@ -67,18 +100,47 @@ downVote() {
 // }
 save(post_id: number){
   console.log('save id='+post_id);
-  console.log(this.http.savePost(post_id).subscribe((data: any) => this.posts = data));
+  // if (!this.http.savePost(post_id).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.saved = true;
+  // }
+  this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data);
 }
 
 unsave(post_id: number){
-  console.log('unsave id='+post_id);
-  console.log(this.http.unsavePost(post_id).subscribe((data: any) => this.posts = data));
+  console.log('unsave id='+this.postid);
+  // console.log(this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data));
+  // if (!this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.saved = !this.posts.saved;
+  // }
+  this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data);
 }
+
 hide() {
-  this.posts.hidden = true;
+  // if (!this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.hidden = true;
+  // }
+  console.log('hide id='+this.postid);
+  this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data);
 }
 unhide() {
-  this.posts.hidden = false;
+  // if (!this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.hidden = false;
+  // }
+  console.log('unhide id='+this.postid);
+  this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data)
+}
+
+viewPost(post_id: number) {
+  // request to view post
+  // this.postsEvent.emit(this.posts);
+}
+
+toggleEditing(){
+  if (this.editing){
+    this.editing = false;
+  } else {
+    this.editing = true;
+  }
 }
 
 /**
@@ -88,6 +150,7 @@ unhide() {
 @HostListener('window:resize', ['$event'])
 onResize(event) {
   if (window.innerWidth > 960) {
+    // this.innerWidth2 = window.innerWidth - 700;
     this.innerWidth2 = window.innerWidth - 350;
   } else {
     this.innerWidth2 = window.innerWidth;
