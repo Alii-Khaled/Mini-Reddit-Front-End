@@ -119,12 +119,14 @@ hide() {
   // if (!this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
   //   this.posts.hidden = true;
   // }
+  console.log('hide id='+this.postid);
   this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data);
 }
 unhide() {
   // if (!this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
   //   this.posts.hidden = false;
   // }
+  console.log('unhide id='+this.postid);
   this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data)
 }
 
