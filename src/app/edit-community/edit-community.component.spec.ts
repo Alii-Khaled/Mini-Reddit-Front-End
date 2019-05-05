@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/* import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditCommunityComponent } from './edit-community.component';
 import {FormsModule} from '@angular/forms';
@@ -26,3 +26,4 @@ describe('EditCommunityComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+ */
