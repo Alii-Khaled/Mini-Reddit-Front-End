@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+/* import { TestBed } from '@angular/core/testing';
 
 import { ViewSinglePostService } from './view-single-post.service';
 
@@ -10,3 +10,4 @@ describe('ViewSinglePostService', () => {
     expect(service).toBeTruthy();
   });
 });
+ */

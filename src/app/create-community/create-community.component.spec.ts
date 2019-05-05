@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/* import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateCommunityComponent } from './create-community.component';
 
@@ -23,3 +23,4 @@ describe('CreateCommunityComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+ */

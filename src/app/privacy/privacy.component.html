@@ -3,7 +3,7 @@
 <div class="blocking">Block</div>
 <form class="add-block">
   <input type="text" maxlength="30" placeholder="ADD USER TO BLOCKED LIST" [(ngModel)]="username" name="name">
-  <button type="submit" (click)="add()"><b>ADD</b></button>
+  <button type="submit" (click)="add()" id="add"><b>ADD</b></button>
 </form>
 <div class="blocking">Blocked users</div>
 <form *ngFor="let block of blockedPeople" id="blocked-bar">
