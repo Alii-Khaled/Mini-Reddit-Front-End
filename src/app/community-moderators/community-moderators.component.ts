@@ -14,7 +14,7 @@ import { from } from 'rxjs';
   styleUrls: ['./community-moderators.component.css']
 })
 export class CommunityModeratorsComponent implements OnInit {
-  moderators: any;
+  moderators: communityModerators[];
   isModerator: boolean;
   message;
   /**
@@ -37,7 +37,7 @@ export class CommunityModeratorsComponent implements OnInit {
     this.commId = parseInt(this.arr[this.arr.length - 2]);
     route.params.subscribe(val => {
       window.scroll(0, 0);
-      this.http.getMyModerators(this.commId).subscribe((data: any) => this.moderators =data.moderators);
+      this.http.getMyModerators(this.commId).subscribe((data: any) => this.moderators = data.moderators);
 
     });
   }
@@ -47,7 +47,7 @@ export class CommunityModeratorsComponent implements OnInit {
     this.arr = this.router.url.split('/');
     this.commId = parseInt(this.arr[this.arr.length - 2]);
     console.log(this.commId);
-    this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data);
+    this.http.getMyModerators(this.commId).subscribe((data: any) => this.moderators = data.moderators);
     console.log(this.commId);
     this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
       this.isModerator = data.moderator;
@@ -78,8 +78,7 @@ export class CommunityModeratorsComponent implements OnInit {
           duration: 4000,
           verticalPosition: 'bottom',
           horizontalPosition: 'center',
-          panelClass: 'snack-remove-button',
-
+          panelClass: 'snack-remove-button'
         });
         console.log(username);
         let moderator = new communityModerators(username, "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png");
@@ -110,11 +109,14 @@ export class CommunityModeratorsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        var username = this.moderators[i].moderators_name;
-        var id = this.moderators[i].id;
+        
+        var username = this.moderators[i].moderator_username;
+        var id=1;
+       /*  var id = this.moderators[i].id; for mock */
         /* w bab3at id dah parameter awlany 3ashan al8y mn mock */
         this.http.removeModerator(this.commId, username, id).subscribe(
           response => {
+            
             this.message = 'removed Successfully';
             this.snackBar.open(this.message, undefined, {
               duration: 4000,
