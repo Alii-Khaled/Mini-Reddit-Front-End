@@ -6,9 +6,20 @@
       "id": 1
     },
     {
-      "moderator_username": "ahmed",
-      "moderator_photo": "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png",
-      "id": 2
+      "moderator_name": "muhanad",
+      "id": 6
+    },
+    {
+      "moderator_name": "ahmed",
+      "id": 7
+    },
+    {
+      "moderator_name": "sherif",
+      "id": 8
+    },
+    {
+      "moderator_name": "7moda pasta",
+      "id": 9
     }
   ],
   "Community": [
