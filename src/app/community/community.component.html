@@ -4,9 +4,9 @@
     <div id="BannerBar" class=" row BannerBar" style="margin-top:48px;">
 
       <div id="All" class=" row All">
-        <img id="banner" src="{{Community?.banner}}" alt="">
+        <img id="banner" src="{{Community?.banner}}" (error)="bann.src='https://styles.redditmedia.com/t5_6/styles/bannerBackgroundImage_yddlxq1m39r21.jpg?format=pjpg&s=5b0d6c78cbbf5e40d6882202257bc3f70b307549'" #bann  alt="">
         <div id="CommLogoName" class="CommLogoName">
-          <img id="logo" class="logo" src="{{Community?.logo}}" alt="logo" viewBox="0 0 20 20">
+          <img id="logo" class="logo" src="{{Community?.logo}}" (error)="imgg.src='http://i.imgur.com/sdO8tAw.png'" #imgg alt="logo" viewBox="0 0 20 20">
           <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
           <span id="Name" class="Name">r/{{Community?.name}}</span>
         </div>
@@ -28,7 +28,7 @@
         </div>
       </div>
 <div class="col-md-2"></div>
-      <div class="col-md-2">
+      <div class="col-md-2 rightColumn">
         <div class="row">
           <div id="CommunityDetailsAll" class="CommunityDetailsAll panel-default  col-md-4">
             <div id="CommDetails" class="CommDetails panel-heading">
@@ -36,7 +36,7 @@
             </div>
             <div id="CommInfoAll" class="CommInfoAll panel-body panel-footer">
               <div id="CommLogoNamei" class="CommLogoNamei">
-                <img class="logo" src="{{Community?.logo}}" alt="logo" viewBox="0 0 20 20">
+                <img class="logo" src="{{Community?.logo}}" (error)="imggg.src='http://i.imgur.com/sdO8tAw.png'" #imggg alt="logo" viewBox="0 0 20 20">
                 <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
                 <span id="Namei" class="Namei">r/ {{Community?.name }} </span>
                 <div id="SubOnline" class="SubOnline">
@@ -89,7 +89,7 @@
             <div class="CommDetails panel-heading">
               Rules
             </div>
-            <div class="CommInfoAll panel-body panel-footer">
+            <div id="ruless"class="CommInfoAll panel-body panel-footer">
               {{Community?.rules }}
             </div>
           </div>

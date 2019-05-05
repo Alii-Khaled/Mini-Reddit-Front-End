@@ -85,6 +85,7 @@ export class communityHttpService {
     }
 
     getMyModerators(id: number): Observable<any[]> {
+    
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -97,10 +98,10 @@ export class communityHttpService {
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-            return this.http.get<communityModerators[]>('http://localhost:3000/get_my_moderators');
+            return this.http.get<any>('http://localhost:3000/get_my_moderators');
         }
         else {
-            return this.http.get<communityModerators[]>('http://35.204.169.121/api/v1/auth/viewModerators?community_id=' + id, { headers });
+            return this.http.get<any>('http://35.204.169.121/api/v1/unauth/viewModerators?community_id=' + id, { headers });
 
         }
     }
@@ -320,5 +321,29 @@ export class communityHttpService {
         }
     }
 
+
+getHomepagePosts() {
+    var token = localStorage.getItem('token');
+    let headers = {
+        "Accept": "application/json",
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json",
+    }
+
+    let body = {
+        "page_type": 1,
+
+    }
+    /**
+     * Choose from where i'll get my data
+     */
+    if (this.IsApi === false) {
+        return this.http.get<any>("http://localhost:3000/posts")
+    }
+    else {
+        return this.http.get<any>("http://35.204.169.121/api/v1/unauth/ViewPosts?page_type=" + 1, { headers })
+    }
 }
 
+
+}

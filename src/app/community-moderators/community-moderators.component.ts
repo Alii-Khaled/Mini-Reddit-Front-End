@@ -14,7 +14,7 @@ import { from } from 'rxjs';
   styleUrls: ['./community-moderators.component.css']
 })
 export class CommunityModeratorsComponent implements OnInit {
-  moderators: any[];
+  moderators: any;
   isModerator: boolean;
   message;
   /**
@@ -32,9 +32,12 @@ export class CommunityModeratorsComponent implements OnInit {
 
   constructor(private http: communityHttpService, public snackBar: MatSnackBar, private router: Router, route: ActivatedRoute, public dialog: MatDialog) {
     window.scroll(0, 0);
+    window.scroll(0, 0);
+    this.arr = this.router.url.split('/');
+    this.commId = parseInt(this.arr[this.arr.length - 2]);
     route.params.subscribe(val => {
       window.scroll(0, 0);
-      this.http.getMyModerators(this.commId).subscribe((data: communityModerators[]) => this.moderators = data as communityModerators[]);
+      this.http.getMyModerators(this.commId).subscribe((data: any) => this.moderators =data.moderators);
 
     });
   }

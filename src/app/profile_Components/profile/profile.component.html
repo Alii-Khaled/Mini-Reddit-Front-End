@@ -1,22 +1,22 @@
 <nav style="margin-top:48px"  class="navbar navbar-default" id="toolbar">
   <div class="container-fluid">
     <div class="nav nav-tabs" id="navbar">
-      <li><a routerLink="/user/{{PublicInfo?.username}}" id="overview" class="navbar-item">Overview</a></li>
-      <li><a routerLink="/user/{{PublicInfo?.username}}/posts" id="posts" class="navbar-item">Posts</a></li>
-      <li><a routerLink="/user/{{PublicInfo?.username}}/comments" id="comments" class="navbar-item asd2">Comments</a></li>
-      <li *ngIf="myProfile"><a routerLink="/user/{{PublicInfo?.username}}/saved" id="saved" class="navbar-item asd2">Saved</a></li>
-      <li *ngIf="myProfile"><a routerLink="/user/{{PublicInfo?.username}}/hidden" id="hidden" class="navbar-item asd">Hidden</a></li>
-      <li *ngIf="myProfile"><a routerLink="/user/{{PublicInfo?.username}}/upvoted" id="upvoted" class="navbar-item asd">Upvoted</a></li>
-      <li *ngIf="myProfile"><a routerLink="/user/{{PublicInfo?.username}}/downvoted" id="downvoted" class="navbar-item asd">Downvoted</a></li>
+      <li><a routerLink="/user/{{publicInfo?.username}}" id="overview" class="navbar-item">Overview</a></li>
+      <li><a routerLink="/user/{{publicInfo?.username}}/posts" id="posts" class="navbar-item">Posts</a></li>
+      <li><a routerLink="/user/{{publicInfo?.username}}/comments" id="comments" class="navbar-item asd2">Comments</a></li>
+      <li *ngIf="myProfile"><a routerLink="/user/{{publicInfo?.username}}/saved" id="saved" class="navbar-item asd2">Saved</a></li>
+      <li *ngIf="myProfile"><a routerLink="/user/{{publicInfo?.username}}/hidden" id="hidden" class="navbar-item asd">Hidden</a></li>
+      <li *ngIf="myProfile"><a routerLink="/user/{{publicInfo?.username}}/upvoted" id="upvoted" class="navbar-item asd">Upvoted</a></li>
+      <li *ngIf="myProfile"><a routerLink="/user/{{publicInfo?.username}}/downvoted" id="downvoted" class="navbar-item asd">Downvoted</a></li>
       <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i></a>
           <ul class="dropdown-menu dropdown-menu-right">
-            <li><a routerLink="/user/{{PublicInfo?.username}}/comments" id="commnts_h" class="dropdown-hidden-items2" >Comments</a></li>
-            <li *ngIf="myProfile"><a routerLink="/user/{{PublicInfo?.username}}/saved" id="saved_h" class="dropdown-hidden-items2" >Saved</a></li> 
-            <li *ngIf="myProfile"><a routerLink="/user/{{PublicInfo?.username}}/hidden" id="hidden_h" class="dropdown-hidden-items" >Hidden</a></li>
-            <li *ngIf="myProfile"><a routerLink="/user/{{PublicInfo?.username}}/upvoted" id="upvoted_h" class="dropdown-hidden-items" >Upvoted</a></li>
-            <li *ngIf="myProfile"><a routerLink="/user/{{PublicInfo?.username}}/downvoted" id="downvoted_h" class="dropdown-hidden-items">Downvoted</a></li>
-            <li><a routerLink="/user/{{PublicInfo?.username}}">Gilded (legacy)</a></li>
+            <li><a routerLink="/user/{{publicInfo?.username}}/comments" id="commnts_h" class="dropdown-hidden-items2" >Comments</a></li>
+            <li *ngIf="myProfile"><a routerLink="/user/{{publicInfo?.username}}/saved" id="saved_h" class="dropdown-hidden-items2" >Saved</a></li> 
+            <li *ngIf="myProfile"><a routerLink="/user/{{publicInfo?.username}}/hidden" id="hidden_h" class="dropdown-hidden-items" >Hidden</a></li>
+            <li *ngIf="myProfile"><a routerLink="/user/{{publicInfo?.username}}/upvoted" id="upvoted_h" class="dropdown-hidden-items" >Upvoted</a></li>
+            <li *ngIf="myProfile"><a routerLink="/user/{{publicInfo?.username}}/downvoted" id="downvoted_h" class="dropdown-hidden-items">Downvoted</a></li>
+            <li><a routerLink="/user/{{publicInfo?.username}}">Gilded (legacy)</a></li>
           </ul>
       </li>
     </div>
@@ -24,17 +24,17 @@
 </nav>
 <body>
 <form id="user-card">
-  <img id="banner" width="100%" height="94px" src="{{PublicInfo?.cover_path}}" (error)="banner.src = 'https://www.beautycolorcode.com/2c96da.png'" #banner>
-  <img id="pp" width="80px" height="80px" src="{{PublicInfo?.photo_path}}" (error)="pp.src = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png'" #pp>
-  <p style="margin-left:10px;" id="name">u/{{PublicInfo?.name}}</p>
+  <img id="banner" width="100%" height="94px" src="{{publicInfo?.cover_path}}" (error)="banner.src = 'https://www.beautycolorcode.com/2c96da.png'" #banner>
+  <img id="pp" width="80px" height="80px" src="{{publicInfo?.photo_path}}" (error)="pp.src = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png'" #pp>
+  <p style="margin-left:10px;" id="name">u/{{publicInfo?.name}}</p>
   <h5 style="margin-left:10px;float: left;">Karma</h5>
   <h5 style="margin-left:100px;float: right;margin-right: 90px;">Cake day</h5>
   <br>
   <br>
   <i class="fa fa-cog" style="color:rgb(51, 168, 255);margin-left: 10px;float: left;" aria-hidden="true"></i>
-  <p style="-webkit-text-fill-color: gray;float: left;margin-top: -3px;margin-left: 5px;">{{PublicInfo?.karma}}</p>
+  <p style="-webkit-text-fill-color: gray;float: left;margin-top: -3px;margin-left: 5px;" id="karma">{{publicInfo?.karma}}</p>
   <i class="fa fa-birthday-cake" style="color:rgb(51, 168, 255);margin-inline-start: 129px;" aria-hidden="true"></i>
-  <p style="-webkit-text-fill-color: gray;margin-top: -18px;margin-inline-start: 150px;float: left;">{{PublicInfo?.cake_day}}</p>
+  <p id="cake" style="-webkit-text-fill-color: gray;margin-top: -18px;margin-inline-start: 150px;float: left;">{{publicInfo?.cake_day}}</p>
   <br>
   <br>
   <button type="button" class="btn btn-outline-primary" id="card-button" (click)="cardButtonClick()" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()"><b>{{cardButton}}</b></button>

@@ -51,10 +51,6 @@ export class UserHeaderComponent implements OnInit {
    */
   myFollowing: UserPublicInfo[];
   /**
-   * Subscribed communities id's
-   */
-  commIds: any;
-  /**
    * @param http For requests
    * @param router To navigate to another page if token is sended false
    */

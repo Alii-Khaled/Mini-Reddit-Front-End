@@ -57,20 +57,15 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('navbar', 'true');
       localStorage.setItem('username', val.username);
       this.router.navigateByUrl('');
-        window.location.reload();
-
-    
-
+      window.location.reload();
     },
       err => {
         if (err.status === 422) {
-          this.router.navigateByUrl('#');
-          console.log('error');
-        }
+          this.router.navigateByUrl('');
+             }
 
-      }, 
-      ()=>{
-        
+      },
+      () => {
     /*   this.OneSignal.push(function () {
 
         var isPushSupported = this.OneSignal.isPushNotificationsSupported();
@@ -104,13 +99,9 @@ export class LoginComponent implements OnInit {
           // Push notifications are not supported
           console.log(' Push notifications are not supported');
         }
-     
       }); */
       }
-      
       );
-
-
   }
   /**
    * supposed to open sign up page as pop up

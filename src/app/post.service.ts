@@ -140,8 +140,6 @@ export class PostService {
         let body = {
             "link_id": link_id
         };
-        console.log(token);
-        console.log(link_id);
         return this.http.post(this.BackEnd + '/api/v1/auth/unsaveLink' , body, {headers});
     }
   }
@@ -168,7 +166,6 @@ export class PostService {
         let body = {
             "post_id": post_id
         };
-        console.log(token);
         return this.http.post(this.BackEnd + '/api/v1/auth/hidePost' , body, {headers});
     }
   }
