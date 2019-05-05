@@ -347,3 +347,9 @@ height: 40px;
    
     margin-left: 20px;
 }
+.rightColumn{
+
+   
+    right: 160px;
+    float: right;
+}
