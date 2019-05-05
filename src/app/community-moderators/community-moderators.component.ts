@@ -70,6 +70,7 @@ export class CommunityModeratorsComponent implements OnInit {
   */
     this.http.addModerator(this.commId, username, "https://www.redditstatic.com/desktop2x/img/placeholder_gradient_light-280.png").subscribe(
       response => {
+        
         this.message = 'Added Successfully';
         this.snackBar.open(this.message, undefined, {
           duration: 4000,
