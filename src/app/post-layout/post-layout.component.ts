@@ -100,17 +100,19 @@ downVote() {
 // }
 save(post_id: number){
   console.log('save id='+post_id);
-  if (!this.http.savePost(post_id).subscribe((data: any) => this.posts = data) === false) {
-    this.posts.saved = true;
-  }
+  // if (!this.http.savePost(post_id).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.saved = true;
+  // }
+  this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data);
 }
 
 unsave(post_id: number){
   console.log('unsave id='+this.postid);
   // console.log(this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data));
-  if (!this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
-    this.posts.saved = !this.posts.saved;
-  }
+  // if (!this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.saved = !this.posts.saved;
+  // }
+  this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data);
 }
 
 hide() {
