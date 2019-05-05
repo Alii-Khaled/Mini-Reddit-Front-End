@@ -1123,7 +1123,7 @@ export class communityHttpService {
 
         }
         else {
-            return this.http.post&lt;communityModerators[]&gt;(&#x27;http://35.204.169.121//api/auth/removeModerator&#x27;, body, { headers });
+            return this.http.post&lt;communityModerators[]&gt;(&#x27;http://35.204.169.121//api/v1/auth/removeModerator&#x27;, body, { headers });
 
         }
     }
@@ -1160,7 +1160,7 @@ export class communityHttpService {
             return this.http.post&lt;communityModerators[]&gt;(&#x27;http://localhost:3000/get_my_moderators/&#x27;, bodyy);
         }
         else {
-            return this.http.post&lt;communityModerators[]&gt;(&#x27;http://35.204.169.121//api/auth/addModerator&#x27;, body, { headers });
+            return this.http.post&lt;communityModerators[]&gt;(&#x27;http://35.204.169.121//api/v1/auth/addModerator&#x27;, body, { headers });
 
         }
     }
@@ -1181,7 +1181,7 @@ export class communityHttpService {
             return this.http.get&lt;communityModerators[]&gt;(&#x27;http://localhost:3000/get_my_moderators&#x27;);
         }
         else {
-            return this.http.get&lt;communityModerators[]&gt;(&#x27;http://35.204.169.121/api/auth/viewModerators?community_id&#x3D;&#x27; + id, { headers });
+            return this.http.get&lt;communityModerators[]&gt;(&#x27;http://35.204.169.121/api/v1/auth/viewModerators?community_id&#x3D;&#x27; + id, { headers });
 
         }
     }
@@ -1211,7 +1211,7 @@ export class communityHttpService {
         }
         else {
             /*get community info not now in backend*/
-            return this.http.get&lt;Communities&gt;(&#x27;http://35.204.169.121/api/unauth/communityInformation?community_id&#x3D;&#x27; + id, { headers });
+            return this.http.get&lt;Communities&gt;(&#x27;http://35.204.169.121/api/v1/unauth/communityInformation?community_id&#x3D;&#x27; + id, { headers });
         }
     }
 
@@ -1244,8 +1244,8 @@ export class communityHttpService {
 
         }
         else {
-            // return this.http.post&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/auth/removeCommunity&#x27;,body ,{ headers });
-            return this.http.post&lt;any&gt;(&#x27;http://35.204.169.121/api/auth/removeCommunity&#x27;, body, { headers });
+            // return this.http.post&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/auth/removeCommunity&#x27;,body ,{ headers });
+            return this.http.post&lt;any&gt;(&#x27;http://35.204.169.121/api/v1/auth/removeCommunity&#x27;, body, { headers });
 
         }
     }
@@ -1272,11 +1272,11 @@ export class communityHttpService {
              * From the mock server if &quot;IsApi&quot; is false
              * And from Api if it is true
              */
-            return this.http.post&lt;any&gt;(&#x27;http://localhost/api/auth/subscribeCommunity&#x27;, body, { headers });
+            return this.http.post&lt;any&gt;(&#x27;http://localhost/api/v1/auth/subscribeCommunity&#x27;, body, { headers });
         }
         else {
-            // return this.http.post&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/auth/subscribeCommunity&#x27;, body, { headers });
-            return this.http.post&lt;any&gt;(&#x27;http://35.204.169.121/api/auth/subscribeCommunity&#x27;, body, { headers });
+            // return this.http.post&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/auth/subscribeCommunity&#x27;, body, { headers });
+            return this.http.post&lt;any&gt;(&#x27;http://35.204.169.121/api/v1/auth/subscribeCommunity&#x27;, body, { headers });
         }
     }
     /**
@@ -1302,11 +1302,11 @@ export class communityHttpService {
              * From the mock server if &quot;IsApi&quot; is false
              * And from Api if it is true
              */
-            return this.http.post&lt;any&gt;(&#x27;http://localhost/api/auth/unSubscribeCommunity&#x27;, body, { headers });
+            return this.http.post&lt;any&gt;(&#x27;http://localhost/api/v1/auth/unSubscribeCommunity&#x27;, body, { headers });
         }
         else {
-            // return this.http.post&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/auth/unSubscribeCommunity&#x27;,body ,{ headers });
-            return this.http.post&lt;any&gt;(&#x27;http://35.204.169.121/api/auth/unSubscribeCommunity&#x27;, body, { headers });
+            // return this.http.post&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/auth/unSubscribeCommunity&#x27;,body ,{ headers });
+            return this.http.post&lt;any&gt;(&#x27;http://35.204.169.121/api/v1/auth/unSubscribeCommunity&#x27;, body, { headers });
         }
 
     }
@@ -1337,11 +1337,11 @@ export class communityHttpService {
          * Choose from where i&#x27;ll get my data
          */
         if (this.IsApi &#x3D;&#x3D;&#x3D; false) {
-            return this.http.post(&quot;http://localhost/api/auth/editCommunity&quot;, body, { headers })
+            return this.http.post(&quot;http://localhost/api/v1/auth/editCommunity&quot;, body, { headers })
         }
         else {
-            // return this.http.post(&quot;https://930d0c7c.ngrok.io/api/auth/editCommunity&quot;, body, { headers })
-            return this.http.post(&quot;http://35.204.169.121/api/auth/editCommunity&quot;, body, { headers })
+            // return this.http.post(&quot;https://930d0c7c.ngrok.io/api/v1/auth/editCommunity&quot;, body, { headers })
+            return this.http.post(&quot;http://35.204.169.121/api/v1/auth/editCommunity&quot;, body, { headers })
         }
     }
 
@@ -1369,7 +1369,7 @@ export class communityHttpService {
             return this.http.get&lt;any&gt;(&quot;http://localhost:3000/posts&quot;)
         }
         else {
-            return this.http.get&lt;any&gt;(&quot;http://35.204.169.121/api/unauth/ViewPosts?community_id&#x3D;&quot; + community_id, { headers })
+            return this.http.get&lt;any&gt;(&quot;http://35.204.169.121/api/v1/unauth/ViewPosts?community_id&#x3D;&quot; + community_id, { headers })
         }
     }
 
@@ -1395,8 +1395,8 @@ export class communityHttpService {
             /**
              * Here id represent username of the profile owner user
              */
-            // return this.http.get&lt;UserPublicInfo&gt;(&#x27;https://930d0c7c.ngrok.io/api/unauth/viewPublicUserInfo?username&#x3D;&#x27; + id , {headers});
-            //return this.http.get&lt;UserPublicInfo&gt;(&#x27;http://35.204.169.121/api/unauth/viewPublicUserInfo?username&#x3D;&#x27; + id , {headers});
+            // return this.http.get&lt;UserPublicInfo&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/unauth/viewPublicUserInfo?username&#x3D;&#x27; + id , {headers});
+            //return this.http.get&lt;UserPublicInfo&gt;(&#x27;http://35.204.169.121/api/v1/unauth/viewPublicUserInfo?username&#x3D;&#x27; + id , {headers});
             return this.http.get&lt;UserPublicInfo&gt;(&#x27;http://localhost:3000/user_public_info/&#x27; + 1);
         }
     }

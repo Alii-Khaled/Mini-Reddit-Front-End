@@ -5,6 +5,7 @@ import { singlePost } from '../classes/single-post';
 import { ViewSinglePostService } from './view-single-post.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ActivatedRoute } from '@angular/router';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-view-single-post',
@@ -41,11 +42,12 @@ export class ViewSinglePostComponent implements OnInit {
       ]
   
   };
+  postid;
 
  /**
    * @param modalService To open pop up for login
    */
-  constructor(private http: HttpService, private route: ActivatedRoute, private modalService: BsModalService) { }
+  constructor(private http: PostService, private route: ActivatedRoute, private modalService: BsModalService) { }
 
   /**
   * This to configure the popup modal
@@ -84,11 +86,44 @@ export class ViewSinglePostComponent implements OnInit {
     // this.http.getMyCommunities('username').subscribe((data: any) => this.communities = data);
 
     // this.http.GetSinglePost().subscribe((data: PostsObjects[]) => this.posts = data);
+    this.postid=this.posts.post_id;
   }
 
   // reseiveData($event){
   //   this.posts = $event;
   // }
+
+  save(){
+    // console.log('save id='+post_id);
+    // if (!this.http.savePost(post_id).subscribe((data: any) => this.posts = data) === false) {
+    //   this.posts.saved = true;
+    // }
+    this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data);
+  }
+  
+  unsave(){
+    console.log('unsave id='+this.postid);
+    // console.log(this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data));
+    // if (!this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+    //   this.posts.saved = !this.posts.saved;
+    // }
+    this.http.unsavePost(this.postid).subscribe((data: any) => this.posts = data);
+  }
+  
+  hide() {
+    // if (!this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+    //   this.posts.hidden = true;
+    // }
+    console.log('hide id='+this.postid);
+    this.http.hidePost(this.postid).subscribe((data: any) => this.posts = data);
+  }
+  unhide() {
+    // if (!this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data) === false) {
+    //   this.posts.hidden = false;
+    // }
+    console.log('unhide id='+this.postid);
+    this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data);
+  }
 
   /**
   * This is the function that shows the login page as popup

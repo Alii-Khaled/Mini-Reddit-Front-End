@@ -256,6 +256,7 @@ cardButtonClick() {
    */
   if (this.cardButton === 'NEW POST') {
     // TODO: put routing link here to create new post
+    this.router.navigateByUrl('/submit');
   } else if (this.cardButton === 'FOLLOW') {
     /**
      * Follow user request

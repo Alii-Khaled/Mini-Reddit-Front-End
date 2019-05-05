@@ -81,6 +81,7 @@ upVote() {
     this.posts.upvoted = true;
     this.posts.upvotes ++;
   }
+  this.http.upvote(this.postid).subscribe((data: any) => this.posts = data);
 }
 downVote() {
   this.posts.upvoted = false;
@@ -91,6 +92,7 @@ downVote() {
     this.posts.downvoted = true;
     this.posts.downvotes ++;
   }
+  this.http.downvote(this.postid).subscribe((data: any) => this.posts = data);
 }
 // unsave() {
 //   this.posts.saved = !this.posts.saved;
@@ -127,7 +129,7 @@ unhide() {
   //   this.posts.hidden = false;
   // }
   console.log('unhide id='+this.postid);
-  this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data)
+  this.http.unhidePost(this.postid).subscribe((data: any) => this.posts = data);
 }
 
 viewPost(post_id: number) {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileHttpService } from '../profile_Components/profile.http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: ProfileHttpService , private router: Router) { }
 
   ngOnInit() {
+    // this.http.getMyPosts(this.username).subscribe((data: any) => this.posts = data.posts);
   }
 
 }

@@ -15,6 +15,7 @@
         <!-- tabs/////////////////////////////////// -->
         <mat-tab-group class="createPost" disableRipple>
             <mat-tab label="Post">
+              <br>
               <div class="active-pink-3 active-pink-4 mb-4" id="search" style="font-size:16px;">
                   <input class="form-control" id="title" type="text" placeholder="Title" aria-label="Search" [(ngModel)]="htmlContent1" name="name" #name="ngModel">
               </div> 
@@ -23,7 +24,7 @@
               <div class="textAreaSmall">
                 <!-- the markdown of angular -->
                 <!-- <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent" row="5"></app-ngx-editor> -->
-                <app-ngx-editor id="body" [config]="editorConfig" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+                <app-ngx-editor id="body" [config]="editorConfig" [spellcheck]="true" [(ngModel)]="htmlContent" content="content" #content="ngModel"></app-ngx-editor>
                 <!-- the text area -->
                 <!-- <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="5" placeholder="Text (optional)"></textarea> -->
                 
@@ -62,7 +63,7 @@
           <div class="rightButtons">
             <button mat-stroked-button class="draftButton rightButton" style="color:blue; background-color: white;">SAVE DRAFT</button>
             <button type="submit" id="postButton" class="postButton rightButton btn btn-success" 
-            [disabled]="!name?.value" (click)="createPost()">POST</button>
+            [disabled]="!name?.value" (click)="createPost(content,1,name)">POST</button>
           </div>
         </div>
         <!-- tabs ......................................... -->

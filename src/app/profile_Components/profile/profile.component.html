@@ -37,7 +37,7 @@
   <p style="-webkit-text-fill-color: gray;margin-top: -18px;margin-inline-start: 150px;float: left;">{{PublicInfo?.cake_day}}</p>
   <br>
   <br>
-  <button type="button" class="btn btn-outline-primary" id="card-button" routerLink="/submit" (click)="cardButtonClick()" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()"><b>{{cardButton}}</b></button>
+  <button type="button" class="btn btn-outline-primary" id="card-button" (click)="cardButtonClick()" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()"><b>{{cardButton}}</b></button>
 </form>
 <div id="content">
   <router-outlet></router-outlet>
