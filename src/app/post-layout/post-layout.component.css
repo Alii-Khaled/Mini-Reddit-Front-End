@@ -142,3 +142,20 @@ mat-icon{
 /* @media only screen and (min-width : 705){
     .post-container { width: 700px;}
 } */
+
+.commentButton{
+    margin-left: 3px; 
+    color:white; 
+    background-color: rgb(56, 56, 90);
+    font-size: 12px;
+    height: auto;
+    float: right;
+}
+
+.commentButton:hover{
+    background-color: rgb(77, 97, 112);
+}
+
+.commentButton:hover:disabled{
+    background-color: blue;
+}

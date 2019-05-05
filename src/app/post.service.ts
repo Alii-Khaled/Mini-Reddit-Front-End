@@ -8,7 +8,8 @@ import { comments } from './classes/commentss';
   providedIn: 'root'
 })
 export class PostService {
-  IsApi: boolean;
+  IsApi = true;
+  BackEnd = 'http://35.204.169.121';
 
   constructor(private http: HttpClient) { }
 
@@ -46,7 +47,7 @@ export class PostService {
 
     }
     else {
-        return this.http.post<PostsObjects[]>('http://35.204.169.121//api/auth/removeLink', body, { headers });
+        return this.http.post<PostsObjects[]>('http://35.204.169.121//api/v1/auth/removeLink', body, { headers });
 
     }
   }
@@ -67,7 +68,7 @@ export class PostService {
         return this.http.get<PostsObjects[]>('http://localhost:3000/posts');
     }
     else {
-        return this.http.get<PostsObjects[]>('http://35.204.169.121/api/auth/viewPosts?post_id=' + id, { headers });
+        return this.http.get<PostsObjects[]>('http://35.204.169.121/api/v1/auth/viewPosts?post_id=' + id, { headers });
 
     }
   }
@@ -90,31 +91,108 @@ export class PostService {
         return this.http.post("http://localhost:3000/posts", body, { headers })
     }
     else {
-        // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-        return this.http.post("http://35.204.169.121/api/auth/saveLink", body, { headers })
+        // return this.http.post("https://930d0c7c.ngrok.io/api/v1/auth/editCommunity", body, { headers })
+        return this.http.post("http://35.204.169.121/api/v1/auth/saveLink", body, { headers })
     }
   }
 
-  unsavePost(link_id: number) {
-    var token = localStorage.getItem('token');
-    let headers = {
-        "Accept": "application/json",
-        "Authorization": "Bearer " + token,
-        "Content-Type": "application/json",
-    }
+  // unsavePost(link_id: number) {
+  //   var token = localStorage.getItem('token');
+  //   let headers = {
+  //       "Accept": "application/json",
+  //       "Authorization": "Bearer " + token,
+  //       "Content-Type": "application/json",
+  //   }
 
-    let body = {
-        "link_id": link_id
-    }
-    /**
-     * Choose from where i'll get my data
-     */
+  //   let body = {
+  //       "link_id": link_id
+  //   }
+  //   /**
+  //    * Choose from where i'll get my data
+  //    */
+  //   if (this.IsApi === false) {
+  //       return this.http.post("http://localhost:3000/posts", body, { headers })
+  //   }
+  //   else {
+  //       // return this.http.post("https://930d0c7c.ngrok.io/api/v1/auth/editCommunity", body, { headers })
+  //       return this.http.post("http://35.204.169.121/api/v1/auth/unsaveLink", body, { headers })
+  //   }
+  // }
+  unsavePost(link_id) {
     if (this.IsApi === false) {
-        return this.http.post("http://localhost:3000/posts", body, { headers })
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "link_id": link_id
+        };
+        return this.http.post(this.BackEnd + '/api/v1/auth/unsaveLink' , body, {headers});
     }
-    else {
-        // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-        return this.http.post("http://35.204.169.121/api/auth/unsaveLink", body, { headers })
+  }
+
+  hidePost(post_id) {
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "post_id": post_id
+        };
+        return this.http.post(this.BackEnd + '/api/v1/auth/hidePost' , body, {headers});
+    }
+  }
+
+  unhidePost(post_id) {
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "post_id": post_id
+        };
+        return this.http.post(this.BackEnd + '/api/v1/auth/unhidePost' , body, {headers});
     }
   }
 
@@ -139,7 +217,7 @@ export class PostService {
     }
     else {
         /*I hope this is the right way*/
-        return this.http.get<comments>('http://35.204.169.121/api/unauth/ViewPosts?page_type=' + page_type 
+        return this.http.get<comments>('http://35.204.169.121/api/v1/unauth/ViewPosts?page_type=' + page_type 
         + '&username=' + username + '&community_id=' + community_id, { headers });
     }
   }
@@ -169,7 +247,7 @@ export class PostService {
 
     }
     else {
-        return this.http.post<comments[]>('http://35.204.169.121//api/auth/removeLink', body, { headers });
+        return this.http.post<comments[]>('http://35.204.169.121//api/v1/auth/removeLink', body, { headers });
 
     }
   }
@@ -194,7 +272,7 @@ export class PostService {
     }
     else {
         /*get community info not now in backend*/
-        return this.http.get<comments>('http://35.204.169.121/api/unauth/viewCommentsReplies?link_id=' + id, { headers });
+        return this.http.get<comments>('http://35.204.169.121/api/v1/unauth/viewCommentsReplies?link_id=' + id, { headers });
     }
   }
 
@@ -216,8 +294,8 @@ export class PostService {
         return this.http.post("http://localhost:3000/commentss", body, { headers })
     }
     else {
-        // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-        return this.http.post("http://35.204.169.121/api/auth/saveLink", body, { headers })
+        // return this.http.post("https://930d0c7c.ngrok.io/api/v1/auth/editCommunity", body, { headers })
+        return this.http.post("http://35.204.169.121/api/v1/auth/saveLink", body, { headers })
     }
   }
 
@@ -239,8 +317,8 @@ export class PostService {
         return this.http.post("http://localhost:3000/commentss", body, { headers })
     }
     else {
-        // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-        return this.http.post("http://35.204.169.121/api/auth/unsaveLink", body, { headers })
+        // return this.http.post("https://930d0c7c.ngrok.io/api/v1/auth/editCommunity", body, { headers })
+        return this.http.post("http://35.204.169.121/api/v1/auth/unsaveLink", body, { headers })
     }
   }
 

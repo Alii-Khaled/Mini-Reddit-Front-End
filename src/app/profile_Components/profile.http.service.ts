@@ -44,7 +44,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any>( this.BackEnd + '/api/unauth/viewUserCommunities?username=' + username , {headers} );
+            return this.http.get<any>( this.BackEnd + '/api/v1/unauth/viewUserCommunities?username=' + username , {headers} );
         }
     }
 
@@ -79,8 +79,8 @@ export class ProfileHttpService {
             /**
              * Getting username from Api
              */
-            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/getUsername' , {headers});
-            return this.http.get<any>(this.BackEnd + '/api/auth/getUsername' , {headers});
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/v1/auth/getUsername' , {headers});
+            return this.http.get<any>(this.BackEnd + '/api/v1/auth/getUsername' , {headers});
             }
     }
     /**
@@ -109,8 +109,8 @@ export class ProfileHttpService {
             /**
              * Here id represent username of the profile owner user
              */
-            // return this.http.get<UserPublicInfo>('https://930d0c7c.ngrok.io/api/unauth/viewPublicUserInfo?username=' + id , {headers});
-            return this.http.get<UserPublicInfo>(this.BackEnd + '/api/unauth/viewPublicUserInfo?username=' + id , {headers});
+            // return this.http.get<UserPublicInfo>('https://930d0c7c.ngrok.io/api/v1/unauth/viewPublicUserInfo?username=' + id , {headers});
+            return this.http.get<UserPublicInfo>(this.BackEnd + '/api/v1/unauth/viewPublicUserInfo?username=' + id , {headers});
         }
     }
 
@@ -137,7 +137,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewOverview?username=' + username , { headers });
+            return this.http.get<any[]>(this.BackEnd + '/api/v1/unauth/viewOverview?username=' + username , { headers });
         }
     }
 
@@ -165,8 +165,8 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/viewUpOrDownvotedPosts?type=0', {headers} );
-            return this.http.get<any>(this.BackEnd + '/api/auth/viewUpOrDownvotedPosts?type=0', {headers} );
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/v1/auth/viewUpOrDownvotedPosts?type=0', {headers} );
+            return this.http.get<any>(this.BackEnd + '/api/v1/auth/viewUpOrDownvotedPosts?type=0', {headers} );
         }
     }
 
@@ -194,7 +194,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any>(this.BackEnd + '/api/auth/viewUpOrDownvotedPosts?type=1' , {headers} );
+            return this.http.get<any>(this.BackEnd + '/api/v1/auth/viewUpOrDownvotedPosts?type=1' , {headers} );
         }
     }
 
@@ -222,8 +222,8 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/unauth/ViewPosts?username=' + username ,  {headers} );
-            return this.http.get<any>(this.BackEnd + '/api/unauth/ViewPosts?username=' + username ,  {headers} );
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/v1/unauth/ViewPosts?username=' + username ,  {headers} );
+            return this.http.get<any>(this.BackEnd + '/api/v1/unauth/ViewPosts?username=' + username ,  {headers} );
         }
     }
 
@@ -251,7 +251,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<PostsObjects[]>(this.BackEnd + '/api/auth/viewHiddenPosts' ,  {headers} );
+            return this.http.get<PostsObjects[]>(this.BackEnd + '/api/v1/auth/viewHiddenPosts' ,  {headers} );
         }
     }
     /**
@@ -278,7 +278,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token 
             });
-            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewComments?username=' + username , {headers});
+            return this.http.get<any[]>(this.BackEnd + '/api/v1/unauth/viewComments?username=' + username , {headers});
         }
     }
 
@@ -305,8 +305,8 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/auth/following?username=' + username , { headers });
-            return this.http.get<any>(this.BackEnd + '/api/auth/following?username=' + username , { headers });
+            // return this.http.get<any>('https://930d0c7c.ngrok.io/api/v1/auth/following?username=' + username , { headers });
+            return this.http.get<any>(this.BackEnd + '/api/v1/auth/following?username=' + username , { headers });
         }
     }
 
@@ -333,7 +333,7 @@ export class ProfileHttpService {
                 'Authorization': 'Bearer ' + token
             });
             let body = {};
-            return this.http.post(this.BackEnd + '/api/auth/signOut' , body, {headers});
+            return this.http.post(this.BackEnd + '/api/v1/auth/signOut' , body, {headers});
         }
     }
     /**
@@ -362,7 +362,7 @@ export class ProfileHttpService {
             let body = {
                 "username" :username
             };
-            return this.http.post(this.BackEnd + '/api/auth/blockUser' , body, {headers});
+            return this.http.post(this.BackEnd + '/api/v1/auth/blockUser' , body, {headers});
         }
     }
     /**
@@ -390,7 +390,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any>(this.BackEnd + '/api/auth/blockedUsers', { headers });
+            return this.http.get<any>(this.BackEnd + '/api/v1/auth/blockedUsers', { headers });
         }
     }
 
@@ -420,7 +420,7 @@ export class ProfileHttpService {
             let body = {
                 "username": username
             };
-            return this.http.post(this.BackEnd + '/api/auth/unblockUser' , body, {headers});
+            return this.http.post(this.BackEnd + '/api/v1/auth/unblockUser' , body, {headers});
         }
     }
     /**
@@ -448,7 +448,7 @@ export class ProfileHttpService {
             let body = {
                 "username": username
             };
-            return this.http.post(this.BackEnd + '/api/auth/follow' , body, {headers});
+            return this.http.post(this.BackEnd + '/api/v1/auth/follow' , body, {headers});
         }
     }
     /**
@@ -476,7 +476,7 @@ export class ProfileHttpService {
             let body = {
                 "username": username
             };
-            return this.http.post(this.BackEnd + '/api/auth/unfollow' , body, {headers});
+            return this.http.post(this.BackEnd + '/api/v1/auth/unfollow' , body, {headers});
         }
     }
 
@@ -503,7 +503,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any[]>(this.BackEnd + '/api/unauth/viewOverview?username=' + username , { headers });
+            return this.http.get<any[]>(this.BackEnd + '/api/v1/unauth/viewOverview?username=' + username , { headers });
         }
     }
 

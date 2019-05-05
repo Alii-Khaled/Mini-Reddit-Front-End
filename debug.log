@@ -1,1 +1,2 @@
 [0414/053752.589:ERROR:file_io_win.cc(179)] CreateFile C:\Users\DELL\AppData\Local\Temp\karma-83325208\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[0505/035252.238:ERROR:http_transport_win.cc(349)] WinHttpWriteData: The operation completed successfully. (0x0)
