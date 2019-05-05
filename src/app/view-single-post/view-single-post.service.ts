@@ -31,8 +31,8 @@ export class ViewSinglePostService {
             'Accept': 'application/json',
             'Authorization': 'Bearer ' + token
         });
-        // return this.http.get<any>('https://930d0c7c.ngrok.io/api/unauth/ViewPosts?username=' + username ,  {headers} );
-        return this.http.get<any>(this.BackEnd + '/api/unauth/ViewPosts?username=' + post_id ,  {headers} );
+        // return this.http.get<any>('https://930d0c7c.ngrok.io/api/v1/unauth/ViewPosts?username=' + username ,  {headers} );
+        return this.http.get<any>(this.BackEnd + '/api/v1/unauth/ViewPosts?username=' + post_id ,  {headers} );
     }
 }
 

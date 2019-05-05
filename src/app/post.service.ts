@@ -47,7 +47,7 @@ export class PostService {
 
     }
     else {
-        return this.http.post<PostsObjects[]>('http://35.204.169.121//api/auth/removeLink', body, { headers });
+        return this.http.post<PostsObjects[]>('http://35.204.169.121//api/v1/auth/removeLink', body, { headers });
 
     }
   }
@@ -68,7 +68,7 @@ export class PostService {
         return this.http.get<PostsObjects[]>('http://localhost:3000/posts');
     }
     else {
-        return this.http.get<PostsObjects[]>('http://35.204.169.121/api/auth/viewPosts?post_id=' + id, { headers });
+        return this.http.get<PostsObjects[]>('http://35.204.169.121/api/v1/auth/viewPosts?post_id=' + id, { headers });
 
     }
   }
@@ -91,8 +91,8 @@ export class PostService {
         return this.http.post("http://localhost:3000/posts", body, { headers })
     }
     else {
-        // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-        return this.http.post("http://35.204.169.121/api/auth/saveLink", body, { headers })
+        // return this.http.post("https://930d0c7c.ngrok.io/api/v1/auth/editCommunity", body, { headers })
+        return this.http.post("http://35.204.169.121/api/v1/auth/saveLink", body, { headers })
     }
   }
 
@@ -114,8 +114,8 @@ export class PostService {
   //       return this.http.post("http://localhost:3000/posts", body, { headers })
   //   }
   //   else {
-  //       // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-  //       return this.http.post("http://35.204.169.121/api/auth/unsaveLink", body, { headers })
+  //       // return this.http.post("https://930d0c7c.ngrok.io/api/v1/auth/editCommunity", body, { headers })
+  //       return this.http.post("http://35.204.169.121/api/v1/auth/unsaveLink", body, { headers })
   //   }
   // }
   unsavePost(link_id) {
@@ -140,7 +140,7 @@ export class PostService {
         let body = {
             "link_id": link_id
         };
-        return this.http.post(this.BackEnd + '/api/auth/unsaveLink' , body, {headers});
+        return this.http.post(this.BackEnd + '/api/v1/auth/unsaveLink' , body, {headers});
     }
   }
 
@@ -166,7 +166,7 @@ export class PostService {
         let body = {
             "post_id": post_id
         };
-        return this.http.post(this.BackEnd + '/api/auth/hidePost' , body, {headers});
+        return this.http.post(this.BackEnd + '/api/v1/auth/hidePost' , body, {headers});
     }
   }
 
@@ -192,7 +192,7 @@ export class PostService {
         let body = {
             "post_id": post_id
         };
-        return this.http.post(this.BackEnd + '/api/auth/unhidePost' , body, {headers});
+        return this.http.post(this.BackEnd + '/api/v1/auth/unhidePost' , body, {headers});
     }
   }
 
@@ -217,7 +217,7 @@ export class PostService {
     }
     else {
         /*I hope this is the right way*/
-        return this.http.get<comments>('http://35.204.169.121/api/unauth/ViewPosts?page_type=' + page_type 
+        return this.http.get<comments>('http://35.204.169.121/api/v1/unauth/ViewPosts?page_type=' + page_type 
         + '&username=' + username + '&community_id=' + community_id, { headers });
     }
   }
@@ -247,7 +247,7 @@ export class PostService {
 
     }
     else {
-        return this.http.post<comments[]>('http://35.204.169.121//api/auth/removeLink', body, { headers });
+        return this.http.post<comments[]>('http://35.204.169.121//api/v1/auth/removeLink', body, { headers });
 
     }
   }
@@ -272,7 +272,7 @@ export class PostService {
     }
     else {
         /*get community info not now in backend*/
-        return this.http.get<comments>('http://35.204.169.121/api/unauth/viewCommentsReplies?link_id=' + id, { headers });
+        return this.http.get<comments>('http://35.204.169.121/api/v1/unauth/viewCommentsReplies?link_id=' + id, { headers });
     }
   }
 
@@ -294,8 +294,8 @@ export class PostService {
         return this.http.post("http://localhost:3000/commentss", body, { headers })
     }
     else {
-        // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-        return this.http.post("http://35.204.169.121/api/auth/saveLink", body, { headers })
+        // return this.http.post("https://930d0c7c.ngrok.io/api/v1/auth/editCommunity", body, { headers })
+        return this.http.post("http://35.204.169.121/api/v1/auth/saveLink", body, { headers })
     }
   }
 
@@ -317,8 +317,8 @@ export class PostService {
         return this.http.post("http://localhost:3000/commentss", body, { headers })
     }
     else {
-        // return this.http.post("https://930d0c7c.ngrok.io/api/auth/editCommunity", body, { headers })
-        return this.http.post("http://35.204.169.121/api/auth/unsaveLink", body, { headers })
+        // return this.http.post("https://930d0c7c.ngrok.io/api/v1/auth/editCommunity", body, { headers })
+        return this.http.post("http://35.204.169.121/api/v1/auth/unsaveLink", body, { headers })
     }
   }
 

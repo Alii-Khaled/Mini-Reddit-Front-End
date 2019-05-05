@@ -1371,7 +1371,7 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            return this.http.get&lt;any&gt;( this.BackEnd + &#x27;/api/unauth/viewUserCommunities?username&#x3D;&#x27; + username , {headers} );
+            return this.http.get&lt;any&gt;( this.BackEnd + &#x27;/api/v1/unauth/viewUserCommunities?username&#x3D;&#x27; + username , {headers} );
         }
     }
 
@@ -1406,8 +1406,8 @@ export class ProfileHttpService {
             /**
              * Getting username from Api
              */
-            // return this.http.get&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/auth/getUsername&#x27; , {headers});
-            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/auth/getUsername&#x27; , {headers});
+            // return this.http.get&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/auth/getUsername&#x27; , {headers});
+            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/v1/auth/getUsername&#x27; , {headers});
             }
     }
     /**
@@ -1436,8 +1436,8 @@ export class ProfileHttpService {
             /**
              * Here id represent username of the profile owner user
              */
-            // return this.http.get&lt;UserPublicInfo&gt;(&#x27;https://930d0c7c.ngrok.io/api/unauth/viewPublicUserInfo?username&#x3D;&#x27; + id , {headers});
-            return this.http.get&lt;UserPublicInfo&gt;(this.BackEnd + &#x27;/api/unauth/viewPublicUserInfo?username&#x3D;&#x27; + id , {headers});
+            // return this.http.get&lt;UserPublicInfo&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/unauth/viewPublicUserInfo?username&#x3D;&#x27; + id , {headers});
+            return this.http.get&lt;UserPublicInfo&gt;(this.BackEnd + &#x27;/api/v1/unauth/viewPublicUserInfo?username&#x3D;&#x27; + id , {headers});
         }
     }
 
@@ -1464,7 +1464,7 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            return this.http.get&lt;any[]&gt;(this.BackEnd + &#x27;/api/unauth/viewOverview?username&#x3D;&#x27; + username , { headers });
+            return this.http.get&lt;any[]&gt;(this.BackEnd + &#x27;/api/v1/unauth/viewOverview?username&#x3D;&#x27; + username , { headers });
         }
     }
 
@@ -1492,8 +1492,8 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            // return this.http.get&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/auth/viewUpOrDownvotedPosts?type&#x3D;0&#x27;, {headers} );
-            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/auth/viewUpOrDownvotedPosts?type&#x3D;0&#x27;, {headers} );
+            // return this.http.get&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/auth/viewUpOrDownvotedPosts?type&#x3D;0&#x27;, {headers} );
+            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/v1/auth/viewUpOrDownvotedPosts?type&#x3D;0&#x27;, {headers} );
         }
     }
 
@@ -1521,7 +1521,7 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/auth/viewUpOrDownvotedPosts?type&#x3D;1&#x27; , {headers} );
+            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/v1/auth/viewUpOrDownvotedPosts?type&#x3D;1&#x27; , {headers} );
         }
     }
 
@@ -1549,8 +1549,8 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            // return this.http.get&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/unauth/ViewPosts?username&#x3D;&#x27; + username ,  {headers} );
-            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/unauth/ViewPosts?username&#x3D;&#x27; + username ,  {headers} );
+            // return this.http.get&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/unauth/ViewPosts?username&#x3D;&#x27; + username ,  {headers} );
+            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/v1/unauth/ViewPosts?username&#x3D;&#x27; + username ,  {headers} );
         }
     }
 
@@ -1578,7 +1578,7 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            return this.http.get&lt;PostsObjects[]&gt;(this.BackEnd + &#x27;/api/auth/viewHiddenPosts&#x27; ,  {headers} );
+            return this.http.get&lt;PostsObjects[]&gt;(this.BackEnd + &#x27;/api/v1/auth/viewHiddenPosts&#x27; ,  {headers} );
         }
     }
     /**
@@ -1605,7 +1605,7 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token 
             });
-            return this.http.get&lt;any[]&gt;(this.BackEnd + &#x27;/api/unauth/viewComments?username&#x3D;&#x27; + username , {headers});
+            return this.http.get&lt;any[]&gt;(this.BackEnd + &#x27;/api/v1/unauth/viewComments?username&#x3D;&#x27; + username , {headers});
         }
     }
 
@@ -1632,8 +1632,8 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            // return this.http.get&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/auth/following?username&#x3D;&#x27; + username , { headers });
-            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/auth/following?username&#x3D;&#x27; + username , { headers });
+            // return this.http.get&lt;any&gt;(&#x27;https://930d0c7c.ngrok.io/api/v1/auth/following?username&#x3D;&#x27; + username , { headers });
+            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/v1/auth/following?username&#x3D;&#x27; + username , { headers });
         }
     }
 
@@ -1660,7 +1660,7 @@ export class ProfileHttpService {
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
             let body &#x3D; {};
-            return this.http.post(this.BackEnd + &#x27;/api/auth/signOut&#x27; , body, {headers});
+            return this.http.post(this.BackEnd + &#x27;/api/v1/auth/signOut&#x27; , body, {headers});
         }
     }
     /**
@@ -1689,7 +1689,7 @@ export class ProfileHttpService {
             let body &#x3D; {
                 &quot;username&quot; :username
             };
-            return this.http.post(this.BackEnd + &#x27;/api/auth/blockUser&#x27; , body, {headers});
+            return this.http.post(this.BackEnd + &#x27;/api/v1/auth/blockUser&#x27; , body, {headers});
         }
     }
     /**
@@ -1717,7 +1717,7 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/auth/blockedUsers&#x27;, { headers });
+            return this.http.get&lt;any&gt;(this.BackEnd + &#x27;/api/v1/auth/blockedUsers&#x27;, { headers });
         }
     }
 
@@ -1747,7 +1747,7 @@ export class ProfileHttpService {
             let body &#x3D; {
                 &quot;username&quot;: username
             };
-            return this.http.post(this.BackEnd + &#x27;/api/auth/unblockUser&#x27; , body, {headers});
+            return this.http.post(this.BackEnd + &#x27;/api/v1/auth/unblockUser&#x27; , body, {headers});
         }
     }
     /**
@@ -1775,7 +1775,7 @@ export class ProfileHttpService {
             let body &#x3D; {
                 &quot;username&quot;: username
             };
-            return this.http.post(this.BackEnd + &#x27;/api/auth/follow&#x27; , body, {headers});
+            return this.http.post(this.BackEnd + &#x27;/api/v1/auth/follow&#x27; , body, {headers});
         }
     }
     /**
@@ -1803,7 +1803,7 @@ export class ProfileHttpService {
             let body &#x3D; {
                 &quot;username&quot;: username
             };
-            return this.http.post(this.BackEnd + &#x27;/api/auth/unfollow&#x27; , body, {headers});
+            return this.http.post(this.BackEnd + &#x27;/api/v1/auth/unfollow&#x27; , body, {headers});
         }
     }
 
@@ -1830,7 +1830,7 @@ export class ProfileHttpService {
                 &#x27;Accept&#x27;: &#x27;application/json&#x27;,
                 &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token
             });
-            return this.http.get&lt;any[]&gt;(this.BackEnd + &#x27;/api/auth/viewSavedLinks?username&#x3D;&#x27; + username , { headers });
+            return this.http.get&lt;any[]&gt;(this.BackEnd + &#x27;/api/v1/auth/viewSavedLinks?username&#x3D;&#x27; + username , { headers });
         }
     }
 
