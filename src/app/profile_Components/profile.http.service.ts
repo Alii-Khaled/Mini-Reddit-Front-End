@@ -100,7 +100,7 @@ export class ProfileHttpService {
         } else {
             /**
              * Setting headers
-             */
+             */ 
             const headers = new HttpHeaders ({
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
