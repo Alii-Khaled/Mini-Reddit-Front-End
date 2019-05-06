@@ -160,6 +160,18 @@ export class UserHeaderComponent implements OnInit {
       },
     );
   }
+  popular(){
+    this.dropdown.changeData('Popular', 'https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png');
+
+    this.router.navigateByUrl('r/popular');
+   
+  }
+  home(){
+    console.log('da5al home');
+    this.dropdown.changeData( 'Home', 'https://image.flaticon.com/icons/svg/25/25694.svg');
+    this.router.navigateByUrl('');
+
+  }
 
   /**
    * Filter function

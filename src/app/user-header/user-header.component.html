@@ -15,9 +15,9 @@
         <ul class="dropdown-menu" id="dropdown-menu-left">
           <li><input type="text" class="searchTerm" placeholder="Filter" id="myInput" (keyup)="filterFunction()"></li>
           <li class="dropdown-header">Reddit Feeds</li>
-          <li><a role="button"><img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="25" height="25" style="margin-right:15px">
+          <li><a (click)="popular()" role="button"><img src="https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png" width="25" height="25" style="margin-right:15px">
           Popular</a></li>
-          <li><a role="button"><img src="https://image.flaticon.com/icons/svg/25/25694.svg" width="25" height="25" style="margin-right:15px">
+          <li><a (click)="home()" role="button"><img src="https://image.flaticon.com/icons/svg/25/25694.svg" width="25" height="25" style="margin-right:15px">
           Home</a></li>
           <li><a role="button"><img src="https://image.flaticon.com/icons/png/512/39/39915.png" width="25" height="25" style="margin-right:15px">
           All</a></li>

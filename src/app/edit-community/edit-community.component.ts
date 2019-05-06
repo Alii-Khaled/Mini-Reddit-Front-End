@@ -154,7 +154,7 @@ export class EditCommunityComponent implements OnInit {
             if (this.theresponse) {
 
               this.dropdown.changeData('' + 'Popular', 'https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png');
-              setTimeout(() => this.router.navigateByUrl('#'), 5000);
+              setTimeout(() => this.router.navigateByUrl(''), 5000);
             }
           }
         );
