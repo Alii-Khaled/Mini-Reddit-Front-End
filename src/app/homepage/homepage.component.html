@@ -1,2 +1,32 @@
-<div style="margin-top:100px"></div>
-<app-post-layout *ngFor="let post of posts;" [posts]="post"></app-post-layout>
+<div class="container" id="allpage">
+    <div style="margin-top:100px"></div>
+    <div class="row">
+        <div class="col-md-7">
+            <app-post-layout *ngFor="let post of posts;" [posts]="post"></app-post-layout>
+        </div>
+      <div class="col-md-2"></div>
+        <div class="col-md-2 rightColumn">
+            <div class="row">
+                <div id="CommunityDetailsAll" class="CommunityDetailsAll panel-default  col-md-4">
+                    <div id="CommDetails" class="CommDetails panel-heading" id="sora">
+                      
+                    </div>
+                    <div id="CommInfoAll" class="CommInfoAll panel-body panel-footer">
+                        <div id="CommLogoNamei" class="CommLogoNamei">
+                            <img class="logo" src="http://i.imgur.com/sdO8tAw.png'"
+                                 alt="logo"
+                                viewBox="0 0 20 20">
+                            <!-- <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg> -->
+                            <span id="Namei" class="Namei">r/ Popular </span>
+                          
+                            <div id="Bio" class="Bio">
+                                    The best posts on Reddit for you, pulled from the most active communities on Reddit. Check here to see the most shared, upvoted, and commented content on the internet.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

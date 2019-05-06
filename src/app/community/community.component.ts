@@ -86,6 +86,7 @@ export class CommunityComponent implements OnInit {
 
       /*  this.commId=parseInt(this.router.url.substr(11)); */
       console.log(this.commId);
+
       this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts);
       this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => {
         this.Community = data;
@@ -103,6 +104,7 @@ export class CommunityComponent implements OnInit {
           this.Community.banner= "https://styles.redditmedia.com/t5_6/styles/bannerBackgroundImage_yddlxq1m39r21.jpg?format=pjpg&s=5b0d6c78cbbf5e40d6882202257bc3f70b307549"
         }
         this.dropdown.changeData('r/' + this.Community.name, this.Community.logo);
+        
       },response=>{},
       ()=>
       {
@@ -115,8 +117,9 @@ export class CommunityComponent implements OnInit {
 
       }
       ); 
-   
-    });
+      this.http.getMyModerators(this.commId).subscribe((data: any) => this.moderators = data.moderators);
+    }
+    );
   }
   /**
    * function toggleButton Toggles the subscribe to unsubscribe and vice verse
@@ -205,7 +208,7 @@ export class CommunityComponent implements OnInit {
   ngOnInit() {
     this.http.getCommunityInfo(this.commId).subscribe((data: Communities) => this.Community = data);
     this.http.getMyModerators(this.commId).subscribe((data: any) => this.moderators = data.moderators);
-    this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts)
+    this.http.getCommunityPosts(this.commId).subscribe((data: any) => this.posts = data.posts);
   }
 
 }

@@ -75,7 +75,7 @@
                   {{buttonName}}
                 </mat-button-toggle>
 
-                <button id="CreatePost" type="button" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
+                <button id="CreatePost" type="button" routerLink="/submit" class="btn btn-primary btn-lg CreatePost">CREATE POST</button>
                 <button *ngIf="isModerator" id="editCommunityBtn" routerLink="/community/{{commId}}/Edit_community"
                   type="button" class="btn btn-primary btn-lg CreatePost">EDIT COMMUNITY</button>
               </div>

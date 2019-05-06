@@ -109,14 +109,14 @@ export class CommunityModeratorsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        
+     
         var username = this.moderators[i].moderator_username;
         var id=1;
        /*  var id = this.moderators[i].id; for mock */
         /* w bab3at id dah parameter awlany 3ashan al8y mn mock */
         this.http.removeModerator(this.commId, username, id).subscribe(
           response => {
-            
+            this.moderators.splice(i);
             this.message = 'removed Successfully';
             this.snackBar.open(this.message, undefined, {
               duration: 4000,
