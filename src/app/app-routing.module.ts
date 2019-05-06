@@ -20,6 +20,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { ErrorComponent } from './error/error.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { ViewSinglePostComponent } from './view-single-post/view-single-post.component';
+import { PopularpageComponent } from './popularpage/popularpage.component';
 
 const routes: Routes = [
 
@@ -45,6 +46,7 @@ const routes: Routes = [
     ]
   },
   { path: 'community/:CommunityName', component: CommunityComponent },
+  { path: 'r/popular', component: PopularpageComponent },
   { path: 'community/:CommunityName/Edit_community', component: EditCommunityComponent },
   { path: 'community/:CommunityName/Moderators', component: CommunityModeratorsComponent },
   { path: 'settings', component: UserSettingsComponent },

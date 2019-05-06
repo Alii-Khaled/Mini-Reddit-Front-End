@@ -3,6 +3,9 @@ import { HttpService } from '../http.service';
 import { ProfileHttpService } from '../profile_Components/profile.http.service';
 import { comments } from '../classes/comments';
 import { Router } from '@angular/router';
+import { PostService } from '../post.service';
+import { Input } from '@syncfusion/ej2-inputs';
+import { communityHttpService } from '../community/community.http.service';
 
 @Component({
   selector: 'app-create-post',
@@ -11,26 +14,8 @@ import { Router } from '@angular/router';
 })
 export class CreatePostComponent implements OnInit {
 
-  constructor(private router: Router, private http: ProfileHttpService) { }
-  
-// try this
-// editorConfig = {
+  constructor(private router: Router, private http: PostService, private httpComm: ProfileHttpService) { }
 
-//   editable: true,
-
-//   spellcheck: false,
-
-//   height: '10rem',
-
-//   minHeight: '5rem',
-
-//   placeholder: 'Text (optional)',
-
-//   translate: 'no'
-
-// };
-
-// try this
 editorConfig = {
   editable: true,
     spellcheck: true,
@@ -44,12 +29,6 @@ editorConfig = {
     placeholder: 'Text (optional)',
     imageEndPoint: '',
     toolbar: [
-        // ['bold', 'italic', 'underline', 'strikeThrough', 'superscript', 'subscript'],
-        // ['fontName', 'fontSize', 'color'],
-        // ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent'],
-        // ['cut', 'copy', 'delete', 'removeFormat', 'undo', 'redo'],
-        // ['paragraph', 'blockquote', 'removeBlockquote', 'horizontalLine', 'orderedList', 'unorderedList'],
-        // ['link', 'unlink', 'image', 'video']
         ['bold', 'italic', 'link', 'strikeThrough', 'superscript'],
         ['fontSize', 'blockquote', 'removeBlockquote', 'orderedList', 'unorderedList'],
         ['link', 'unlink', 'image', 'video']
@@ -77,6 +56,9 @@ public communities = [
    */
   username: string;
 
+  // @Input() posts;
+  posts;
+
   ngOnInit() {
     /**
      * Getting profile owner username
@@ -87,18 +69,19 @@ public communities = [
      * Request for overview bun not completed yet
      */
     // get request to get communities that i am in, and put it in communities
-    // this.http.getMyCommunities(this.username).subscribe((data: any) => {
-    //   this.communities = data.communities;
-    // });
+    this.httpComm.getMyCommunities(this.username).subscribe((data: any) => {
+      this.communities = data.communities;
+    });
   }
 
-  createPost() {
+  createPost(post_content, parent_link_id, post_title, community_id=1, image_path='', video_url='') {
     // post request to 'add new link' => "create post"
-    // this.apiService.createPost(this.comments)
+    // this.http.createPost(this.comments)
     // .subscribe(
     //   Response=>console.log('success', Response),
     //   error=>console.error('error',error)
     // );
+    this.http.addNewLink(post_content, parent_link_id, post_title, community_id, image_path, video_url).subscribe((data: any) => this.posts = data);
   }
 
 }

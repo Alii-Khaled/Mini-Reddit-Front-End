@@ -196,6 +196,118 @@ export class PostService {
     }
   }
 
+  upvote(link_id) {
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "link_id": link_id
+        };
+        return this.http.post(this.BackEnd + '/api/v1/auth/upvoteLink' , body, {headers});
+    }
+  }
+
+  downvote(link_id) {
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "link_id": link_id
+        };
+        return this.http.post(this.BackEnd + '/api/v1/auth/downvoteLink' , body, {headers});
+    }
+  }
+
+  addNewLink(post_content, parent_link_id, post_title, community_id, image_path, video_url) {
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "post_content": post_content,
+            "parent_link_id": parent_link_id,
+            "post_title": post_title,
+            "community_id": community_id,
+            "image_path": image_path,
+            "video_url": video_url
+        };
+        return this.http.post(this.BackEnd + '/api/v1/auth/addLink' , body, {headers});
+    }
+  }
+
+  editPost(post_id, new_title, new_content, new_image) {
+    if (this.IsApi === false) {
+        /**
+         * From the mock server if "IsApi" is false
+         * And from Api if it is true
+         */
+    } else {
+        /**
+         * Getting token from cookies
+         */
+        var token = localStorage.getItem('token');
+        /**
+         * Setting headers
+         */
+        const headers = new HttpHeaders ({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        });
+        let body = {
+            "post_id": post_id,
+            "new_title": new_title,
+            "new_content": new_content,
+            "new_image": new_image
+        };
+        return this.http.post(this.BackEnd + '/api/v1/auth//editPost' , body, {headers});
+    }
+  }
+
   // is not completed
   getHomePosts(page_type: number, username: string, community_id: number = null): Observable<comments> {
 

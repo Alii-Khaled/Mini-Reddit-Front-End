@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit {
   /**
    * Current user public info
    */
-  PublicInfo: UserPublicInfo;
+  publicInfo: UserPublicInfo;
   /**
    * @param http For requests
    * @param router To rout to another url if there was an error
@@ -109,18 +109,18 @@ export class ProfileComponent implements OnInit {
            * Request to get user's public info
            */
           this.http.getUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
-            this.PublicInfo = data;
+            this.publicInfo = data;
             /**
              * To split cake day from day and hour to day only
              */
-            this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
-            if (!this.PublicInfo.photo_path) {
+            this.publicInfo.cake_day = this.publicInfo.cake_day.substr(0, 10);
+            if (!this.publicInfo.photo_path) {
 // tslint:disable-next-line: max-line-length
-              this.PublicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
+              this.publicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
             }
-            if (!this.PublicInfo.cover_path) {
+            if (!this.publicInfo.cover_path) {
               // tslint:disable-next-line: max-line-length
-              this.PublicInfo.cover_path = 'https://www.beautycolorcode.com/2c96da.png';
+              this.publicInfo.cover_path = 'https://www.beautycolorcode.com/2c96da.png';
             }
         }, err => {
           /**
@@ -131,7 +131,7 @@ export class ProfileComponent implements OnInit {
         /**
          * Changing the dropdown logo and title
          */
-        this.dropdown.changeData('u/' + this.PublicInfo.name, this.PublicInfo.photo_path);
+        this.dropdown.changeData('u/' + this.publicInfo.name, this.publicInfo.photo_path);
         });
         });
     }
@@ -155,18 +155,18 @@ export class ProfileComponent implements OnInit {
            * Request to get user's public info
            */
         this.http.getUserPublicInfo(this.username).subscribe((data: UserPublicInfo) => {
-            this.PublicInfo = data;
+            this.publicInfo = data;
             /**
              * To split cake day from day and hour to day only
              */
-            this.PublicInfo.cake_day = this.PublicInfo.cake_day.substr(0, 10);
-            if (!this.PublicInfo.photo_path) {
+            this.publicInfo.cake_day = this.publicInfo.cake_day.substr(0, 10);
+            if (!this.publicInfo.photo_path) {
 // tslint:disable-next-line: max-line-length
-              this.PublicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
+              this.publicInfo.photo_path = 'https://polar-ocean-4195.herokuapp.com/7777772e7265646469747374617469632e636f6d/avatars/avatar_default_10_FF8717.png';
             }
-            if (!this.PublicInfo.cover_path) {
+            if (!this.publicInfo.cover_path) {
               // tslint:disable-next-line: max-line-length
-              this.PublicInfo.cover_path = 'https://www.beautycolorcode.com/2c96da.png';
+              this.publicInfo.cover_path = 'https://www.beautycolorcode.com/2c96da.png';
             }
         }, err => {
           /**
@@ -177,7 +177,7 @@ export class ProfileComponent implements OnInit {
         /**
          * Changing the dropdown logo and title
          */
-        this.dropdown.changeData('u/' + this.PublicInfo.name, this.PublicInfo.photo_path);
+        this.dropdown.changeData('u/' + this.publicInfo.name, this.publicInfo.photo_path);
         });
         });
     }
@@ -255,7 +255,9 @@ cardButtonClick() {
    * If i'm on my profile then it creates a new post
    */
   if (this.cardButton === 'NEW POST') {
+    this.router.navigateByUrl('submit');
     // TODO: put routing link here to create new post
+    this.router.navigateByUrl('/submit');
   } else if (this.cardButton === 'FOLLOW') {
     /**
      * Follow user request

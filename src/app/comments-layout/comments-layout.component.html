@@ -27,18 +27,18 @@
             <ng-template #elseBlockSave><a href="#" id="save" style="color:blue;" (click)="unsaveComment(comment?.comment_id)"><mat-icon>bookmark</mat-icon> Unsave</a></ng-template>
             <li><a href="#"id="edit{{comment?.comment_id}}"><mat-icon>edit</mat-icon> Edit</a></li>
             <li><a href="#" id="delete{{comment?.comment_id}}"><mat-icon>delete_forever</mat-icon> Delete</a></li>
-            <li><a href="#" id="_remove{{comment?.comment_id}}" class="others" *ngIf="innerWidth < 268;"><mat-icon>delete</mat-icon> Remove</a></li>
+            <li><a href="#" id="_remove{{comment?.comment_id}}" class="others" *ngIf="innerWidth < 268;" (click)="remover(comment?.comment_id)"><mat-icon>delete</mat-icon> Remove</a></li>
             <li><a href="#" id="_spam{{comment?.comment_id}}" class="others" *ngIf="innerWidth < 268;"><mat-icon>horizontal_split</mat-icon> Spam</a></li>
             <li><a href="#" id="_verify{{comment?.comment_id}}" class="others" *ngIf="innerWidth < 268;"><mat-icon>verified_user</mat-icon></a></li>
           </ul>
         </button>
       </div>
       <!-- <button mat-button *ngIf="innerWidth >= 494;"><mat-icon></mat-icon>.</button> -->
-      <button mat-button id="remove{{comment?.comment_id}}" class="others" *ngIf="innerWidth >= 268;"><mat-icon>delete</mat-icon> Remove</button>
+      <button mat-button id="remove{{comment?.comment_id}}" class="others" *ngIf="innerWidth >= 268;" (click)="remover(comment?.comment_id)"><mat-icon>delete</mat-icon> Remove</button>
       <button mat-button id="spam{{comment?.comment_id}}" class="others" *ngIf="innerWidth >= 332;"><mat-icon>horizontal_split</mat-icon> Spam</button>
       <button mat-button id="verify{{comment?.comment_id}}" class="others" *ngIf="innerWidth >= 397;"><mat-icon>verified_user</mat-icon></button>
     </blockquote>
   </div>
 </form>
 
-<app-view-single-post style="display:none;" [sharedData]="comment"></app-view-single-post>
+<app-view-single-post style="display:none;" [sharedData]="post"></app-view-single-post>

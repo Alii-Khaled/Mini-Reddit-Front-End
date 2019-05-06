@@ -127,7 +127,7 @@
                     <li><a href="#" id="embed{{comment?.comment_id}}"><mat-icon>code</mat-icon> Embed</a></li>
                   </ul>
                 </button>
-                <button disableRipple mat-button (click)="save()" *ngIf="(!loggedin || comment.saved === false) && innerWidth >= 366; else elseBlockSave" id="save{{comment?.comment_id}}" class="buttons" >Save</button>
+                <button disableRipple mat-button (click)="save()" *ngIf="(!loggedin || comment.saved === false) && innerWidth >= 366; else elseBlockSave" id="save{{comment?.comment_id}}" class="buttons">Save</button>
                 <ng-template #elseBlockSave><button disableRipple (click)="unsave()" mat-button id="unSave{{comment.comment_id}}" class="buttons" *ngIf="innerWidth >= 366;">Unsave</button></ng-template>
                 <button disableRipple mat-button id="report" class="buttons" *ngIf="loggedin && innerWidth >= 494;">Report</button>
               </div>

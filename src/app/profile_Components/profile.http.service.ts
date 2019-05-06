@@ -100,7 +100,7 @@ export class ProfileHttpService {
         } else {
             /**
              * Setting headers
-             */
+             */ 
             const headers = new HttpHeaders ({
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -231,13 +231,13 @@ export class ProfileHttpService {
     /**
      * Getting user's hidden posts
      */
-    getHidden(): Observable<PostsObjects[]> {
+    getHidden(): Observable<any> {
         if (this.IsApi === false) {
             /**
              * From the mock server if "IsApi" is false
              * And from Api if it is true
              */
-        return this.http.get<PostsObjects[]>('http://localhost:3000/hidden');
+        return this.http.get<any>('http://localhost:3000/hidden');
         } else {
             /**
              * Getting token from cookies
@@ -503,7 +503,7 @@ export class ProfileHttpService {
                 'Accept': 'application/json',
                 'Authorization': 'Bearer ' + token
             });
-            return this.http.get<any[]>(this.BackEnd + '/api/v1/unauth/viewOverview?username=' + username , { headers });
+            return this.http.get<any[]>(this.BackEnd + '/api/v1/auth/viewSavedLinks' , { headers });
         }
     }
 

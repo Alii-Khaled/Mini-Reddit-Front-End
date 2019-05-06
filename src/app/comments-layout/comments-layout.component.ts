@@ -11,6 +11,7 @@ import { PostService } from '../post.service';
   styleUrls: ['./comments-layout.component.css']
 })
 export class CommentsLayoutComponent implements OnInit {
+  commentid: number;
 
   constructor(private http: PostService, public router: Router) { }
   innerWidth = window.innerWidth;
@@ -47,6 +48,8 @@ export class CommentsLayoutComponent implements OnInit {
     }
     this.innerWidth2 = this.innerWidth2 - 100;
     this.innerWidth = this.innerWidth2 - 150;
+
+    // this.commentid = this.comments.comment_id;
   }
 
 /**
@@ -67,6 +70,47 @@ onResize(event) {
   //  + this.comments.comment_id.toString();
   document.getElementById(this.id).style.width = this.size;
   // for part of buttons
+}
+
+save(comment_id: number){
+  console.log('save id='+comment_id);
+  // if (!this.http.savePost(post_id).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.saved = true;
+  // }
+  this.commentid=comment_id;
+  this.http.unsaveComment(this.commentid).subscribe((data: any) => this.posts = data);
+}
+
+unsave(comment_id: number){
+  console.log('unsave id='+this.commentid);
+  // console.log(this.http.unsavePost(this.commentid).subscribe((data: any) => this.posts = data));
+  // if (!this.http.unsavePost(this.commentid).subscribe((data: any) => this.posts = data) === false) {
+  //   this.posts.saved = !this.posts.saved;
+  // }
+  this.commentid=comment_id;
+  this.http.unsaveComment(this.commentid).subscribe((data: any) => this.posts = data);
+}
+
+// hide(comment_id) {
+//   // if (!this.http.hidePost(this.commentid).subscribe((data: any) => this.posts = data) === false) {
+//   //   this.posts.hidden = true;
+//   // }
+//   this.commentid=comment_id;
+//   console.log('hide id='+this.commentid);
+//   this.http.hideComment(this.commentid).subscribe((data: any) => this.posts = data);
+// }
+// unhide(comment_id) {
+//   // if (!this.http.unhidePost(this.commentid).subscribe((data: any) => this.posts = data) === false) {
+//   //   this.posts.hidden = false;
+//   // }
+//   this.commentid=comment_id;
+//   console.log('unhide id='+this.commentid);
+//   this.http.unhideComment(this.commentid).subscribe((data: any) => this.posts = data);
+// }
+
+remove(comment_id){
+  this.commentid=comment_id;
+  this.http.removeComment(this.commentid).subscribe((data: any)=>this.posts = data);
 }
 
 viewPost(post_id: number) {

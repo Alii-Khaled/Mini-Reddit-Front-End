@@ -43,12 +43,14 @@
 
         <div id="editPost" style="padding:50px; padding-top:20px; display: inline-block; background-color: white;border-style: solid;
         border-width: 0px; border-bottom-width: 1px;border-bottom-color: grey;width: 100%;" *ngIf="editing">
-          <app-ngx-editor id="body" [config]="editorConfig" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+          <app-ngx-editor id="body" [config]="editorConfig" [spellcheck]="true" [(ngModel)]="htmlContent" name="name" #name="ngModel"></app-ngx-editor>
           
           <button disableRipple type="submit" id="editButton" class="commentButton rightButton btn btn-success" 
-            [disabled]="!name.value" (click)="createPost()">COMMENT
+            [disabled]="!name.value">COMMENT
           </button>
         </div>
       </form>
     
     </div>
+
+    <app-view-single-post style="display:none;" [sharedData]="posts"></app-view-single-post>

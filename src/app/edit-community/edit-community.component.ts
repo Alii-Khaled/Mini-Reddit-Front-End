@@ -90,6 +90,7 @@ export class EditCommunityComponent implements OnInit {
 
     this.reader.onload = (event: any) => {
       this.avatarUrl = event.target.result;
+      this.uploadedAvatar = event.target.files[0];
       console.log('process avatar');
     };
     this.reader.readAsDataURL(this.uploadedAvatar);
@@ -102,6 +103,7 @@ export class EditCommunityComponent implements OnInit {
     this.uploadedBanner = event.target.files[0];
     this.reader.onload = (event: any) => {
       this.bannerUrl = event.target.result;
+      this.uploadedBanner = event.target.files[0];
       console.log('process banner');
     };
     this.reader.readAsDataURL(this.uploadedBanner);
@@ -152,7 +154,7 @@ export class EditCommunityComponent implements OnInit {
             if (this.theresponse) {
 
               this.dropdown.changeData('' + 'Popular', 'https://cdn0.iconfinder.com/data/icons/huge-business-icons/512/Growth.png');
-              setTimeout(() => this.router.navigateByUrl('#'), 5000);
+              setTimeout(() => this.router.navigateByUrl(''), 5000);
             }
           }
         );

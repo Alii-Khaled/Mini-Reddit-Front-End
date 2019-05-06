@@ -322,7 +322,7 @@ height: 40px;
 
 #allpage{
     background-color: #DAE0E6;
-    height: -webkit-fill-available;
+    height: auto;
     width: 100%;
   
 }
